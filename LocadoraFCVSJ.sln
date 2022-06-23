@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraFCVSJ.Dominio", "LocadoraFCVSJ.Dominio\LocadoraFCVSJ.Dominio.csproj", "{C3E5F932-9752-4AE8-B7CD-A9879B1E0187}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Dominio", "LocadoraFCVSJ.Dominio\LocadoraFCVSJ.Dominio.csproj", "{C3E5F932-9752-4AE8-B7CD-A9879B1E0187}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraFCVSJ.Infra.BancoDeDados", "LocadoraFCVSJ.Infra.BancoDeDados\LocadoraFCVSJ.Infra.BancoDeDados.csproj", "{519D0C1F-61BE-47D1-9095-AF50C785D602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Infra.BancoDeDados", "LocadoraFCVSJ.Infra.BancoDeDados\LocadoraFCVSJ.Infra.BancoDeDados.csproj", "{519D0C1F-61BE-47D1-9095-AF50C785D602}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domínio", "2. Domínio", "{ECD86BD6-EF07-4E24-8615-CDC45B046F5E}"
 EndProject
@@ -19,9 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 Teste Unitários", "4.1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 Testes de Integração", "4.2 Testes de Integração", "{35878EC7-75FF-4E96-A940-255D607AD843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraFCVSJ.Dominio.Testes", "LocadoraFCVSJ.Dominio.Testes\LocadoraFCVSJ.Dominio.Testes.csproj", "{E11071B5-046C-4073-9BEB-A19C31D7C830}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Dominio.Testes", "LocadoraFCVSJ.Dominio.Testes\LocadoraFCVSJ.Dominio.Testes.csproj", "{E11071B5-046C-4073-9BEB-A19C31D7C830}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraFCVSJ.Infra.BancoDeDados.Testes", "LocadoraFCVSJ.Infra.BancoDeDados.Testes\LocadoraFCVSJ.Infra.BancoDeDados.Testes.csproj", "{22D9DB85-9BEC-4B4D-9428-441A0AB77E1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Infra.BancoDeDados.Testes", "LocadoraFCVSJ.Infra.BancoDeDados.Testes\LocadoraFCVSJ.Infra.BancoDeDados.Testes.csproj", "{22D9DB85-9BEC-4B4D-9428-441A0AB77E1C}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LocadoraFCVSJ.Projeto.BancoDeDados", "LocadoraFCVSJ.Projeto.BancoDeDados\LocadoraFCVSJ.Projeto.BancoDeDados.sqlproj", "{56B50F5E-2604-45EB-B315-831EC25FAB86}"
 EndProject
