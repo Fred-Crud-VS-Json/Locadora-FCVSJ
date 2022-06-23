@@ -63,5 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\TBGrupo.sql" />
+    <Build Include="dbo\Tables\TBFuncionario.sql" />
   </ItemGroup>
 </Project>
