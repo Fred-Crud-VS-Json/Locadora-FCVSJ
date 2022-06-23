@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
+using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data.SqlClient;
@@ -15,25 +16,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
 
         public RepositorioFuncionarioEmBancoDadosTest() 
         {
-            string StringConexao =
-            @"Data Source=(LocalDB)\MSSqlLocalDB;
-              Initial Catalog=DBLocadoraFCVSJ;
-              Integrated Security=True;
-              Pooling=False";
-
-            string query =
-                @"DELETE FROM [TBFuncionario]; DBCC CHECKIDENT (TBFuncionario, RESEED, 0)";
-
-            SqlConnection Conexao = null;
-
-            using (Conexao = new(StringConexao))
-            {
-                using SqlCommand comando = new(query, Conexao);
-
-                Conexao.Open();
-
-                comando.ExecuteNonQuery();
-            }
+            BdUtil.ExecutarSql("DELETE FROM [TBFuncionario]; DBCC CHECKIDENT (TBFuncionario, RESEED, 0)");
 
             repositorioFuncionario = new();
         }
