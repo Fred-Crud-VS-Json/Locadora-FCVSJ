@@ -1,3 +1,5 @@
+using LocadoraFCVSJ.ModuloCliente;
+using LocadoraFCVSJ.ModuloFuncionario;
 using LocadoraFCVSJ.ModuloGrupo;
 
 namespace LocadoraFCVSJ
@@ -13,7 +15,7 @@ namespace LocadoraFCVSJ
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new RegistrarNovoGrupoForm());
+            Application.Run(new TelaPrincipal());
         }
     }
 }
