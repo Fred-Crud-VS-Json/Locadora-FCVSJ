@@ -21,7 +21,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloGrupo
             // arrange
             grupo = NovoGrupo();
 
-            grupo.Nome = null;
+            grupo.Nome = "";
 
             // action
             TestValidationResult<Grupo> resultado = validador.TestValidate(grupo);
