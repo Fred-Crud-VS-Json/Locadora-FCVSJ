@@ -93,6 +93,16 @@ namespace LocadoraFCVSJ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_white_30px {
+            get {
+                object obj = ResourceManager.GetObject("close_white_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap info_30px {
             get {
                 object obj = ResourceManager.GetObject("info_30px", resourceCulture);
@@ -143,9 +153,29 @@ namespace LocadoraFCVSJ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pencil_30px {
+            get {
+                object obj = ResourceManager.GetObject("pencil_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus___30px {
             get {
                 object obj = ResourceManager.GetObject("plus_+_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_math_30px {
+            get {
+                object obj = ResourceManager.GetObject("plus_math_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
