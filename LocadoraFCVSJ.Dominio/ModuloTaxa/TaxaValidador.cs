@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using System.Text.RegularExpressions;
 
-namespace LocadoraFCVSJ.Dominio.ModuloTaxas
+namespace LocadoraFCVSJ.Dominio.ModuloTaxa
 {
     public class TaxaValidador : AbstractValidator<Taxa>
     {

@@ -1,6 +1,6 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
 
-namespace LocadoraFCVSJ.Dominio.ModuloTaxas
+namespace LocadoraFCVSJ.Dominio.ModuloTaxa
 {
     public class Taxa : EntidadeBase<Taxa>
     {
