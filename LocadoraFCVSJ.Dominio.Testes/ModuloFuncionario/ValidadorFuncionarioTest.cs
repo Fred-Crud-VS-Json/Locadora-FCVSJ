@@ -120,21 +120,6 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
             resultado.ShouldHaveValidationErrorFor(funcionario => funcionario.DataAdmissao);
         }
 
-        [TestMethod]
-        public void NivelAcesso_deve_ser_valido()
-        {
-            //arrange
-            funcionario = NovoFuncionario();
-
-            funcionario.NivelAcesso = 4;
-
-            //action
-            TestValidationResult<Funcionario> resultado = validador.TestValidate(funcionario);
-
-            //assert
-            resultado.ShouldHaveValidationErrorFor(funcionario => funcionario.NivelAcesso);
-        }
-
         private Funcionario NovoFuncionario()
         {
             return new Funcionario
@@ -144,7 +129,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
                 Senha = "Fulano123",
                 Salario = 1500,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = 1
+                NivelAcesso = (NivelAcessoEnum)0
             };
         }
     }

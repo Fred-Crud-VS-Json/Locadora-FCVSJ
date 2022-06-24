@@ -52,7 +52,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             funcionarioAtualizado.Senha = "Fulano123567789";
             funcionarioAtualizado.Salario = 1500;
             funcionarioAtualizado.DataAdmissao = DateTime.Now.Date;
-            funcionarioAtualizado.NivelAcesso = 1;
+            funcionarioAtualizado.NivelAcesso = (NivelAcessoEnum)1;
 
             //action
             repositorioFuncionario.Editar(funcionarioAtualizado);
@@ -116,7 +116,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
                 Senha = "Fulano123567789",
                 Salario = 1500,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = 1
+                NivelAcesso = (NivelAcessoEnum)1
             };
         }
 
@@ -129,7 +129,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
                 Senha = "Fulanoa4444657789",
                 Salario = 2000,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = 2
+                NivelAcesso = (NivelAcessoEnum)2
             };
         }
     }

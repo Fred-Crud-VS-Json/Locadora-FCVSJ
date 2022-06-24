@@ -37,7 +37,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 Senha = senha,
                 Salario = salario,
                 DataAdmissao = dataAdmissao,
-                NivelAcesso = nivelAcesso
+                NivelAcesso = (NivelAcessoEnum)nivelAcesso
             };
 
             return funcionario;

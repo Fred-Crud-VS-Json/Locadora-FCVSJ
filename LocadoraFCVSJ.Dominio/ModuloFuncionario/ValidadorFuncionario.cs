@@ -30,11 +30,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
             RuleFor(x => x.DataAdmissao)
                 .LessThanOrEqualTo(DateTime.Now)
                 .NotEmpty();
-
-            RuleFor(x => x.NivelAcesso)
-                .GreaterThanOrEqualTo(1)
-                .LessThanOrEqualTo(3)
-                .NotEmpty();
         }
     }
 }

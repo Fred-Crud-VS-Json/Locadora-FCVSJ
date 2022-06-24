@@ -16,7 +16,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
             Senha = senha;
             Salario = salario;
             DataAdmissao = dataAdmissao;
-            NivelAcesso = nivelAcesso;
+            NivelAcesso = (NivelAcessoEnum)nivelAcesso;
         }
 
         public string Nome { get; set; }
@@ -24,7 +24,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
         public string Senha { get; set; }
         public decimal Salario { get; set; }
         public DateTime DataAdmissao { get; set; }
-        public int NivelAcesso { get; set; }
+        public NivelAcessoEnum NivelAcesso { get; set; }
 
         public override bool Equals(object obj)
         {
