@@ -11,7 +11,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
         {
             comando.Parameters.AddWithValue("ID", funcionario.Id);
             comando.Parameters.AddWithValue("NOME", funcionario.Nome);
-            comando.Parameters.AddWithValue("LOGIN", funcionario.Login);
+            comando.Parameters.AddWithValue("LOGIN", funcionario.Usuario);
             comando.Parameters.AddWithValue("SENHA", funcionario.Senha);
             comando.Parameters.AddWithValue("SALARIO", funcionario.Salario);
             comando.Parameters.AddWithValue("DATAADMISSAO", funcionario.DataAdmissao);
@@ -33,7 +33,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
             {
                 Id = id,
                 Nome = nome,
-                Login = login,
+                Usuario = login,
                 Senha = senha,
                 Salario = salario,
                 DataAdmissao = dataAdmissao,

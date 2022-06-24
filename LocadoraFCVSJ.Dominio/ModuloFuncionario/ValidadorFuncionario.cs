@@ -1,10 +1,5 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
 {
@@ -13,23 +8,19 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
         public ValidadorFuncionario()
         {
             RuleFor(x => x.Nome)
-                .NotEmpty();
+                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{3,60}$")).WithMessage("Nome informado é inválido. Lembre-se de preenche-lo corretamente. \n(Min 3 caracteres, Max 60 caracteres) \n(Acentos e espaços são permitidos)\n");
 
-            RuleFor(x => x.Login)
-                .Matches(new Regex(@"^[.@a-zA-Z-0-9]{3,60}$")).WithMessage("Login de usuário informado é inválido.")
-                .NotEmpty();
+            RuleFor(x => x.Usuario)
+                .Matches(new Regex(@"^[.@a-zA-Z-0-9]{3,60}$")).WithMessage("Usuário informado é inválido. Lembre-se de preenche-lo corretamente. \n(Min 3 caracteres, Max 60 caracteres) \n(Caracteres Especiais Permitidos: [.@])\n");
 
             RuleFor(x => x.Senha)
-                .Matches(new Regex(@"^[.!@#$%&*a-zA-Z-0-9]{10,25}$")).WithMessage("Senha informada é inválida.")
-                .NotEmpty();
+                .Matches(new Regex(@"^[.!@#$%&*a-zA-Z-0-9]{10,25}$")).WithMessage("Senha informada é inválida. Lembre-se de preenche-la corretamente. \n(Min 10 caracteres, Max 25 caracteres) \n(Caracteres Especiais Permitidos: [.!@#$%&*]\n");
 
             RuleFor(x => x.Salario)
-                .GreaterThanOrEqualTo(1100)
-                .NotEmpty();
+                .GreaterThanOrEqualTo(1100);
 
             RuleFor(x => x.DataAdmissao)
-                .LessThanOrEqualTo(DateTime.Now)
-                .NotEmpty();
+                .LessThanOrEqualTo(DateTime.Now);
         }
     }
 }

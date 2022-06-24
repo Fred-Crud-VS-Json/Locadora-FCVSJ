@@ -27,7 +27,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
                 funcionario = value;
 
                 TxbNome.Text = funcionario.Nome;
-                TxbUsuario.Text = funcionario.Login;
+                TxbUsuario.Text = funcionario.Usuario;
                 TxbSenha.Text = funcionario.Senha;
                 TxbSalario.Text = Convert.ToString(funcionario.Salario);
                 MtxbDataAdmissao.Text = Convert.ToString(funcionario.DataAdmissao);
@@ -40,7 +40,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
             funcionario.Nome = TxbNome.Text;
-            funcionario.Login = TxbUsuario.Text;
+            funcionario.Usuario = TxbUsuario.Text;
             funcionario.Senha = TxbSenha.Text;
             funcionario.Salario = Convert.ToDecimal(TxbSalario.Text);
             funcionario.DataAdmissao = DateTime.ParseExact(MtxbDataAdmissao.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);

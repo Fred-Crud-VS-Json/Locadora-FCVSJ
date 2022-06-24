@@ -1,26 +1,11 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
-using System;
 
 namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
 {
     public class Funcionario : EntidadeBase<Funcionario>
     {
-        public Funcionario()
-        {
-        }
-
-        public Funcionario(string nome, string login, string senha, decimal salario, DateTime dataAdmissao, int nivelAcesso)
-        {
-            Nome = nome;
-            Login = login;
-            Senha = senha;
-            Salario = salario;
-            DataAdmissao = dataAdmissao;
-            NivelAcesso = (NivelAcessoEnum)nivelAcesso;
-        }
-
         public string Nome { get; set; }
-        public string Login { get; set; }
+        public string Usuario { get; set; }
         public string Senha { get; set; }
         public decimal Salario { get; set; }
         public DateTime DataAdmissao { get; set; }
@@ -31,7 +16,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
             return obj is Funcionario funcionario &&
                    Id == funcionario.Id &&
                    Nome == funcionario.Nome &&
-                   Login == funcionario.Login &&
+                   Usuario == funcionario.Usuario &&
                    Senha == funcionario.Senha &&
                    Salario == funcionario.Salario &&
                    DataAdmissao == funcionario.DataAdmissao &&
@@ -40,12 +25,12 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id, Nome, Login, Senha, Salario, DataAdmissao, NivelAcesso);
+            return HashCode.Combine(Id, Nome, Usuario, Senha, Salario, DataAdmissao, NivelAcesso);
         }
 
         public override string ToString()
         {
-            return Nome + " - " + Login + " - " + Senha + " - " + Salario + " - " 
+            return Nome + " - " + Usuario + " - " + Senha + " - " + Salario + " - " 
                 + DataAdmissao + " - " + NivelAcesso;
         }
     }

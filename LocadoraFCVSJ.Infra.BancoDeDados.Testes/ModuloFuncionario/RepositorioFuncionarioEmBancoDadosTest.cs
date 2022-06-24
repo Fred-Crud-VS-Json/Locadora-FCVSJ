@@ -3,7 +3,6 @@ using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
 {
@@ -12,7 +11,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
     {
         private Funcionario? funcionario;
         private readonly RepositorioFuncionario repositorioFuncionario;
-
 
         public RepositorioFuncionarioEmBancoDadosTest() 
         {
@@ -31,7 +29,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             repositorioFuncionario.Inserir(funcionario);
 
             //assert
-            Funcionario funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
+            Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
 
             funcionarioEncontrado.Should().NotBeNull();
             funcionario.Should().Be(funcionarioEncontrado);
@@ -46,9 +44,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             //action
             repositorioFuncionario.Inserir(funcionario);
 
-            Funcionario funcionarioAtualizado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
+            Funcionario? funcionarioAtualizado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
+
             funcionarioAtualizado.Nome = "Fulano";
-            funcionarioAtualizado.Login = "FulanoDaSilva";
+            funcionarioAtualizado.Usuario = "FulanoDaSilva";
             funcionarioAtualizado.Senha = "Fulano123567789";
             funcionarioAtualizado.Salario = 1500;
             funcionarioAtualizado.DataAdmissao = DateTime.Now.Date;
@@ -58,7 +57,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             repositorioFuncionario.Editar(funcionarioAtualizado);
 
             //assert
-            Funcionario funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
+            Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
 
             funcionarioEncontrado.Should().NotBeNull();
             funcionario.Should().Be(funcionarioEncontrado);
@@ -74,7 +73,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             repositorioFuncionario.Inserir(funcionario);
 
             //assert
-            Funcionario funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
+            Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
 
             //action
             repositorioFuncionario.Excluir(funcionario);
@@ -112,7 +111,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             return new Funcionario
             {
                 Nome = "Fulano",
-                Login = "FulanoDaSilva",
+                Usuario = "FulanoDaSilva",
                 Senha = "Fulano123567789",
                 Salario = 1500,
                 DataAdmissao = DateTime.Now.Date,
@@ -125,7 +124,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             return new Funcionario
             {
                 Nome = "Fulana",
-                Login = "FulanaDaSilveira",
+                Usuario = "FulanaDaSilveira",
                 Senha = "Fulanoa4444657789",
                 Salario = 2000,
                 DataAdmissao = DateTime.Now.Date,

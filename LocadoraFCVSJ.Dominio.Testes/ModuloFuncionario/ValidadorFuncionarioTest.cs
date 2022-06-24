@@ -8,7 +8,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
     public class ValidadorFuncionarioTest
     {
         private Funcionario? funcionario;
-        private ValidadorFuncionario validador;
+        private readonly ValidadorFuncionario validador;
 
         public ValidadorFuncionarioTest() 
         {
@@ -21,7 +21,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
             //arrange
             funcionario = NovoFuncionario();
 
-            funcionario.Nome = null;
+            funcionario.Nome = "";
 
             //action
             TestValidationResult<Funcionario> resultado = validador.TestValidate(funcionario);
@@ -36,13 +36,13 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
             //arrange
             funcionario = NovoFuncionario();
 
-            funcionario.Login = null;
+            funcionario.Usuario = "";
 
             //action
             TestValidationResult<Funcionario> resultado = validador.TestValidate(funcionario);
 
             //assert
-            resultado.ShouldHaveValidationErrorFor(funcionario => funcionario.Login);
+            resultado.ShouldHaveValidationErrorFor(funcionario => funcionario.Usuario);
         }
 
         [TestMethod]
@@ -51,13 +51,13 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
             //arrange
             funcionario = NovoFuncionario();
 
-            funcionario.Login = "sdfds fgf";
+            funcionario.Usuario = "sdfds fgf";
 
             //action
             TestValidationResult<Funcionario> resultado = validador.TestValidate(funcionario);
 
             //assert
-            resultado.ShouldHaveValidationErrorFor(funcionario => funcionario.Login);
+            resultado.ShouldHaveValidationErrorFor(funcionario => funcionario.Usuario);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
             //arrange
             funcionario = NovoFuncionario();
 
-            funcionario.Senha = null;
+            funcionario.Senha = "";
 
             //action
             TestValidationResult<Funcionario> resultado = validador.TestValidate(funcionario);
@@ -125,11 +125,11 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
             return new Funcionario
             {
                 Nome = "Fulano",
-                Login = "FulanoDaSilva",
+                Usuario = "FulanoDaSilva",
                 Senha = "Fulano123",
                 Salario = 1500,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = (NivelAcessoEnum)0
+                NivelAcesso = 0
             };
         }
     }
