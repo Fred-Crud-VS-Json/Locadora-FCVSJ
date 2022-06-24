@@ -1,9 +1,9 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloTaxas;
+﻿using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 {
-    public class RepositorioTaxa : RepositorioBase<Taxa, TaxaValidador, MapeadorTaxa>
+    public class RepositorioTaxa : RepositorioBase<Taxa, ValidadorTaxa, MapeadorTaxa>
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBTaxa]

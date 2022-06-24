@@ -1,5 +1,5 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
-using LocadoraFCVSJ.Dominio.ModuloTaxas;
+using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using System.Data.SqlClient;
 
