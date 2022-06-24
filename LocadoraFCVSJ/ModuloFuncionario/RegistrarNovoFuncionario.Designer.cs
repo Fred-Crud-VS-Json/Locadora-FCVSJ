@@ -36,23 +36,23 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbNome = new Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbUsuario = new Krypton.Toolkit.KryptonTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.kryptonTextBox3 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbSenha = new Krypton.Toolkit.KryptonTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.kryptonTextBox4 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbSalario = new Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonMaskedTextBox1 = new Krypton.Toolkit.KryptonMaskedTextBox();
-            this.kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
+            this.BtnConcluirRegistro = new Krypton.Toolkit.KryptonButton();
+            this.MtxbDataAdmissao = new Krypton.Toolkit.KryptonMaskedTextBox();
+            this.CbxNivelAcesso = new Krypton.Toolkit.KryptonComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxNivelAcesso)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -141,20 +141,20 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // kryptonTextBox1
+            // TxbNome
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(28, 201);
-            this.kryptonTextBox1.MaxLength = 60;
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(427, 31);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbNome.Location = new System.Drawing.Point(28, 201);
+            this.TxbNome.MaxLength = 60;
+            this.TxbNome.Name = "TxbNome";
+            this.TxbNome.Size = new System.Drawing.Size(427, 31);
+            this.TxbNome.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbNome.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox1.TabIndex = 5;
+            this.TxbNome.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbNome.StateCommon.Border.Rounding = 5F;
+            this.TxbNome.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbNome.TabIndex = 5;
             // 
             // label3
             // 
@@ -167,20 +167,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Nome";
             // 
-            // kryptonTextBox2
+            // TxbUsuario
             // 
-            this.kryptonTextBox2.Location = new System.Drawing.Point(30, 280);
-            this.kryptonTextBox2.MaxLength = 60;
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(425, 31);
-            this.kryptonTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbUsuario.Location = new System.Drawing.Point(30, 280);
+            this.TxbUsuario.MaxLength = 60;
+            this.TxbUsuario.Name = "TxbUsuario";
+            this.TxbUsuario.Size = new System.Drawing.Size(425, 31);
+            this.TxbUsuario.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbUsuario.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox2.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox2.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox2.TabIndex = 7;
+            this.TxbUsuario.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbUsuario.StateCommon.Border.Rounding = 5F;
+            this.TxbUsuario.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbUsuario.TabIndex = 7;
             // 
             // label5
             // 
@@ -193,22 +193,22 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Usuário";
             // 
-            // kryptonTextBox3
+            // TxbSenha
             // 
-            this.kryptonTextBox3.Location = new System.Drawing.Point(30, 358);
-            this.kryptonTextBox3.MaxLength = 60;
-            this.kryptonTextBox3.Name = "kryptonTextBox3";
-            this.kryptonTextBox3.PasswordChar = '●';
-            this.kryptonTextBox3.Size = new System.Drawing.Size(425, 31);
-            this.kryptonTextBox3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbSenha.Location = new System.Drawing.Point(30, 358);
+            this.TxbSenha.MaxLength = 60;
+            this.TxbSenha.Name = "TxbSenha";
+            this.TxbSenha.PasswordChar = '●';
+            this.TxbSenha.Size = new System.Drawing.Size(425, 31);
+            this.TxbSenha.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbSenha.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox3.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox3.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox3.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox3.TabIndex = 9;
-            this.kryptonTextBox3.UseSystemPasswordChar = true;
+            this.TxbSenha.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbSenha.StateCommon.Border.Rounding = 5F;
+            this.TxbSenha.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbSenha.TabIndex = 9;
+            this.TxbSenha.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -221,20 +221,20 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Senha";
             // 
-            // kryptonTextBox4
+            // TxbSalario
             // 
-            this.kryptonTextBox4.Location = new System.Drawing.Point(30, 436);
-            this.kryptonTextBox4.MaxLength = 60;
-            this.kryptonTextBox4.Name = "kryptonTextBox4";
-            this.kryptonTextBox4.Size = new System.Drawing.Size(174, 31);
-            this.kryptonTextBox4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox4.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbSalario.Location = new System.Drawing.Point(30, 436);
+            this.TxbSalario.MaxLength = 60;
+            this.TxbSalario.Name = "TxbSalario";
+            this.TxbSalario.Size = new System.Drawing.Size(174, 31);
+            this.TxbSalario.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbSalario.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox4.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox4.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox4.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox4.TabIndex = 11;
+            this.TxbSalario.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbSalario.StateCommon.Border.Rounding = 5F;
+            this.TxbSalario.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbSalario.TabIndex = 11;
             // 
             // label7
             // 
@@ -269,77 +269,77 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Nível de Acesso";
             // 
-            // kryptonButton1
+            // BtnConcluirRegistro
             // 
-            this.kryptonButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.kryptonButton1.Location = new System.Drawing.Point(32, 574);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnConcluirRegistro.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnConcluirRegistro.Location = new System.Drawing.Point(32, 574);
+            this.BtnConcluirRegistro.Name = "BtnConcluirRegistro";
+            this.BtnConcluirRegistro.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.OverrideDefault.Border.Rounding = 5F;
-            this.kryptonButton1.Size = new System.Drawing.Size(424, 51);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.StateCommon.Back.ColorAngle = 45F;
-            this.kryptonButton1.StateCommon.Border.ColorAngle = 45F;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnConcluirRegistro.OverrideDefault.Border.Rounding = 5F;
+            this.BtnConcluirRegistro.Size = new System.Drawing.Size(424, 51);
+            this.BtnConcluirRegistro.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.StateCommon.Back.ColorAngle = 45F;
+            this.BtnConcluirRegistro.StateCommon.Border.ColorAngle = 45F;
+            this.BtnConcluirRegistro.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButton1.StateCommon.Border.Rounding = 5F;
-            this.kryptonButton1.StateCommon.Border.Width = 0;
-            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonButton1.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton1.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton1.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnConcluirRegistro.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnConcluirRegistro.StateCommon.Border.Rounding = 5F;
+            this.BtnConcluirRegistro.StateCommon.Border.Width = 0;
+            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnConcluirRegistro.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnConcluirRegistro.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnConcluirRegistro.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton1.StatePressed.Border.Width = 0;
-            this.kryptonButton1.TabIndex = 18;
-            this.kryptonButton1.Values.Text = "Concluir";
+            this.BtnConcluirRegistro.StatePressed.Border.Rounding = 5F;
+            this.BtnConcluirRegistro.StatePressed.Border.Width = 0;
+            this.BtnConcluirRegistro.TabIndex = 18;
+            this.BtnConcluirRegistro.Values.Text = "Concluir";
             // 
-            // kryptonMaskedTextBox1
+            // MtxbDataAdmissao
             // 
-            this.kryptonMaskedTextBox1.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.kryptonMaskedTextBox1.Location = new System.Drawing.Point(234, 436);
-            this.kryptonMaskedTextBox1.Mask = "00/00/0000";
-            this.kryptonMaskedTextBox1.Name = "kryptonMaskedTextBox1";
-            this.kryptonMaskedTextBox1.Size = new System.Drawing.Size(221, 31);
-            this.kryptonMaskedTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonMaskedTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.MtxbDataAdmissao.Culture = new System.Globalization.CultureInfo("pt-BR");
+            this.MtxbDataAdmissao.Location = new System.Drawing.Point(234, 436);
+            this.MtxbDataAdmissao.Mask = "00/00/0000";
+            this.MtxbDataAdmissao.Name = "MtxbDataAdmissao";
+            this.MtxbDataAdmissao.Size = new System.Drawing.Size(221, 31);
+            this.MtxbDataAdmissao.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.MtxbDataAdmissao.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonMaskedTextBox1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonMaskedTextBox1.StateCommon.Border.Rounding = 5F;
-            this.kryptonMaskedTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonMaskedTextBox1.TabIndex = 13;
-            this.kryptonMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbDataAdmissao.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.MtxbDataAdmissao.StateCommon.Border.Rounding = 5F;
+            this.MtxbDataAdmissao.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MtxbDataAdmissao.TabIndex = 13;
+            this.MtxbDataAdmissao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // kryptonComboBox1
+            // CbxNivelAcesso
             // 
-            this.kryptonComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.kryptonComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.kryptonComboBox1.DropDownWidth = 420;
-            this.kryptonComboBox1.IntegralHeight = false;
-            this.kryptonComboBox1.Location = new System.Drawing.Point(31, 515);
-            this.kryptonComboBox1.Name = "kryptonComboBox1";
-            this.kryptonComboBox1.Size = new System.Drawing.Size(424, 29);
-            this.kryptonComboBox1.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonComboBox1.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.CbxNivelAcesso.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CbxNivelAcesso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxNivelAcesso.DropDownWidth = 420;
+            this.CbxNivelAcesso.IntegralHeight = false;
+            this.CbxNivelAcesso.Location = new System.Drawing.Point(31, 515);
+            this.CbxNivelAcesso.Name = "CbxNivelAcesso";
+            this.CbxNivelAcesso.Size = new System.Drawing.Size(424, 29);
+            this.CbxNivelAcesso.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.CbxNivelAcesso.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonComboBox1.StateCommon.ComboBox.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonComboBox1.StateCommon.ComboBox.Border.Rounding = 5F;
-            this.kryptonComboBox1.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.kryptonComboBox1.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonComboBox1.TabIndex = 15;
+            this.CbxNivelAcesso.StateCommon.ComboBox.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.CbxNivelAcesso.StateCommon.ComboBox.Border.Rounding = 5F;
+            this.CbxNivelAcesso.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxNivelAcesso.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.CbxNivelAcesso.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxNivelAcesso.TabIndex = 15;
             // 
             // RegistrarNovoFuncionario
             // 
@@ -347,18 +347,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 631);
-            this.Controls.Add(this.kryptonComboBox1);
-            this.Controls.Add(this.kryptonMaskedTextBox1);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.CbxNivelAcesso);
+            this.Controls.Add(this.MtxbDataAdmissao);
+            this.Controls.Add(this.BtnConcluirRegistro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.kryptonTextBox4);
+            this.Controls.Add(this.TxbSalario);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.kryptonTextBox3);
+            this.Controls.Add(this.TxbSenha);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.kryptonTextBox2);
+            this.Controls.Add(this.TxbUsuario);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.TxbNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -374,7 +374,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxNivelAcesso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,18 +388,18 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Label label4;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox TxbNome;
         private Label label3;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private Krypton.Toolkit.KryptonTextBox TxbUsuario;
         private Label label5;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private Krypton.Toolkit.KryptonTextBox TxbSenha;
         private Label label6;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
+        private Krypton.Toolkit.KryptonTextBox TxbSalario;
         private Label label7;
         private Label label8;
         private Label label9;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonMaskedTextBox kryptonMaskedTextBox1;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
+        private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
+        private Krypton.Toolkit.KryptonMaskedTextBox MtxbDataAdmissao;
+        private Krypton.Toolkit.KryptonComboBox CbxNivelAcesso;
     }
 }
