@@ -122,7 +122,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LocadoraFCVSJ.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(180, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(201, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(351, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -167,33 +167,47 @@
             this.BtnAcessarFuncionarios.Name = "BtnAcessarFuncionarios";
             this.BtnAcessarFuncionarios.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarFuncionarios.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarFuncionarios.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarFuncionarios.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarFuncionarios.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnAcessarFuncionarios.OverrideDefault.Border.Rounding = 5F;
+            this.BtnAcessarFuncionarios.OverrideDefault.Border.Width = 2;
             this.BtnAcessarFuncionarios.Size = new System.Drawing.Size(210, 51);
             this.BtnAcessarFuncionarios.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarFuncionarios.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarFuncionarios.StateCommon.Back.ColorAngle = 45F;
+            this.BtnAcessarFuncionarios.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarFuncionarios.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarFuncionarios.StateCommon.Border.ColorAngle = 45F;
             this.BtnAcessarFuncionarios.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnAcessarFuncionarios.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.BtnAcessarFuncionarios.StateCommon.Border.Rounding = 5F;
-            this.BtnAcessarFuncionarios.StateCommon.Border.Width = 0;
+            this.BtnAcessarFuncionarios.StateCommon.Border.Width = 2;
             this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarFuncionarios.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarFuncionarios.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarFuncionarios.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarFuncionarios.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarFuncionarios.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarFuncionarios.StateDisabled.Border.Rounding = 5F;
+            this.BtnAcessarFuncionarios.StateDisabled.Border.Width = 2;
             this.BtnAcessarFuncionarios.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.BtnAcessarFuncionarios.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarFuncionarios.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarFuncionarios.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.BtnAcessarFuncionarios.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnAcessarFuncionarios.StatePressed.Border.Rounding = 5F;
-            this.BtnAcessarFuncionarios.StatePressed.Border.Width = 0;
+            this.BtnAcessarFuncionarios.StatePressed.Border.Width = 2;
             this.BtnAcessarFuncionarios.TabIndex = 30;
             this.BtnAcessarFuncionarios.Values.Text = "Acessar";
             this.BtnAcessarFuncionarios.Click += new System.EventHandler(this.BtnAcessarFuncionarios_Click);
@@ -255,23 +269,34 @@
             this.BtnAcessarGrupos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarGrupos.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarGrupos.StateCommon.Back.ColorAngle = 45F;
+            this.BtnAcessarGrupos.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarGrupos.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnAcessarGrupos.StateCommon.Border.ColorAngle = 45F;
             this.BtnAcessarGrupos.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnAcessarGrupos.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.BtnAcessarGrupos.StateCommon.Border.Rounding = 5F;
-            this.BtnAcessarGrupos.StateCommon.Border.Width = 0;
+            this.BtnAcessarGrupos.StateCommon.Border.Width = 2;
             this.BtnAcessarGrupos.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarGrupos.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarGrupos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarGrupos.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarGrupos.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarGrupos.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarGrupos.StateDisabled.Border.Rounding = 5F;
+            this.BtnAcessarGrupos.StateDisabled.Border.Width = 2;
             this.BtnAcessarGrupos.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.BtnAcessarGrupos.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarGrupos.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarGrupos.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.BtnAcessarGrupos.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnAcessarGrupos.StatePressed.Border.Rounding = 5F;
-            this.BtnAcessarGrupos.StatePressed.Border.Width = 0;
+            this.BtnAcessarGrupos.StatePressed.Border.Width = 2;
             this.BtnAcessarGrupos.TabIndex = 30;
             this.BtnAcessarGrupos.Values.Text = "Acessar";
             this.BtnAcessarGrupos.Click += new System.EventHandler(this.BtnAcessarGrupos_Click);
@@ -333,25 +358,36 @@
             this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton3.StateCommon.Back.ColorAngle = 45F;
+            this.kryptonButton3.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.kryptonButton3.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton3.StateCommon.Border.ColorAngle = 45F;
             this.kryptonButton3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton3.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.kryptonButton3.StateCommon.Border.Rounding = 5F;
-            this.kryptonButton3.StateCommon.Border.Width = 0;
+            this.kryptonButton3.StateCommon.Border.Width = 2;
             this.kryptonButton3.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton3.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton3.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton3.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton3.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton3.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton3.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton3.StateDisabled.Border.Rounding = 5F;
+            this.kryptonButton3.StateDisabled.Border.Width = 2;
             this.kryptonButton3.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton3.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton3.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton3.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton3.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton3.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton3.StatePressed.Border.Width = 0;
+            this.kryptonButton3.StatePressed.Border.Width = 2;
             this.kryptonButton3.TabIndex = 30;
             this.kryptonButton3.Values.Text = "Acessar";
             // 
@@ -412,25 +448,36 @@
             this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton4.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton4.StateCommon.Back.ColorAngle = 45F;
+            this.kryptonButton4.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.kryptonButton4.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton4.StateCommon.Border.ColorAngle = 45F;
             this.kryptonButton4.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton4.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.kryptonButton4.StateCommon.Border.Rounding = 5F;
-            this.kryptonButton4.StateCommon.Border.Width = 0;
+            this.kryptonButton4.StateCommon.Border.Width = 2;
             this.kryptonButton4.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton4.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton4.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton4.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton4.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton4.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton4.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton4.StateDisabled.Border.Rounding = 5F;
+            this.kryptonButton4.StateDisabled.Border.Width = 2;
             this.kryptonButton4.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton4.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton4.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton4.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton4.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton4.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton4.StatePressed.Border.Width = 0;
+            this.kryptonButton4.StatePressed.Border.Width = 2;
             this.kryptonButton4.TabIndex = 30;
             this.kryptonButton4.Values.Text = "Acessar";
             // 
@@ -491,25 +538,36 @@
             this.kryptonButton5.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton5.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton5.StateCommon.Back.ColorAngle = 45F;
+            this.kryptonButton5.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.kryptonButton5.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton5.StateCommon.Border.ColorAngle = 45F;
             this.kryptonButton5.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton5.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.kryptonButton5.StateCommon.Border.Rounding = 5F;
-            this.kryptonButton5.StateCommon.Border.Width = 0;
+            this.kryptonButton5.StateCommon.Border.Width = 2;
             this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton5.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton5.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton5.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton5.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton5.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton5.StateDisabled.Border.Rounding = 5F;
+            this.kryptonButton5.StateDisabled.Border.Width = 2;
             this.kryptonButton5.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton5.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton5.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton5.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton5.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton5.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton5.StatePressed.Border.Width = 0;
+            this.kryptonButton5.StatePressed.Border.Width = 2;
             this.kryptonButton5.TabIndex = 30;
             this.kryptonButton5.Values.Text = "Acessar";
             // 
@@ -570,25 +628,36 @@
             this.kryptonButton6.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton6.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton6.StateCommon.Back.ColorAngle = 45F;
+            this.kryptonButton6.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.kryptonButton6.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton6.StateCommon.Border.ColorAngle = 45F;
             this.kryptonButton6.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton6.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.kryptonButton6.StateCommon.Border.Rounding = 5F;
-            this.kryptonButton6.StateCommon.Border.Width = 0;
+            this.kryptonButton6.StateCommon.Border.Width = 2;
             this.kryptonButton6.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton6.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton6.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton6.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton6.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton6.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton6.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.kryptonButton6.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton6.StateDisabled.Border.Rounding = 5F;
+            this.kryptonButton6.StateDisabled.Border.Width = 2;
             this.kryptonButton6.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton6.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton6.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.kryptonButton6.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.kryptonButton6.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton6.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton6.StatePressed.Border.Width = 0;
+            this.kryptonButton6.StatePressed.Border.Width = 2;
             this.kryptonButton6.TabIndex = 30;
             this.kryptonButton6.Values.Text = "Acessar";
             // 

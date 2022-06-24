@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControleFuncionarioForm));
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -317,6 +318,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ControleFuncionarioForm";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
