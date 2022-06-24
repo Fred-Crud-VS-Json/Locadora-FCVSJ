@@ -40,6 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,11 +104,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
             this.label3.Location = new System.Drawing.Point(36, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 28);
+            this.label3.Size = new System.Drawing.Size(54, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nome";
             // 
@@ -195,7 +196,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.label4.Location = new System.Drawing.Point(37, 10);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(277, 23);
@@ -214,6 +215,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RegistrarNovoGrupoForm";
@@ -243,5 +245,6 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Label label4;
+        private Krypton.Toolkit.KryptonPalette kryptonPalette1;
     }
 }
