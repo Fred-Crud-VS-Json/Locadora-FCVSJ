@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarNovoFuncionario));
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -95,21 +94,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Poppins Medium", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(87, 19);
+            this.label1.Location = new System.Drawing.Point(64, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 36);
+            this.label1.Size = new System.Drawing.Size(359, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Novo Registro de Funcionário";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label2.Location = new System.Drawing.Point(91, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 2);
-            this.label2.TabIndex = 1;
             // 
             // panel1
             // 
@@ -371,7 +362,6 @@
             this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -395,7 +385,6 @@
 
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private Label label1;
-        private Label label2;
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox1;
