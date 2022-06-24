@@ -11,7 +11,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
         public DateTime DataAdmissao { get; set; }
         public NivelAcessoEnum NivelAcesso { get; set; }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is Funcionario funcionario &&
                    Id == funcionario.Id &&
@@ -26,12 +26,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
         public override int GetHashCode()
         {
             return HashCode.Combine(Id, Nome, Usuario, Senha, Salario, DataAdmissao, NivelAcesso);
-        }
-
-        public override string ToString()
-        {
-            return Nome + " - " + Usuario + " - " + Senha + " - " + Salario + " - " 
-                + DataAdmissao + " - " + NivelAcesso;
         }
     }
 }

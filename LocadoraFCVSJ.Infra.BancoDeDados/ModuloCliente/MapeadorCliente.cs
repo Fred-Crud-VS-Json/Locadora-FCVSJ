@@ -10,36 +10,53 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
         {
             comando.Parameters.AddWithValue("ID", cliente.Id);
             comando.Parameters.AddWithValue("NOME", cliente.Nome);
-            comando.Parameters.AddWithValue("DADO", cliente.Dado);
-            comando.Parameters.AddWithValue("ENDERECO", cliente.Endereco);
-            comando.Parameters.AddWithValue("TIPO", cliente.Tipo);
+            comando.Parameters.AddWithValue("CPF", cliente.CPF);
+            comando.Parameters.AddWithValue("CNPJ", cliente.CNPJ);
             comando.Parameters.AddWithValue("CNH", cliente.CNH);
             comando.Parameters.AddWithValue("TELEFONE", cliente.Telefone);
             comando.Parameters.AddWithValue("EMAIL", cliente.Email);
-
+            comando.Parameters.AddWithValue("CIDADE", cliente.Cidade);
+            comando.Parameters.AddWithValue("CEP", cliente.CEP);
+            comando.Parameters.AddWithValue("NUMERO", cliente.Numero);
+            comando.Parameters.AddWithValue("BAIRRO", cliente.Bairro);
+            comando.Parameters.AddWithValue("ESTADO", cliente.UF);
+            comando.Parameters.AddWithValue("COMPLEMENTO", cliente.Complemento);
+            comando.Parameters.AddWithValue("RUA", cliente.Rua);
         }
 
         public override Cliente ConverterRegistro(SqlDataReader leitorCliente)
         {
             int id = Convert.ToInt32(leitorCliente["ID"]);
             string nome = (string)leitorCliente["NOME"];
-            string dados = (string)leitorCliente["DADO"];
-            string endereco = (string)leitorCliente["ENDERECO"];
-            string tipo = (string)leitorCliente["TIPO"];
+            string cpf = (string)leitorCliente["CPF"];
+            string cnpj = (string)leitorCliente["CNPJ"];
             string cnh = (string)leitorCliente["CNH"];
             string telefone = (string)leitorCliente["TELEFONE"];
             string email = (string)leitorCliente["EMAIL"];
+            string cidade = (string)leitorCliente["CIDADE"];
+            string cep = (string)leitorCliente["CEP"];
+            string numero = (string)leitorCliente["NUMERO"];
+            string bairro = (string)leitorCliente["BAIRRO"];
+            string estado = (string)leitorCliente["ESTADO"];
+            string complemento = (string)leitorCliente["COMPLEMENTO"];
+            string rua = (string)leitorCliente["RUA"];
 
             return new Cliente()
             {
                 Id = id,
                 Nome = nome,
-                Dado = dados,
-                Endereco = endereco,
-                Tipo = tipo,
+                CPF = cpf,
+                CNPJ = cnpj,
                 CNH = cnh,
                 Telefone = telefone,
-                Email = email
+                Email = email,
+                Cidade = cidade,
+                CEP = cep,
+                Numero = numero,
+                Bairro = bairro,
+                UF = estado,
+                Complemento = complemento,
+                Rua = rua
             };
         }
     }

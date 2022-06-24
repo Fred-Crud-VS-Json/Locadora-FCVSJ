@@ -9,33 +9,51 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
         protected override string QueryInserir => @"INSERT INTO [TBCLIENTE]
                 (
                     [NOME],       
-                    [DADO], 
-                    [ENDERECO],
-                    [TIPO],                    
+                    [CPF],
+                    [CNPJ],                   
                     [CNH],                                                           
                     [TELEFONE],
-                    [EMAIL]
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [ESTADO],
+                    [COMPLEMENTO],
+                    [RUA]
                 )
             VALUES
                 (
                     @NOME,
-                    @DADO,
-                    @ENDERECO,
-                    @TIPO,
+                    @CPF,
+                    @CNPJ,
                     @CNH,
                     @TELEFONE,
-                    @EMAIL
+                    @EMAIL,
+                    @CIDADE,
+                    @CEP,
+                    @NUMERO,
+                    @BAIRRO,
+                    @ESTADO,
+                    @COMPLEMENTO,
+                    @RUA
                 ); SELECT SCOPE_IDENTITY();";
 
         protected override string QueryEditar => @" UPDATE [TBCLIENTE]
                     SET 
-                        [NOME] = @NOME, 
-                        [DADO] = @DADO, 
-                        [ENDERECO] = @ENDERECO,
-                        [TIPO] = @TIPO, 
+                        [NOME] = @NOME,  
+                        [CPF] = @CPF,
+                        [CNPJ] = CNPJ,
                         [CNH] = @CNH,
                         [TELEFONE] = @TELEFONE,
-                        [EMAIL] =  @EMAIL
+                        [EMAIL] =  @EMAIL,
+                        [CIDADE] = @CIDADE,
+                        [CEP] = @CEP,
+                        [NUMERO] = @NUMERO,
+                        [BAIRRO] = @BAIRRO,
+                        [ESTADO] = @ESTADO,
+                        [COMPLEMENTO] = @COMPLEMENTO,
+                        [RUA] = @RUA
                     WHERE [ID] = @ID";
 
         protected override string QueryExcluir => @"DELETE FROM [TBCLIENTE] 
@@ -44,12 +62,18 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
         protected override string QuerySelecionarPorId => @"SELECT 
                     [ID],		            
                     [NOME],       
-                    [DADO], 
-                    [ENDERECO],
-                    [TIPO],                    
+                    [CPF],
+                    [CNPJ],                  
                     [CNH],                                                           
                     [TELEFONE],
-                    [EMAIL]
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [ESTADO],
+                    [COMPLEMENTO],
+                    [RUA]
                     
 	            FROM 
 		            [TBCLIENTE]
@@ -59,12 +83,18 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
         protected override string QuerySelecionarTodos => @"SELECT 
                     [ID],
 		            [NOME],       
-                    [DADO], 
-                    [ENDERECO],
-                    [TIPO],                    
+                    [CPF],
+                    [CNPJ],                 
                     [CNH],                                                           
                     [TELEFONE],
-                    [EMAIL]
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [ESTADO],
+                    [COMPLEMENTO],
+                    [RUA]
 	            FROM 
 		            [TBCLIENTE]";
     }

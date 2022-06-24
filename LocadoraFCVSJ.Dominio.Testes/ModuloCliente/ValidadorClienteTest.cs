@@ -40,51 +40,37 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
         }
 
         [TestMethod]
-        public void Dado_deve_ser_obrigatorio()
+        public void Cpf_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
 
-            cliente.Dado = null;
+            cliente.CPF = null;
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
-            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Dado);
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.CPF);
         }
 
-        [TestMethod]
-        public void Endereco_deve_ser_obrigatorio()
+        public void Cpf_deve_ser_valido()
         {
             cliente = NovoCliente();
 
-            cliente.Endereco = null;
+            cliente.CPF = "123456";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
-            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Endereco);
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.CPF);
         }
 
-        [TestMethod]
-        public void Tipo_deve_ser_obrigatorio()
+        public void Cnpj_deve_ser_valido()
         {
             cliente = NovoCliente();
 
-            cliente.Tipo = null;
+            cliente.CNPJ = "123456";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
-            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Tipo);
-        }
-
-        [TestMethod]
-        public void Tipo_deve_ser_valido()
-        {
-            cliente = NovoCliente();
-
-            cliente.Tipo = "@123";
-
-            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
-
-            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Tipo);
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.CNPJ);
         }
 
         [TestMethod]
@@ -123,6 +109,17 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Telefone);
         }
 
+        public void Telefone_deve_ser_valido()
+        {
+            cliente = NovoCliente();
+
+            cliente.Telefone = "129887";
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Telefone);
+        }
+
         [TestMethod]
         public void Email_deve_ser_obrigatorio()
         {
@@ -135,17 +132,111 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Email);
         }
 
+        public void Cidade_deve_ser_obrigatoria()
+        {
+            cliente = NovoCliente();
+
+            cliente.Cidade= null;
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Cidade);
+        }
+
+        public void Cep_deve_ser_obrigatorio()
+        {
+            cliente = NovoCliente();
+
+            cliente.CEP = null;
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.CEP);
+        }
+
+        public void Cep_deve_ser_valido()
+        {
+            cliente = NovoCliente();
+
+            cliente.CEP = "123";
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.CEP);
+        }
+
+         public void Numero_deve_ser_obrigatorio()
+        {
+            cliente = NovoCliente();
+
+            cliente.Numero = null;
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Numero);
+        }
+
+         public void Bairro_deve_ser_obrigatorio()
+        {
+            cliente = NovoCliente();
+
+            cliente.Bairro = null;
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Bairro);
+        }
+
+        public void uf_deve_ser_obrigatorio()
+        {
+            cliente = NovoCliente();
+
+            cliente.UF = null;
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.UF);
+        }
+
+        public void uf_deve_ser_valido()
+        {
+            cliente = NovoCliente();
+
+            cliente.UF = "S";
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.UF);
+        }
+
+        public void Rua_deve_ser_obrigatoria()
+        {
+            cliente = NovoCliente();
+
+            cliente.Rua = null;
+
+            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
+
+            resultado.ShouldHaveValidationErrorFor(cliente => cliente.Rua);
+        }
+
         private Cliente NovoCliente()
         {
             return new Cliente
             {
                 Nome = "Fulano",
-                Dado = "000120",
-                Endereco = "Rua jl",
-                Tipo = "normal",
-                CNH = "0000",
-                Telefone = "121212",
-                Email = "Fulano@gmail.com"
+                CPF = "59643424718",
+                CNPJ = "12345678912345",
+                Rua = "Alameda",
+                CNH = "0123456789",
+                Telefone = "12988754461",
+                Email = "Fulano@gmail.com",
+                Cidade = "Lages",
+                CEP = "01234567",
+                Numero = "212",
+                Bairro = "Coral",
+                UF = "SP",
+                Complemento = "verde"
             };
         }
 

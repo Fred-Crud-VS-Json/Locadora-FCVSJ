@@ -15,7 +15,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
         public RepositorioClienteEmBancoDeDadosTest()
         {
             BdUtil.ExecutarSql("DELETE FROM [TBCliente]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
-            cliente = new Cliente("Pedro", "321654987", "Rua Jorge Lacerda", "Normal", "0123456789", "12988754461", "pedro@gmail");
+            cliente = new Cliente("Pedro", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
             repositorio = new RepositorioClienteEmBancoDeDados();
         }
         [TestMethod]
@@ -39,12 +39,18 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
 
             //action
             cliente.Nome = "Pedro Nunes";
-            cliente.Telefone = "987654321";
-            cliente.Email = "Pedro@gmail.com";
-            cliente.Endereco = "São José dos Campos";
-            cliente.Tipo = "Jurídico";
+            cliente.CPF = "69643424718";
+            cliente.CNPJ = "12345678912345";
             cliente.CNH = "1234567891";
-            cliente.Dado = "00012003";
+            cliente.Telefone = "12988754461";
+            cliente.Email = "Pedro@gmail.com";
+            cliente.Cidade = "São José dos Campos";
+            cliente.CEP = "01234567";
+            cliente.Numero = "12";
+            cliente.Bairro = "Coral";
+            cliente.UF = "SP";
+            cliente.Complemento = "verde";
+            cliente.Rua = "Rua Fulano";
 
             repositorio.Editar(cliente);
 
@@ -87,9 +93,9 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
         public void Deve_selecionar_todos_os_clientes()
         {
             //arrange
-            var c01 = new Cliente("Pedro", "321654986", "Rua Gov Jorge Lacerda", "Normal", "1234567891", "12988754461", "pedo@gmail");
-            var c02 = new Cliente("João", "321654985", "Rua Jorge Lacerda", "Normal", "1234567891", "1298875461", "pedr@gmail");
-            var c03 = new Cliente("Lucas", "321654987", "Rua Jorg Lacerda", "Jurídico", "1234567891", "12988754461", "pedro@gmail");
+            var c01 = new Cliente("Alan", "59643424719", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
+            var c02 = new Cliente("Eduardo", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
+            var c03 = new Cliente("Pedro", "59643424717", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
 
             repositorio.Inserir(c01);
             repositorio.Inserir(c02);
