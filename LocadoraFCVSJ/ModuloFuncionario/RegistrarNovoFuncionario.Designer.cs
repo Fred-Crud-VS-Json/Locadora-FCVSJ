@@ -338,14 +338,14 @@
             this.CbxNivelAcesso.IntegralHeight = false;
             this.CbxNivelAcesso.Location = new System.Drawing.Point(31, 515);
             this.CbxNivelAcesso.Name = "CbxNivelAcesso";
-            this.CbxNivelAcesso.Size = new System.Drawing.Size(424, 29);
+            this.CbxNivelAcesso.Size = new System.Drawing.Size(424, 31);
             this.CbxNivelAcesso.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.CbxNivelAcesso.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.CbxNivelAcesso.StateCommon.ComboBox.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.CbxNivelAcesso.StateCommon.ComboBox.Border.Rounding = 5F;
-            this.CbxNivelAcesso.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxNivelAcesso.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxNivelAcesso.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.CbxNivelAcesso.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxNivelAcesso.TabIndex = 15;

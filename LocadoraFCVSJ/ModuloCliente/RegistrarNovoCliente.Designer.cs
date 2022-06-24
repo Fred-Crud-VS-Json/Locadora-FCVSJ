@@ -36,38 +36,43 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbNome = new Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonTextBox4 = new Krypton.Toolkit.KryptonTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.kryptonTextBox5 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbNumero = new Krypton.Toolkit.KryptonTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.kryptonTextBox6 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbBairro = new Krypton.Toolkit.KryptonTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.kryptonTextBox7 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbComplemento = new Krypton.Toolkit.KryptonTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.kryptonTextBox8 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbCnh = new Krypton.Toolkit.KryptonTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.kryptonTextBox9 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbEmail = new Krypton.Toolkit.KryptonTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ChbxPessoaJuridica = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.kryptonTextBox11 = new Krypton.Toolkit.KryptonTextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.kryptonMaskedTextBox1 = new Krypton.Toolkit.KryptonMaskedTextBox();
-            this.kryptonMaskedTextBox2 = new Krypton.Toolkit.KryptonMaskedTextBox();
-            this.kryptonMaskedTextBox3 = new Krypton.Toolkit.KryptonMaskedTextBox();
+            this.MtxbTelefone = new Krypton.Toolkit.KryptonMaskedTextBox();
+            this.MTxbCpf = new Krypton.Toolkit.KryptonMaskedTextBox();
+            this.MtxbCep = new Krypton.Toolkit.KryptonMaskedTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxbCidade = new Krypton.Toolkit.KryptonTextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.TxbRua = new Krypton.Toolkit.KryptonTextBox();
+            this.CbxUf = new Krypton.Toolkit.KryptonComboBox();
+            this.kryptonMaskedTextBox1 = new Krypton.Toolkit.KryptonMaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxUf)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -156,20 +161,20 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // kryptonTextBox1
+            // TxbNome
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(30, 201);
-            this.kryptonTextBox1.MaxLength = 60;
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(425, 31);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbNome.Location = new System.Drawing.Point(30, 201);
+            this.TxbNome.MaxLength = 60;
+            this.TxbNome.Name = "TxbNome";
+            this.TxbNome.Size = new System.Drawing.Size(425, 31);
+            this.TxbNome.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbNome.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox1.TabIndex = 5;
+            this.TxbNome.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbNome.StateCommon.Border.Rounding = 5F;
+            this.TxbNome.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbNome.TabIndex = 5;
             // 
             // label3
             // 
@@ -207,7 +212,7 @@
             // kryptonButton1
             // 
             this.kryptonButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.kryptonButton1.Location = new System.Drawing.Point(28, 836);
+            this.kryptonButton1.Location = new System.Drawing.Point(28, 916);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -243,23 +248,8 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonButton1.StatePressed.Border.Rounding = 5F;
             this.kryptonButton1.StatePressed.Border.Width = 2;
-            this.kryptonButton1.TabIndex = 29;
+            this.kryptonButton1.TabIndex = 33;
             this.kryptonButton1.Values.Text = "Concluir";
-            // 
-            // kryptonTextBox4
-            // 
-            this.kryptonTextBox4.Location = new System.Drawing.Point(325, 358);
-            this.kryptonTextBox4.MaxLength = 2;
-            this.kryptonTextBox4.Name = "kryptonTextBox4";
-            this.kryptonTextBox4.Size = new System.Drawing.Size(131, 31);
-            this.kryptonTextBox4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox4.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox4.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox4.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox4.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox4.TabIndex = 11;
             // 
             // label7
             // 
@@ -272,131 +262,131 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "UF";
             // 
-            // kryptonTextBox5
+            // TxbNumero
             // 
-            this.kryptonTextBox5.Location = new System.Drawing.Point(30, 440);
-            this.kryptonTextBox5.MaxLength = 5;
-            this.kryptonTextBox5.Name = "kryptonTextBox5";
-            this.kryptonTextBox5.Size = new System.Drawing.Size(70, 31);
-            this.kryptonTextBox5.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox5.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbNumero.Location = new System.Drawing.Point(30, 520);
+            this.TxbNumero.MaxLength = 5;
+            this.TxbNumero.Name = "TxbNumero";
+            this.TxbNumero.Size = new System.Drawing.Size(70, 31);
+            this.TxbNumero.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbNumero.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox5.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox5.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox5.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox5.TabIndex = 13;
+            this.TxbNumero.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbNumero.StateCommon.Border.Rounding = 5F;
+            this.TxbNumero.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbNumero.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label8.Location = new System.Drawing.Point(28, 412);
+            this.label8.Location = new System.Drawing.Point(28, 492);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Número";
             // 
-            // kryptonTextBox6
+            // TxbBairro
             // 
-            this.kryptonTextBox6.Location = new System.Drawing.Point(120, 440);
-            this.kryptonTextBox6.MaxLength = 60;
-            this.kryptonTextBox6.Name = "kryptonTextBox6";
-            this.kryptonTextBox6.Size = new System.Drawing.Size(149, 31);
-            this.kryptonTextBox6.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox6.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbBairro.Location = new System.Drawing.Point(256, 441);
+            this.TxbBairro.MaxLength = 60;
+            this.TxbBairro.Name = "TxbBairro";
+            this.TxbBairro.Size = new System.Drawing.Size(198, 31);
+            this.TxbBairro.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbBairro.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox6.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox6.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox6.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox6.TabIndex = 15;
+            this.TxbBairro.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbBairro.StateCommon.Border.Rounding = 5F;
+            this.TxbBairro.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbBairro.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label9.Location = new System.Drawing.Point(120, 412);
+            this.label9.Location = new System.Drawing.Point(256, 413);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 25);
             this.label9.TabIndex = 23;
             this.label9.Text = "Bairro";
             // 
-            // kryptonTextBox7
+            // TxbComplemento
             // 
-            this.kryptonTextBox7.Location = new System.Drawing.Point(289, 440);
-            this.kryptonTextBox7.MaxLength = 60;
-            this.kryptonTextBox7.Name = "kryptonTextBox7";
-            this.kryptonTextBox7.Size = new System.Drawing.Size(167, 31);
-            this.kryptonTextBox7.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox7.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbComplemento.Location = new System.Drawing.Point(341, 520);
+            this.TxbComplemento.MaxLength = 60;
+            this.TxbComplemento.Name = "TxbComplemento";
+            this.TxbComplemento.Size = new System.Drawing.Size(113, 31);
+            this.TxbComplemento.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbComplemento.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox7.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox7.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox7.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox7.TabIndex = 17;
+            this.TxbComplemento.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbComplemento.StateCommon.Border.Rounding = 5F;
+            this.TxbComplemento.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbComplemento.TabIndex = 21;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label10.Location = new System.Drawing.Point(289, 412);
+            this.label10.Location = new System.Drawing.Point(341, 492);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 25);
             this.label10.TabIndex = 25;
             this.label10.Text = "Complemento";
             // 
-            // kryptonTextBox8
+            // TxbCnh
             // 
-            this.kryptonTextBox8.Location = new System.Drawing.Point(30, 519);
-            this.kryptonTextBox8.MaxLength = 10;
-            this.kryptonTextBox8.Name = "kryptonTextBox8";
-            this.kryptonTextBox8.Size = new System.Drawing.Size(200, 31);
-            this.kryptonTextBox8.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox8.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbCnh.Location = new System.Drawing.Point(30, 599);
+            this.TxbCnh.MaxLength = 10;
+            this.TxbCnh.Name = "TxbCnh";
+            this.TxbCnh.Size = new System.Drawing.Size(200, 31);
+            this.TxbCnh.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbCnh.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox8.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox8.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox8.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox8.TabIndex = 19;
+            this.TxbCnh.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbCnh.StateCommon.Border.Rounding = 5F;
+            this.TxbCnh.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbCnh.TabIndex = 23;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label11.Location = new System.Drawing.Point(29, 491);
+            this.label11.Location = new System.Drawing.Point(29, 571);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 25);
             this.label11.TabIndex = 27;
             this.label11.Text = "CNH";
             // 
-            // kryptonTextBox9
+            // TxbEmail
             // 
-            this.kryptonTextBox9.Location = new System.Drawing.Point(30, 599);
-            this.kryptonTextBox9.MaxLength = 60;
-            this.kryptonTextBox9.Name = "kryptonTextBox9";
-            this.kryptonTextBox9.Size = new System.Drawing.Size(425, 31);
-            this.kryptonTextBox9.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox9.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbEmail.Location = new System.Drawing.Point(30, 679);
+            this.TxbEmail.MaxLength = 60;
+            this.TxbEmail.Name = "TxbEmail";
+            this.TxbEmail.Size = new System.Drawing.Size(425, 31);
+            this.TxbEmail.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbEmail.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox9.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox9.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox9.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox9.TabIndex = 23;
+            this.TxbEmail.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbEmail.StateCommon.Border.Rounding = 5F;
+            this.TxbEmail.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbEmail.TabIndex = 27;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label12.Location = new System.Drawing.Point(30, 571);
+            this.label12.Location = new System.Drawing.Point(30, 651);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 25);
             this.label12.TabIndex = 29;
@@ -407,20 +397,20 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label13.Location = new System.Drawing.Point(252, 491);
+            this.label13.Location = new System.Drawing.Point(252, 571);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 25);
             this.label13.TabIndex = 31;
             this.label13.Text = "Telefone";
             // 
-            // checkBox1
+            // ChbxPessoaJuridica
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 41);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ChbxPessoaJuridica.AutoSize = true;
+            this.ChbxPessoaJuridica.Location = new System.Drawing.Point(12, 41);
+            this.ChbxPessoaJuridica.Name = "ChbxPessoaJuridica";
+            this.ChbxPessoaJuridica.Size = new System.Drawing.Size(15, 14);
+            this.ChbxPessoaJuridica.TabIndex = 29;
+            this.ChbxPessoaJuridica.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -433,21 +423,6 @@
             this.label14.TabIndex = 34;
             this.label14.Text = "Pessoa Jurídica?";
             // 
-            // kryptonTextBox11
-            // 
-            this.kryptonTextBox11.Location = new System.Drawing.Point(8, 103);
-            this.kryptonTextBox11.MaxLength = 14;
-            this.kryptonTextBox11.Name = "kryptonTextBox11";
-            this.kryptonTextBox11.Size = new System.Drawing.Size(406, 31);
-            this.kryptonTextBox11.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox11.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox11.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox11.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox11.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox11.TabIndex = 27;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -459,62 +434,65 @@
             this.label15.TabIndex = 35;
             this.label15.Text = "CNPJ";
             // 
-            // kryptonMaskedTextBox1
+            // MtxbTelefone
             // 
-            this.kryptonMaskedTextBox1.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.kryptonMaskedTextBox1.Location = new System.Drawing.Point(256, 519);
-            this.kryptonMaskedTextBox1.Mask = "(00) 00000-0000";
-            this.kryptonMaskedTextBox1.Name = "kryptonMaskedTextBox1";
-            this.kryptonMaskedTextBox1.Size = new System.Drawing.Size(199, 31);
-            this.kryptonMaskedTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonMaskedTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.MtxbTelefone.Culture = new System.Globalization.CultureInfo("pt-BR");
+            this.MtxbTelefone.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbTelefone.Location = new System.Drawing.Point(256, 599);
+            this.MtxbTelefone.Mask = "(00) 00000-0000";
+            this.MtxbTelefone.Name = "MtxbTelefone";
+            this.MtxbTelefone.Size = new System.Drawing.Size(199, 31);
+            this.MtxbTelefone.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.MtxbTelefone.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonMaskedTextBox1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonMaskedTextBox1.StateCommon.Border.Rounding = 5F;
-            this.kryptonMaskedTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonMaskedTextBox1.TabIndex = 21;
-            this.kryptonMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbTelefone.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.MtxbTelefone.StateCommon.Border.Rounding = 5F;
+            this.MtxbTelefone.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MtxbTelefone.TabIndex = 25;
+            this.MtxbTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // kryptonMaskedTextBox2
+            // MTxbCpf
             // 
-            this.kryptonMaskedTextBox2.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.kryptonMaskedTextBox2.Location = new System.Drawing.Point(30, 280);
-            this.kryptonMaskedTextBox2.Mask = "000.000.000-00";
-            this.kryptonMaskedTextBox2.Name = "kryptonMaskedTextBox2";
-            this.kryptonMaskedTextBox2.Size = new System.Drawing.Size(426, 31);
-            this.kryptonMaskedTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonMaskedTextBox2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.MTxbCpf.Culture = new System.Globalization.CultureInfo("pt-BR");
+            this.MTxbCpf.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MTxbCpf.Location = new System.Drawing.Point(30, 280);
+            this.MTxbCpf.Mask = "000.000.000-00";
+            this.MTxbCpf.Name = "MTxbCpf";
+            this.MTxbCpf.Size = new System.Drawing.Size(426, 31);
+            this.MTxbCpf.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.MTxbCpf.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonMaskedTextBox2.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonMaskedTextBox2.StateCommon.Border.Rounding = 5F;
-            this.kryptonMaskedTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonMaskedTextBox2.TabIndex = 7;
-            this.kryptonMaskedTextBox2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MTxbCpf.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.MTxbCpf.StateCommon.Border.Rounding = 5F;
+            this.MTxbCpf.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MTxbCpf.TabIndex = 7;
+            this.MTxbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // kryptonMaskedTextBox3
+            // MtxbCep
             // 
-            this.kryptonMaskedTextBox3.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.kryptonMaskedTextBox3.Location = new System.Drawing.Point(30, 358);
-            this.kryptonMaskedTextBox3.Mask = "00000-000";
-            this.kryptonMaskedTextBox3.Name = "kryptonMaskedTextBox3";
-            this.kryptonMaskedTextBox3.Size = new System.Drawing.Size(272, 31);
-            this.kryptonMaskedTextBox3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonMaskedTextBox3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.MtxbCep.Culture = new System.Globalization.CultureInfo("pt-BR");
+            this.MtxbCep.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbCep.Location = new System.Drawing.Point(30, 358);
+            this.MtxbCep.Mask = "00000-000";
+            this.MtxbCep.Name = "MtxbCep";
+            this.MtxbCep.Size = new System.Drawing.Size(272, 31);
+            this.MtxbCep.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.MtxbCep.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonMaskedTextBox3.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonMaskedTextBox3.StateCommon.Border.Rounding = 5F;
-            this.kryptonMaskedTextBox3.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonMaskedTextBox3.TabIndex = 9;
-            this.kryptonMaskedTextBox3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbCep.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.MtxbCep.StateCommon.Border.Rounding = 5F;
+            this.MtxbCep.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MtxbCep.TabIndex = 9;
+            this.MtxbCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(30, 651);
+            this.panel3.Location = new System.Drawing.Point(30, 731);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(425, 157);
             this.panel3.TabIndex = 36;
@@ -522,42 +500,136 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.kryptonMaskedTextBox1);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.checkBox1);
+            this.panel4.Controls.Add(this.ChbxPessoaJuridica);
             this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.kryptonTextBox11);
             this.panel4.Location = new System.Drawing.Point(1, 1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(423, 155);
             this.panel4.TabIndex = 37;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.label2.Location = new System.Drawing.Point(121, 492);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 25);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Rua";
+            // 
+            // TxbCidade
+            // 
+            this.TxbCidade.Location = new System.Drawing.Point(30, 441);
+            this.TxbCidade.MaxLength = 10;
+            this.TxbCidade.Name = "TxbCidade";
+            this.TxbCidade.Size = new System.Drawing.Size(200, 31);
+            this.TxbCidade.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbCidade.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.TxbCidade.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbCidade.StateCommon.Border.Rounding = 5F;
+            this.TxbCidade.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbCidade.TabIndex = 13;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.label16.Location = new System.Drawing.Point(29, 413);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 25);
+            this.label16.TabIndex = 39;
+            this.label16.Text = "Cidade";
+            // 
+            // TxbRua
+            // 
+            this.TxbRua.Location = new System.Drawing.Point(125, 520);
+            this.TxbRua.MaxLength = 10;
+            this.TxbRua.Name = "TxbRua";
+            this.TxbRua.Size = new System.Drawing.Size(200, 31);
+            this.TxbRua.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbRua.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.TxbRua.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbRua.StateCommon.Border.Rounding = 5F;
+            this.TxbRua.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbRua.TabIndex = 19;
+            // 
+            // CbxUf
+            // 
+            this.CbxUf.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CbxUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxUf.DropDownWidth = 420;
+            this.CbxUf.IntegralHeight = false;
+            this.CbxUf.Location = new System.Drawing.Point(325, 358);
+            this.CbxUf.Name = "CbxUf";
+            this.CbxUf.Size = new System.Drawing.Size(131, 31);
+            this.CbxUf.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.CbxUf.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.CbxUf.StateCommon.ComboBox.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.CbxUf.StateCommon.ComboBox.Border.Rounding = 5F;
+            this.CbxUf.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxUf.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.CbxUf.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxUf.TabIndex = 11;
+            // 
+            // kryptonMaskedTextBox1
+            // 
+            this.kryptonMaskedTextBox1.Culture = new System.Globalization.CultureInfo("pt-BR");
+            this.kryptonMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.kryptonMaskedTextBox1.Location = new System.Drawing.Point(8, 103);
+            this.kryptonMaskedTextBox1.Mask = "00.000.000/0000-00";
+            this.kryptonMaskedTextBox1.Name = "kryptonMaskedTextBox1";
+            this.kryptonMaskedTextBox1.Size = new System.Drawing.Size(407, 31);
+            this.kryptonMaskedTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.kryptonMaskedTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonMaskedTextBox1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonMaskedTextBox1.StateCommon.Border.Rounding = 5F;
+            this.kryptonMaskedTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonMaskedTextBox1.TabIndex = 36;
+            this.kryptonMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // RegistrarNovoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(484, 903);
+            this.ClientSize = new System.Drawing.Size(484, 984);
+            this.Controls.Add(this.CbxUf);
+            this.Controls.Add(this.TxbRua);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TxbCidade);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.kryptonMaskedTextBox3);
-            this.Controls.Add(this.kryptonMaskedTextBox2);
-            this.Controls.Add(this.kryptonMaskedTextBox1);
+            this.Controls.Add(this.MtxbCep);
+            this.Controls.Add(this.MTxbCpf);
+            this.Controls.Add(this.MtxbTelefone);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.kryptonTextBox9);
+            this.Controls.Add(this.TxbEmail);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.kryptonTextBox8);
+            this.Controls.Add(this.TxbCnh);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.kryptonTextBox7);
+            this.Controls.Add(this.TxbComplemento);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.kryptonTextBox6);
+            this.Controls.Add(this.TxbBairro);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.kryptonTextBox5);
+            this.Controls.Add(this.TxbNumero);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.kryptonTextBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.TxbNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -576,6 +648,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CbxUf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -589,33 +662,37 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Label label4;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox TxbNome;
         private Label label3;
         private Label label5;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
         private Label label6;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
         private Label label7;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
+        private Krypton.Toolkit.KryptonTextBox TxbNumero;
         private Label label8;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox6;
+        private Krypton.Toolkit.KryptonTextBox TxbBairro;
         private Label label9;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox7;
+        private Krypton.Toolkit.KryptonTextBox TxbComplemento;
         private Label label10;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox8;
+        private Krypton.Toolkit.KryptonTextBox TxbCnh;
         private Label label11;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox9;
+        private Krypton.Toolkit.KryptonTextBox TxbEmail;
         private Label label12;
         private Label label13;
-        private CheckBox checkBox1;
+        private CheckBox ChbxPessoaJuridica;
         private Label label14;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox11;
         private Label label15;
-        private Krypton.Toolkit.KryptonMaskedTextBox kryptonMaskedTextBox1;
-        private Krypton.Toolkit.KryptonMaskedTextBox kryptonMaskedTextBox2;
-        private Krypton.Toolkit.KryptonMaskedTextBox kryptonMaskedTextBox3;
+        private Krypton.Toolkit.KryptonMaskedTextBox MtxbTelefone;
+        private Krypton.Toolkit.KryptonMaskedTextBox MTxbCpf;
+        private Krypton.Toolkit.KryptonMaskedTextBox MtxbCep;
         private Panel panel3;
         private Panel panel4;
+        private Label label2;
+        private Krypton.Toolkit.KryptonTextBox TxbCidade;
+        private Label label16;
+        private Krypton.Toolkit.KryptonTextBox TxbRua;
+        private Krypton.Toolkit.KryptonComboBox CbxUf;
+        private Krypton.Toolkit.KryptonMaskedTextBox kryptonMaskedTextBox1;
     }
 }
