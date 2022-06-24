@@ -62,6 +62,11 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.kryptonButton6 = new Krypton.Toolkit.KryptonButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.BtnAcessarTaxas = new Krypton.Toolkit.KryptonButton();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,6 +86,9 @@
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -496,7 +504,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(511, 281);
+            this.panel9.Location = new System.Drawing.Point(11, 417);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(232, 114);
             this.panel9.TabIndex = 5;
@@ -672,12 +680,102 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Gestão de Clientes";
             // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Location = new System.Drawing.Point(511, 282);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(232, 114);
+            this.panel13.TabIndex = 7;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.White;
+            this.panel14.Controls.Add(this.pictureBox8);
+            this.panel14.Controls.Add(this.BtnAcessarTaxas);
+            this.panel14.Controls.Add(this.label7);
+            this.panel14.Location = new System.Drawing.Point(1, 1);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(230, 112);
+            this.panel14.TabIndex = 2;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::LocadoraFCVSJ.Properties.Resources.percentage_30px;
+            this.pictureBox8.Location = new System.Drawing.Point(4, 9);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox8.TabIndex = 31;
+            this.pictureBox8.TabStop = false;
+            // 
+            // BtnAcessarTaxas
+            // 
+            this.BtnAcessarTaxas.AccessibleName = "Taxas";
+            this.BtnAcessarTaxas.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnAcessarTaxas.Location = new System.Drawing.Point(8, 51);
+            this.BtnAcessarTaxas.Name = "BtnAcessarTaxas";
+            this.BtnAcessarTaxas.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarTaxas.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarTaxas.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarTaxas.OverrideDefault.Border.Rounding = 5F;
+            this.BtnAcessarTaxas.Size = new System.Drawing.Size(210, 51);
+            this.BtnAcessarTaxas.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarTaxas.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarTaxas.StateCommon.Back.ColorAngle = 45F;
+            this.BtnAcessarTaxas.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarTaxas.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarTaxas.StateCommon.Border.ColorAngle = 45F;
+            this.BtnAcessarTaxas.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarTaxas.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnAcessarTaxas.StateCommon.Border.Rounding = 5F;
+            this.BtnAcessarTaxas.StateCommon.Border.Width = 2;
+            this.BtnAcessarTaxas.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnAcessarTaxas.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnAcessarTaxas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarTaxas.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarTaxas.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarTaxas.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarTaxas.StateDisabled.Border.Rounding = 5F;
+            this.BtnAcessarTaxas.StateDisabled.Border.Width = 2;
+            this.BtnAcessarTaxas.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarTaxas.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarTaxas.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarTaxas.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarTaxas.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarTaxas.StatePressed.Border.Rounding = 5F;
+            this.BtnAcessarTaxas.StatePressed.Border.Width = 2;
+            this.BtnAcessarTaxas.TabIndex = 30;
+            this.BtnAcessarTaxas.Values.Text = "Acessar";
+            this.BtnAcessarTaxas.Click += new System.EventHandler(this.BtnAcessarTaxas_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.label7.Location = new System.Drawing.Point(34, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 26);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Gestão de Taxas";
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(755, 400);
+            this.ClientSize = new System.Drawing.Size(755, 536);
+            this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel11);
@@ -718,6 +816,10 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,5 +858,10 @@
         private PictureBox pictureBox5;
         private Krypton.Toolkit.KryptonButton kryptonButton6;
         private Label label6;
+        private Panel panel13;
+        private Panel panel14;
+        private PictureBox pictureBox8;
+        private Krypton.Toolkit.KryptonButton BtnAcessarTaxas;
+        private Label label7;
     }
 }

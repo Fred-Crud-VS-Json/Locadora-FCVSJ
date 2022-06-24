@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[TBTaxa]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Nome] VARCHAR(200) NOT NULL, 
+    [Valor] DECIMAL(18, 2) NOT NULL, 
+    [TipoCalculoTaxa] INT NOT NULL
+)
