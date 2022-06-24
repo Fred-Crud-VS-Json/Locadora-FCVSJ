@@ -45,6 +45,10 @@
             this.GridFuncionarios = new System.Windows.Forms.DataGridView();
             this.ClnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnSalario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnDataAdmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnNivelAcesso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -105,7 +109,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(306, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 75);
+            this.panel1.Size = new System.Drawing.Size(569, 75);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -114,7 +118,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(511, 71);
+            this.panel2.Size = new System.Drawing.Size(565, 71);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -122,7 +126,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Medium", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(93, 14);
+            this.label1.Location = new System.Drawing.Point(115, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(340, 48);
             this.label1.TabIndex = 2;
@@ -142,7 +146,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(12, 115);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(808, 54);
+            this.panel3.Size = new System.Drawing.Size(863, 54);
             this.panel3.TabIndex = 3;
             // 
             // panel4
@@ -153,7 +157,7 @@
             this.panel4.Controls.Add(this.BtnInserir);
             this.panel4.Location = new System.Drawing.Point(1, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(806, 52);
+            this.panel4.Size = new System.Drawing.Size(861, 52);
             this.panel4.TabIndex = 2;
             // 
             // BtnExcluir
@@ -235,7 +239,11 @@
             this.GridFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GridFuncionarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClnId,
-            this.ClnNome});
+            this.ClnNome,
+            this.ClnUsuario,
+            this.ClnSalario,
+            this.ClnDataAdmissao,
+            this.ClnNivelAcesso});
             this.GridFuncionarios.EnableHeadersVisualStyles = false;
             this.GridFuncionarios.GridColor = System.Drawing.Color.White;
             this.GridFuncionarios.Location = new System.Drawing.Point(12, 190);
@@ -253,7 +261,7 @@
             this.GridFuncionarios.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncionarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.GridFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridFuncionarios.Size = new System.Drawing.Size(807, 468);
+            this.GridFuncionarios.Size = new System.Drawing.Size(863, 468);
             this.GridFuncionarios.TabIndex = 4;
             // 
             // ClnId
@@ -270,12 +278,40 @@
             this.ClnNome.ReadOnly = true;
             this.ClnNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // ClnUsuario
+            // 
+            this.ClnUsuario.HeaderText = "Usuário";
+            this.ClnUsuario.Name = "ClnUsuario";
+            this.ClnUsuario.ReadOnly = true;
+            this.ClnUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ClnSalario
+            // 
+            this.ClnSalario.HeaderText = "Salário";
+            this.ClnSalario.Name = "ClnSalario";
+            this.ClnSalario.ReadOnly = true;
+            this.ClnSalario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ClnDataAdmissao
+            // 
+            this.ClnDataAdmissao.HeaderText = "Data de Admissão";
+            this.ClnDataAdmissao.Name = "ClnDataAdmissao";
+            this.ClnDataAdmissao.ReadOnly = true;
+            this.ClnDataAdmissao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ClnNivelAcesso
+            // 
+            this.ClnNivelAcesso.HeaderText = "Nível de Acesso";
+            this.ClnNivelAcesso.Name = "ClnNivelAcesso";
+            this.ClnNivelAcesso.ReadOnly = true;
+            this.ClnNivelAcesso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // ControleFuncionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(833, 670);
+            this.ClientSize = new System.Drawing.Size(887, 670);
             this.Controls.Add(this.GridFuncionarios);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -314,5 +350,9 @@
         private DataGridView GridFuncionarios;
         private DataGridViewTextBoxColumn ClnId;
         private DataGridViewTextBoxColumn ClnNome;
+        private DataGridViewTextBoxColumn ClnUsuario;
+        private DataGridViewTextBoxColumn ClnSalario;
+        private DataGridViewTextBoxColumn ClnDataAdmissao;
+        private DataGridViewTextBoxColumn ClnNivelAcesso;
     }
 }

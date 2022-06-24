@@ -320,7 +320,8 @@
             this.MtxbDataAdmissao.StateCommon.Border.Rounding = 5F;
             this.MtxbDataAdmissao.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MtxbDataAdmissao.TabIndex = 13;
-            this.MtxbDataAdmissao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbDataAdmissao.Text = "__/__/____";
+            this.MtxbDataAdmissao.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // CbxNivelAcesso
             // 
@@ -384,11 +385,9 @@
         #endregion
 
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
-        private Label label1;
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Label label4;
         private Krypton.Toolkit.KryptonTextBox TxbNome;
         private Label label3;
         private Krypton.Toolkit.KryptonTextBox TxbUsuario;
@@ -402,5 +401,7 @@
         private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
         private Krypton.Toolkit.KryptonMaskedTextBox MtxbDataAdmissao;
         private Krypton.Toolkit.KryptonComboBox CbxNivelAcesso;
+        public Label label1;
+        public Label label4;
     }
 }

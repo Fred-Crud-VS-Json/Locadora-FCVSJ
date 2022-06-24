@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
+using System.Globalization;
 
 namespace LocadoraFCVSJ.ModuloFuncionario
 {
@@ -41,8 +42,8 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             funcionario.Nome = TxbNome.Text;
             funcionario.Login = TxbUsuario.Text;
             funcionario.Senha = TxbSenha.Text;
-            funcionario.Salario = Convert.ToDecimal(TxbSalario);
-            funcionario.DataAdmissao = Convert.ToDateTime(MtxbDataAdmissao);
+            funcionario.Salario = Convert.ToDecimal(TxbSalario.Text);
+            funcionario.DataAdmissao = DateTime.ParseExact(MtxbDataAdmissao.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             funcionario.NivelAcesso = (NivelAcessoEnum)CbxNivelAcesso.SelectedItem;
 
             ValidationResult resultado = SalvarRegistro(funcionario);
