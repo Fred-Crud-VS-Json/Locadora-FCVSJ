@@ -29,7 +29,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
                 TxbNome.Text = funcionario.Nome;
                 TxbUsuario.Text = funcionario.Usuario;
                 TxbSenha.Text = funcionario.Senha;
-                TxbSalario.Text = Convert.ToString(funcionario.Salario);
+                TxbSalario.Text = funcionario.Salario.ToString("F2");
                 MtxbDataAdmissao.Text = Convert.ToString(funcionario.DataAdmissao);
                 CbxNivelAcesso.SelectedItem = funcionario.NivelAcesso;
             }
@@ -39,20 +39,29 @@ namespace LocadoraFCVSJ.ModuloFuncionario
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
-            funcionario.Nome = TxbNome.Text;
-            funcionario.Usuario = TxbUsuario.Text;
-            funcionario.Senha = TxbSenha.Text;
-            funcionario.Salario = Convert.ToDecimal(TxbSalario.Text);
-            funcionario.DataAdmissao = DateTime.ParseExact(MtxbDataAdmissao.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            funcionario.NivelAcesso = (NivelAcessoEnum)CbxNivelAcesso.SelectedItem;
-
-            ValidationResult resultado = SalvarRegistro(funcionario);
-
-            if (resultado.IsValid == false)
+            try
             {
-                MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                funcionario.Nome = TxbNome.Text;
+                funcionario.Usuario = TxbUsuario.Text;
+                funcionario.Senha = TxbSenha.Text;
+                funcionario.Salario = Convert.ToDecimal(TxbSalario.Text);
+                funcionario.DataAdmissao = DateTime.ParseExact(MtxbDataAdmissao.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                funcionario.NivelAcesso = (NivelAcessoEnum)CbxNivelAcesso.SelectedItem;
 
+                ValidationResult resultado = SalvarRegistro(funcionario);
+
+                if (resultado.IsValid == false)
+                {
+                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    DialogResult = DialogResult.None;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("O campo 'Salário' deve conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
+                TxbSalario.Clear();
             }
         }
     }

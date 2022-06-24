@@ -17,7 +17,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
                 .Matches(new Regex(@"^[.!@#$%&*a-zA-Z-0-9]{10,25}$")).WithMessage("Senha informada é inválida. Lembre-se de preenche-la corretamente. \n(Min 10 caracteres, Max 25 caracteres) \n(Caracteres Especiais Permitidos: [.!@#$%&*]\n");
 
             RuleFor(x => x.Salario)
-                .GreaterThanOrEqualTo(1100);
+                .GreaterThan(0).WithMessage("Salário informado é inválido. Lembre-se de preenche-lo corretamente.");
 
             RuleFor(x => x.DataAdmissao)
                 .LessThanOrEqualTo(DateTime.Now);

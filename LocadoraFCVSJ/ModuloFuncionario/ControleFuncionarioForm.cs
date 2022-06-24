@@ -1,6 +1,5 @@
 ﻿using Krypton.Toolkit;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
-using System.Globalization;
 
 namespace LocadoraFCVSJ.ModuloFuncionario
 {
@@ -20,7 +19,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
 
             grupos.ForEach(x =>
             {
-                GridFuncionarios.Rows.Add(x.Id, x.Nome, x.Usuario, "R$ " + x.Salario.ToString("F2", CultureInfo.InvariantCulture), x.DataAdmissao.ToString("dd/MM/yyyy"), x.NivelAcesso);
+                GridFuncionarios.Rows.Add(x.Id, x.Nome, x.Usuario, "R$ " + x.Salario.ToString("F2"), x.DataAdmissao.ToString("dd/MM/yyyy"), x.NivelAcesso);
             });
 
             GridFuncionarios.ClearSelection();
