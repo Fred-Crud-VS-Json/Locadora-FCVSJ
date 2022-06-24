@@ -303,6 +303,7 @@
             this.BtnConcluirRegistro.StatePressed.Border.Width = 0;
             this.BtnConcluirRegistro.TabIndex = 18;
             this.BtnConcluirRegistro.Values.Text = "Concluir";
+            this.BtnConcluirRegistro.Click += new System.EventHandler(this.BtnConcluirRegistro_Click);
             // 
             // MtxbDataAdmissao
             // 
