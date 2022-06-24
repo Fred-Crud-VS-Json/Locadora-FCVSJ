@@ -22,13 +22,13 @@ namespace LocadoraFCVSJ.ModuloTaxa
         public Taxa Taxa
         {
             get { return taxa; }
-            
+
             set
             {
                 taxa = value;
 
                 TxbNome.Text = taxa.Nome;
-                TxbValor.Text = taxa.Valor.ToString("F2", CultureInfo.InvariantCulture);
+                TxbValor.Text = taxa.Valor.ToString("F2");
                 CbxTipoCalculoTaxa.SelectedItem = taxa.TipoCalculoTaxa;
             }
         }
@@ -36,17 +36,26 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
-            taxa.Nome = TxbNome.Text;
-            taxa.Valor = Convert.ToDecimal(TxbValor.Text);
-            taxa.TipoCalculoTaxa = (TipoCalculoTaxa)CbxTipoCalculoTaxa.SelectedItem;
-
-            ValidationResult resultado = SalvarRegistro(taxa);
-
-            if (resultado.IsValid == false)
+            try
             {
-                MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                taxa.Nome = TxbNome.Text;
+                taxa.Valor = Convert.ToDecimal(TxbValor.Text);
+                taxa.TipoCalculoTaxa = (TipoCalculoTaxa)CbxTipoCalculoTaxa.SelectedItem;
 
+                ValidationResult resultado = SalvarRegistro(taxa);
+
+                if (resultado.IsValid == false)
+                {
+                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    DialogResult = DialogResult.None;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("O campo 'Valor' deve conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
+                TxbValor.Clear();
             }
         }
     }

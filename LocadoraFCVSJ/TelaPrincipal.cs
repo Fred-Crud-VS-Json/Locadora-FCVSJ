@@ -2,8 +2,10 @@
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
+using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using LocadoraFCVSJ.ModuloFuncionario;
 using LocadoraFCVSJ.ModuloGrupo;
+using LocadoraFCVSJ.ModuloTaxa;
 
 namespace LocadoraFCVSJ
 {
@@ -18,11 +20,13 @@ namespace LocadoraFCVSJ
 
             RepositorioGrupo repositorioGrupo = new();
             RepositorioFuncionario repositorioFuncionario = new();
+            RepositorioTaxa repositorioTaxa = new();
 
             controladores = new()
             {
                 { "Grupos", new ControladorGrupo(repositorioGrupo) },
-                { "Funcionarios", new ControladorFuncionario(repositorioFuncionario) }
+                { "Funcionarios", new ControladorFuncionario(repositorioFuncionario) },
+                { "Taxas", new ControladorTaxa(repositorioTaxa) }
             };
         }
 
@@ -34,6 +38,11 @@ namespace LocadoraFCVSJ
         private void BtnAcessarFuncionarios_Click(object sender, EventArgs e)
         {
             AbrirTela(BtnAcessarFuncionarios);
+        }
+
+        private void BtnAcessarTaxas_Click(object sender, EventArgs e)
+        {
+            AbrirTela(BtnAcessarTaxas);
         }
 
         private void AbrirTela(KryptonButton botao)
