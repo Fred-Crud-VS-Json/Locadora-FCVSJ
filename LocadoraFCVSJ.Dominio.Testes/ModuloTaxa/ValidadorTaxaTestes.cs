@@ -9,7 +9,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloTaxa
     public class ValidadorGrupoTestes
     {
         private Taxa? taxa;
-        private readonly TaxaValidador validador;
+        private readonly ValidadorTaxa validador;
 
         public ValidadorGrupoTestes()
         {
