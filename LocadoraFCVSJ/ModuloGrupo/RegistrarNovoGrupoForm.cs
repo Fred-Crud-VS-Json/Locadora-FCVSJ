@@ -27,7 +27,7 @@ namespace LocadoraFCVSJ.ModuloGrupo
 
         public Func<Grupo, ValidationResult> SalvarRegistro { get; set; }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
+        private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
             grupo.Nome = kryptonTextBox1.Text;
 

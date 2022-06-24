@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.BtnConcluirRegistro = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -117,41 +117,41 @@
             this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonTextBox1.TabIndex = 3;
             // 
-            // kryptonButton1
+            // BtnConcluirRegistro
             // 
-            this.kryptonButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.kryptonButton1.Location = new System.Drawing.Point(36, 278);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnConcluirRegistro.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnConcluirRegistro.Location = new System.Drawing.Point(36, 278);
+            this.BtnConcluirRegistro.Name = "BtnConcluirRegistro";
+            this.BtnConcluirRegistro.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.OverrideDefault.Border.Rounding = 5F;
-            this.kryptonButton1.Size = new System.Drawing.Size(417, 51);
-            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton1.StateCommon.Back.ColorAngle = 45F;
-            this.kryptonButton1.StateCommon.Border.ColorAngle = 45F;
-            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnConcluirRegistro.OverrideDefault.Border.Rounding = 5F;
+            this.BtnConcluirRegistro.Size = new System.Drawing.Size(417, 51);
+            this.BtnConcluirRegistro.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnConcluirRegistro.StateCommon.Back.ColorAngle = 45F;
+            this.BtnConcluirRegistro.StateCommon.Border.ColorAngle = 45F;
+            this.BtnConcluirRegistro.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButton1.StateCommon.Border.Rounding = 5F;
-            this.kryptonButton1.StateCommon.Border.Width = 0;
-            this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonButton1.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton1.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton1.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnConcluirRegistro.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnConcluirRegistro.StateCommon.Border.Rounding = 5F;
+            this.BtnConcluirRegistro.StateCommon.Border.Width = 0;
+            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnConcluirRegistro.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnConcluirRegistro.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnConcluirRegistro.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton1.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton1.StatePressed.Border.Width = 0;
-            this.kryptonButton1.TabIndex = 4;
-            this.kryptonButton1.Values.Text = "Concluir";
-            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            this.BtnConcluirRegistro.StatePressed.Border.Rounding = 5F;
+            this.BtnConcluirRegistro.StatePressed.Border.Width = 0;
+            this.BtnConcluirRegistro.TabIndex = 4;
+            this.BtnConcluirRegistro.Values.Text = "Concluir";
+            this.BtnConcluirRegistro.Click += new System.EventHandler(this.BtnConcluirRegistro_Click);
             // 
             // panel1
             // 
@@ -199,7 +199,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 341);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.BtnConcluirRegistro);
             this.Controls.Add(this.kryptonTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -226,7 +226,7 @@
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private Label label3;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox1;

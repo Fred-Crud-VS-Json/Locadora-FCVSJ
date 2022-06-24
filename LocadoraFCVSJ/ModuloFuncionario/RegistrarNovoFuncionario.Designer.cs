@@ -166,7 +166,6 @@
             this.label3.Size = new System.Drawing.Size(54, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nome";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // kryptonTextBox2
             // 
