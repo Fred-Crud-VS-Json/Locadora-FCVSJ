@@ -61,7 +61,7 @@
             this.MtxbCep = new Krypton.Toolkit.KryptonMaskedTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.kryptonMaskedTextBox1 = new Krypton.Toolkit.KryptonMaskedTextBox();
+            this.MtxbCnpj = new Krypton.Toolkit.KryptonMaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxbCidade = new Krypton.Toolkit.KryptonTextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -501,7 +501,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.kryptonMaskedTextBox1);
+            this.panel4.Controls.Add(this.MtxbCnpj);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.ChbxPessoaJuridica);
             this.panel4.Controls.Add(this.label15);
@@ -510,23 +510,23 @@
             this.panel4.Size = new System.Drawing.Size(423, 155);
             this.panel4.TabIndex = 37;
             // 
-            // kryptonMaskedTextBox1
+            // MtxbCnpj
             // 
-            this.kryptonMaskedTextBox1.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.kryptonMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.kryptonMaskedTextBox1.Location = new System.Drawing.Point(8, 103);
-            this.kryptonMaskedTextBox1.Mask = "00.000.000/0000-00";
-            this.kryptonMaskedTextBox1.Name = "kryptonMaskedTextBox1";
-            this.kryptonMaskedTextBox1.Size = new System.Drawing.Size(407, 31);
-            this.kryptonMaskedTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonMaskedTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.MtxbCnpj.Culture = new System.Globalization.CultureInfo("pt-BR");
+            this.MtxbCnpj.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbCnpj.Location = new System.Drawing.Point(8, 103);
+            this.MtxbCnpj.Mask = "00.000.000/0000-00";
+            this.MtxbCnpj.Name = "MtxbCnpj";
+            this.MtxbCnpj.Size = new System.Drawing.Size(407, 31);
+            this.MtxbCnpj.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.MtxbCnpj.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonMaskedTextBox1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonMaskedTextBox1.StateCommon.Border.Rounding = 5F;
-            this.kryptonMaskedTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonMaskedTextBox1.TabIndex = 36;
-            this.kryptonMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbCnpj.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.MtxbCnpj.StateCommon.Border.Rounding = 5F;
+            this.MtxbCnpj.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MtxbCnpj.TabIndex = 36;
+            this.MtxbCnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label2
             // 
@@ -694,6 +694,6 @@
         private Label label16;
         private Krypton.Toolkit.KryptonTextBox TxbRua;
         private Krypton.Toolkit.KryptonComboBox CbxUf;
-        private Krypton.Toolkit.KryptonMaskedTextBox kryptonMaskedTextBox1;
+        private Krypton.Toolkit.KryptonMaskedTextBox MtxbCnpj;
     }
 }
