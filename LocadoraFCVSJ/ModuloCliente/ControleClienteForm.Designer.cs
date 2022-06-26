@@ -187,6 +187,7 @@
             this.BtnExcluir.StateCommon.Border.Rounding = 4F;
             this.BtnExcluir.TabIndex = 2;
             this.BtnExcluir.Values.Text = "";
+            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // BtnEditar
             // 
@@ -206,6 +207,7 @@
             this.BtnEditar.StateCommon.Border.Width = 1;
             this.BtnEditar.TabIndex = 1;
             this.BtnEditar.Values.Text = "";
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnInserir
             // 
@@ -225,6 +227,7 @@
             this.BtnInserir.StateCommon.Border.Width = 1;
             this.BtnInserir.TabIndex = 0;
             this.BtnInserir.Values.Text = "";
+            this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
             // GridClientes
             // 
