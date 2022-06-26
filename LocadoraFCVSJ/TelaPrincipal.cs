@@ -1,8 +1,10 @@
 ﻿using Krypton.Toolkit;
 using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
+using LocadoraFCVSJ.ModuloCliente;
 using LocadoraFCVSJ.ModuloFuncionario;
 using LocadoraFCVSJ.ModuloGrupo;
 using LocadoraFCVSJ.ModuloTaxa;
@@ -21,12 +23,14 @@ namespace LocadoraFCVSJ
             RepositorioGrupo repositorioGrupo = new();
             RepositorioFuncionario repositorioFuncionario = new();
             RepositorioTaxa repositorioTaxa = new();
+            RepositorioClienteEmBancoDeDados repositorioCliente = new();
 
             controladores = new()
             {
                 { "Grupos", new ControladorGrupo(repositorioGrupo) },
                 { "Funcionarios", new ControladorFuncionario(repositorioFuncionario) },
-                { "Taxas", new ControladorTaxa(repositorioTaxa) }
+                { "Taxas", new ControladorTaxa(repositorioTaxa) },
+                { "Clientes", new ControladorCliente(repositorioCliente) }
             };
         }
 
@@ -44,6 +48,12 @@ namespace LocadoraFCVSJ
         {
             AbrirTela(BtnAcessarTaxas);
         }
+
+        private void BtnAcessarClientes_Click(object sender, EventArgs e)
+        {
+            AbrirTela(BtnAcessarClientes);
+        }
+
 
         private void AbrirTela(KryptonButton botao)
         {
