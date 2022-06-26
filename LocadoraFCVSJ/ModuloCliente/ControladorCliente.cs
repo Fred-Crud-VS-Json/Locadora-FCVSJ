@@ -31,7 +31,7 @@ namespace LocadoraFCVSJ.ModuloCliente
 
             DialogResult resultado = tela.ShowDialog();
 
-            if (resultado == DialogResult.OK);
+            if (resultado == DialogResult.OK) 
                 CarregarClientes();
         }
 
@@ -41,7 +41,7 @@ namespace LocadoraFCVSJ.ModuloCliente
 
             if (clienteSelecionado == null)
             {
-                MessageBox.Show("Selecione um cliente primeiro.", "Edição de clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um cliente primeiro.", "Edição de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -67,18 +67,17 @@ namespace LocadoraFCVSJ.ModuloCliente
 
             if (clienteSelecionado == null)
             {
-                MessageBox.Show("Selecione um cliente primeiro.", "Exclusão de Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um cliente primeiro.", "Exclusão de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Clienet", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Cliente", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
                 _repositorioCliente.Excluir(clienteSelecionado);
 
             CarregarClientes();
         }
-
 
         public override KryptonForm ObterTela()
         {

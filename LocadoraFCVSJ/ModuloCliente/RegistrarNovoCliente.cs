@@ -27,7 +27,7 @@ namespace LocadoraFCVSJ.ModuloCliente
                 cliente = value;
 
                 TxbNome.Text = cliente.Nome;
-                MTxbCpf.Text = Convert.ToString(cliente.CPF);
+                MtxbCpf.Text = Convert.ToString(cliente.CPF);
                 MtxbCnpj.Text = Convert.ToString(cliente.CNPJ);
                 TxbCnh.Text = Convert.ToString(cliente.CNH);
                 MtxbTelefone.Text = Convert.ToString(cliente.Telefone);
@@ -48,7 +48,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             try
             {
                 TxbNome.Text = cliente.Nome;
-                MTxbCpf.Text = Convert.ToString(cliente.CPF);
+                MtxbCpf.Text = Convert.ToString(cliente.CPF);
                 MtxbCnpj.Text = Convert.ToString(cliente.CNPJ);
                 TxbCnh.Text = Convert.ToString(cliente.CNH);
                 MtxbTelefone.Text = Convert.ToString(cliente.Telefone);

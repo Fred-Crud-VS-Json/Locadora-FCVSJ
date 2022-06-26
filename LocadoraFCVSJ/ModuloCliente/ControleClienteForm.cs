@@ -34,7 +34,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             return GridClientes;
         }
 
-        private void ControleFuncionarioForm_Load(object sender, EventArgs e)
+        private void ControleClienteForm_Load(object sender, EventArgs e)
         {
             GridClientes.ClearSelection();
         }
