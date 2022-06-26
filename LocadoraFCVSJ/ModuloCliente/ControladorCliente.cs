@@ -2,11 +2,6 @@
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraFCVSJ.ModuloCliente
 {

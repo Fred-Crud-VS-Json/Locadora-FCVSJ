@@ -6,6 +6,7 @@ namespace LocadoraFCVSJ.ModuloCliente
     public partial class ControleClienteForm : KryptonForm
     {
         private readonly ControladorCliente _controladorCliente;
+
         public ControleClienteForm(ControladorCliente controladorCliente)
         {
             InitializeComponent();
