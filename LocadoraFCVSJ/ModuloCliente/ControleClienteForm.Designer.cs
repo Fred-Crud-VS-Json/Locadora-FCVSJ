@@ -37,7 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnExcluir = new Krypton.Toolkit.KryptonButton();
@@ -47,18 +46,12 @@
             this.ClnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cln = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnRuaAvenida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnComplemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnCnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnPessoaJuridica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClnCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnEndereco = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,7 +112,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(306, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1607, 75);
+            this.panel1.Size = new System.Drawing.Size(1068, 75);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -128,7 +121,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1603, 71);
+            this.panel2.Size = new System.Drawing.Size(1064, 71);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -136,19 +129,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Medium", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(277, 48);
             this.label1.TabIndex = 2;
             this.label1.Text = "Gestão de Clientes";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // panel3
             // 
@@ -156,7 +141,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(12, 115);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1898, 54);
+            this.panel3.Size = new System.Drawing.Size(1363, 54);
             this.panel3.TabIndex = 3;
             // 
             // panel4
@@ -167,7 +152,7 @@
             this.panel4.Controls.Add(this.BtnInserir);
             this.panel4.Location = new System.Drawing.Point(1, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1896, 52);
+            this.panel4.Size = new System.Drawing.Size(1361, 52);
             this.panel4.TabIndex = 2;
             // 
             // BtnExcluir
@@ -251,18 +236,12 @@
             this.ClnId,
             this.ClnNome,
             this.ClnCpf,
-            this.Cln,
-            this.ClnUf,
-            this.ClnCidade,
-            this.ClnRuaAvenida,
-            this.ClnNumero,
-            this.ClnBairro,
-            this.ClnComplemento,
             this.ClnCnh,
             this.ClnEmail,
             this.ClnTelefone,
             this.ClnPessoaJuridica,
-            this.ClnCnpj});
+            this.ClnCnpj,
+            this.ClnEndereco});
             this.GridClientes.EnableHeadersVisualStyles = false;
             this.GridClientes.GridColor = System.Drawing.Color.White;
             this.GridClientes.Location = new System.Drawing.Point(12, 190);
@@ -278,122 +257,101 @@
             this.GridClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.GridClientes.RowTemplate.Height = 25;
             this.GridClientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridClientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.GridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridClientes.Size = new System.Drawing.Size(1901, 468);
+            this.GridClientes.Size = new System.Drawing.Size(1363, 468);
             this.GridClientes.TabIndex = 4;
+            this.GridClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridClientes_CellClick);
+            this.GridClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridClientes_CellFormatting);
+            this.GridClientes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridClientes_CellPainting);
             // 
             // ClnId
             // 
+            this.ClnId.FillWeight = 30F;
             this.ClnId.HeaderText = "ID";
             this.ClnId.Name = "ClnId";
             this.ClnId.ReadOnly = true;
+            this.ClnId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClnNome
             // 
+            this.ClnNome.FillWeight = 95F;
             this.ClnNome.HeaderText = "Nome";
             this.ClnNome.Name = "ClnNome";
             this.ClnNome.ReadOnly = true;
+            this.ClnNome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClnCpf
             // 
+            this.ClnCpf.FillWeight = 40F;
             this.ClnCpf.HeaderText = "CPF";
             this.ClnCpf.Name = "ClnCpf";
             this.ClnCpf.ReadOnly = true;
+            this.ClnCpf.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnCpf.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Cln
-            // 
-            this.Cln.HeaderText = "CEP";
-            this.Cln.Name = "Cln";
-            this.Cln.ReadOnly = true;
-            this.Cln.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnUf
-            // 
-            this.ClnUf.HeaderText = "UF";
-            this.ClnUf.Name = "ClnUf";
-            this.ClnUf.ReadOnly = true;
-            this.ClnUf.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnCidade
-            // 
-            this.ClnCidade.HeaderText = "Cidade";
-            this.ClnCidade.Name = "ClnCidade";
-            this.ClnCidade.ReadOnly = true;
-            this.ClnCidade.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnRuaAvenida
-            // 
-            this.ClnRuaAvenida.HeaderText = "Rua/Avenida";
-            this.ClnRuaAvenida.Name = "ClnRuaAvenida";
-            this.ClnRuaAvenida.ReadOnly = true;
-            this.ClnRuaAvenida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnNumero
-            // 
-            this.ClnNumero.HeaderText = "Número";
-            this.ClnNumero.Name = "ClnNumero";
-            this.ClnNumero.ReadOnly = true;
-            this.ClnNumero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnBairro
-            // 
-            this.ClnBairro.HeaderText = "Bairro";
-            this.ClnBairro.Name = "ClnBairro";
-            this.ClnBairro.ReadOnly = true;
-            this.ClnBairro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnComplemento
-            // 
-            this.ClnComplemento.HeaderText = "Complemento";
-            this.ClnComplemento.Name = "ClnComplemento";
-            this.ClnComplemento.ReadOnly = true;
-            this.ClnComplemento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClnCnh
             // 
+            this.ClnCnh.FillWeight = 66.81472F;
             this.ClnCnh.HeaderText = "CNH";
             this.ClnCnh.Name = "ClnCnh";
             this.ClnCnh.ReadOnly = true;
+            this.ClnCnh.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnCnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClnEmail
             // 
+            this.ClnEmail.FillWeight = 80F;
             this.ClnEmail.HeaderText = "E-mail";
             this.ClnEmail.Name = "ClnEmail";
             this.ClnEmail.ReadOnly = true;
+            this.ClnEmail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnEmail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClnTelefone
             // 
+            this.ClnTelefone.FillWeight = 66.81472F;
             this.ClnTelefone.HeaderText = "Telefone";
             this.ClnTelefone.Name = "ClnTelefone";
             this.ClnTelefone.ReadOnly = true;
+            this.ClnTelefone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnTelefone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClnPessoaJuridica
             // 
+            this.ClnPessoaJuridica.FillWeight = 15F;
             this.ClnPessoaJuridica.HeaderText = "PJ";
             this.ClnPessoaJuridica.Name = "ClnPessoaJuridica";
             this.ClnPessoaJuridica.ReadOnly = true;
+            this.ClnPessoaJuridica.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnPessoaJuridica.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ClnCnpj
             // 
+            this.ClnCnpj.FillWeight = 66.81472F;
             this.ClnCnpj.HeaderText = "CNPJ";
             this.ClnCnpj.Name = "ClnCnpj";
             this.ClnCnpj.ReadOnly = true;
+            this.ClnCnpj.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnCnpj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ClnEndereco
+            // 
+            this.ClnEndereco.FillWeight = 25F;
+            this.ClnEndereco.HeaderText = "Endereço";
+            this.ClnEndereco.Name = "ClnEndereco";
+            this.ClnEndereco.ReadOnly = true;
+            this.ClnEndereco.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ClnEndereco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ClnEndereco.Text = "";
             // 
             // ControleClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1925, 670);
+            this.ClientSize = new System.Drawing.Size(1386, 670);
             this.Controls.Add(this.GridClientes);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -425,7 +383,6 @@
         private Panel panel1;
         private Panel panel2;
         private Label label1;
-        private ToolStripButton toolStripButton1;
         private Panel panel3;
         private Panel panel4;
         private Krypton.Toolkit.KryptonButton BtnExcluir;
@@ -435,17 +392,11 @@
         private DataGridViewTextBoxColumn ClnId;
         private DataGridViewTextBoxColumn ClnNome;
         private DataGridViewTextBoxColumn ClnCpf;
-        private DataGridViewTextBoxColumn Cln;
-        private DataGridViewTextBoxColumn ClnUf;
-        private DataGridViewTextBoxColumn ClnCidade;
-        private DataGridViewTextBoxColumn ClnRuaAvenida;
-        private DataGridViewTextBoxColumn ClnNumero;
-        private DataGridViewTextBoxColumn ClnBairro;
-        private DataGridViewTextBoxColumn ClnComplemento;
         private DataGridViewTextBoxColumn ClnCnh;
         private DataGridViewTextBoxColumn ClnEmail;
         private DataGridViewTextBoxColumn ClnTelefone;
         private DataGridViewTextBoxColumn ClnPessoaJuridica;
         private DataGridViewTextBoxColumn ClnCnpj;
+        private DataGridViewButtonColumn ClnEndereco;
     }
 }

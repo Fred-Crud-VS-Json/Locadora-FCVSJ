@@ -8,6 +8,7 @@ namespace LocadoraFCVSJ.ModuloCliente
     public partial class RegistrarNovoCliente : KryptonForm
     {
         private Cliente cliente;
+        private System.Timers.Timer STimer;
 
         public RegistrarNovoCliente()
         {
@@ -76,6 +77,10 @@ namespace LocadoraFCVSJ.ModuloCliente
                 MessageBox.Show("O campo 'CPF', 'CNH', 'NUMERO', 'CNPJ', 'TELEFONE' E 'CEP' devem conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
             }
+        }
+
+        private void RegistrarNovoCliente_Load(object sender, EventArgs e)
+        {
         }
     }
 }

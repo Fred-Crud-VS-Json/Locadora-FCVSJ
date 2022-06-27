@@ -88,7 +88,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             controleClienteForm.AtualizarGrid(clientes);
         }
 
-        private Cliente? ObterCliente()
+        public Cliente? ObterCliente()
         {
             if (controleClienteForm.ObterGrid().CurrentCell != null && controleClienteForm.ObterGrid().CurrentCell.Selected == true)
             {
