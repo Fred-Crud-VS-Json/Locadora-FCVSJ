@@ -10,7 +10,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
     [TestClass]
     public class RepositorioClienteEmBancoDeDadosTest
     {
-        private Cliente cliente;
+        private readonly Cliente? cliente;
         private readonly RepositorioClienteEmBancoDeDados repositorio;
 
         public RepositorioClienteEmBancoDeDadosTest()
@@ -19,6 +19,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
             cliente = new Cliente("Pedro", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
             repositorio = new RepositorioClienteEmBancoDeDados();
         }
+
         [TestMethod]
         public void Deve_inserir_novo_clietne()
         {

@@ -9,7 +9,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
     public class ValidadorClienteTest
     {
         private Cliente? cliente;
-        private ValidadorCliente validador;
+        private readonly ValidadorCliente validador;
 
         public ValidadorClienteTest()
         {
@@ -21,7 +21,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
         {
             cliente = NovoCliente();
 
-            cliente.Nome = null;
+            cliente.Nome = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
@@ -45,7 +45,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
         {
             cliente = NovoCliente();
 
-            cliente.CPF = null;
+            cliente.CPF = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
@@ -79,7 +79,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
         {
             cliente = NovoCliente();
 
-            cliente.CNH = null;
+            cliente.CNH = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
@@ -103,7 +103,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
         {
             cliente = NovoCliente();
 
-            cliente.Telefone = null;
+            cliente.Telefone = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
@@ -126,7 +126,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
         {
             cliente = NovoCliente();
 
-            cliente.Email = null;
+            cliente.Email = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
@@ -137,7 +137,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
         {
             cliente = NovoCliente();
 
-            cliente.Cidade= null;
+            cliente.Cidade = null;
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
@@ -166,7 +166,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.CEP);
         }
 
-         public void Numero_deve_ser_obrigatorio()
+        public void Numero_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
 
@@ -177,7 +177,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Numero);
         }
 
-         public void Bairro_deve_ser_obrigatorio()
+        public void Bairro_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
 

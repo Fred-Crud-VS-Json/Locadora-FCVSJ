@@ -91,21 +91,6 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloFuncionario
         }
 
         [TestMethod]
-        public void Salario_deve_ser_valido()
-        {
-            //arrange
-            funcionario = NovoFuncionario();
-
-            funcionario.Salario = 1000;
-
-            //action
-            TestValidationResult<Funcionario> resultado = validador.TestValidate(funcionario);
-
-            //assert
-            resultado.ShouldHaveValidationErrorFor(funcionario => funcionario.Salario);
-        }
-
-        [TestMethod]
         public void DataAdmissao_deve_ser_valido()
         {
             //arrange
