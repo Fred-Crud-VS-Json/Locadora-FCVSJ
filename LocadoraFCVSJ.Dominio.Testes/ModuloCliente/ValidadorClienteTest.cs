@@ -52,6 +52,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.CPF);
         }
 
+        [TestMethod]
         public void Cpf_deve_ser_valido()
         {
             cliente = NovoCliente();
@@ -63,6 +64,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.CPF);
         }
 
+        [TestMethod]
         public void Cnpj_deve_ser_valido()
         {
             cliente = NovoCliente();
@@ -110,6 +112,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Telefone);
         }
 
+        [TestMethod]
         public void Telefone_deve_ser_valido()
         {
             cliente = NovoCliente();
@@ -133,28 +136,31 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Email);
         }
 
+        [TestMethod]
         public void Cidade_deve_ser_obrigatoria()
         {
             cliente = NovoCliente();
 
-            cliente.Cidade = null;
+            cliente.Cidade = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Cidade);
         }
 
+        [TestMethod]
         public void Cep_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
 
-            cliente.CEP = null;
+            cliente.CEP = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.CEP);
         }
 
+        [TestMethod]
         public void Cep_deve_ser_valido()
         {
             cliente = NovoCliente();
@@ -166,28 +172,31 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.CEP);
         }
 
+        [TestMethod]
         public void Numero_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
 
-            cliente.Numero = null;
+            cliente.Numero = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Numero);
         }
 
+        [TestMethod]
         public void Bairro_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
 
-            cliente.Bairro = null;
+            cliente.Bairro = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Bairro);
         }
 
+        [TestMethod]
         public void Uf_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
@@ -199,11 +208,12 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.UF);
         }
 
+        [TestMethod]
         public void Rua_deve_ser_obrigatoria()
         {
             cliente = NovoCliente();
 
-            cliente.Rua = null;
+            cliente.Rua = "";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
