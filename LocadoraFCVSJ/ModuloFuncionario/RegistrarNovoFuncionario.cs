@@ -64,7 +64,6 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             {
                 MessageBox.Show("O campo 'Salário' ou 'Data de Admissão' possuem valores inválidos.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
-                TxbSalario.Clear();
             }
         }
     }
