@@ -23,7 +23,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
                 .LessThanOrEqualTo(DateTime.Now);
 
             RuleFor(x => x.NivelAcesso)
-                .NotEmpty().WithMessage("Nível de Acesso infomado é inválido.");
+                .NotEmpty().WithMessage("Nível de Acesso informado é inválido.");
         }
     }
 }

@@ -6,7 +6,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloTaxa
     {
         public string Nome { get; set; }
         public decimal Valor { get; set; }
-        public TipoCalculoTaxa TipoCalculoTaxa { get; set; }
+        public TipoCalculoTaxa? TipoCalculoTaxa { get; set; }
 
         public override bool Equals(object? obj)
         {

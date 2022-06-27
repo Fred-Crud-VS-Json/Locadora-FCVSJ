@@ -40,7 +40,9 @@ namespace LocadoraFCVSJ.ModuloTaxa
             {
                 taxa.Nome = TxbNome.Text;
                 taxa.Valor = Convert.ToDecimal(TxbValor.Text);
-                taxa.TipoCalculoTaxa = (TipoCalculoTaxa)CbxTipoCalculoTaxa.SelectedItem;
+
+                if (CbxTipoCalculoTaxa.SelectedItem != null)
+                    taxa.TipoCalculoTaxa = (TipoCalculoTaxa)CbxTipoCalculoTaxa.SelectedItem;
 
                 ValidationResult resultado = SalvarRegistro(taxa);
 
