@@ -62,7 +62,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             }
             catch (FormatException)
             {
-                MessageBox.Show("O campo 'Salário' deve conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("O campo 'Salário' ou 'Data de Admissão' possuem valores inválidos.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
                 TxbSalario.Clear();
             }
