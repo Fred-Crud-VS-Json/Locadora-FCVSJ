@@ -38,10 +38,17 @@ namespace LocadoraFCVSJ.ModuloCliente
                 TxbEmail.Text = cliente.Email;
                 TxbCnh.Text = cliente.CNH;
 
-                if (cliente.CNPJ != String.Empty)
+                if (!string.IsNullOrEmpty(cliente.CNPJ))
+                {
                     ChbxPessoaJuridica.Checked = true;
                     MtxbCnpj.Enabled = true;
                     MtxbCnpj.Text = cliente.CNPJ;
+                }
+                else
+                {
+                    ChbxPessoaJuridica.Checked = false;
+                    cliente.CNPJ = null;
+                }
             }
         }
         public Func<Cliente, ValidationResult> SalvarRegistro { get; set; }

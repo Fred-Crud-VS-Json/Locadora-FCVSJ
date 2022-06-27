@@ -28,7 +28,7 @@ namespace LocadoraFCVSJ.ModuloCliente
 
                 for (int i = z; i <= GridClientes.Rows.Count; i++)
                 {
-                    if (x.CNPJ == String.Empty)
+                    if (string.IsNullOrEmpty(x.CNPJ))
                         GridClientes.Rows[i - 1].Cells[6].Value = "Não";
                     else
                         GridClientes.Rows[i - 1].Cells[6].Value = "Sim";
