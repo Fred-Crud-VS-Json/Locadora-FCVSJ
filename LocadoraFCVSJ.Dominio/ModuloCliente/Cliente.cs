@@ -1,4 +1,5 @@
-﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+﻿using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 
 namespace LocadoraFCVSJ.Dominio.ModuloCliente
 {
@@ -8,7 +9,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
         {
         }
 
-        public Cliente(string nome, string cPF, string? cNPJ, string cNH, string telefone, string email, string cidade, string cEP, string numero, string bairro, string uf, string? complemento, string rua)
+        public Cliente(string nome, string cPF, string? cNPJ, string cNH, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF uf, string? complemento, string rua)
         {
             Nome = nome;
             CPF = cPF;
@@ -35,7 +36,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
         public string CEP { get; set; }
         public string Numero { get; set; }
         public string Bairro { get; set; }
-        public string UF { get; set; }
+        public UF? UF { get; set; }
         public string? Complemento { get; set; }
         public string Rua { get; set; }
 

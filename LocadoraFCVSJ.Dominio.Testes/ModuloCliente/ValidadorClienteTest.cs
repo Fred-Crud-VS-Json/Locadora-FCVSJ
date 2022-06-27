@@ -1,4 +1,5 @@
 ﻿using FluentValidation.TestHelper;
+using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -187,22 +188,11 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
             resultado.ShouldHaveValidationErrorFor(cliente => cliente.Bairro);
         }
 
-        public void uf_deve_ser_obrigatorio()
+        public void Uf_deve_ser_obrigatorio()
         {
             cliente = NovoCliente();
 
             cliente.UF = null;
-
-            TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
-
-            resultado.ShouldHaveValidationErrorFor(cliente => cliente.UF);
-        }
-
-        public void uf_deve_ser_valido()
-        {
-            cliente = NovoCliente();
-
-            cliente.UF = "S";
 
             TestValidationResult<Cliente> resultado = validador.TestValidate(cliente);
 
@@ -235,7 +225,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCliente
                 CEP = "01234567",
                 Numero = "212",
                 Bairro = "Coral",
-                UF = "SP",
+                UF = UF.SP,
                 Complemento = "verde"
             };
         }

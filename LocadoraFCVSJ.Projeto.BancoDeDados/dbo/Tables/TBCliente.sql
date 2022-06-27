@@ -10,9 +10,9 @@
       [CEP]     VARCHAR (300) NOT NULL,
        [Numero]     VARCHAR (300) NOT NULL,
         [Bairro]     VARCHAR (300) NOT NULL,
-         [Estado]     VARCHAR (300) NOT NULL,
-          [Complemento]     VARCHAR (300) NULL,
-          [Rua]     VARCHAR (300) NULL
+         [UF]     INT NOT NULL,
+          [Complemento]     VARCHAR (300) NOT NULL,
+          [Rua]     VARCHAR (300) NOT NULL
     CONSTRAINT [PK__TBClient__3214EC077C074026] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
@@ -51,7 +52,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             funcionarioAtualizado.Senha = "Fulano123567789";
             funcionarioAtualizado.Salario = 1500;
             funcionarioAtualizado.DataAdmissao = DateTime.Now.Date;
-            funcionarioAtualizado.NivelAcesso = (NivelAcessoEnum)1;
+            funcionarioAtualizado.NivelAcesso = (NivelAcesso)1;
 
             //action
             repositorioFuncionario.Editar(funcionarioAtualizado);
@@ -115,7 +116,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
                 Senha = "Fulano123567789",
                 Salario = 1500,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = (NivelAcessoEnum)1
+                NivelAcesso = (NivelAcesso)1
             };
         }
 
@@ -128,7 +129,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
                 Senha = "Fulanoa4444657789",
                 Salario = 2000,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = (NivelAcessoEnum)2
+                NivelAcesso = (NivelAcesso)2
             };
         }
     }

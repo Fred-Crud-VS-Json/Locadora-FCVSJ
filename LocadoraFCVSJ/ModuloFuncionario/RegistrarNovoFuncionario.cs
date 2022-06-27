@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using Krypton.Toolkit;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using System.Globalization;
 
@@ -13,7 +14,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
         {
             InitializeComponent();
 
-            List<NivelAcessoEnum> niveisDeAcesso = Enum.GetValues(typeof(NivelAcessoEnum)).Cast<NivelAcessoEnum>().ToList();
+            List<NivelAcesso> niveisDeAcesso = Enum.GetValues(typeof(NivelAcesso)).Cast<NivelAcesso>().ToList();
 
             niveisDeAcesso.ForEach(x => CbxNivelAcesso.Items.Add(x));
         }
@@ -46,7 +47,9 @@ namespace LocadoraFCVSJ.ModuloFuncionario
                 funcionario.Senha = TxbSenha.Text;
                 funcionario.Salario = Convert.ToDecimal(TxbSalario.Text);
                 funcionario.DataAdmissao = DateTime.ParseExact(MtxbDataAdmissao.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                funcionario.NivelAcesso = (NivelAcessoEnum)CbxNivelAcesso.SelectedItem;
+
+                if (CbxNivelAcesso.SelectedItem != null)
+                    funcionario.NivelAcesso = (NivelAcesso)CbxNivelAcesso.SelectedItem;
 
                 ValidationResult resultado = SalvarRegistro(funcionario);
 

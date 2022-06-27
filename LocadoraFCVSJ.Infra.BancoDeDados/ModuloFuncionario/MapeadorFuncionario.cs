@@ -1,4 +1,5 @@
 ﻿
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using System.Data.SqlClient;
@@ -37,7 +38,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 Senha = senha,
                 Salario = salario,
                 DataAdmissao = dataAdmissao,
-                NivelAcesso = (NivelAcessoEnum)nivelAcesso
+                NivelAcesso = (NivelAcesso)nivelAcesso
             };
 
             return funcionario;

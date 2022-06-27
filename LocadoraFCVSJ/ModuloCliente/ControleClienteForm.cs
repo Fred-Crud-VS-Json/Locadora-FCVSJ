@@ -14,13 +14,26 @@ namespace LocadoraFCVSJ.ModuloCliente
             _controladorCliente = controladorCliente;
         }
 
-        public void AtualizarGrid(List<Cliente> grupos)
+        public void AtualizarGrid(List<Cliente> clientes)
         {
             GridClientes.Rows.Clear();
 
-            grupos.ForEach(x =>
+            int z = 0;
+
+            clientes.ForEach(x =>
             {
                 GridClientes.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.Email, x.Telefone);
+
+                z++;
+
+                for (int i = z; i <= GridClientes.Rows.Count; i++)
+                {
+                    if (x.CNPJ == String.Empty)
+                        GridClientes.Rows[i - 1].Cells[6].Value = "Não";
+                    else
+                        GridClientes.Rows[i - 1].Cells[6].Value = "Sim";
+                        GridClientes.Rows[i - 1].Cells[7].Value = x.CNPJ;
+                }
             });
 
             GridClientes.ClearSelection();

@@ -113,11 +113,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Poppins Medium", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.label1.Location = new System.Drawing.Point(105, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 29);
+            this.label1.Size = new System.Drawing.Size(303, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Novo Registro de Cliente";
             // 
@@ -369,7 +369,7 @@
             // TxbEmail
             // 
             this.TxbEmail.Location = new System.Drawing.Point(40, 667);
-            this.TxbEmail.MaxLength = 60;
+            this.TxbEmail.MaxLength = 100;
             this.TxbEmail.Name = "TxbEmail";
             this.TxbEmail.Size = new System.Drawing.Size(425, 31);
             this.TxbEmail.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -411,6 +411,7 @@
             this.ChbxPessoaJuridica.Size = new System.Drawing.Size(15, 14);
             this.ChbxPessoaJuridica.TabIndex = 29;
             this.ChbxPessoaJuridica.UseVisualStyleBackColor = true;
+            this.ChbxPessoaJuridica.CheckedChanged += new System.EventHandler(this.ChbxPessoaJuridica_CheckedChanged);
             // 
             // label14
             // 
@@ -513,6 +514,7 @@
             // 
             this.MtxbCnpj.Culture = new System.Globalization.CultureInfo("pt-BR");
             this.MtxbCnpj.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtxbCnpj.Enabled = false;
             this.MtxbCnpj.Location = new System.Drawing.Point(8, 103);
             this.MtxbCnpj.Mask = "00.000.000/0000-00";
             this.MtxbCnpj.Name = "MtxbCnpj";
@@ -541,7 +543,7 @@
             // TxbCidade
             // 
             this.TxbCidade.Location = new System.Drawing.Point(40, 429);
-            this.TxbCidade.MaxLength = 10;
+            this.TxbCidade.MaxLength = 60;
             this.TxbCidade.Name = "TxbCidade";
             this.TxbCidade.Size = new System.Drawing.Size(200, 31);
             this.TxbCidade.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -567,7 +569,7 @@
             // TxbRua
             // 
             this.TxbRua.Location = new System.Drawing.Point(135, 508);
-            this.TxbRua.MaxLength = 10;
+            this.TxbRua.MaxLength = 150;
             this.TxbRua.Name = "TxbRua";
             this.TxbRua.Size = new System.Drawing.Size(200, 31);
             this.TxbRua.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -651,7 +653,6 @@
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Locadora FCVSJ";
-            this.Load += new System.EventHandler(this.RegistrarNovoCliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -8,56 +8,46 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
         public ValidadorCliente()
         {
             RuleFor(x => x.Nome)
-                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{3,60}$")).WithMessage("Nome informado é inválido.")
-                .NotEmpty().WithMessage("Deve ser inserido um nome");
-
+                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{3,60}$")).WithMessage("Nome informado é inválido. Lembre-se de preenche-lo corretamente.\n (Min 3 caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
+            
             RuleFor(x => x.CPF)
-                .Length(11).WithMessage("O Cpf deve ter pelo menos 11 caracteres!")
-                .NotEmpty().WithMessage("Deve ser inserido um dado");
-
-            RuleFor(x => x.CNH)
-                .Length(10).WithMessage("A Cnh deve ter pelo menos 10 caracteres!")
-                .NotEmpty().WithMessage("Deve ser inserido uma CNH");
-
-
-            RuleFor(x => x.Telefone)
-                .Length(11).WithMessage("O Telefone deve ter pelo menos 11 caracteres!")
-                .NotEmpty().WithMessage("Deve ser inserido um Telefone");
-
-            RuleFor(x => x.Email)
-                .NotEmpty().WithMessage("Deve ser inserido um Email");
-
-            RuleFor(x => x.CNPJ)
-                .Length(14).WithMessage("O cnpj deve ter pelo menos 14 caracteres!");
-
-            RuleFor(x => x.Cidade)
-                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{5,60}$")).WithMessage("Cidade informado é inválido.")
-                .NotEmpty().WithMessage("Deve ser inserido uma Cidade");
+                .Matches(new Regex(@"^[0-9]{11}$")).WithMessage("CPF informado é inválido. Lembre-se de preenche-lo corretamente.\n (11 caracteres)\n");
 
             RuleFor(x => x.CEP)
-                .Length(8).WithMessage("O Cep deve ter pelo menos 8 caracteres!")
-                .NotEmpty().WithMessage("Deve ser inserido um CEP");
-
-            RuleFor(x => x.Numero)
-                .NotEmpty().WithMessage("Deve ser inserido um Numero");
-
-            RuleFor(x => x.Bairro)
-                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{5,60}$")).WithMessage("Bairro informado é inválido.")
-                .NotEmpty().WithMessage("Deve ser inserido uma Bairro");
+                .Matches(new Regex(@"^[0-9]{8}$")).WithMessage("CEP informado é inválido. Lembre-se de preenche-lo corretamente.\n (8 caracteres)\n");
 
             RuleFor(x => x.UF)
-               .Matches(new Regex(@"^(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)$")).WithMessage("UF informada é inválida.")
-                .NotEmpty().WithMessage("Deve ser inserido um UF");
+                .NotEmpty().WithMessage("UF informada é inválida. \n");
 
-            RuleFor(x => x.Complemento)
-                .NotEmpty().WithMessage("Deve ser inserido um Complemento");
+            RuleFor(x => x.Cidade)
+                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{5,60}$")).WithMessage("Cidade informada é inválida. Lembre-se de preenche-la corretamente.\n (Min  caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
+
+            RuleFor(x => x.Bairro)
+                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{2,60}$")).WithMessage("Bairro informado é inválido. Lembre-se de preenche-lo corretamente.\n (Min 2 caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
+
+            RuleFor(x => x.Numero)
+                .Matches(new Regex(@"^[0-9]{1,5}$")).WithMessage("Número informado é inválido. Lembre-se de preenche-lo corretamente.\n");
 
             RuleFor(x => x.Rua)
-                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{5,100}$")).WithMessage("Rua informada é inválida.")
-                .NotEmpty().WithMessage("Deve ser inserido uma Rua");
+                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{2,150}$")).WithMessage("Rua informada é inválido. Lembre-se de preenche-la corretamente.\n (Min 2 caracteres, Max 150 caracteres)\n (Acentos e espaços são permitidos)\n");
+
+            RuleFor(x => x.Complemento)
+                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{2,60}$")).WithMessage("Complemento informado é inválido. Lembre-se de preenche-lo corretamente.\n (Min 2 caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
+
+            RuleFor(x => x.CNH)
+                .Matches(new Regex(@"^[0-9]{10}$")).WithMessage("CNH informado é inválido. Lembre-se de preenche-la corretamente.\n (10 caracteres)\n");
+
+            RuleFor(x => x.Telefone)
+                .Matches(new Regex(@"^\d{2}\d{5}\d{4}$")).WithMessage("Telefone informado é inválido. Lembre-se de preenche-lo corretamente.\n (11 caracteres)\n");
+
+            RuleFor(x => x.Email)
+                .EmailAddress().WithMessage("E-mail informado é inválido. Lembre-se de preenche-lo corretamente.");
+
+            When(x => x.CNPJ != null, () =>
+            {
+                RuleFor(x => x.CNPJ)
+                    .Matches(new Regex(@"^[0-9]{14}$")).WithMessage("\nCNPJ informado é inválido. Lembre-se de preenche-lo corretamente.\n (14 caracteres) \n");
+            });
         }
-
-
-
     }
 }

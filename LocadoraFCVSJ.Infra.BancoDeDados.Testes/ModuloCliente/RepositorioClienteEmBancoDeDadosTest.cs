@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
@@ -10,12 +11,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
     public class RepositorioClienteEmBancoDeDadosTest
     {
         private Cliente cliente;
-        private RepositorioClienteEmBancoDeDados repositorio;
+        private readonly RepositorioClienteEmBancoDeDados repositorio;
 
         public RepositorioClienteEmBancoDeDadosTest()
         {
             BdUtil.ExecutarSql("DELETE FROM [TBCliente]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
-            cliente = new Cliente("Pedro", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
+            cliente = new Cliente("Pedro", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
             repositorio = new RepositorioClienteEmBancoDeDados();
         }
         [TestMethod]
@@ -48,7 +49,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
             cliente.CEP = "01234567";
             cliente.Numero = "12";
             cliente.Bairro = "Coral";
-            cliente.UF = "SP";
+            cliente.UF = UF.SP;
             cliente.Complemento = "verde";
             cliente.Rua = "Rua Fulano";
 
@@ -93,9 +94,9 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
         public void Deve_selecionar_todos_os_clientes()
         {
             //arrange
-            var c01 = new Cliente("Alan", "59643424719", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
-            var c02 = new Cliente("Eduardo", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
-            var c03 = new Cliente("Pedro", "59643424717", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", "SC", "azul", "Alameda");
+            var c01 = new Cliente("Alan", "59643424719", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
+            var c02 = new Cliente("Eduardo", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
+            var c03 = new Cliente("Pedro", "59643424717", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
 
             repositorio.Inserir(c01);
             repositorio.Inserir(c02);

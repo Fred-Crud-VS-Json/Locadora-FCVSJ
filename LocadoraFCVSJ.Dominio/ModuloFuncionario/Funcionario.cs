@@ -9,7 +9,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
         public string Senha { get; set; }
         public decimal Salario { get; set; }
         public DateTime DataAdmissao { get; set; }
-        public NivelAcessoEnum NivelAcesso { get; set; }
+        public NivelAcesso? NivelAcesso { get; set; }
 
         public override bool Equals(object? obj)
         {

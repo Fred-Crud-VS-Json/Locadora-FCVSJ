@@ -46,7 +46,7 @@ namespace LocadoraFCVSJ.ModuloCliente
                 SalvarRegistro = _repositorioCliente.Editar
             };
 
-            tela.label1.Text = " Editando Registro";
+            tela.label1.Text = "        Editando Registro";
             tela.label4.Text = "Altere abaixo as informações que deseja do cliente selecionado.";
 
 

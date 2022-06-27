@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LocadoraFCVSJ.Compartilhado
+﻿namespace LocadoraFCVSJ.Compartilhado
 {
-    public enum EstadosUF
+    public enum UF
     {
         AC,
         AL,

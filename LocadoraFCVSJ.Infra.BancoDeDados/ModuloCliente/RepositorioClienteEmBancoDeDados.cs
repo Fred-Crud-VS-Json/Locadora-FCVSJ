@@ -18,7 +18,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                     [CEP],
                     [NUMERO],
                     [BAIRRO],
-                    [ESTADO],
+                    [UF],
                     [COMPLEMENTO],
                     [RUA]
                 )
@@ -34,16 +34,17 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                     @CEP,
                     @NUMERO,
                     @BAIRRO,
-                    @ESTADO,
+                    @UF,
                     @COMPLEMENTO,
                     @RUA
+
                 ); SELECT SCOPE_IDENTITY();";
 
         protected override string QueryEditar => @" UPDATE [TBCLIENTE]
                     SET 
                         [NOME] = @NOME,  
                         [CPF] = @CPF,
-                        [CNPJ] = CNPJ,
+                        [CNPJ] = @CNPJ,
                         [CNH] = @CNH,
                         [TELEFONE] = @TELEFONE,
                         [EMAIL] =  @EMAIL,
@@ -51,10 +52,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                         [CEP] = @CEP,
                         [NUMERO] = @NUMERO,
                         [BAIRRO] = @BAIRRO,
-                        [ESTADO] = @ESTADO,
+                        [UF] = @UF,
                         [COMPLEMENTO] = @COMPLEMENTO,
                         [RUA] = @RUA
-                    WHERE [ID] = @ID";
+                    WHERE 
+                        [ID] = @ID";
 
         protected override string QueryExcluir => @"DELETE FROM [TBCLIENTE] 
                 WHERE [ID] = @ID";
@@ -71,10 +73,9 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                     [CEP],
                     [NUMERO],
                     [BAIRRO],
-                    [ESTADO],
+                    [UF],
                     [COMPLEMENTO],
                     [RUA]
-                    
 	            FROM 
 		            [TBCLIENTE]
 		        WHERE
@@ -92,7 +93,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                     [CEP],
                     [NUMERO],
                     [BAIRRO],
-                    [ESTADO],
+                    [UF],
                     [COMPLEMENTO],
                     [RUA]
 	            FROM 

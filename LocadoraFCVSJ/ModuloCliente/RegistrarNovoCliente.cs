@@ -8,13 +8,11 @@ namespace LocadoraFCVSJ.ModuloCliente
     public partial class RegistrarNovoCliente : KryptonForm
     {
         private Cliente cliente;
-        private System.Timers.Timer STimer;
-
         public RegistrarNovoCliente()
         {
             InitializeComponent();
 
-            List<EstadosUF> estadosUF = Enum.GetValues(typeof(EstadosUF)).Cast<EstadosUF>().ToList();
+            List<UF> estadosUF = Enum.GetValues(typeof(UF)).Cast<UF>().ToList();
 
             estadosUF.ForEach(x => CbxUf.Items.Add(x));
         }
@@ -28,18 +26,22 @@ namespace LocadoraFCVSJ.ModuloCliente
                 cliente = value;
 
                 TxbNome.Text = cliente.Nome;
-                MtxbCpf.Text = Convert.ToString(cliente.CPF);
-                MtxbCnpj.Text = Convert.ToString(cliente.CNPJ);
-                TxbCnh.Text = Convert.ToString(cliente.CNH);
-                MtxbTelefone.Text = Convert.ToString(cliente.Telefone);
-                TxbEmail.Text = cliente.Email;
-                TxbCidade.Text = cliente.Cidade;
-                MtxbCep.Text = Convert.ToString(cliente.CEP);
-                TxbNumero.Text = Convert.ToString(cliente.Numero);
-                TxbBairro.Text = cliente.Bairro;
+                MtxbCpf.Text = cliente.CPF;
+                MtxbCep.Text = cliente.CEP;
                 CbxUf.SelectedItem = cliente.UF;
-                TxbComplemento.Text = cliente.Complemento;
+                TxbCidade.Text = cliente.Cidade;
+                TxbBairro.Text = cliente.Bairro;
+                TxbNumero.Text = cliente.Numero;
                 TxbRua.Text = cliente.Rua;
+                TxbComplemento.Text = cliente.Complemento;
+                MtxbTelefone.Text = cliente.Telefone;
+                TxbEmail.Text = cliente.Email;
+                TxbCnh.Text = cliente.CNH;
+
+                if (cliente.CNPJ != String.Empty)
+                    ChbxPessoaJuridica.Checked = true;
+                    MtxbCnpj.Enabled = true;
+                    MtxbCnpj.Text = cliente.CNPJ;
             }
         }
         public Func<Cliente, ValidationResult> SalvarRegistro { get; set; }
@@ -48,20 +50,26 @@ namespace LocadoraFCVSJ.ModuloCliente
         {
             try
             {
-                TxbNome.Text = cliente.Nome;
-                MtxbCpf.Text = Convert.ToString(cliente.CPF);
-                MtxbCnpj.Text = Convert.ToString(cliente.CNPJ);
-                TxbCnh.Text = Convert.ToString(cliente.CNH);
-                MtxbTelefone.Text = Convert.ToString(cliente.Telefone);
-                TxbEmail.Text = cliente.Email;
-                TxbCidade.Text = cliente.Cidade;
-                MtxbCep.Text = Convert.ToString(cliente.CEP);
-                TxbNumero.Text = Convert.ToString(cliente.Numero);
-                TxbBairro.Text = cliente.Bairro;
-                CbxUf.SelectedItem = cliente.UF;
-                TxbComplemento.Text = cliente.Complemento;
-                TxbRua.Text = cliente.Rua;
+                cliente.Nome = TxbNome.Text;
+                cliente.CPF = MtxbCpf.Text;
+                cliente.CEP = MtxbCep.Text;
 
+                if (CbxUf.SelectedItem != null)
+                    cliente.UF = (UF)CbxUf.SelectedItem;
+
+                cliente.Cidade = TxbCidade.Text;
+                cliente.Bairro = TxbBairro.Text;
+                cliente.Numero = TxbNumero.Text;
+                cliente.Rua = TxbRua.Text;
+                cliente.Complemento = TxbComplemento.Text;
+                cliente.Telefone = MtxbTelefone.Text;
+                cliente.Email = TxbEmail.Text;
+                cliente.CNH = TxbCnh.Text;
+
+                if (ChbxPessoaJuridica.Checked == true)
+                    cliente.CNPJ = MtxbCnpj.Text;
+                else
+                    cliente.CNPJ = null;
 
                 ValidationResult resultado = SalvarRegistro(cliente);
 
@@ -74,13 +82,23 @@ namespace LocadoraFCVSJ.ModuloCliente
             }
             catch (FormatException)
             {
-                MessageBox.Show("O campo 'CPF', 'CNH', 'NUMERO', 'CNPJ', 'TELEFONE' E 'CEP' devem conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("O campo 'NUMERO' deve conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
             }
         }
 
-        private void RegistrarNovoCliente_Load(object sender, EventArgs e)
+        private void ChbxPessoaJuridica_CheckedChanged(object sender, EventArgs e)
         {
+            if (ChbxPessoaJuridica.Checked == true)
+            {
+                MtxbCnpj.Enabled = true;
+            }
+            else
+            {
+                cliente.CNPJ = null;
+                MtxbCnpj.Clear();
+                MtxbCnpj.Enabled = false;
+            }
         }
     }
 }
