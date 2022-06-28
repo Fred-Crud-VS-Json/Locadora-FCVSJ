@@ -106,11 +106,11 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 5F;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color1 = System.Drawing.Color.White;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -122,7 +122,7 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 0, -1, -1);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -130,7 +130,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LocadoraFCVSJ.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(201, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(201, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(351, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -141,7 +141,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 148);
+            this.panel1.Location = new System.Drawing.Point(12, 134);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 114);
             this.panel1.TabIndex = 1;
@@ -152,9 +152,9 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.BtnAcessarFuncionarios);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(1, 1);
+            this.panel2.Location = new System.Drawing.Point(2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 112);
+            this.panel2.Size = new System.Drawing.Size(228, 110);
             this.panel2.TabIndex = 2;
             // 
             // pictureBox2
@@ -197,7 +197,7 @@
             this.BtnAcessarFuncionarios.StateCommon.Border.Width = 2;
             this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarFuncionarios.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarFuncionarios.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarFuncionarios.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -217,6 +217,10 @@
             this.BtnAcessarFuncionarios.StatePressed.Border.Rounding = 5F;
             this.BtnAcessarFuncionarios.StatePressed.Border.Width = 2;
             this.BtnAcessarFuncionarios.TabIndex = 30;
+            this.BtnAcessarFuncionarios.ToolTipValues.Description = "";
+            this.BtnAcessarFuncionarios.ToolTipValues.EnableToolTips = true;
+            this.BtnAcessarFuncionarios.ToolTipValues.Heading = "Acessar Módulo Funcionário";
+            this.BtnAcessarFuncionarios.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnAcessarFuncionarios.Values.Text = "Acessar";
             this.BtnAcessarFuncionarios.Click += new System.EventHandler(this.BtnAcessarFuncionarios_Click);
             // 
@@ -235,7 +239,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(511, 148);
+            this.panel3.Location = new System.Drawing.Point(511, 134);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(232, 114);
             this.panel3.TabIndex = 2;
@@ -246,9 +250,9 @@
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.BtnAcessarGrupos);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(1, 1);
+            this.panel4.Location = new System.Drawing.Point(2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(230, 112);
+            this.panel4.Size = new System.Drawing.Size(228, 110);
             this.panel4.TabIndex = 2;
             // 
             // pictureBox4
@@ -288,7 +292,7 @@
             this.BtnAcessarGrupos.StateCommon.Border.Width = 2;
             this.BtnAcessarGrupos.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarGrupos.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarGrupos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarGrupos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarGrupos.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarGrupos.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarGrupos.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -306,6 +310,9 @@
             this.BtnAcessarGrupos.StatePressed.Border.Rounding = 5F;
             this.BtnAcessarGrupos.StatePressed.Border.Width = 2;
             this.BtnAcessarGrupos.TabIndex = 30;
+            this.BtnAcessarGrupos.ToolTipValues.Description = "";
+            this.BtnAcessarGrupos.ToolTipValues.EnableToolTips = true;
+            this.BtnAcessarGrupos.ToolTipValues.Heading = "Acessar Módulo Grupo";
             this.BtnAcessarGrupos.Values.Text = "Acessar";
             this.BtnAcessarGrupos.Click += new System.EventHandler(this.BtnAcessarGrupos_Click);
             // 
@@ -324,7 +331,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(261, 148);
+            this.panel5.Location = new System.Drawing.Point(261, 134);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(232, 114);
             this.panel5.TabIndex = 3;
@@ -335,9 +342,9 @@
             this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.kryptonButton3);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(1, 1);
+            this.panel6.Location = new System.Drawing.Point(2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(230, 112);
+            this.panel6.Size = new System.Drawing.Size(228, 110);
             this.panel6.TabIndex = 2;
             // 
             // pictureBox3
@@ -377,7 +384,7 @@
             this.kryptonButton3.StateCommon.Border.Width = 2;
             this.kryptonButton3.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton3.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton3.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton3.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton3.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -397,6 +404,10 @@
             this.kryptonButton3.StatePressed.Border.Rounding = 5F;
             this.kryptonButton3.StatePressed.Border.Width = 2;
             this.kryptonButton3.TabIndex = 30;
+            this.kryptonButton3.ToolTipValues.Description = "";
+            this.kryptonButton3.ToolTipValues.EnableToolTips = true;
+            this.kryptonButton3.ToolTipValues.Heading = "Acessar Módulo Veículo";
+            this.kryptonButton3.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.kryptonButton3.Values.Text = "Acessar";
             // 
             // label3
@@ -414,7 +425,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(261, 281);
+            this.panel7.Location = new System.Drawing.Point(261, 267);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(232, 114);
             this.panel7.TabIndex = 6;
@@ -425,9 +436,9 @@
             this.panel8.Controls.Add(this.pictureBox6);
             this.panel8.Controls.Add(this.kryptonButton4);
             this.panel8.Controls.Add(this.label4);
-            this.panel8.Location = new System.Drawing.Point(1, 1);
+            this.panel8.Location = new System.Drawing.Point(2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(230, 112);
+            this.panel8.Size = new System.Drawing.Size(228, 110);
             this.panel8.TabIndex = 2;
             // 
             // pictureBox6
@@ -467,7 +478,7 @@
             this.kryptonButton4.StateCommon.Border.Width = 2;
             this.kryptonButton4.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton4.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton4.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton4.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton4.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -487,6 +498,10 @@
             this.kryptonButton4.StatePressed.Border.Rounding = 5F;
             this.kryptonButton4.StatePressed.Border.Width = 2;
             this.kryptonButton4.TabIndex = 30;
+            this.kryptonButton4.ToolTipValues.Description = "";
+            this.kryptonButton4.ToolTipValues.EnableToolTips = true;
+            this.kryptonButton4.ToolTipValues.Heading = "Acessar Módulo Finança";
+            this.kryptonButton4.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.kryptonButton4.Values.Text = "Acessar";
             // 
             // label4
@@ -504,7 +519,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(11, 417);
+            this.panel9.Location = new System.Drawing.Point(11, 403);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(232, 114);
             this.panel9.TabIndex = 5;
@@ -515,9 +530,9 @@
             this.panel10.Controls.Add(this.pictureBox7);
             this.panel10.Controls.Add(this.kryptonButton5);
             this.panel10.Controls.Add(this.label5);
-            this.panel10.Location = new System.Drawing.Point(1, 1);
+            this.panel10.Location = new System.Drawing.Point(2, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(230, 112);
+            this.panel10.Size = new System.Drawing.Size(228, 110);
             this.panel10.TabIndex = 2;
             // 
             // pictureBox7
@@ -557,7 +572,7 @@
             this.kryptonButton5.StateCommon.Border.Width = 2;
             this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton5.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton5.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton5.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -577,6 +592,10 @@
             this.kryptonButton5.StatePressed.Border.Rounding = 5F;
             this.kryptonButton5.StatePressed.Border.Width = 2;
             this.kryptonButton5.TabIndex = 30;
+            this.kryptonButton5.ToolTipValues.Description = "";
+            this.kryptonButton5.ToolTipValues.EnableToolTips = true;
+            this.kryptonButton5.ToolTipValues.Heading = "Acessar Módulo Locação";
+            this.kryptonButton5.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.kryptonButton5.Values.Text = "Acessar";
             // 
             // label5
@@ -594,7 +613,7 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel11.Controls.Add(this.panel12);
-            this.panel11.Location = new System.Drawing.Point(12, 281);
+            this.panel11.Location = new System.Drawing.Point(12, 267);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(232, 114);
             this.panel11.TabIndex = 4;
@@ -605,9 +624,9 @@
             this.panel12.Controls.Add(this.pictureBox5);
             this.panel12.Controls.Add(this.BtnAcessarClientes);
             this.panel12.Controls.Add(this.label6);
-            this.panel12.Location = new System.Drawing.Point(1, 1);
+            this.panel12.Location = new System.Drawing.Point(2, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(230, 112);
+            this.panel12.Size = new System.Drawing.Size(228, 110);
             this.panel12.TabIndex = 2;
             // 
             // pictureBox5
@@ -647,7 +666,7 @@
             this.BtnAcessarClientes.StateCommon.Border.Width = 2;
             this.BtnAcessarClientes.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarClientes.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarClientes.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarClientes.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarClientes.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarClientes.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarClientes.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -667,6 +686,10 @@
             this.BtnAcessarClientes.StatePressed.Border.Rounding = 5F;
             this.BtnAcessarClientes.StatePressed.Border.Width = 2;
             this.BtnAcessarClientes.TabIndex = 30;
+            this.BtnAcessarClientes.ToolTipValues.Description = "";
+            this.BtnAcessarClientes.ToolTipValues.EnableToolTips = true;
+            this.BtnAcessarClientes.ToolTipValues.Heading = "Acessar Módulo Cliente";
+            this.BtnAcessarClientes.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnAcessarClientes.Values.Text = "Acessar";
             this.BtnAcessarClientes.Click += new System.EventHandler(this.BtnAcessarClientes_Click);
             // 
@@ -685,7 +708,7 @@
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel13.Controls.Add(this.panel14);
-            this.panel13.Location = new System.Drawing.Point(511, 282);
+            this.panel13.Location = new System.Drawing.Point(511, 268);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(232, 114);
             this.panel13.TabIndex = 7;
@@ -696,9 +719,9 @@
             this.panel14.Controls.Add(this.pictureBox8);
             this.panel14.Controls.Add(this.BtnAcessarTaxas);
             this.panel14.Controls.Add(this.label7);
-            this.panel14.Location = new System.Drawing.Point(1, 1);
+            this.panel14.Location = new System.Drawing.Point(2, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(230, 112);
+            this.panel14.Size = new System.Drawing.Size(228, 110);
             this.panel14.TabIndex = 2;
             // 
             // pictureBox8
@@ -738,7 +761,7 @@
             this.BtnAcessarTaxas.StateCommon.Border.Width = 2;
             this.BtnAcessarTaxas.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarTaxas.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarTaxas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarTaxas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarTaxas.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarTaxas.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarTaxas.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -756,6 +779,10 @@
             this.BtnAcessarTaxas.StatePressed.Border.Rounding = 5F;
             this.BtnAcessarTaxas.StatePressed.Border.Width = 2;
             this.BtnAcessarTaxas.TabIndex = 30;
+            this.BtnAcessarTaxas.ToolTipValues.Description = "";
+            this.BtnAcessarTaxas.ToolTipValues.EnableToolTips = true;
+            this.BtnAcessarTaxas.ToolTipValues.Heading = "Acessar Módulo Taxa";
+            this.BtnAcessarTaxas.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnAcessarTaxas.Values.Text = "Acessar";
             this.BtnAcessarTaxas.Click += new System.EventHandler(this.BtnAcessarTaxas_Click);
             // 
@@ -775,7 +802,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(755, 536);
+            this.ClientSize = new System.Drawing.Size(755, 527);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel9);

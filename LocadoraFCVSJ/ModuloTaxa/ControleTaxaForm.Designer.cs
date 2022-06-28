@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControleTaxaForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -106,9 +106,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(306, 12);
+            this.panel1.Location = new System.Drawing.Point(306, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 75);
+            this.panel1.Size = new System.Drawing.Size(515, 72);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -117,7 +117,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(511, 71);
+            this.panel2.Size = new System.Drawing.Size(511, 68);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -125,7 +125,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Medium", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(128, 14);
+            this.label1.Location = new System.Drawing.Point(128, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(244, 48);
             this.label1.TabIndex = 2;
@@ -155,18 +155,18 @@
             this.panel4.Controls.Add(this.BtnExcluir);
             this.panel4.Controls.Add(this.BtnEditar);
             this.panel4.Controls.Add(this.BtnInserir);
-            this.panel4.Location = new System.Drawing.Point(1, 1);
+            this.panel4.Location = new System.Drawing.Point(2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(806, 52);
+            this.panel4.Size = new System.Drawing.Size(804, 50);
             this.panel4.TabIndex = 2;
             // 
             // BtnExcluir
             // 
-            this.BtnExcluir.Location = new System.Drawing.Point(105, 7);
+            this.BtnExcluir.Location = new System.Drawing.Point(139, 7);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.OverrideDefault.Back.Color1 = System.Drawing.Color.IndianRed;
             this.BtnExcluir.OverrideDefault.Back.Color2 = System.Drawing.Color.IndianRed;
-            this.BtnExcluir.Size = new System.Drawing.Size(41, 38);
+            this.BtnExcluir.Size = new System.Drawing.Size(55, 38);
             this.BtnExcluir.StateCommon.Back.Color1 = System.Drawing.Color.IndianRed;
             this.BtnExcluir.StateCommon.Back.Color2 = System.Drawing.Color.IndianRed;
             this.BtnExcluir.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.close_white_30px;
@@ -176,16 +176,20 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnExcluir.StateCommon.Border.Rounding = 4F;
             this.BtnExcluir.TabIndex = 2;
+            this.BtnExcluir.ToolTipValues.Description = "";
+            this.BtnExcluir.ToolTipValues.EnableToolTips = true;
+            this.BtnExcluir.ToolTipValues.Heading = "Excluir Taxa";
+            this.BtnExcluir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnExcluir.Values.Text = "";
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // BtnEditar
             // 
-            this.BtnEditar.Location = new System.Drawing.Point(58, 7);
+            this.BtnEditar.Location = new System.Drawing.Point(75, 7);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.OverrideDefault.Back.Color1 = System.Drawing.Color.CornflowerBlue;
             this.BtnEditar.OverrideDefault.Back.Color2 = System.Drawing.Color.CornflowerBlue;
-            this.BtnEditar.Size = new System.Drawing.Size(41, 38);
+            this.BtnEditar.Size = new System.Drawing.Size(55, 38);
             this.BtnEditar.StateCommon.Back.Color1 = System.Drawing.Color.CornflowerBlue;
             this.BtnEditar.StateCommon.Back.Color2 = System.Drawing.Color.CornflowerBlue;
             this.BtnEditar.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.pencil_30px;
@@ -196,6 +200,10 @@
             this.BtnEditar.StateCommon.Border.Rounding = 4F;
             this.BtnEditar.StateCommon.Border.Width = 1;
             this.BtnEditar.TabIndex = 1;
+            this.BtnEditar.ToolTipValues.Description = "";
+            this.BtnEditar.ToolTipValues.EnableToolTips = true;
+            this.BtnEditar.ToolTipValues.Heading = "Editar Taxa";
+            this.BtnEditar.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnEditar.Values.Text = "";
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
@@ -205,7 +213,7 @@
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.MediumSeaGreen;
             this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.MediumSeaGreen;
-            this.BtnInserir.Size = new System.Drawing.Size(41, 38);
+            this.BtnInserir.Size = new System.Drawing.Size(55, 38);
             this.BtnInserir.StateCommon.Back.Color1 = System.Drawing.Color.MediumSeaGreen;
             this.BtnInserir.StateCommon.Back.Color2 = System.Drawing.Color.MediumSeaGreen;
             this.BtnInserir.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.plus_math_30px;
@@ -216,6 +224,10 @@
             this.BtnInserir.StateCommon.Border.Rounding = 4F;
             this.BtnInserir.StateCommon.Border.Width = 1;
             this.BtnInserir.TabIndex = 0;
+            this.BtnInserir.ToolTipValues.Description = "";
+            this.BtnInserir.ToolTipValues.EnableToolTips = true;
+            this.BtnInserir.ToolTipValues.Heading = "Adicionar Taxa";
+            this.BtnInserir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnInserir.Values.Text = "";
             this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
@@ -227,14 +239,14 @@
             this.GridTaxas.BackgroundColor = System.Drawing.Color.White;
             this.GridTaxas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridTaxas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridTaxas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridTaxas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridTaxas.ColumnHeadersHeight = 45;
             this.GridTaxas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GridTaxas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -250,11 +262,11 @@
             this.GridTaxas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.GridTaxas.RowHeadersVisible = false;
             this.GridTaxas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
-            this.GridTaxas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
+            this.GridTaxas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.GridTaxas.RowTemplate.Height = 25;
             this.GridTaxas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GridTaxas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

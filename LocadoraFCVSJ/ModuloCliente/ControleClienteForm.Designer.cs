@@ -110,7 +110,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(306, 12);
+            this.panel1.Location = new System.Drawing.Point(306, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1068, 72);
             this.panel1.TabIndex = 1;
@@ -171,6 +171,10 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnExcluir.StateCommon.Border.Rounding = 4F;
             this.BtnExcluir.TabIndex = 2;
+            this.BtnExcluir.ToolTipValues.Description = "";
+            this.BtnExcluir.ToolTipValues.EnableToolTips = true;
+            this.BtnExcluir.ToolTipValues.Heading = "Excluir Cliente";
+            this.BtnExcluir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnExcluir.Values.Text = "";
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
@@ -191,6 +195,10 @@
             this.BtnEditar.StateCommon.Border.Rounding = 4F;
             this.BtnEditar.StateCommon.Border.Width = 1;
             this.BtnEditar.TabIndex = 1;
+            this.BtnEditar.ToolTipValues.Description = "";
+            this.BtnEditar.ToolTipValues.EnableToolTips = true;
+            this.BtnEditar.ToolTipValues.Heading = "Editar Cliente";
+            this.BtnEditar.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnEditar.Values.Text = "";
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
@@ -211,6 +219,10 @@
             this.BtnInserir.StateCommon.Border.Rounding = 4F;
             this.BtnInserir.StateCommon.Border.Width = 1;
             this.BtnInserir.TabIndex = 0;
+            this.BtnInserir.ToolTipValues.Description = "";
+            this.BtnInserir.ToolTipValues.EnableToolTips = true;
+            this.BtnInserir.ToolTipValues.Heading = "Adicionar Cliente";
+            this.BtnInserir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnInserir.Values.Text = "";
             this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
