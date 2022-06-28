@@ -75,11 +75,11 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 5F;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -112,7 +112,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(306, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1068, 75);
+            this.panel1.Size = new System.Drawing.Size(1068, 72);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -121,7 +121,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1064, 71);
+            this.panel2.Size = new System.Drawing.Size(1064, 68);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -129,7 +129,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Medium", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(13, 14);
+            this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(277, 48);
             this.label1.TabIndex = 2;
@@ -150,18 +150,18 @@
             this.panel4.Controls.Add(this.BtnExcluir);
             this.panel4.Controls.Add(this.BtnEditar);
             this.panel4.Controls.Add(this.BtnInserir);
-            this.panel4.Location = new System.Drawing.Point(1, 1);
+            this.panel4.Location = new System.Drawing.Point(2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1361, 52);
+            this.panel4.Size = new System.Drawing.Size(1359, 50);
             this.panel4.TabIndex = 2;
             // 
             // BtnExcluir
             // 
-            this.BtnExcluir.Location = new System.Drawing.Point(105, 7);
+            this.BtnExcluir.Location = new System.Drawing.Point(139, 7);
             this.BtnExcluir.Name = "BtnExcluir";
             this.BtnExcluir.OverrideDefault.Back.Color1 = System.Drawing.Color.IndianRed;
             this.BtnExcluir.OverrideDefault.Back.Color2 = System.Drawing.Color.IndianRed;
-            this.BtnExcluir.Size = new System.Drawing.Size(41, 38);
+            this.BtnExcluir.Size = new System.Drawing.Size(55, 38);
             this.BtnExcluir.StateCommon.Back.Color1 = System.Drawing.Color.IndianRed;
             this.BtnExcluir.StateCommon.Back.Color2 = System.Drawing.Color.IndianRed;
             this.BtnExcluir.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.close_white_30px;
@@ -176,11 +176,11 @@
             // 
             // BtnEditar
             // 
-            this.BtnEditar.Location = new System.Drawing.Point(58, 7);
+            this.BtnEditar.Location = new System.Drawing.Point(75, 7);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.OverrideDefault.Back.Color1 = System.Drawing.Color.CornflowerBlue;
             this.BtnEditar.OverrideDefault.Back.Color2 = System.Drawing.Color.CornflowerBlue;
-            this.BtnEditar.Size = new System.Drawing.Size(41, 38);
+            this.BtnEditar.Size = new System.Drawing.Size(55, 38);
             this.BtnEditar.StateCommon.Back.Color1 = System.Drawing.Color.CornflowerBlue;
             this.BtnEditar.StateCommon.Back.Color2 = System.Drawing.Color.CornflowerBlue;
             this.BtnEditar.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.pencil_30px;
@@ -200,7 +200,7 @@
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.MediumSeaGreen;
             this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.MediumSeaGreen;
-            this.BtnInserir.Size = new System.Drawing.Size(41, 38);
+            this.BtnInserir.Size = new System.Drawing.Size(55, 38);
             this.BtnInserir.StateCommon.Back.Color1 = System.Drawing.Color.MediumSeaGreen;
             this.BtnInserir.StateCommon.Back.Color2 = System.Drawing.Color.MediumSeaGreen;
             this.BtnInserir.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.plus_math_30px;
@@ -220,6 +220,7 @@
             this.GridClientes.AllowUserToDeleteRows = false;
             this.GridClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridClientes.BackgroundColor = System.Drawing.Color.White;
+            this.GridClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.GridClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -338,7 +339,7 @@
             // 
             // ClnEndereco
             // 
-            this.ClnEndereco.FillWeight = 25F;
+            this.ClnEndereco.FillWeight = 30F;
             this.ClnEndereco.HeaderText = "Endereço";
             this.ClnEndereco.Name = "ClnEndereco";
             this.ClnEndereco.ReadOnly = true;
