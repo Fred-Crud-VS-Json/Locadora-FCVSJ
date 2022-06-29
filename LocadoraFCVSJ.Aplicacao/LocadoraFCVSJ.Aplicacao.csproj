@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LocadoraFCVSJ.Dominio\LocadoraFCVSJ.Dominio.csproj" />
+    <ProjectReference Include="..\LocadoraFCVSJ.Infra.BancoDeDados\LocadoraFCVSJ.Infra.BancoDeDados.csproj" />
+  </ItemGroup>
+
 </Project>
