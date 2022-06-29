@@ -1,11 +1,12 @@
 ﻿using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 {
-    public class RepositorioGrupo : RepositorioBase<Grupo, ValidadorGrupo, MapeadorGrupo>
+    public class RepositorioGrupo : RepositorioBase<Grupo, MapeadorGrupo>, IRepositorioGrupo
     {
-        protected override string QueryInserir => 
+        protected override string QueryInserir =>
             @"INSERT INTO [TBGrupo]
                 (
                     [Nome]
@@ -43,5 +44,19 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 	                GRUPO.[NOME]
                 FROM
 	                [TBGrupo] AS GRUPO";
+
+        private string QuerySelecionarPorNome =>
+            @"SELECT 
+	                GRUPO.[ID],
+	                GRUPO.[NOME]
+                FROM
+	                [TBGrupo] AS GRUPO
+                WHERE 
+	                GRUPO.[NOME] = @NOME";
+
+        public Grupo? SelecionarPropriedade<T>(string parametro, T propriedade)
+        {
+            return SelecionarParametro(QuerySelecionarPorNome, new SqlParameter(parametro, propriedade));
+        }
     }
 }
