@@ -1,5 +1,5 @@
-﻿using FluentValidation.Results;
-using Krypton.Toolkit;
+﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
@@ -8,12 +8,14 @@ namespace LocadoraFCVSJ.ModuloGrupo
 {
     public class ControladorGrupo : ControladorBase
     {
-        private readonly RepositorioGrupo _repositorioGrupo;
+        private readonly IRepositorioGrupo _repositorioGrupo;
+        private readonly ServicoGrupo _servicoGrupo;
         private readonly ControleGrupoForm controleGrupoForm;
 
-        public ControladorGrupo(RepositorioGrupo repositorioGrupo)
+        public ControladorGrupo(IRepositorioGrupo repositorioGrupo, ServicoGrupo servicoGrupo)
         {
             _repositorioGrupo = repositorioGrupo;
+            _servicoGrupo = servicoGrupo;
             controleGrupoForm = new(this);
         }
 
@@ -22,7 +24,7 @@ namespace LocadoraFCVSJ.ModuloGrupo
             RegistrarNovoGrupoForm tela = new()
             {
                 Grupo = new(),
-                SalvarRegistro = _repositorioGrupo.Inserir
+                SalvarRegistro = _servicoGrupo.Inserir
             };
 
             DialogResult resultado = tela.ShowDialog();
@@ -44,7 +46,7 @@ namespace LocadoraFCVSJ.ModuloGrupo
             RegistrarNovoGrupoForm tela = new()
             {
                 Grupo = grupoSelecionado,
-                SalvarRegistro = _repositorioGrupo.Editar
+                SalvarRegistro = _servicoGrupo.Editar
             };
 
             tela.label1.Text = "      Editando Registro";
