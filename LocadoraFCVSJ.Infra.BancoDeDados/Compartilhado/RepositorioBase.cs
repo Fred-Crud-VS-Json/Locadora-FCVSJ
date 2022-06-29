@@ -1,13 +1,10 @@
-﻿using FluentValidation;
-using FluentValidation.Results;
-using LocadoraFCVSJ.Dominio.Compartilhado;
+﻿using LocadoraFCVSJ.Dominio.Compartilhado;
 using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 {
-    public abstract class RepositorioBase<T, TValidador, TMapeador>
+    public abstract class RepositorioBase<T, TMapeador> : IRepositorio<T>
         where T : EntidadeBase<T>
-        where TValidador : AbstractValidator<T>, new()
         where TMapeador : MapeadorBase<T>, new()
     {
         private readonly string StringConexao =
@@ -28,15 +25,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 
         protected abstract string QuerySelecionarTodos { get; }
 
-        public ValidationResult Inserir(T registro)
+        public virtual void Inserir(T registro)
         {
-            TValidador validador = new();
-
-            ValidationResult resultadoValidacao = validador.Validate(registro);
-
-            if (resultadoValidacao.IsValid == false)
-                return resultadoValidacao;
-
             using (Conexao = new(StringConexao))
             {
                 using SqlCommand comando = new(QueryInserir, Conexao);
@@ -48,20 +38,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
                 Conexao.Open();
 
                 registro.Id = Convert.ToInt32(comando.ExecuteScalar());
-
-                return resultadoValidacao;
             }
         }
 
-        public ValidationResult Editar(T registro)
+        public virtual void Editar(T registro)
         {
-            TValidador validador = new();
-
-            ValidationResult resultadoValidacao = validador.Validate(registro);
-
-            if (resultadoValidacao.IsValid == false)
-                return resultadoValidacao;
-
             using (Conexao = new(StringConexao))
             {
                 using SqlCommand comando = new(QueryEditar, Conexao);
@@ -73,12 +54,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
                 Conexao.Open();
 
                 comando.ExecuteNonQuery();
-                
-                return resultadoValidacao;
             }
         }
 
-        public void Excluir(T registro)
+        public virtual void Excluir(T registro)
         {
             using (Conexao = new(StringConexao))
             {
@@ -92,7 +71,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
             }
         }
 
-        public T? SelecionarPorId(int id)
+        public virtual T? SelecionarPorId(int id)
         {
             using (Conexao = new(StringConexao))
             {
@@ -115,7 +94,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
             }
         }
 
-        public List<T> SelecionarTodos()
+        public virtual List<T> SelecionarTodos()
         {
             using (Conexao = new(StringConexao))
             {
@@ -129,10 +108,33 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 
                 List<T> registros = new();
 
-                while(leitorRegistro.Read()) 
+                while (leitorRegistro.Read())
                     registros.Add(mapeador.ConverterRegistro(leitorRegistro));
 
                 return registros;
+            }
+        }
+
+        public virtual T? SelecionarParametro(string query, SqlParameter parametro)
+        {
+            using (Conexao = new(StringConexao))
+            {
+                using SqlCommand comando = new(query, Conexao);
+
+                comando.Parameters.Add(parametro);
+
+                Conexao.Open();
+
+                SqlDataReader leitorRegistro = comando.ExecuteReader();
+
+                TMapeador mapeador = new();
+
+                T? registro = null;
+
+                if (leitorRegistro.Read())
+                    registro = mapeador.ConverterRegistro(leitorRegistro);
+
+                return registro;
             }
         }
     }
