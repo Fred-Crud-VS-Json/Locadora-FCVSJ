@@ -1,7 +1,3 @@
-using LocadoraFCVSJ.ModuloCliente;
-using LocadoraFCVSJ.ModuloFuncionario;
-using LocadoraFCVSJ.ModuloGrupo;
-
 namespace LocadoraFCVSJ
 {
     internal static class Program
