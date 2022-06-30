@@ -1,4 +1,5 @@
 ﻿using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LocadoraFCVSJ.Dominio.ModuloCondutor
 {
-    public class Condutor
+    public class Condutor : EntidadeBase<Condutor>
     {
           public Condutor(string nome, string cPF, string? cNPJ, string cNH, DateTime dataVencimento, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF? uF, string? complemento, string rua)
         {

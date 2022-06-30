@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LocadoraFCVSJ.Dominio.ModuloCondutor;
+using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
 {
-    internal class IRepositorioCondutor
+    public interface IRepositorioCondutor : IRepositorio<Condutor>
     {
+        Condutor? SelecionarPropriedade<T>(string query, string parametro, T propriedade);
     }
 }
