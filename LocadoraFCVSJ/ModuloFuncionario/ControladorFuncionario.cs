@@ -1,4 +1,5 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloFuncionario;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
@@ -7,12 +8,14 @@ namespace LocadoraFCVSJ.ModuloFuncionario
 {
     public class ControladorFuncionario : ControladorBase
     {
-        private readonly RepositorioFuncionario _repositorioFuncionario;
+        private readonly IRepositorioFuncionario _repositorioFuncionario;
+        private readonly ServicoFuncionario _servicoFuncionario;
         private readonly ControleFuncionarioForm controleFuncionarioForm;
 
-        public ControladorFuncionario(RepositorioFuncionario repositorioFuncionario)
+        public ControladorFuncionario(IRepositorioFuncionario repositorioFuncionario, ServicoFuncionario servicoFuncionario)
         {
             _repositorioFuncionario = repositorioFuncionario;
+            _servicoFuncionario = servicoFuncionario;
             controleFuncionarioForm = new(this);
         }
 
@@ -21,7 +24,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             RegistrarNovoFuncionario tela = new()
             {
                 Funcionario = new(),
-                SalvarRegistro = _repositorioFuncionario.Inserir
+                SalvarRegistro = _servicoFuncionario.Inserir
             };
 
             DialogResult resultado = tela.ShowDialog();
@@ -43,7 +46,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             RegistrarNovoFuncionario tela = new()
             {
                 Funcionario = funcionarioSelecionado,
-                SalvarRegistro = _repositorioFuncionario.Editar
+                SalvarRegistro = _servicoFuncionario.Editar
             };
 
             tela.label1.Text = "            Editando Registro";

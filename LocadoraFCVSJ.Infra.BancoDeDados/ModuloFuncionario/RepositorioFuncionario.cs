@@ -1,9 +1,10 @@
 ﻿using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
 {
-    public class RepositorioFuncionario : RepositorioBase<Funcionario, ValidadorFuncionario, MapeadorFuncionario>
+    public class RepositorioFuncionario : RepositorioBase<Funcionario, MapeadorFuncionario>, IRepositorioFuncionario
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBFUNCIONARIO]
@@ -37,7 +38,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 WHERE
                     [ID] = @ID";
 
-        protected override string QueryExcluir => 
+        protected override string QueryExcluir =>
             @"DELETE FROM [TBFUNCIONARIO]
                 WHERE
                     [ID] = @ID";
@@ -67,5 +68,24 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 [NIVELACESSO]
             FROM
                 [TBFUNCIONARIO]";
+
+        public string QuerySelecionarPorUsuario =>
+            @"SELECT 
+	                [ID],
+                    [NOME],
+                    [LOGIN],
+                    [SENHA],
+                    [SALARIO],
+                    [DATAADMISSAO],
+                    [NIVELACESSO]
+                FROM
+	                [TBFUNCIONARIO]
+                WHERE 
+	                [USUARIO] = @USUARIO";
+
+        public Funcionario? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
+        {
+            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
+        }
     }
 }
