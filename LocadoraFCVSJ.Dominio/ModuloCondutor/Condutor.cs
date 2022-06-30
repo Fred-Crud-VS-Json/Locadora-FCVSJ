@@ -10,7 +10,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
 {
     public class Condutor : EntidadeBase<Condutor>
     {
-          public Condutor(string nome, string cPF, string? cNPJ, string cNH, DateTime dataVencimento, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF? uF, string? complemento, string rua)
+        public Condutor()
+        {
+        }
+
+        public Condutor(string nome, string cPF, string? cNPJ, string cNH, DateTime dataVencimento, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF? uF, string? complemento, string rua)
         {
             Nome = nome;
             CPF = cPF;
