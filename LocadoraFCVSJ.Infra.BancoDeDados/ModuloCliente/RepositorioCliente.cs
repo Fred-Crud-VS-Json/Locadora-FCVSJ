@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 {
-    public class RepositorioClienteEmBancoDeDados : RepositorioBase<Cliente, MapeadorCliente>, IRepositorioCliente
+    public class RepositorioCliente : RepositorioBase<Cliente, MapeadorCliente>, IRepositorioCliente
     {
 
         protected override string QueryInserir => @"INSERT INTO [TBCLIENTE]
@@ -183,6 +183,27 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 		            [TBCLIENTE]
 		        WHERE 
                     [EMAIL] = @EMAIL";
+
+        public string QuerySelecionarPorCnh =>
+           @"SELECT 
+	                 [ID],		            
+                    [NOME],       
+                    [CPF],
+                    [CNPJ],                  
+                    [CNH],                                                           
+                    [TELEFONE],
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [UF],
+                    [COMPLEMENTO],
+                    [RUA]
+	            FROM 
+		            [TBCLIENTE]
+		        WHERE 
+                    [CNH] = @CNH";
 
         public Cliente? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {

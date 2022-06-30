@@ -7,10 +7,10 @@ namespace LocadoraFCVSJ.ModuloCliente
 {
     public class ControladorCliente : ControladorBase
     {
-        private readonly RepositorioClienteEmBancoDeDados _repositorioCliente;
+        private readonly RepositorioCliente _repositorioCliente;
         private readonly ControleClienteForm controleClienteForm;
 
-        public ControladorCliente(RepositorioClienteEmBancoDeDados repositorioCliente)
+        public ControladorCliente(RepositorioCliente repositorioCliente)
         {
             _repositorioCliente = repositorioCliente;
             controleClienteForm = new(this);

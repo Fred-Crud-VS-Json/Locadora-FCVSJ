@@ -25,7 +25,7 @@ namespace LocadoraFCVSJ
             RepositorioGrupo repositorioGrupo = new();
             RepositorioFuncionario repositorioFuncionario = new();
             RepositorioTaxa repositorioTaxa = new();
-            RepositorioClienteEmBancoDeDados repositorioCliente = new();
+            RepositorioCliente repositorioCliente = new();
 
             ServicoGrupo servicoGrupo = new(repositorioGrupo);
             ServicoTaxa servicoTaxa = new(repositorioTaxa);

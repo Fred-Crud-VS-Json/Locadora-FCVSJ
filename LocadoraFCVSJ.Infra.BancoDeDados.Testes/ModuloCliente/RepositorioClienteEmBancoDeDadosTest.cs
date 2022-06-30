@@ -11,13 +11,13 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCliente
     public class RepositorioClienteEmBancoDeDadosTest
     {
         private readonly Cliente? cliente;
-        private readonly RepositorioClienteEmBancoDeDados repositorio;
+        private readonly RepositorioCliente repositorio;
 
         public RepositorioClienteEmBancoDeDadosTest()
         {
             BdUtil.ExecutarSql("DELETE FROM [TBCliente]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
             cliente = new Cliente("Pedro", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
-            repositorio = new RepositorioClienteEmBancoDeDados();
+            repositorio = new RepositorioCliente();
         }
 
         [TestMethod]
