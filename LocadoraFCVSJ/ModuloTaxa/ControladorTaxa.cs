@@ -1,4 +1,5 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
@@ -8,11 +9,13 @@ namespace LocadoraFCVSJ.ModuloTaxa
     public class ControladorTaxa : ControladorBase
     {
         private readonly RepositorioTaxa _repositorioTaxa;
+        private readonly ServicoTaxa _servicoTaxa;
         private readonly ControleTaxaForm controleTaxaForm;
 
-        public ControladorTaxa(RepositorioTaxa repositorioTaxa)
+        public ControladorTaxa(RepositorioTaxa repositorioTaxa, ServicoTaxa servicoTaxa)
         {
             _repositorioTaxa = repositorioTaxa;
+            _servicoTaxa = servicoTaxa;
             controleTaxaForm = new(this);
         }
 
@@ -21,7 +24,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             RegistrarNovaTaxaForm tela = new()
             {
                 Taxa = new(),
-                SalvarRegistro = _repositorioTaxa.Inserir
+                SalvarRegistro = _servicoTaxa.Inserir
             };
 
             DialogResult resultado = tela.ShowDialog();
@@ -43,7 +46,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             RegistrarNovaTaxaForm tela = new()
             {
                 Taxa = taxaSelecionada,
-                SalvarRegistro = _repositorioTaxa.Editar
+                SalvarRegistro = _servicoTaxa.Editar
             };
 
             tela.label1.Text = "      Editando Registro";
