@@ -1,4 +1,5 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
@@ -8,11 +9,13 @@ namespace LocadoraFCVSJ.ModuloCliente
     public class ControladorCliente : ControladorBase
     {
         private readonly RepositorioCliente _repositorioCliente;
+        private readonly ServicoCliente _servicoCliente;
         private readonly ControleClienteForm controleClienteForm;
 
-        public ControladorCliente(RepositorioCliente repositorioCliente)
+        public ControladorCliente(RepositorioCliente repositorioCliente, ServicoCliente servicoCliente)
         {
             _repositorioCliente = repositorioCliente;
+            _servicoCliente = servicoCliente;
             controleClienteForm = new(this);
         }
 
@@ -21,7 +24,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             RegistrarNovoCliente tela = new()
             {
                 Cliente = new(),
-                SalvarRegistro = _repositorioCliente.Inserir
+                SalvarRegistro = _servicoCliente.Inserir
             };
 
             DialogResult resultado = tela.ShowDialog();
@@ -43,7 +46,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             RegistrarNovoCliente tela = new()
             {
                 Cliente = clienteSelecionado,
-                SalvarRegistro = _repositorioCliente.Editar
+                SalvarRegistro = _servicoCliente.Editar
             };
 
             tela.label1.Text = "        Editando Registro";
