@@ -45,7 +45,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
                 FROM
 	                [TBGrupo] AS GRUPO";
 
-        private string QuerySelecionarPorNome =>
+        public string QuerySelecionarPorNome =>
             @"SELECT 
 	                GRUPO.[ID],
 	                GRUPO.[NOME]
@@ -54,9 +54,9 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
                 WHERE 
 	                GRUPO.[NOME] = @NOME";
 
-        public Grupo? SelecionarPropriedade<T>(string parametro, T propriedade)
+        public Grupo? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
-            return SelecionarParametro(QuerySelecionarPorNome, new SqlParameter(parametro, propriedade));
+            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
         }
     }
 }

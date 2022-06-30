@@ -1,4 +1,5 @@
-﻿using FluentValidation.Results;
+﻿using FluentValidation;
+using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 
@@ -6,9 +7,9 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 {
     public class ServicoGrupo
     {
-        private readonly IRepositorioGrupo repositorioGrupo;
+        private readonly RepositorioGrupo repositorioGrupo;
 
-        public ServicoGrupo(IRepositorioGrupo repositorioGrupo)
+        public ServicoGrupo(RepositorioGrupo repositorioGrupo)
         {
             this.repositorioGrupo = repositorioGrupo;
         }
@@ -47,7 +48,9 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 
         private bool NomeDuplicado(Grupo grupo)
         {
-            Grupo? grupoEncontrado = repositorioGrupo.SelecionarPropriedade("NOME", grupo.Nome);
+            string query = repositorioGrupo.QuerySelecionarPorNome;
+
+            Grupo? grupoEncontrado = repositorioGrupo.SelecionarPropriedade(query, "NOME", grupo.Nome);
 
             return grupoEncontrado != null
                 && grupoEncontrado.Nome.Equals(grupo.Nome, StringComparison.OrdinalIgnoreCase)
