@@ -72,13 +72,17 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         private bool CNPJDuplicado(Cliente cliente)
         {
-            string query = _repositorioCliente.QuerySelecionarPorCnpj;
+            if (cliente.CNPJ != null)
+            {
+                string query = _repositorioCliente.QuerySelecionarPorCnpj;
 
-            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CNPJ", cliente.CNPJ);
+                Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CNPJ", cliente.CNPJ);
 
-            return clienteEncontrado != null
-                && clienteEncontrado.CNPJ.Equals(cliente.CNPJ, StringComparison.OrdinalIgnoreCase)
-                && clienteEncontrado.Id != cliente.Id;
+                return clienteEncontrado != null
+                    && clienteEncontrado.CNPJ.Equals(cliente.CNPJ, StringComparison.OrdinalIgnoreCase)
+                    && clienteEncontrado.Id != cliente.Id;
+            }
+            return false;
         }
 
         private bool CNHDuplicado(Cliente cliente)
