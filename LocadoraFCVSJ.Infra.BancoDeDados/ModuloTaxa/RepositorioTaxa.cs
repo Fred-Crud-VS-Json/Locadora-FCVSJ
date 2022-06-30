@@ -3,7 +3,7 @@ using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 {
-    public class RepositorioTaxa : RepositorioBase<Taxa, ValidadorTaxa, MapeadorTaxa>
+    public class RepositorioTaxa : RepositorioBase<Taxa, MapeadorTaxa>, IRepositorioTaxa
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBTaxa]
@@ -53,5 +53,21 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 	                TAXA.[TIPOCALCULOTAXA]
                 FROM
 	                [TBTaxa] AS TAXA";
+
+        public string QuerySelecionarPorNome =>
+            @"SELECT 
+	                TAXA.[ID],
+	                TAXA.[NOME],
+                    TAXA.[VALOR],
+                    TAXA.[TIPOCALCULOTAXA]
+                FROM
+	                [TBTaxa] AS TAXA
+                WHERE 
+	                TAXA.[NOME] = @NOME";
+
+        public Taxa? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
