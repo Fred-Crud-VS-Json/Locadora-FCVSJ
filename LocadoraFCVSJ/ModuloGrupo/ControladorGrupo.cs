@@ -8,11 +8,11 @@ namespace LocadoraFCVSJ.ModuloGrupo
 {
     public class ControladorGrupo : ControladorBase
     {
-        private readonly IRepositorioGrupo _repositorioGrupo;
+        private readonly RepositorioGrupo _repositorioGrupo;
         private readonly ServicoGrupo _servicoGrupo;
         private readonly ControleGrupoForm controleGrupoForm;
 
-        public ControladorGrupo(IRepositorioGrupo repositorioGrupo, ServicoGrupo servicoGrupo)
+        public ControladorGrupo(RepositorioGrupo repositorioGrupo, ServicoGrupo servicoGrupo)
         {
             _repositorioGrupo = repositorioGrupo;
             _servicoGrupo = servicoGrupo;
