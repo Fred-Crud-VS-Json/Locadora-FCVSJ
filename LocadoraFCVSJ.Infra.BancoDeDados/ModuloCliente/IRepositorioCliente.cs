@@ -5,6 +5,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 {
     public interface IRepositorioCliente : IRepositorio<Cliente>
     {
-        Cliente? SelecionarPropriedade<T>(string parametro, T propriedade);
+        Cliente? SelecionarPropriedade<T>(string query, string parametro, T propriedade);
     }
 }
