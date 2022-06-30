@@ -1,4 +1,5 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Compartilhado;
@@ -29,13 +30,14 @@ namespace LocadoraFCVSJ
 
             ServicoGrupo servicoGrupo = new(repositorioGrupo);
             ServicoTaxa servicoTaxa = new(repositorioTaxa);
+            ServicoCliente servicoCliente = new(repositorioCliente);
 
             controladores = new()
             {
                 { "Grupos", new ControladorGrupo(repositorioGrupo, servicoGrupo) },
                 { "Funcionarios", new ControladorFuncionario(repositorioFuncionario) },
                 { "Taxas", new ControladorTaxa(repositorioTaxa, servicoTaxa) },
-                { "Clientes", new ControladorCliente(repositorioCliente) }
+                { "Clientes", new ControladorCliente(repositorioCliente, servicoCliente) }
             };
         }
 
