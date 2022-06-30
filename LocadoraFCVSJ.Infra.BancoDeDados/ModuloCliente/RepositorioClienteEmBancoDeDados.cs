@@ -1,9 +1,10 @@
 ﻿using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 {
-    public class RepositorioClienteEmBancoDeDados : RepositorioBase<Cliente, ValidadorCliente, MapeadorCliente>
+    public class RepositorioClienteEmBancoDeDados : RepositorioBase<Cliente, MapeadorCliente>, IRepositorioCliente
     {
 
         protected override string QueryInserir => @"INSERT INTO [TBCLIENTE]
@@ -98,5 +99,94 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                     [RUA]
 	            FROM 
 		            [TBCLIENTE]";
+
+        public string QuerySelecionarPorCpf =>
+            @"SELECT 
+	                 [ID],		            
+                    [NOME],       
+                    [CPF],
+                    [CNPJ],                  
+                    [CNH],                                                           
+                    [TELEFONE],
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [UF],
+                    [COMPLEMENTO],
+                    [RUA]
+	            FROM 
+		            [TBCLIENTE]
+		        WHERE 
+                    [CPF] = @CPF";
+
+        public string QuerySelecionarPorCnpj =>
+           @"SELECT 
+	                 [ID],		            
+                    [NOME],       
+                    [CPF],
+                    [CNPJ],                  
+                    [CNH],                                                           
+                    [TELEFONE],
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [UF],
+                    [COMPLEMENTO],
+                    [RUA]
+	            FROM 
+		            [TBCLIENTE]
+		        WHERE 
+                    [CNPJ] = @CNPJ";
+
+        public string QuerySelecionarPorTelefone =>
+           @"SELECT 
+	                 [ID],		            
+                    [NOME],       
+                    [CPF],
+                    [CNPJ],                  
+                    [CNH],                                                           
+                    [TELEFONE],
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [UF],
+                    [COMPLEMENTO],
+                    [RUA]
+	            FROM 
+		            [TBCLIENTE]
+		        WHERE 
+                    [TELEFONE] = @TELEFONE";
+
+        public string QuerySelecionarPorEmail =>
+           @"SELECT 
+	                 [ID],		            
+                    [NOME],       
+                    [CPF],
+                    [CNPJ],                  
+                    [CNH],                                                           
+                    [TELEFONE],
+                    [EMAIL],
+                    [CIDADE],
+                    [CEP],
+                    [NUMERO],
+                    [BAIRRO],
+                    [UF],
+                    [COMPLEMENTO],
+                    [RUA]
+	            FROM 
+		            [TBCLIENTE]
+		        WHERE 
+                    [EMAIL] = @EMAIL";
+
+        public Cliente? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
+        {
+            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
+        }
     }
 }
