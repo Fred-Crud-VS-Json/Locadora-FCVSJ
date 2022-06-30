@@ -41,7 +41,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             var resultadoValidacao = validador.Validate(funcionario);
 
             if (NomeDuplicado(funcionario))
-                resultadoValidacao.Errors.Add(new ValidationFailure("Usuario", "Usuario informado já existe."));
+                resultadoValidacao.Errors.Add(new ValidationFailure("Login", "Usuario informado já existe."));
 
             return resultadoValidacao;
         }
@@ -50,11 +50,11 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
         {
             string query = repositorioFuncionario.QuerySelecionarPorUsuario;
 
-            Funcionario? grupoEncontrado = repositorioFuncionario.SelecionarPropriedade(query, "USUARIO", funcionario.Usuario);
+            Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPropriedade(query, "LOGIN", funcionario.Usuario);
 
-            return grupoEncontrado != null
-                && grupoEncontrado.Nome.Equals(funcionario.Nome, StringComparison.OrdinalIgnoreCase)
-                && grupoEncontrado.Id != funcionario.Id;
+            return funcionarioEncontrado != null
+                && funcionarioEncontrado.Usuario.Equals(funcionario.Usuario, StringComparison.OrdinalIgnoreCase)
+                && funcionarioEncontrado.Id != funcionario.Id;
         }
     }
 }

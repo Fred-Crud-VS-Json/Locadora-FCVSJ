@@ -81,7 +81,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 FROM
 	                [TBFUNCIONARIO]
                 WHERE 
-	                [USUARIO] = @USUARIO";
+	                [LOGIN] = @LOGIN";
 
         public Funcionario? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
