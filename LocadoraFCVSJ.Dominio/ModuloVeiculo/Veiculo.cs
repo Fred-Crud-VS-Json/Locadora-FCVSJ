@@ -38,10 +38,21 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
                    Detalhes == veiculo.Detalhes;
         }
 
-
-        //public override int GetHashCode()
-        //{
-        //    return HashCode.Combine(Id, GrupoVeiculo, Modelo, Marca, Placa, Cor, (TipoCombustivel?)TipoCombustivel, CapacidadeTanque, Ano, KmPercorrido, Detalhes);
-        //}
+        public override int GetHashCode()
+        {
+            HashCode hash = new HashCode();
+            hash.Add(Id);
+            hash.Add(GrupoVeiculo);
+            hash.Add(Modelo);
+            hash.Add(Marca);
+            hash.Add(Placa);
+            hash.Add(Cor);
+            hash.Add(TipoCombustivel);
+            hash.Add(CapacidadeTanque);
+            hash.Add(Ano);
+            hash.Add(KmPercorrido);
+            hash.Add(Detalhes);
+            return hash.ToHashCode();
+        }
     }
 }
