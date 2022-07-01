@@ -1,11 +1,6 @@
 ﻿using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
 {
