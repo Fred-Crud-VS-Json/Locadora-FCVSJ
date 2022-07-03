@@ -1,6 +1,6 @@
 ﻿using LocadoraFCVSJ.Dominio.ModuloGrupo;
 
-namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
+namespace LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca
 {
     public class PlanoDeCobranca
     {

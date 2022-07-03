@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
+namespace LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca
 {
     public class ValidadorPlanoDeCobranca : AbstractValidator<PlanoDeCobranca>
     {

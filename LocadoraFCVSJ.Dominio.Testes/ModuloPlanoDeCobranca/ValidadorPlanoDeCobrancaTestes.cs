@@ -1,6 +1,6 @@
 ﻿using FluentValidation.TestHelper;
-using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
+using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
