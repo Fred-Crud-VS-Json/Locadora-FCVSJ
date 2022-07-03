@@ -5,28 +5,28 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
     public class PlanoDeCobranca
     {
         public Grupo Grupo { get; set; }
-        public decimal PlanoDiarioValorDiario { get; set; }
-        public decimal PlanoDiarioValorKm { get; set; }
-        public decimal PlanoLivreValorDiario { get; set; }
-        public decimal PlanoControladoValorDiario { get; set; }
-        public decimal PlanoControladoValorKm { get; set; }
-        public int PlanoControladoLimiteKm { get; set; }
+        public decimal PlanoDiario_ValorDiario { get; set; }
+        public decimal PlanoDiario_ValorKm { get; set; }
+        public decimal PlanoLivre_ValorDiario { get; set; }
+        public decimal PlanoControlado_ValorDiario { get; set; }
+        public decimal PlanoControlado_ValorKm { get; set; }
+        public int PlanoControlado_LimiteKm { get; set; }
 
         public override bool Equals(object? obj)
         {
             return obj is PlanoDeCobranca cobranca &&
                    EqualityComparer<Grupo>.Default.Equals(Grupo, cobranca.Grupo) &&
-                   PlanoDiarioValorDiario == cobranca.PlanoDiarioValorDiario &&
-                   PlanoDiarioValorKm == cobranca.PlanoDiarioValorKm &&
-                   PlanoLivreValorDiario == cobranca.PlanoLivreValorDiario &&
-                   PlanoControladoValorDiario == cobranca.PlanoControladoValorDiario &&
-                   PlanoControladoValorKm == cobranca.PlanoControladoValorKm &&
-                   PlanoControladoLimiteKm == cobranca.PlanoControladoLimiteKm;
+                   PlanoDiario_ValorDiario == cobranca.PlanoDiario_ValorDiario &&
+                   PlanoDiario_ValorKm == cobranca.PlanoDiario_ValorKm &&
+                   PlanoLivre_ValorDiario == cobranca.PlanoLivre_ValorDiario &&
+                   PlanoControlado_ValorDiario == cobranca.PlanoControlado_ValorDiario &&
+                   PlanoControlado_ValorKm == cobranca.PlanoControlado_ValorKm &&
+                   PlanoControlado_LimiteKm == cobranca.PlanoControlado_LimiteKm;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Grupo, PlanoDiarioValorDiario, PlanoDiarioValorKm, PlanoLivreValorDiario, PlanoControladoValorDiario, PlanoControladoValorKm, PlanoControladoLimiteKm);
+            return HashCode.Combine(Grupo, PlanoDiario_ValorDiario, PlanoDiario_ValorKm, PlanoLivre_ValorDiario, PlanoControlado_ValorDiario, PlanoControlado_ValorKm, PlanoControlado_LimiteKm);
         }
     }
 }

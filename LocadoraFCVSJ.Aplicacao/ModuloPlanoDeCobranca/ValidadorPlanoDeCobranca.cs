@@ -6,22 +6,22 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
     {
         public ValidadorPlanoDeCobranca()
         {
-            RuleFor(x => x.PlanoDiarioValorDiario)
+            RuleFor(x => x.PlanoDiario_ValorDiario)
                 .GreaterThan(0);
 
-            RuleFor(x => x.PlanoDiarioValorKm)
+            RuleFor(x => x.PlanoDiario_ValorKm)
                 .GreaterThan(0);
 
-            RuleFor(x => x.PlanoLivreValorDiario)
+            RuleFor(x => x.PlanoLivre_ValorDiario)
                 .GreaterThan(0);
 
-            RuleFor(x => x.PlanoControladoValorDiario)
+            RuleFor(x => x.PlanoControlado_ValorDiario)
                 .GreaterThan(0);
 
-            RuleFor(x => x.PlanoControladoValorKm)
+            RuleFor(x => x.PlanoControlado_ValorKm)
                  .GreaterThan(0);
 
-            RuleFor(x => x.PlanoControladoLimiteKm)
+            RuleFor(x => x.PlanoControlado_LimiteKm)
                 .GreaterThan(0);
         }
     }
