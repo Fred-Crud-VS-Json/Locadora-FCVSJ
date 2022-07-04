@@ -43,12 +43,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
         {
             return obj is Veiculo veiculo &&
                    Id == veiculo.Id &&
-                   GrupoVeiculo == veiculo.GrupoVeiculo &&
+                   EqualityComparer<Grupo>.Default.Equals(GrupoVeiculo, veiculo.GrupoVeiculo) &&
                    Modelo == veiculo.Modelo &&
                    Marca == veiculo.Marca &&
                    Placa == veiculo.Placa &&
                    Cor == veiculo.Cor &&
-                   Placa == veiculo.Placa &&
                    TipoCombustivel == veiculo.TipoCombustivel &&
                    CapacidadeTanque == veiculo.CapacidadeTanque &&
                    Ano == veiculo.Ano &&

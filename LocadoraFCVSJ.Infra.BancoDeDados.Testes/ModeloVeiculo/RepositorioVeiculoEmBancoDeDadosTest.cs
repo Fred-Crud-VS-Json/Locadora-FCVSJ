@@ -27,9 +27,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
         [TestMethod]
         public void Deve_inserir_novo_Veiculo()
         {
+            grupo = NovoGrupo();
             veiculo = NovoVeiculo();
 
             //action
+            repositorioGrupo.Inserir(grupo);
             repositorioVeiculo.Inserir(veiculo);
 
             //assert
@@ -39,11 +41,81 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
             veiculo.Should().Be(veiculoEncontrado);
         }
 
+        [TestMethod]
+        public void Deve_editar_Veiculo()
+        {
+            grupo = NovoGrupo();
+            veiculo = NovoVeiculo();
+
+            //action
+            repositorioGrupo.Inserir(grupo);
+            repositorioVeiculo.Inserir(veiculo);
+
+            //assert
+            Veiculo? veiculoAtualizado = repositorioVeiculo.SelecionarPorId(veiculo.Id);
+
+            veiculoAtualizado.GrupoVeiculo = grupo;
+            veiculoAtualizado.Modelo = "Teste";
+            veiculoAtualizado.Marca = "Ford";
+            veiculoAtualizado.Placa = "ASD2345";
+            veiculoAtualizado.Cor = "Preto";
+            veiculoAtualizado.TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)1;
+            veiculoAtualizado.CapacidadeTanque = 200;
+            veiculoAtualizado.Ano = 2020;
+            veiculoAtualizado.KmPercorrido = 0;
+            veiculoAtualizado.Detalhes = "4 Portas";
+
+            repositorioVeiculo.Inserir(veiculoAtualizado);
+
+            Veiculo? veiculoEncontrado = repositorioVeiculo.SelecionarPorId(veiculo.Id);
+
+            veiculoEncontrado.Should().NotBeNull();
+            veiculo.Should().Be(veiculoEncontrado);
+        }
+
+        [TestMethod]
+        public void Deve_excluir_Veiculo()
+        {
+            grupo = NovoGrupo();
+            veiculo = NovoVeiculo();
+
+            //action
+            repositorioGrupo.Inserir(grupo);
+            repositorioVeiculo.Inserir(veiculo);
+
+            //assert
+            Veiculo? veiculoEncontrado = repositorioVeiculo.SelecionarPorId(veiculo.Id);
+
+            repositorioVeiculo.Excluir(veiculo);
+
+            veiculoEncontrado.Should().NotBeNull();
+            veiculo.Should().Be(veiculoEncontrado);
+        }
+
+        [TestMethod]
+        public void Deve_Selecionar_todos_veiculos()
+        {
+            grupo = NovoGrupo();
+            repositorioGrupo.Inserir(grupo);
+
+            veiculo = NovoVeiculo();
+            repositorioVeiculo.Inserir(veiculo);
+
+            veiculo = NovoVeiculo2();
+            repositorioVeiculo.Inserir(veiculo);
+
+            //assert
+            var veiculos = repositorioVeiculo.SelecionarTodos();
+
+            //assert
+            Assert.AreEqual(2, veiculos.Count);
+
+            Assert.AreEqual("Teste", veiculos[0].Modelo);
+            Assert.AreEqual("Teste2", veiculos[1].Modelo);
+        }
+
         private Veiculo NovoVeiculo()
         {
-            Grupo grupo = new Grupo();
-            grupo.Nome = "Grupo A - Carro economico";
-
             return new Veiculo
             {
                 GrupoVeiculo = grupo,
@@ -56,6 +128,31 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 Ano = 2020,
                 KmPercorrido = 0,
                 Detalhes = "4 Portas"
+            };
+        }
+
+        private Veiculo NovoVeiculo2()
+        {
+            return new Veiculo
+            {
+                GrupoVeiculo = grupo,
+                Modelo = "Teste2",
+                Marca = "Volkswagen",
+                Placa = "PLG2945",
+                Cor = "Brando",
+                TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)0,
+                CapacidadeTanque = 400,
+                Ano = 2010,
+                KmPercorrido = 100,
+                Detalhes = "2 Portas"
+            };
+        }
+
+        private Grupo NovoGrupo()
+        {
+            return new Grupo
+            {
+                Nome = "Grupo a"
             };
         }
     }
