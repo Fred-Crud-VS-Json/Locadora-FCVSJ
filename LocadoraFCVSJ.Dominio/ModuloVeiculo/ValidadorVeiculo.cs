@@ -29,7 +29,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
                 .GreaterThanOrEqualTo(0).WithMessage("Quilometragem informada é inválida. Lembre-se de preenche-la corretamente.\n");
 
             RuleFor(x => x.Detalhes)
-                .Matches(new Regex(@"^[.!@#$%&*a-zA-Z-0-9]{0,160}$")).WithMessage("Detalhe informado é inválido. Lembre-se de preenche-lo corretamente.\n (Max 160 caracteres)\n (Acentos, números e espaços são permitidos)\n");
+                .Matches(new Regex(@"^[ .!@#$%&*a-zA-Z-0-9]{0,160}$")).WithMessage("Detalhe informado é inválido. Lembre-se de preenche-lo corretamente.\n (Max 160 caracteres)\n (Acentos, números e espaços são permitidos)\n");
         }
     }
 }

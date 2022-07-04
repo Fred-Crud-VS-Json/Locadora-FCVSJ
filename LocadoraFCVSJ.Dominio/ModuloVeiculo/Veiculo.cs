@@ -10,6 +10,24 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
 {
     public class Veiculo :EntidadeBase<Veiculo>
     {
+        public Veiculo()
+        {
+        }
+
+        public Veiculo(Grupo grupoVeiculo, string modelo, string marca, string placa, string cor, TipoCombustivel? tipoCombustivel, decimal capacidadeTanque, int ano, decimal kmPercorrido, string detalhes)
+        {
+            GrupoVeiculo = grupoVeiculo;
+            Modelo = modelo;
+            Marca = marca;
+            Placa = placa;
+            Cor = cor;
+            TipoCombustivel = tipoCombustivel;
+            CapacidadeTanque = capacidadeTanque;
+            Ano = ano;
+            KmPercorrido = kmPercorrido;
+            Detalhes = detalhes;
+        }
+
         public Grupo GrupoVeiculo { get; set; }
         public string Modelo { get; set; }
         public string Marca { get; set; }

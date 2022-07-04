@@ -4,6 +4,15 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
 {
     public class Grupo : EntidadeBase<Grupo>
     {
+        public Grupo()
+        {
+        }
+
+        public Grupo(string nome)
+        {
+            Nome = nome;
+        }
+
         public string Nome { get; set; }
 
         public override bool Equals(object? obj)
