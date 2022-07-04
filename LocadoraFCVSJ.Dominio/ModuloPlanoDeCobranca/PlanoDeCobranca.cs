@@ -1,8 +1,9 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloGrupo;
+﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloGrupo;
 
 namespace LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca
 {
-    public class PlanoDeCobranca
+    public class PlanoDeCobranca : EntidadeBase<PlanoDeCobranca>
     {
         public Grupo Grupo { get; set; }
         public decimal PlanoDiario_ValorDiario { get; set; }
