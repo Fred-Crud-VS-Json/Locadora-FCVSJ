@@ -21,7 +21,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     [BAIRRO],
                     [UF],
                     [COMPLEMENTO],
-                    [RUA]
+                    [RUA],
+                    [CLIENTE_ID]
                 )
             VALUES
                 (
@@ -38,8 +39,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     @BAIRRO,
                     @UF,
                     @COMPLEMENTO,
-                    @RUA
-
+                    @RUA,
+                    @CLIENTE_ID
                 ); SELECT SCOPE_IDENTITY();";
 
         protected override string QueryEditar => @" UPDATE [TBCONDUTOR]
@@ -57,7 +58,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                         [BAIRRO] = @BAIRRO,
                         [UF] = @UF,
                         [COMPLEMENTO] = @COMPLEMENTO,
-                        [RUA] = @RUA
+                        [RUA] = @RUA,
+                        [CLIENTE_ID] = @CLIENTE_ID
                     WHERE 
                         [ID] = @ID";
 
@@ -66,154 +68,278 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                 WHERE [ID] = @ID";
 
         protected override string QuerySelecionarPorId => @"SELECT 
-                    [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                   
-                    [CNH],      
-                    [DATAVENCIMENTO],
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+                    CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
+                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
+                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
+                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
+                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
+                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
+                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
 	            FROM 
-		            [TBCONDUTOR]
+		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
 		        WHERE
-                    [ID] = @ID";
+                    CONDUTOR.[ID] = @ID";
 
         protected override string QuerySelecionarTodos => @"SELECT 
-                    [ID],
-		            [NOME],       
-                    [CPF],
-                    [CNPJ],                   
-                    [CNH],      
-                    [DATAVENCIMENTO],
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+                    CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
+                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
+                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
+                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
+                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
+                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
+                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
 	            FROM 
-		            [TBCONDUTOR]";
+		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID";
 
         public string QuerySelecionarPorCpf =>
            @"SELECT 
-	                [ID],
-		            [NOME],       
-                    [CPF],
-                    [CNPJ],                   
-                    [CNH],      
-                    [DATAVENCIMENTO],
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
+                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
+                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
+                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
+                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
+                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
+                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
 	            FROM 
-		            [TBCONDUTOR]
-		        WHERE 
-                    [CPF] = @CPF";
+		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[CPF] = @CPF";
+
 
         public string QuerySelecionarPorCnpj =>
            @"SELECT 
-	               [ID],		            
-                   [NOME],       
-                   [CPF],
-                   [CNPJ],                   
-                   [CNH],      
-                   [DATAVENCIMENTO],
-                   [TELEFONE],
-                   [EMAIL],
-                   [CIDADE],
-                   [CEP],
-                   [NUMERO],
-                   [BAIRRO],
-                   [UF],
-                   [COMPLEMENTO],
-                   [RUA]
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
+                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
+                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
+                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
+                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
+                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
+                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
 	            FROM 
-		            [TBCONDUTOR]
-		        WHERE 
-                    [CNPJ] = @CNPJ";
+		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[CNPJ] = @CNPJ";
+
 
         public string QuerySelecionarPorTelefone =>
            @"SELECT 
-	               [ID],		            
-                   [NOME],       
-                   [CPF],
-                   [CNPJ],                   
-                   [CNH],      
-                   [DATAVENCIMENTO],
-                   [TELEFONE],
-                   [EMAIL],
-                   [CIDADE],
-                   [CEP],
-                   [NUMERO],
-                   [BAIRRO],
-                   [UF],
-                   [COMPLEMENTO],
-                   [RUA]
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
+                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
+                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
+                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
+                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
+                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
+                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
 	            FROM 
-		            [TBCONDUTOR]
-		        WHERE 
-                    [TELEFONE] = @TELEFONE";
+		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[TELEFONE] = @TELEFONE";
+
 
         public string QuerySelecionarPorEmail =>
            @"SELECT 
-	                [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                   
-                    [CNH],      
-                    [DATAVENCIMENTO],
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
+                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
+                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
+                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
+                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
+                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
+                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
 	            FROM 
-		            [TBCONDUTOR]
-		        WHERE 
-                    [EMAIL] = @EMAIL";
+		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[EMAIL] = @EMAIL";
+
 
         public string QuerySelecionarPorCnh =>
            @"SELECT 
-	                [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                   
-                    [CNH],      
-                    [DATAVENCIMENTO],
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
+                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
+                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
+                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
+                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
+                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
+                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
 	            FROM 
-		            [TBCONDUTOR]
-		        WHERE 
-                    [CNH] = @CNH";
+		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[CNH] = @CNH";
+
 
         public Condutor? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {

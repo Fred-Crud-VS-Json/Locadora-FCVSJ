@@ -1,7 +1,9 @@
 ﻿using FluentAssertions;
 using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,18 +14,26 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCondutor
     {
         private readonly Condutor? condutor;
         private readonly RepositorioCondutor repositorio;
+        private readonly Cliente? cliente;
+        private readonly RepositorioCliente repositorioCliente;
 
         public RepositorioCondutorTestes()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
-            condutor = new Condutor("Pedro", "59643424718", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
+            BdUtil.ExecutarSql("DELETE FROM [TBCliente]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]; DBCC CHECKIDENT (TBCondutor, RESEED, 0)");
+
+            cliente = new Cliente("Pedro", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
+            condutor = new Condutor("Pedro", "59643424718", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
+            repositorioCliente = new RepositorioCliente();
             repositorio = new RepositorioCondutor();
         }
 
         [TestMethod]
         public void Deve_inserir_novo_condutor()
         {
+
             //action
+            repositorioCliente.Inserir(cliente);
             repositorio.Inserir(condutor);
 
             //assert
@@ -36,7 +46,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCondutor
         [TestMethod]
         public void Deve_editar_informacoes_do_Condutor()
         {
-            //arrange                      
+            //arrange
+            repositorioCliente.Inserir(cliente);
             repositorio.Inserir(condutor);
 
             //action
@@ -81,6 +92,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCondutor
         public void Deve_selecionar_apenas_um_condutor()
         {
             //arrange          
+            repositorioCliente.Inserir(cliente);
             repositorio.Inserir(condutor);
 
             //action
@@ -95,9 +107,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCondutor
         public void Deve_selecionar_todos_os_condutores()
         {
             //arrange
-            var c01 = new Condutor("Alan", "59643424719", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
-            var c02 = new Condutor("Eduardo", "59643424718", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
-            var c03 = new Condutor("Pedro", "59643424717", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
+            repositorioCliente.Inserir(cliente);
+            var c01 = new Condutor("Alan", "59643424719", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
+            var c02 = new Condutor("Eduardo", "59643424718", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
+            var c03 = new Condutor("Pedro", "59643424717", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
 
             repositorio.Inserir(c01);
             repositorio.Inserir(c02);

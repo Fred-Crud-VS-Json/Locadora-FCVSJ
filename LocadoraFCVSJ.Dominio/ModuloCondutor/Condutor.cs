@@ -1,5 +1,6 @@
 ﻿using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
         {
         }
 
-        public Condutor(string nome, string cPF, string? cNPJ, string cNH, DateTime dataVencimento, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF? uF, string? complemento, string rua)
+        public Condutor(string nome, string cPF, string? cNPJ, string cNH, DateTime dataVencimento, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF? uF, string? complemento, string rua, Cliente cliente)
         {
             Nome = nome;
             CPF = cPF;
@@ -30,6 +31,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
             UF = uF;
             Complemento = complemento;
             Rua = rua;
+            Cliente = cliente;
         }
 
         public string Nome { get; set; }
@@ -47,9 +49,12 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
         public string? Complemento { get; set; }
         public string Rua { get; set; }
 
+        public Cliente Cliente { get; set; }
+
         public override bool Equals(object? obj)
         {
             return obj is Condutor condutor &&
+                   Id == condutor.Id &&
                    Nome == condutor.Nome &&
                    CPF == condutor.CPF &&
                    CNPJ == condutor.CNPJ &&
@@ -63,12 +68,14 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
                    Bairro == condutor.Bairro &&
                    UF == condutor.UF &&
                    Complemento == condutor.Complemento &&
-                   Rua == condutor.Rua;
+                   Rua == condutor.Rua &&
+                   EqualityComparer<Cliente>.Default.Equals(Cliente, condutor.Cliente);
         }
 
         public override int GetHashCode()
         {
             HashCode hash = new HashCode();
+            hash.Add(Id);
             hash.Add(Nome);
             hash.Add(CPF);
             hash.Add(CNPJ);
@@ -83,6 +90,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
             hash.Add(UF);
             hash.Add(Complemento);
             hash.Add(Rua);
+            hash.Add(Cliente);
             return hash.ToHashCode();
         }
     }

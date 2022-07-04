@@ -1,5 +1,6 @@
 ﻿using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCondutor;
 
 namespace LocadoraFCVSJ.Dominio.ModuloCliente
 {
@@ -78,5 +79,8 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
             hash.Add(Rua);
             return hash.ToHashCode();
         }
+        // public List<Condutor> ListaCondutores { get; set; } = new();
+
+
     }
 }
