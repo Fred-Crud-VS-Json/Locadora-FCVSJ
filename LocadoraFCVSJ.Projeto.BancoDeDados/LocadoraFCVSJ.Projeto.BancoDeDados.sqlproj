@@ -66,6 +66,7 @@
     <Build Include="dbo\Tables\TBFuncionario.sql" />
     <Build Include="dbo\Tables\TBCliente.sql" />
     <Build Include="dbo\Tables\TBTaxa.sql" />
+    <Build Include="dbo\Tables\TBPlanoDeCobranca.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LocadoraFCVSJ.Projeto.BancoDeDados.refactorlog" />
