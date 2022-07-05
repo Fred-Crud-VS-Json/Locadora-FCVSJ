@@ -8,19 +8,16 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
     {
         public override void ConfigurarParametros(Grupo grupo, SqlCommand comando)
         {
-            comando.Parameters.AddWithValue("ID", grupo.Id);
-            comando.Parameters.AddWithValue("NOME", grupo.Nome);
+            comando.Parameters.AddWithValue("GRUPO_ID", grupo.Id);
+            comando.Parameters.AddWithValue("GRUPO_NOME", grupo.Nome);
         }
 
         public override Grupo ConverterRegistro(SqlDataReader leitorRegistro)
         {
-            int id = Convert.ToInt32(leitorRegistro["ID"]);
-            string? nome = Convert.ToString(leitorRegistro["NOME"]);
-
-            return new Grupo
+            return new()
             {
-                Id = id,
-                Nome = nome
+                Id = Convert.ToInt32(leitorRegistro["GRUPO_ID"]),
+                Nome = Convert.ToString(leitorRegistro["GRUPO_NOME"]),
             };
         }
     }

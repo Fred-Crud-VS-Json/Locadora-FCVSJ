@@ -2,6 +2,7 @@
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
@@ -36,9 +37,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
             int kmPercorrido = Convert.ToInt32(leitorRegistro["VEICULO_KMPERCORRIDO"]);
             string detalhes = Convert.ToString(leitorRegistro["VEICULO_DETALHES"]);
 
-            var veiculo = new Veiculo
+            return new()
             {
                 Id = id,
+                GrupoVeiculo = new MapeadorGrupo().ConverterRegistro(leitorRegistro),
                 Modelo = modelo,
                 Marca = marca,
                 Placa = placa,
@@ -47,20 +49,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 CapacidadeTanque = capacidadeTanque,
                 Ano = ano,
                 KmPercorrido = kmPercorrido,
-                Detalhes = detalhes
-            };
-            if (leitorRegistro["VEICULO_GRUPOVEICULO"] != DBNull.Value)
-            {
-                var idGrupoVeiculo = Convert.ToInt32(leitorRegistro["VEICULO_GRUPOVEICULO"]);
-                var nomeGrupoVeiculo = Convert.ToString(leitorRegistro["GRUPO_NOME"]);
-
-                veiculo.GrupoVeiculo = new Grupo
-                {
-                    Id = idGrupoVeiculo,
-                    Nome = nomeGrupoVeiculo
-                };
-            }
-            return veiculo;
+                Detalhes = detalhes,
+            };         
         }
     }
 }
