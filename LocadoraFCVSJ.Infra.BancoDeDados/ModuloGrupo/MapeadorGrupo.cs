@@ -14,8 +14,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 
         public override Grupo ConverterRegistro(SqlDataReader leitorRegistro)
         {
-            int id = Convert.ToInt32(leitorRegistro["ID"]);
-            string? nome = Convert.ToString(leitorRegistro["NOME"]);
+            int id = Convert.ToInt32(leitorRegistro["GRUPO_ID"]);
+            string? nome = Convert.ToString(leitorRegistro["GRUPO_NOME"]);
 
             return new Grupo
             {
