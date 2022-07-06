@@ -46,8 +46,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.BtnSelecionarFoto = new Krypton.Toolkit.KryptonButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.TxbDetalhes = new Krypton.Toolkit.KryptonTextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.TxbKmPercorrido = new Krypton.Toolkit.KryptonTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TxbAno = new Krypton.Toolkit.KryptonTextBox();
@@ -175,7 +173,7 @@
             // BtnConcluirRegistro
             // 
             this.BtnConcluirRegistro.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnConcluirRegistro.Location = new System.Drawing.Point(39, 818);
+            this.BtnConcluirRegistro.Location = new System.Drawing.Point(39, 666);
             this.BtnConcluirRegistro.Name = "BtnConcluirRegistro";
             this.BtnConcluirRegistro.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -240,8 +238,6 @@
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Controls.Add(this.BtnSelecionarFoto);
             this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.TxbDetalhes);
-            this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.TxbKmPercorrido);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.TxbAno);
@@ -273,7 +269,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(249, 743);
+            this.panel3.Location = new System.Drawing.Point(249, 591);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(218, 44);
             this.panel3.TabIndex = 59;
@@ -312,7 +308,7 @@
             // BtnSelecionarFoto
             // 
             this.BtnSelecionarFoto.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnSelecionarFoto.Location = new System.Drawing.Point(42, 743);
+            this.BtnSelecionarFoto.Location = new System.Drawing.Point(42, 591);
             this.BtnSelecionarFoto.Name = "BtnSelecionarFoto";
             this.BtnSelecionarFoto.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnSelecionarFoto.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -356,38 +352,11 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label12.Location = new System.Drawing.Point(41, 715);
+            this.label12.Location = new System.Drawing.Point(41, 563);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(36, 17);
             this.label12.TabIndex = 57;
             this.label12.Text = "Foto";
-            // 
-            // TxbDetalhes
-            // 
-            this.TxbDetalhes.Location = new System.Drawing.Point(41, 588);
-            this.TxbDetalhes.MaxLength = 10;
-            this.TxbDetalhes.Multiline = true;
-            this.TxbDetalhes.Name = "TxbDetalhes";
-            this.TxbDetalhes.Size = new System.Drawing.Size(424, 107);
-            this.TxbDetalhes.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.TxbDetalhes.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.TxbDetalhes.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.TxbDetalhes.StateCommon.Border.Rounding = 5F;
-            this.TxbDetalhes.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxbDetalhes.TabIndex = 54;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label11.Location = new System.Drawing.Point(40, 560);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 17);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Detalhes";
             // 
             // TxbKmPercorrido
             // 
@@ -647,8 +616,6 @@
         private Panel panel5;
         private Krypton.Toolkit.KryptonButton BtnSelecionarFoto;
         private Label label12;
-        private Krypton.Toolkit.KryptonTextBox TxbDetalhes;
-        private Label label11;
         private Krypton.Toolkit.KryptonTextBox TxbKmPercorrido;
         private Label label10;
         private Krypton.Toolkit.KryptonTextBox TxbAno;
