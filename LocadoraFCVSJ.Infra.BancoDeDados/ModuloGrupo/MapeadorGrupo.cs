@@ -8,8 +8,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
     {
         public override void ConfigurarParametros(Grupo grupo, SqlCommand comando)
         {
-            comando.Parameters.AddWithValue("GRUPO_ID", grupo.Id);
-            comando.Parameters.AddWithValue("GRUPO_NOME", grupo.Nome);
+            comando.Parameters.AddWithValue("ID", grupo.Id);
+            comando.Parameters.AddWithValue("NOME", grupo.Nome);
         }
 
         public override Grupo ConverterRegistro(SqlDataReader leitorRegistro)

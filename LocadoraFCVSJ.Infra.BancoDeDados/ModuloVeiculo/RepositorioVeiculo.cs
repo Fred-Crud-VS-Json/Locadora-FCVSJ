@@ -70,9 +70,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 VEICULO.[ANO] AS VEICULO_ANO,
                 VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
                 VEICULO.[DETALHES] AS VEICULO_DETALHES,
+
+                GRUPO.[ID] AS GRUPO_ID,
                 GRUPO.[NOME] AS GRUPO_NOME
             FROM
-                [TBVEICULO] AS VEICULO LEFT JOIN
+                [TBVEICULO] AS VEICULO INNER JOIN
                 [TBGRUPO] AS GRUPO
             ON
                 GRUPO.ID = VEICULO.GRUPOVEICULO
@@ -92,9 +94,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 VEICULO.[ANO] AS VEICULO_ANO,
                 VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
                 VEICULO.[DETALHES] AS VEICULO_DETALHES,
+
+                GRUPO.[ID] AS GRUPO_ID,
                 GRUPO.[NOME] AS GRUPO_NOME
             FROM
-                [TBVEICULO] AS VEICULO LEFT JOIN
+                [TBVEICULO] AS VEICULO INNER JOIN
                 [TBGRUPO] AS GRUPO
             ON
                 GRUPO.ID = VEICULO.GRUPOVEICULO";
@@ -112,9 +116,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 VEICULO.[ANO] AS VEICULO_ANO,
                 VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
                 VEICULO.[DETALHES] AS VEICULO_DETALHES,
+
+                GRUPO.[ID] AS GRUPO_ID,
                 GRUPO.[NOME] AS GRUPO_NOME
             FROM
-                [TBVEICULO] AS VEICULO LEFT JOIN
+                [TBVEICULO] AS VEICULO INNER JOIN
                 [TBGRUPO] AS GRUPO
             ON
                 GRUPO.ID = VEICULO.GRUPOVEICULO

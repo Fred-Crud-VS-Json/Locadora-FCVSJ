@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
@@ -18,8 +19,9 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
 
         public RepositorioVeiculoEmBancoDeDadosTest()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]; DBCC CHECKIDENT (TBGrupo, RESEED, 0)");
             BdUtil.ExecutarSql("DELETE FROM [TBVeiculo]; DBCC CHECKIDENT (TBVeiculo, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]; DBCC CHECKIDENT (TBGrupo, RESEED, 0)");
+
             repositorioGrupo = new();
             repositorioVeiculo = new();
         }
@@ -59,7 +61,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
             veiculoAtualizado.Marca = "Ford";
             veiculoAtualizado.Placa = "ASD2345";
             veiculoAtualizado.Cor = "Preto";
-            veiculoAtualizado.TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)1;
+            veiculoAtualizado.TipoCombustivel = TipoCombustivel.Elétrico;
             veiculoAtualizado.CapacidadeTanque = 200;
             veiculoAtualizado.Ano = 2020;
             veiculoAtualizado.KmPercorrido = 0;
@@ -116,14 +118,14 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
 
         private Veiculo NovoVeiculo()
         {
-            return new Veiculo
+            return new()
             {
                 GrupoVeiculo = grupo,
                 Modelo = "Teste",
                 Marca = "Ford",
                 Placa = "ASD2345",
                 Cor = "Preto",
-                TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)1,
+                TipoCombustivel = TipoCombustivel.Elétrico,
                 CapacidadeTanque = 200,
                 Ano = 2020,
                 KmPercorrido = 0,
@@ -133,14 +135,14 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
 
         private Veiculo NovoVeiculo2()
         {
-            return new Veiculo
+            return new()
             {
                 GrupoVeiculo = grupo,
                 Modelo = "Teste2",
                 Marca = "Volkswagen",
                 Placa = "PLG2945",
                 Cor = "Brando",
-                TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)0,
+                TipoCombustivel = TipoCombustivel.Gasolina,
                 CapacidadeTanque = 400,
                 Ano = 2010,
                 KmPercorrido = 100,
@@ -150,7 +152,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
 
         private Grupo NovoGrupo()
         {
-            return new Grupo
+            return new()
             {
                 Nome = "Grupo a"
             };

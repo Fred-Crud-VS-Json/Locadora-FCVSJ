@@ -26,30 +26,19 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
 
         public override Veiculo ConverterRegistro(SqlDataReader leitorRegistro)
         {
-            int id = Convert.ToInt32(leitorRegistro["VEICULO_ID"]);
-            string modelo = Convert.ToString(leitorRegistro["VEICULO_MODELO"]);
-            string marca = Convert.ToString(leitorRegistro["VEICULO_MARCA"]);
-            string placa = Convert.ToString(leitorRegistro["VEICULO_PLACA"]);
-            string cor = Convert.ToString(leitorRegistro["VEICULO_COR"]);
-            TipoCalculoTaxa tipoCombustivel = (TipoCalculoTaxa)leitorRegistro["VEICULO_TIPOCOMBUSTIVEL"];
-            int capacidadeTanque = Convert.ToInt32(leitorRegistro["VEICULO_CAPACIDADETANQUE"]);
-            int ano = Convert.ToInt32(leitorRegistro["VEICULO_ANO"]);
-            int kmPercorrido = Convert.ToInt32(leitorRegistro["VEICULO_KMPERCORRIDO"]);
-            string detalhes = Convert.ToString(leitorRegistro["VEICULO_DETALHES"]);
-
             return new()
             {
-                Id = id,
+                Id = Convert.ToInt32(leitorRegistro["VEICULO_ID"]),
                 GrupoVeiculo = new MapeadorGrupo().ConverterRegistro(leitorRegistro),
-                Modelo = modelo,
-                Marca = marca,
-                Placa = placa,
-                Cor = cor,
-                TipoCombustivel = (TipoCombustivel)tipoCombustivel,
-                CapacidadeTanque = capacidadeTanque,
-                Ano = ano,
-                KmPercorrido = kmPercorrido,
-                Detalhes = detalhes,
+                Modelo = Convert.ToString(leitorRegistro["VEICULO_MODELO"]),
+                Marca = Convert.ToString(leitorRegistro["VEICULO_MARCA"]),
+                Placa = Convert.ToString(leitorRegistro["VEICULO_PLACA"]),
+                Cor = Convert.ToString(leitorRegistro["VEICULO_COR"]),
+                TipoCombustivel = (TipoCombustivel)leitorRegistro["VEICULO_TIPOCOMBUSTIVEL"],
+                CapacidadeTanque = Convert.ToInt32(leitorRegistro["VEICULO_CAPACIDADETANQUE"]),
+                Ano = Convert.ToInt32(leitorRegistro["VEICULO_ANO"]),
+                KmPercorrido = Convert.ToInt32(leitorRegistro["VEICULO_KMPERCORRIDO"]),
+                Detalhes = Convert.ToString(leitorRegistro["VEICULO_DETALHES"]),
             };         
         }
     }
