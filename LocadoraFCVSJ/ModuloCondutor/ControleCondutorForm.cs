@@ -1,12 +1,71 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Dominio.ModuloCondutor;
 
 namespace LocadoraFCVSJ.ModuloCondutor
 {
     public partial class ControleCondutorForm : KryptonForm
     {
-        public ControleCondutorForm()
+        private readonly ControladorCondutor _controladorCondutor;
+
+        public ControleCondutorForm(ControladorCondutor controladorCondutor)
         {
             InitializeComponent();
+            _controladorCondutor = controladorCondutor;
+        }
+
+        public void AtualizarGrid(List<Condutor> condutores)
+        {
+            GridCondutores.Rows.Clear();
+
+            int z = 0;
+
+            condutores.ForEach(x =>
+            {
+                GridCondutores.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.DataVencimento, x.Email, x.Telefone);
+
+                z++;
+
+                for (int i = z; i <= GridCondutores.Rows.Count; i++)
+                {
+                    if (string.IsNullOrEmpty(x.CNPJ))
+                        GridCondutores.Rows[i - 1].Cells[6].Value = "Não";
+                    else
+                        GridCondutores.Rows[i - 1].Cells[6].Value = "Sim";
+                        GridCondutores.Rows[i - 1].Cells[7].Value = x.CNPJ;
+                }
+            });
+
+            GridCondutores.ClearSelection();
+        }
+
+        public int ObterLinhaSelecionada()
+        {
+            return GridCondutores.CurrentCell.RowIndex;
+        }
+
+        public DataGridView ObterGrid()
+        {
+            return GridCondutores;
+        }
+
+        private void ControleClienteForm_Load(object sender, EventArgs e)
+        {
+            GridCondutores.ClearSelection();
+        }
+
+        private void BtnInserir_Click(object sender, EventArgs e)
+        {
+            _controladorCondutor.Inserir();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            _controladorCondutor.Editar();
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            _controladorCondutor.Excluir();
         }
 
         private void GridCondutores_CellClick(object sender, DataGridViewCellEventArgs e)
