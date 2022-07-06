@@ -121,7 +121,6 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloVeiculo
             resultado.ShouldHaveValidationErrorFor(veiculo => veiculo.KmPercorrido);
         }
 
-
         private Veiculo NovoVeiculo()
         {
             Grupo grupo = new Grupo();
@@ -137,8 +136,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloVeiculo
                 TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)1,
                 CapacidadeTanque = 200,
                 Ano = 2020,
-                KmPercorrido = 0,
-                Detalhes = "4 Portas"
+                KmPercorrido = 0
             };
         }
     }

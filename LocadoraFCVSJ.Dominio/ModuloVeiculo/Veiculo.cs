@@ -14,7 +14,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
         public decimal CapacidadeTanque { get; set; }
         public int Ano { get; set; }
         public decimal KmPercorrido { get; set; }
-        public string Detalhes { get; set; }
         public byte[] Foto { get; set; }
 
         public override bool Equals(object? obj)
@@ -30,7 +29,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
                    CapacidadeTanque == veiculo.CapacidadeTanque &&
                    Ano == veiculo.Ano &&
                    KmPercorrido == veiculo.KmPercorrido &&
-                   Detalhes == veiculo.Detalhes &&
                    EqualityComparer<byte[]>.Default.Equals(Foto, veiculo.Foto);
         }
 
@@ -47,7 +45,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
             hash.Add(CapacidadeTanque);
             hash.Add(Ano);
             hash.Add(KmPercorrido);
-            hash.Add(Detalhes);
             hash.Add(Foto);
             return hash.ToHashCode();
         }

@@ -65,7 +65,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
             veiculoAtualizado.CapacidadeTanque = 200;
             veiculoAtualizado.Ano = 2020;
             veiculoAtualizado.KmPercorrido = 0;
-            veiculoAtualizado.Detalhes = "4 Portas";
 
             repositorioVeiculo.Inserir(veiculoAtualizado);
 
@@ -128,8 +127,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 TipoCombustivel = TipoCombustivel.Elétrico,
                 CapacidadeTanque = 200,
                 Ano = 2020,
-                KmPercorrido = 0,
-                Detalhes = "4 Portas"
+                KmPercorrido = 0
             };
         }
 
@@ -145,8 +143,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 TipoCombustivel = TipoCombustivel.Gasolina,
                 CapacidadeTanque = 400,
                 Ano = 2010,
-                KmPercorrido = 100,
-                Detalhes = "2 Portas"
+                KmPercorrido = 100
             };
         }
 
