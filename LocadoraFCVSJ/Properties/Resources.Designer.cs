@@ -73,6 +73,16 @@ namespace LocadoraFCVSJ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap car_90px {
+            get {
+                object obj = ResourceManager.GetObject("car_90px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap category_30px {
             get {
                 object obj = ResourceManager.GetObject("category_30px", resourceCulture);
