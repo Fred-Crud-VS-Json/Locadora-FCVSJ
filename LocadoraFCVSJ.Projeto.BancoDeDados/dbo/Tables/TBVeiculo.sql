@@ -3,12 +3,13 @@
 	[Id] INT NOT NULL IDENTITY PRIMARY KEY, 
     [GrupoVeiculo] INT NOT NULL, 
     [Modelo] VARCHAR(50) NOT NULL, 
-    [Marca] VARBINARY(50) NOT NULL, 
+    [Marca] VARCHAR(50) NOT NULL, 
     [Placa] VARCHAR(50) NOT NULL, 
     [Cor] VARCHAR(50) NOT NULL, 
     [TipoCombustivel] INT NOT NULL, 
     [CapacidadeTanque] INT NOT NULL, 
     [Ano] INT NOT NULL, 
     [KmPercorrido] INT NOT NULL, 
-    [Detalhes] VARCHAR(50) NULL
+    [Detalhes] VARCHAR(50) NULL, 
+    [Foto] VARBINARY(MAX) NULL
 )
