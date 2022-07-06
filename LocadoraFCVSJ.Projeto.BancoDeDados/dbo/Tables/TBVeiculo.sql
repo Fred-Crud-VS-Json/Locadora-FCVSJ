@@ -10,6 +10,5 @@
     [CapacidadeTanque] INT NOT NULL, 
     [Ano] INT NOT NULL, 
     [KmPercorrido] INT NOT NULL, 
-    [Detalhes] VARCHAR(50) NULL, 
-    [Foto] VARBINARY(MAX) NULL
+    [Foto] VARBINARY(MAX) NOT NULL
 )
