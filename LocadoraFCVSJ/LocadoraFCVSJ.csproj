@@ -35,8 +35,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ModuloCondutor\" />
-  </ItemGroup>
-
 </Project>
