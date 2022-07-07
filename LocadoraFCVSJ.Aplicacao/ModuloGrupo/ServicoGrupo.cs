@@ -34,6 +34,11 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
             return resultadoValidacao;
         }
 
+        public List<Grupo> SelecionarTodos()
+        {
+            return repositorioGrupo.SelecionarTodos();
+        }
+
         private ValidationResult Validar(Grupo grupo)
         {
             AbstractValidator<Grupo> validador = new ValidadorGrupo();
