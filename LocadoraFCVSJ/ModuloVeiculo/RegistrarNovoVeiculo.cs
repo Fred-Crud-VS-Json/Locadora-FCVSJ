@@ -29,18 +29,19 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 TxbPlaca.Text = veiculo.Placa;
                 TxbCor.Text = veiculo.Cor;
                 CbxTipoCombustivel.SelectedItem = veiculo.TipoCombustivel;
-                TxbCapacidadeDoTanque.Text = veiculo.CapacidadeTanque.ToString("F2");
-                TxbAno.Text = veiculo.Ano.ToString("F2");
-                TxbKmPercorrido.Text = veiculo.KmPercorrido.ToString("F2");
+                TxbCapacidadeDoTanque.Text = veiculo.CapacidadeTanque.ToString();
+                TxbAno.Text = veiculo.Ano.ToString();
+                TxbKmPercorrido.Text = veiculo.KmPercorrido.ToString();
             }
         }
+
+        public Func<Veiculo, ValidationResult> SalvarRegistro { get; set; }
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
             SalvarVeiculo();
         }
 
-        public Func<Veiculo, ValidationResult> SalvarRegistro { get; set; }
 
         private void SalvarVeiculo()
         {
