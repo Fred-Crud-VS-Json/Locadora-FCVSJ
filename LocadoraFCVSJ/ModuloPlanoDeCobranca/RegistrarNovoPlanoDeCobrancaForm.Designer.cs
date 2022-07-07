@@ -50,10 +50,10 @@
             this.BtnConcluirRegistro = new Krypton.Toolkit.KryptonButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ChbxPlanoDiario = new System.Windows.Forms.CheckBox();
-            this.ChbxPlanoLivre = new System.Windows.Forms.CheckBox();
             this.ChbxPlanoControlado = new System.Windows.Forms.CheckBox();
+            this.ChbxPlanoLivre = new System.Windows.Forms.CheckBox();
+            this.ChbxPlanoDiario = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -264,6 +264,7 @@
             this.BtnDiario.StatePressed.Border.Width = 2;
             this.BtnDiario.TabIndex = 23;
             this.BtnDiario.Values.Text = "Diário";
+            this.BtnDiario.Click += new System.EventHandler(this.BtnDiario_Click);
             // 
             // BtnLivre
             // 
@@ -306,6 +307,7 @@
             this.BtnLivre.StatePressed.Border.Width = 2;
             this.BtnLivre.TabIndex = 24;
             this.BtnLivre.Values.Text = "Livre";
+            this.BtnLivre.Click += new System.EventHandler(this.BtnLivre_Click);
             // 
             // BtnControlado
             // 
@@ -321,7 +323,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnControlado.OverrideDefault.Border.Rounding = 5F;
             this.BtnControlado.OverrideDefault.Border.Width = 2;
-            this.BtnControlado.Size = new System.Drawing.Size(133, 51);
+            this.BtnControlado.Size = new System.Drawing.Size(155, 51);
             this.BtnControlado.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnControlado.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnControlado.StateCommon.Back.ColorAngle = 45F;
@@ -348,6 +350,7 @@
             this.BtnControlado.StatePressed.Border.Width = 2;
             this.BtnControlado.TabIndex = 25;
             this.BtnControlado.Values.Text = "Controlado";
+            this.BtnControlado.Click += new System.EventHandler(this.BtnControlado_Click);
             // 
             // panel5
             // 
@@ -407,6 +410,7 @@
             this.BtnConcluirRegistro.StatePressed.Border.Width = 2;
             this.BtnConcluirRegistro.TabIndex = 27;
             this.BtnConcluirRegistro.Values.Text = "Concluir";
+            this.BtnConcluirRegistro.Click += new System.EventHandler(this.BtnConcluirRegistro_Click);
             // 
             // panel6
             // 
@@ -429,28 +433,17 @@
             this.panel7.Size = new System.Drawing.Size(200, 109);
             this.panel7.TabIndex = 0;
             // 
-            // label3
+            // ChbxPlanoControlado
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label3.Location = new System.Drawing.Point(10, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 25);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Etapas Concluídas:";
-            // 
-            // ChbxPlanoDiario
-            // 
-            this.ChbxPlanoDiario.AutoSize = true;
-            this.ChbxPlanoDiario.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ChbxPlanoDiario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ChbxPlanoDiario.Location = new System.Drawing.Point(20, 32);
-            this.ChbxPlanoDiario.Name = "ChbxPlanoDiario";
-            this.ChbxPlanoDiario.Size = new System.Drawing.Size(106, 27);
-            this.ChbxPlanoDiario.TabIndex = 23;
-            this.ChbxPlanoDiario.Text = "Plano Diário";
-            this.ChbxPlanoDiario.UseVisualStyleBackColor = true;
+            this.ChbxPlanoControlado.AutoSize = true;
+            this.ChbxPlanoControlado.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ChbxPlanoControlado.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ChbxPlanoControlado.Location = new System.Drawing.Point(20, 76);
+            this.ChbxPlanoControlado.Name = "ChbxPlanoControlado";
+            this.ChbxPlanoControlado.Size = new System.Drawing.Size(140, 27);
+            this.ChbxPlanoControlado.TabIndex = 25;
+            this.ChbxPlanoControlado.Text = "Plano Controlado";
+            this.ChbxPlanoControlado.UseVisualStyleBackColor = true;
             // 
             // ChbxPlanoLivre
             // 
@@ -464,17 +457,28 @@
             this.ChbxPlanoLivre.Text = "Plano Livre";
             this.ChbxPlanoLivre.UseVisualStyleBackColor = true;
             // 
-            // ChbxPlanoControlado
+            // ChbxPlanoDiario
             // 
-            this.ChbxPlanoControlado.AutoSize = true;
-            this.ChbxPlanoControlado.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ChbxPlanoControlado.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ChbxPlanoControlado.Location = new System.Drawing.Point(20, 76);
-            this.ChbxPlanoControlado.Name = "ChbxPlanoControlado";
-            this.ChbxPlanoControlado.Size = new System.Drawing.Size(140, 27);
-            this.ChbxPlanoControlado.TabIndex = 25;
-            this.ChbxPlanoControlado.Text = "Plano Controlado";
-            this.ChbxPlanoControlado.UseVisualStyleBackColor = true;
+            this.ChbxPlanoDiario.AutoSize = true;
+            this.ChbxPlanoDiario.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ChbxPlanoDiario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ChbxPlanoDiario.Location = new System.Drawing.Point(20, 32);
+            this.ChbxPlanoDiario.Name = "ChbxPlanoDiario";
+            this.ChbxPlanoDiario.Size = new System.Drawing.Size(106, 27);
+            this.ChbxPlanoDiario.TabIndex = 23;
+            this.ChbxPlanoDiario.Text = "Plano Diário";
+            this.ChbxPlanoDiario.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.label3.Location = new System.Drawing.Point(10, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(143, 25);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Etapas Concluídas:";
             // 
             // RegistrarNovoPlanoDeCobrancaForm
             // 
@@ -536,7 +540,6 @@
         private Krypton.Toolkit.KryptonButton BtnLivre;
         private Krypton.Toolkit.KryptonButton BtnControlado;
         private Panel panel5;
-        private Panel PnlConteudo;
         private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
         private Panel panel6;
         private Panel panel7;
@@ -544,5 +547,6 @@
         private CheckBox ChbxPlanoLivre;
         private CheckBox ChbxPlanoDiario;
         private Label label3;
+        private Panel PnlConteudo;
     }
 }
