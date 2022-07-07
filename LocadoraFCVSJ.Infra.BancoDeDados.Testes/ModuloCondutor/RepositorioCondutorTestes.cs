@@ -125,6 +125,9 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCondutor
             condutores[0].Should().Be(c01);
             condutores[1].Should().Be(c02);
             condutores[2].Should().Be(c03);
+
+            BdUtil.ExecutarSql("DELETE FROM [TBCliente]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]; DBCC CHECKIDENT (TBCondutor, RESEED, 0)");
         }
     }
 }

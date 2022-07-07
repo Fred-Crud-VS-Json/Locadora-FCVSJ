@@ -1,6 +1,8 @@
 ﻿using FluentValidation.Results;
 using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloCondutor;
 using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using System.Globalization;
 
@@ -9,13 +11,19 @@ namespace LocadoraFCVSJ.ModuloCondutor
     public partial class RegistrarNovoCondutor : KryptonForm
     {
         private Condutor condutor;
-        public RegistrarNovoCondutor()
+        private ServicoCondutor _servicoCondutor;
+
+        public RegistrarNovoCondutor(ServicoCondutor servicoCondutor)
         {
+            _servicoCondutor = servicoCondutor;
+
             InitializeComponent();
+
+            servicoCondutor.SelecionarTodosOsClientes().ForEach(x => CbxCliente.Items.Add(x.Nome));
 
             List<UF> estadosUF = Enum.GetValues(typeof(UF)).Cast<UF>().ToList();
 
-            estadosUF.ForEach(x => CbxUf.Items.Add(x));
+            estadosUF.ForEach(x => CbxUf.Items.Add(x));    
         }
 
         public Condutor Condutor
@@ -110,5 +118,55 @@ namespace LocadoraFCVSJ.ModuloCondutor
                 DialogResult = DialogResult.None;
             }
         }
+
+        private void ChbxClienteCondutor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChbxClienteCondutor.Checked = true)
+            {
+                string clienteNome = (string)CbxCliente.SelectedItem;
+
+                List<Cliente> clienteLista = _servicoCondutor.SelecionarTodosOsClientes();
+
+                Cliente cliente = new Cliente();
+
+                for (int i = 0; i < _servicoCondutor.SelecionarTodosOsClientes().Count; i++)
+                {
+                    if (clienteNome == clienteLista[i].Nome)
+                    {
+                       cliente = clienteLista[i];
+                    }
+                }
+
+
+                TxbNome.Text = cliente.Nome;
+                MtxbCpf.Text = cliente.CPF;
+                MtxbCep.Text = cliente.CEP;
+                CbxUf.SelectedItem = cliente.UF;
+                TxbCidade.Text = cliente.Cidade;
+                TxbBairro.Text = cliente.Bairro;
+                TxbNumero.Text = cliente.Numero;
+                TxbRua.Text = cliente.Rua;
+                TxbComplemento.Text = cliente.Complemento;
+                MtxbTelefone.Text = cliente.Telefone;
+                TxbEmail.Text = cliente.Email;
+                TxbCnh.Text = cliente.CNH;
+                MtbxValidadeCnh.Text = Convert.ToString(condutor.DataVencimento);
+            }
+            else
+            {
+                CbxCliente.Enabled = false;
+                TxbNome.Clear();
+                MtxbCpf.Clear();
+                MtxbCep.Clear();
+                TxbCidade.Clear();
+                TxbBairro.Clear();
+                TxbNumero.Clear();
+                TxbRua.Clear();
+                TxbComplemento.Clear();
+                MtxbTelefone.Clear();
+                TxbEmail.Clear();
+                TxbCnh.Clear();
+            }
+        }
     }
-}
+    }

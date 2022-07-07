@@ -34,6 +34,11 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
             return resultadoValidacao;
         }
 
+        public List<Cliente> SelecionarTodos()
+        {
+            return _repositorioCliente.SelecionarTodos();
+        }
+
         private ValidationResult Validar(Cliente cliente)
         {
             AbstractValidator<Cliente> validador = new ValidadorCliente();
@@ -117,5 +122,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
                 && clienteEncontrado.Telefone.Equals(cliente.Telefone, StringComparison.OrdinalIgnoreCase)
                 && clienteEncontrado.Id != cliente.Id;
         }
+
+
     }
 }

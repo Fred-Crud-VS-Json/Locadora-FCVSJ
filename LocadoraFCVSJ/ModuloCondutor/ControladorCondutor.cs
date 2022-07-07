@@ -1,6 +1,7 @@
 ﻿using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloCondutor;
 using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
 
@@ -21,7 +22,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
         public override void Inserir()
         {
-            RegistrarNovoCondutor tela = new()
+            RegistrarNovoCondutor tela = new(_servicoCondutor)
             {
                 Condutor = new(),
                 SalvarRegistro = _servicoCondutor.Inserir
@@ -43,7 +44,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
                 return;
             }
 
-            RegistrarNovoCondutor tela = new()
+            RegistrarNovoCondutor tela = new(_servicoCondutor)
             {
                 Condutor = condutorSelecionado,
                 SalvarRegistro = _servicoCondutor.Editar

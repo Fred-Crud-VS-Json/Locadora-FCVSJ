@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
+using LocadoraFCVSJ.Aplicacao.ModuloCliente;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
 
@@ -8,10 +10,12 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
     public class ServicoCondutor
     {
         private readonly RepositorioCondutor _repositorioCondutor;
+        private readonly ServicoCliente _servicoCliente;
 
-        public ServicoCondutor(RepositorioCondutor repositorioCondutor)
+        public ServicoCondutor(RepositorioCondutor repositorioCondutor, ServicoCliente servicoCliente)
         {
             _repositorioCondutor = repositorioCondutor;
+            _servicoCliente = servicoCliente;
         }
 
         public ValidationResult Inserir(Condutor cliente)
@@ -32,6 +36,11 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
                 _repositorioCondutor.Editar(condutor);
 
             return resultadoValidacao;
+        }
+
+        public List<Cliente> SelecionarTodosOsClientes()
+        {
+            return _servicoCliente.SelecionarTodos();
         }
 
         private ValidationResult Validar(Condutor condutor)

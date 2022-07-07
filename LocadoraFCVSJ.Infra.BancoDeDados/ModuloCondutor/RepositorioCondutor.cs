@@ -6,6 +6,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
 {
     public class RepositorioCondutor : RepositorioBase<Condutor, MapeadorCondutor>, IRepositorioCondutor
     {
+
         protected override string QueryInserir => @"INSERT INTO [TBCONDUTOR]
                 (
                     [NOME],       
