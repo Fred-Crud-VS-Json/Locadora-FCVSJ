@@ -17,5 +17,10 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
         {
             return HashCode.Combine(Id, Nome);
         }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }
