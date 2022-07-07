@@ -50,7 +50,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
                 SalvarRegistro = _servicoPlanoDeCobranca.Editar
             };
 
-            tela.label1.Text = "                Editando Registro";
+            tela.label1.Text = "                    Editando Registro";
 
             DialogResult resultado = tela.ShowDialog();
 
