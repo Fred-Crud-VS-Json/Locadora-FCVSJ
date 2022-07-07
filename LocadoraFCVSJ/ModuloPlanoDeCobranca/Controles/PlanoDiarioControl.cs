@@ -28,7 +28,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
 
                 if (resultado.IsValid == false)
                 {
-                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(resultado.ToString("\n"), "Locadora FCSVJ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     _telaRegistro.DialogResult = DialogResult.None;
                 }
