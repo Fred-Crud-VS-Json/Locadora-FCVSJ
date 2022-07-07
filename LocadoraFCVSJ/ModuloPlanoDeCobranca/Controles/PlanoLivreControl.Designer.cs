@@ -100,6 +100,7 @@
             this.BtnConcluir.StatePressed.Border.Width = 2;
             this.BtnConcluir.TabIndex = 28;
             this.BtnConcluir.Values.Text = "Concluir";
+            this.BtnConcluir.Click += new System.EventHandler(this.BtnConcluir_Click);
             // 
             // BtnLimpar
             // 
@@ -141,6 +142,7 @@
             this.BtnLimpar.StatePressed.Border.Width = 2;
             this.BtnLimpar.TabIndex = 29;
             this.BtnLimpar.Values.Text = "Limpar";
+            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
             // PlanoLivreControl
             // 
