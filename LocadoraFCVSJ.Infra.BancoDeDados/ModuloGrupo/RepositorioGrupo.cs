@@ -31,8 +31,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 
         protected override string QuerySelecionarPorId =>
             @"SELECT 
-	                GRUPO.[ID],
-	                GRUPO.[NOME]
+	                GRUPO.[ID] AS GRUPO_ID,
+	                GRUPO.[NOME] AS GRUPO_NOME
                 FROM
 	                [TBGrupo] AS GRUPO
                 WHERE 
@@ -40,15 +40,15 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 
         protected override string QuerySelecionarTodos =>
             @"SELECT 
-	                GRUPO.[ID],
-	                GRUPO.[NOME]
+	                GRUPO.[ID] AS GRUPO_ID,
+	                GRUPO.[NOME] AS GRUPO_NOME
                 FROM
 	                [TBGrupo] AS GRUPO";
 
         public string QuerySelecionarPorNome =>
             @"SELECT 
-	                GRUPO.[ID],
-	                GRUPO.[NOME]
+	                GRUPO.[ID] AS GRUPO_ID,
+	                GRUPO.[NOME] AS GRUPO_NAME
                 FROM
 	                [TBGrupo] AS GRUPO
                 WHERE 
