@@ -52,6 +52,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
             TxbValorDiario.Clear();
             TxbValorKm.Clear();
             TxbLimiteKm.Clear();
+            _telaRegistro.ChbxPlanoControlado.Checked = false;
         }
     }
 }

@@ -48,6 +48,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
             TxbValorDiario.Clear();
+            _telaRegistro.ChbxPlanoLivre.Checked = false;
         }
     }
 }
