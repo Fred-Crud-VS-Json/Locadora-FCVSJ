@@ -1,4 +1,5 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
@@ -8,18 +9,20 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 {
     public class ControladorPlanoDeCobranca : ControladorBase
     {
+        private readonly ServicoGrupo _servicoGrupo;
         private readonly ServicoPlanoDeCobranca _servicoPlanoDeCobranca;
         private readonly ControlePlanoDeCobrancaForm controlePlanoDeCobrancaForm;
 
-        public ControladorPlanoDeCobranca(ServicoPlanoDeCobranca servicoPlanoDeCobranca)
+        public ControladorPlanoDeCobranca(ServicoGrupo servicoGrupo, ServicoPlanoDeCobranca servicoPlanoDeCobranca)
         {
+            _servicoGrupo = servicoGrupo;
             _servicoPlanoDeCobranca = servicoPlanoDeCobranca;
             controlePlanoDeCobrancaForm = new(this);
         }
 
         public override void Inserir()
         {
-            RegistrarNovoPlanoDeCobrancaForm tela = new()
+            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoGrupo)
             {
                 PlanoDeCobranca = new(),
                 SalvarRegistro = _servicoPlanoDeCobranca.Inserir
@@ -41,7 +44,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
                 return;
             }
 
-            RegistrarNovoPlanoDeCobrancaForm tela = new()
+            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoGrupo)
             {
                 PlanoDeCobranca = planoSelecionado,
                 SalvarRegistro = _servicoPlanoDeCobranca.Editar
