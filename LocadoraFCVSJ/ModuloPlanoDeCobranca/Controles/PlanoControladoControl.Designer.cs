@@ -78,6 +78,7 @@
             this.BtnLimpar.StatePressed.Border.Width = 2;
             this.BtnLimpar.TabIndex = 41;
             this.BtnLimpar.Values.Text = "Limpar";
+            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
             // BtnConcluir
             // 
@@ -119,6 +120,7 @@
             this.BtnConcluir.StatePressed.Border.Width = 2;
             this.BtnConcluir.TabIndex = 40;
             this.BtnConcluir.Values.Text = "Concluir";
+            this.BtnConcluir.Click += new System.EventHandler(this.BtnConcluir_Click);
             // 
             // TxbValorKm
             // 
