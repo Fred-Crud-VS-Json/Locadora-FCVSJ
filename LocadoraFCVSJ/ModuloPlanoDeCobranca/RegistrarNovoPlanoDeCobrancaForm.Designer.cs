@@ -225,7 +225,6 @@
             // 
             // BtnDiario
             // 
-            this.BtnDiario.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnDiario.Location = new System.Drawing.Point(25, 398);
             this.BtnDiario.Name = "BtnDiario";
             this.BtnDiario.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -268,7 +267,6 @@
             // 
             // BtnLivre
             // 
-            this.BtnLivre.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnLivre.Location = new System.Drawing.Point(140, 398);
             this.BtnLivre.Name = "BtnLivre";
             this.BtnLivre.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -311,7 +309,6 @@
             // 
             // BtnControlado
             // 
-            this.BtnControlado.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnControlado.Location = new System.Drawing.Point(255, 398);
             this.BtnControlado.Name = "BtnControlado";
             this.BtnControlado.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -543,10 +540,10 @@
         private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
         private Panel panel6;
         private Panel panel7;
-        private CheckBox ChbxPlanoControlado;
-        private CheckBox ChbxPlanoLivre;
-        private CheckBox ChbxPlanoDiario;
         private Label label3;
         private Panel PnlConteudo;
+        public CheckBox ChbxPlanoControlado;
+        public CheckBox ChbxPlanoLivre;
+        public CheckBox ChbxPlanoDiario;
     }
 }
