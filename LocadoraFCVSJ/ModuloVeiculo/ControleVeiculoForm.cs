@@ -6,9 +6,10 @@ namespace LocadoraFCVSJ.ModuloVeiculo
     public partial class ControleVeiculoForm : KryptonForm
     {
         private readonly ControladorVeiculo _controladorVeiculo;
-        public ControleVeiculoForm()
+        public ControleVeiculoForm(ControladorVeiculo controladorVeiculo)
         {
             InitializeComponent();
+            _controladorVeiculo = controladorVeiculo;
         }
 
         private void GridVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)

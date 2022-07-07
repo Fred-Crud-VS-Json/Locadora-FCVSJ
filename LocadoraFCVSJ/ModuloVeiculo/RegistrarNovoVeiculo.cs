@@ -39,6 +39,15 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
+            veiculo.GrupoVeiculo = (Dominio.ModuloGrupo.Grupo)CbxGrupo.SelectedItem;
+            veiculo.Modelo = TxbMarca.Text;
+            veiculo.Marca = TxbMarca.Text;
+            veiculo.Placa = TxbPlaca.Text;
+            veiculo.Cor = TxbCor.Text;
+            veiculo.TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)CbxTipoCombustivel.SelectedItem;
+            veiculo.CapacidadeTanque = Convert.ToInt32(TxbCapacidadeDoTanque.Text);
+            veiculo.Ano = Convert.ToInt32(TxbAno.Text);
+            veiculo.KmPercorrido = Convert.ToInt32(TxbKmPercorrido.Text);
             SalvarVeiculo();
         }
 
