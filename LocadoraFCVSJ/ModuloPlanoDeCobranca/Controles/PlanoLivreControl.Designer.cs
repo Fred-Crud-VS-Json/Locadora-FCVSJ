@@ -62,7 +62,6 @@
             // 
             // BtnConcluir
             // 
-            this.BtnConcluir.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnConcluir.Location = new System.Drawing.Point(34, 266);
             this.BtnConcluir.Name = "BtnConcluir";
             this.BtnConcluir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -104,7 +103,6 @@
             // 
             // BtnLimpar
             // 
-            this.BtnLimpar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnLimpar.Location = new System.Drawing.Point(182, 266);
             this.BtnLimpar.Name = "BtnLimpar";
             this.BtnLimpar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -160,10 +158,9 @@
         }
 
         #endregion
-
-        private Krypton.Toolkit.KryptonTextBox TxbValorDiario;
         private Label label3;
         private Krypton.Toolkit.KryptonButton BtnConcluir;
         private Krypton.Toolkit.KryptonButton BtnLimpar;
+        public Krypton.Toolkit.KryptonTextBox TxbValorDiario;
     }
 }
