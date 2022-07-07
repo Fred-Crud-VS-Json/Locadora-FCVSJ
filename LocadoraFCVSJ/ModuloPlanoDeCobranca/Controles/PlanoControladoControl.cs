@@ -37,7 +37,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
                 {
                     MessageBox.Show("Cadastro de Plano Controlado realizado com sucesso!", "Locadora FCSVJ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    _telaRegistro.ChbxPlanoDiario.Checked = true;
+                    _telaRegistro.ChbxPlanoControlado.Checked = true;
                 }
             }
             catch (FormatException)

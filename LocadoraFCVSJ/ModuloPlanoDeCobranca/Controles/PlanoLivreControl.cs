@@ -35,7 +35,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
                 {
                     MessageBox.Show("Cadastro de Plano Livre realizado com sucesso!", "Locadora FCSVJ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    _telaRegistro.ChbxPlanoDiario.Checked = true;
+                    _telaRegistro.ChbxPlanoLivre.Checked = true;
                 }
             }
             catch (FormatException)
