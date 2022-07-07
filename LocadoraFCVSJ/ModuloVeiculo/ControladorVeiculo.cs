@@ -35,12 +35,46 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            Veiculo? veiculoSelecionado = ObterVeiculo();
+
+            if (veiculoSelecionado == null)
+            {
+                MessageBox.Show("Selecione um veiculo primeiro.", "Edição de Veiculo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            RegistrarNovoVeiculo tela = new()
+            {
+                Veiculo = veiculoSelecionado,
+                SalvarRegistro = _servicoVeiculo.Editar
+            };
+
+            tela.label1.Text = "            Editando Registro";
+            tela.label4.Text = "Altere abaixo as informações que deseja do veiculo selecionado.";
+
+
+            DialogResult resultado = tela.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+                CarregarVeiculos();
         }
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            Veiculo? veiculoSelecionado = ObterVeiculo();
+
+            if (veiculoSelecionado == null)
+            {
+                MessageBox.Show("Selecione um veiculo primeiro.", "Exclusão de Veiculo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Funcionário", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.OK)
+                _repositorioVeiculo.Excluir(veiculoSelecionado);
+
+            CarregarVeiculos();
         }
 
         public override KryptonForm ObterTela()
