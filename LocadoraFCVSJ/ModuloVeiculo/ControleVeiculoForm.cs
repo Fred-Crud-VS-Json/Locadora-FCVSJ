@@ -1,9 +1,11 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 
 namespace LocadoraFCVSJ.ModuloVeiculo
 {
     public partial class ControleVeiculoForm : KryptonForm
     {
+        private readonly ControladorVeiculo _controladorVeiculo;
         public ControleVeiculoForm()
         {
             InitializeComponent();
@@ -12,6 +14,28 @@ namespace LocadoraFCVSJ.ModuloVeiculo
         private void GridVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void AtualizarGrid(List<Veiculo> veiculos)
+        {
+            GridVeiculos.Rows.Clear();
+
+            veiculos.ForEach(x =>
+            {
+                GridVeiculos.Rows.Add(x.Id, x.GrupoVeiculo, x.Modelo, x.Marca, x.Placa, x.Cor, x.TipoCombustivel, x.CapacidadeTanque, x.Ano, x.KmPercorrido);
+            });
+
+            GridVeiculos.ClearSelection();
+        }
+
+        public DataGridView ObterGrid()
+        {
+            return GridVeiculos;
+        }
+
+        public int ObterLinhaSelecionada()
+        {
+            return GridVeiculos.CurrentCell.RowIndex;
         }
 
         private void GridVeiculos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -41,6 +65,21 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
             if (e.ColumnIndex == 5)
                 cell.ToolTipText = "Visualização Completa";
+        }
+
+        private void BtnInserir_Click(object sender, EventArgs e)
+        {
+            _controladorVeiculo.Inserir();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            _controladorVeiculo.Editar();
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            _controladorVeiculo.Excluir();
         }
     }
 }

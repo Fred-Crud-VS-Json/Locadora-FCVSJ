@@ -20,7 +20,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                     [CAPACIDADETANQUE],
                     [ANO],
                     [KMPERCORRIDO],
-                    [DETALHES]
+                    [FOTO]
                 )
                 VALUES
                 (
@@ -33,7 +33,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                     @CAPACIDADETANQUE,
                     @ANO,
                     @KMPERCORRIDO,
-                    @DETALHES
+                    @FOTO
                 );SELECT SCOPE_IDENTITY();";
 
         protected override string QueryEditar =>
@@ -48,7 +48,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                     [CAPACIDADETANQUE] = @CAPACIDADETANQUE,
                     [ANO] = @ANO,
                     [KMPERCORRIDO] = @KMPERCORRIDO,
-                    [DETALHES] = @DETALHES
+                    [FOTO] = @FOTO
                 WHERE
                     [ID] = @ID";
 
@@ -69,7 +69,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
                 VEICULO.[ANO] AS VEICULO_ANO,
                 VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
-                VEICULO.[DETALHES] AS VEICULO_DETALHES,
+                VEICULO.[FOTO] AS VEICULO_FOTO,
 
                 GRUPO.[ID] AS GRUPO_ID,
                 GRUPO.[NOME] AS GRUPO_NOME
@@ -93,7 +93,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
                 VEICULO.[ANO] AS VEICULO_ANO,
                 VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
-                VEICULO.[DETALHES] AS VEICULO_DETALHES,
+                VEICULO.[FOTO] AS VEICULO_FOTO,
 
                 GRUPO.[ID] AS GRUPO_ID,
                 GRUPO.[NOME] AS GRUPO_NOME
@@ -115,7 +115,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
                 VEICULO.[ANO] AS VEICULO_ANO,
                 VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
-                VEICULO.[DETALHES] AS VEICULO_DETALHES,
+                VEICULO.[FOTO] AS VEICULO_FOTO,
 
                 GRUPO.[ID] AS GRUPO_ID,
                 GRUPO.[NOME] AS GRUPO_NOME

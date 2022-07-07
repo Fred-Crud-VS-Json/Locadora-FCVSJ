@@ -88,7 +88,7 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 0, -1, -1);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -124,11 +124,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.label1.Location = new System.Drawing.Point(196, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 48);
+            this.label1.Size = new System.Drawing.Size(249, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Gestão de Veículos";
             // 
@@ -173,6 +173,7 @@
             this.BtnExcluir.ToolTipValues.Heading = "Excluir Veículo";
             this.BtnExcluir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnExcluir.Values.Text = "";
+            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // BtnEditar
             // 
@@ -196,6 +197,7 @@
             this.BtnEditar.ToolTipValues.Heading = "Editar Veículo";
             this.BtnEditar.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnEditar.Values.Text = "";
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnInserir
             // 
@@ -219,6 +221,7 @@
             this.BtnInserir.ToolTipValues.Heading = "Adicionar Veículo";
             this.BtnInserir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnInserir.Values.Text = "";
+            this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
             // GridVeiculos
             // 

@@ -1,6 +1,7 @@
 ﻿using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
 using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 
 namespace LocadoraFCVSJ.ModuloVeiculo
@@ -9,18 +10,27 @@ namespace LocadoraFCVSJ.ModuloVeiculo
     {
         private readonly IRepositorioVeiculo _repositorioVeiculo;
         private readonly ServicoVeiculo _servicoVeiculo;
-        //private readonly ControleVeiculoForm controleVeiculoForm;
+        private readonly ControleVeiculoForm controleVeiculoForm;
 
         public ControladorVeiculo(IRepositorioVeiculo repositorioVeiculo, ServicoVeiculo servicoVeiculo)
         {
             _repositorioVeiculo = repositorioVeiculo;
             _servicoVeiculo = servicoVeiculo;
-            //controleVeiculoForm = new(this);
+            controleVeiculoForm = new(this);
         }
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            RegistrarNovoVeiculo tela = new()
+            {
+                Veiculo = new(),
+                SalvarRegistro = _servicoVeiculo.Inserir
+            };
+
+            DialogResult resultado = tela.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+                CarregarVeiculos();
         }
 
         public override void Editar()
@@ -35,7 +45,27 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
         public override KryptonForm ObterTela()
         {
-            throw new NotImplementedException();
+            CarregarVeiculos();
+
+            return controleVeiculoForm;
+        }
+
+        private void CarregarVeiculos()
+        {
+            List<Veiculo> veiculos = _repositorioVeiculo.SelecionarTodos();
+
+            controleVeiculoForm.AtualizarGrid(veiculos);
+        }
+
+        private Veiculo? ObterVeiculo()
+        {
+            if (controleVeiculoForm.ObterGrid().CurrentCell != null && controleVeiculoForm.ObterGrid().CurrentCell.Selected == true)
+            {
+                int index = controleVeiculoForm.ObterLinhaSelecionada();
+                return _repositorioVeiculo.SelecionarTodos().ElementAtOrDefault(index);
+            }
+
+            return null;
         }
     }
 }

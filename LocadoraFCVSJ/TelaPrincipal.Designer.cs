@@ -45,7 +45,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            this.BtnAcessarVeiculos = new Krypton.Toolkit.KryptonButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -122,7 +122,7 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 0, -1, -1);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -197,7 +197,7 @@
             this.BtnAcessarFuncionarios.StateCommon.Border.Width = 2;
             this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarFuncionarios.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarFuncionarios.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarFuncionarios.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarFuncionarios.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -227,11 +227,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label1.Location = new System.Drawing.Point(34, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 26);
+            this.label1.Size = new System.Drawing.Size(167, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Gestão de Funcionários";
             // 
@@ -292,7 +292,7 @@
             this.BtnAcessarGrupos.StateCommon.Border.Width = 2;
             this.BtnAcessarGrupos.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarGrupos.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarGrupos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarGrupos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarGrupos.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarGrupos.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarGrupos.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -319,11 +319,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label2.Location = new System.Drawing.Point(34, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 26);
+            this.label2.Size = new System.Drawing.Size(131, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Gestão de Grupos";
             // 
@@ -340,7 +340,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.kryptonButton3);
+            this.panel6.Controls.Add(this.BtnAcessarVeiculos);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Location = new System.Drawing.Point(2, 2);
             this.panel6.Name = "panel6";
@@ -357,67 +357,68 @@
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
             // 
-            // kryptonButton3
+            // BtnAcessarVeiculos
             // 
-            this.kryptonButton3.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.kryptonButton3.Enabled = false;
-            this.kryptonButton3.Location = new System.Drawing.Point(8, 51);
-            this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton3.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton3.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnAcessarVeiculos.AccessibleName = "Veiculos";
+            this.BtnAcessarVeiculos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnAcessarVeiculos.Location = new System.Drawing.Point(8, 51);
+            this.BtnAcessarVeiculos.Name = "BtnAcessarVeiculos";
+            this.BtnAcessarVeiculos.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarVeiculos.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarVeiculos.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton3.OverrideDefault.Border.Rounding = 5F;
-            this.kryptonButton3.Size = new System.Drawing.Size(210, 51);
-            this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton3.StateCommon.Back.ColorAngle = 45F;
-            this.kryptonButton3.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton3.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton3.StateCommon.Border.ColorAngle = 45F;
-            this.kryptonButton3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnAcessarVeiculos.OverrideDefault.Border.Rounding = 5F;
+            this.BtnAcessarVeiculos.Size = new System.Drawing.Size(210, 51);
+            this.BtnAcessarVeiculos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarVeiculos.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarVeiculos.StateCommon.Back.ColorAngle = 45F;
+            this.BtnAcessarVeiculos.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarVeiculos.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarVeiculos.StateCommon.Border.ColorAngle = 45F;
+            this.BtnAcessarVeiculos.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton3.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonButton3.StateCommon.Border.Rounding = 5F;
-            this.kryptonButton3.StateCommon.Border.Width = 2;
-            this.kryptonButton3.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton3.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton3.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonButton3.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
-            this.kryptonButton3.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
-            this.kryptonButton3.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
-            this.kryptonButton3.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
-            this.kryptonButton3.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnAcessarVeiculos.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnAcessarVeiculos.StateCommon.Border.Rounding = 5F;
+            this.BtnAcessarVeiculos.StateCommon.Border.Width = 2;
+            this.BtnAcessarVeiculos.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnAcessarVeiculos.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnAcessarVeiculos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarVeiculos.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarVeiculos.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarVeiculos.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarVeiculos.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarVeiculos.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton3.StateDisabled.Border.Rounding = 5F;
-            this.kryptonButton3.StateDisabled.Border.Width = 2;
-            this.kryptonButton3.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton3.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton3.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton3.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton3.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnAcessarVeiculos.StateDisabled.Border.Rounding = 5F;
+            this.BtnAcessarVeiculos.StateDisabled.Border.Width = 2;
+            this.BtnAcessarVeiculos.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarVeiculos.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarVeiculos.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarVeiculos.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarVeiculos.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton3.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton3.StatePressed.Border.Width = 2;
-            this.kryptonButton3.TabIndex = 30;
-            this.kryptonButton3.ToolTipValues.Description = "";
-            this.kryptonButton3.ToolTipValues.EnableToolTips = true;
-            this.kryptonButton3.ToolTipValues.Heading = "Acessar Módulo Veículo";
-            this.kryptonButton3.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
-            this.kryptonButton3.Values.Text = "Acessar";
+            this.BtnAcessarVeiculos.StatePressed.Border.Rounding = 5F;
+            this.BtnAcessarVeiculos.StatePressed.Border.Width = 2;
+            this.BtnAcessarVeiculos.TabIndex = 30;
+            this.BtnAcessarVeiculos.ToolTipValues.Description = "";
+            this.BtnAcessarVeiculos.ToolTipValues.EnableToolTips = true;
+            this.BtnAcessarVeiculos.ToolTipValues.Heading = "Acessar Módulo Veículo";
+            this.BtnAcessarVeiculos.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
+            this.BtnAcessarVeiculos.Values.Text = "Acessar";
+            this.BtnAcessarVeiculos.Click += new System.EventHandler(this.BtnAcessarVeiculos_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label3.Location = new System.Drawing.Point(35, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 26);
+            this.label3.Size = new System.Drawing.Size(137, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Gestão de Veículos";
             // 
@@ -478,7 +479,7 @@
             this.kryptonButton4.StateCommon.Border.Width = 2;
             this.kryptonButton4.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton4.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonButton4.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton4.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton4.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton4.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -507,11 +508,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label4.Location = new System.Drawing.Point(35, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 26);
+            this.label4.Size = new System.Drawing.Size(141, 18);
             this.label4.TabIndex = 2;
             this.label4.Text = "Gestão de Finanças";
             // 
@@ -572,7 +573,7 @@
             this.kryptonButton5.StateCommon.Border.Width = 2;
             this.kryptonButton5.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.kryptonButton5.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonButton5.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonButton5.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton5.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.kryptonButton5.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -601,11 +602,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label5.Location = new System.Drawing.Point(35, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 26);
+            this.label5.Size = new System.Drawing.Size(105, 18);
             this.label5.TabIndex = 2;
             this.label5.Text = "Nova Locação";
             // 
@@ -666,7 +667,7 @@
             this.BtnAcessarClientes.StateCommon.Border.Width = 2;
             this.BtnAcessarClientes.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarClientes.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarClientes.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarClientes.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarClientes.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarClientes.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarClientes.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
@@ -696,11 +697,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label6.Location = new System.Drawing.Point(34, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 26);
+            this.label6.Size = new System.Drawing.Size(134, 18);
             this.label6.TabIndex = 2;
             this.label6.Text = "Gestão de Clientes";
             // 
@@ -761,7 +762,7 @@
             this.BtnAcessarTaxas.StateCommon.Border.Width = 2;
             this.BtnAcessarTaxas.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnAcessarTaxas.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnAcessarTaxas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarTaxas.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAcessarTaxas.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarTaxas.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
             this.BtnAcessarTaxas.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -789,11 +790,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label7.Location = new System.Drawing.Point(34, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 26);
+            this.label7.Size = new System.Drawing.Size(121, 18);
             this.label7.TabIndex = 2;
             this.label7.Text = "Gestão de Taxas";
             // 
@@ -867,7 +868,7 @@
         private Label label2;
         private Panel panel5;
         private Panel panel6;
-        private Krypton.Toolkit.KryptonButton kryptonButton3;
+        private Krypton.Toolkit.KryptonButton BtnAcessarVeiculos;
         private Label label3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;

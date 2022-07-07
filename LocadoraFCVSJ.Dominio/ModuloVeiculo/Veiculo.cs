@@ -1,5 +1,6 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
 {
@@ -14,7 +15,10 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
         public decimal CapacidadeTanque { get; set; }
         public int Ano { get; set; }
         public decimal KmPercorrido { get; set; }
+        public string CaminhoFoto { get; set; }
         public byte[] Foto { get; set; }
+
+       
 
         public override bool Equals(object? obj)
         {
