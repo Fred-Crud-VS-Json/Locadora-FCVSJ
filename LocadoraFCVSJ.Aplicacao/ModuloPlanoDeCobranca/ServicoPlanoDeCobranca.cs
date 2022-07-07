@@ -34,6 +34,16 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
             return resultadoValidacao;
         }
 
+        public void Excluir(PlanoDeCobranca planoDeCobranca)
+        {
+            _repositorioPlanoDeCobranca.Excluir(planoDeCobranca);
+        }
+
+        public List<PlanoDeCobranca> SelecionarTodos()
+        {
+            return _repositorioPlanoDeCobranca.SelecionarTodos();
+        }
+
         private ValidationResult Validar(PlanoDeCobranca planoDeCobranca)
         {
             AbstractValidator<PlanoDeCobranca> validador = new ValidadorPlanoDeCobranca();
