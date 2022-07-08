@@ -22,11 +22,17 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 
         public override void Inserir()
         {
-            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoGrupo)
+            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoPlanoDeCobranca, _servicoGrupo)
             {
                 PlanoDeCobranca = new(),
                 SalvarRegistro = _servicoPlanoDeCobranca.Inserir
             };
+
+            if (tela.CbxGrupo.Items.Count == 0)
+            {
+                MessageBox.Show("Não há nenhum grupo disponível para cadastrar um plano de cobrança.", "Locadora FCVSJ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -44,7 +50,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
                 return;
             }
 
-            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoGrupo)
+            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoPlanoDeCobranca, _servicoGrupo)
             {
                 PlanoDeCobranca = planoSelecionado,
                 SalvarRegistro = _servicoPlanoDeCobranca.Editar

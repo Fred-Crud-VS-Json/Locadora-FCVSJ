@@ -54,6 +54,7 @@
             this.ChbxPlanoLivre = new System.Windows.Forms.CheckBox();
             this.ChbxPlanoDiario = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +65,7 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -107,7 +109,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Medium", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(78, 31);
+            this.label1.Location = new System.Drawing.Point(89, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(517, 48);
             this.label1.TabIndex = 1;
@@ -117,7 +119,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(26, 108);
+            this.panel1.Location = new System.Drawing.Point(11, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(411, 56);
             this.panel1.TabIndex = 6;
@@ -158,7 +160,7 @@
             this.CbxGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxGrupo.DropDownWidth = 420;
             this.CbxGrupo.IntegralHeight = false;
-            this.CbxGrupo.Location = new System.Drawing.Point(25, 218);
+            this.CbxGrupo.Location = new System.Drawing.Point(11, 195);
             this.CbxGrupo.Name = "CbxGrupo";
             this.CbxGrupo.Size = new System.Drawing.Size(318, 31);
             this.CbxGrupo.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -177,7 +179,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(25, 194);
+            this.label7.Location = new System.Drawing.Point(11, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 25);
             this.label7.TabIndex = 21;
@@ -187,7 +189,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(25, 286);
+            this.panel3.Location = new System.Drawing.Point(11, 267);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(492, 79);
             this.panel3.TabIndex = 22;
@@ -225,7 +227,7 @@
             // 
             // BtnDiario
             // 
-            this.BtnDiario.Location = new System.Drawing.Point(25, 398);
+            this.BtnDiario.Location = new System.Drawing.Point(11, 365);
             this.BtnDiario.Name = "BtnDiario";
             this.BtnDiario.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnDiario.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -267,7 +269,7 @@
             // 
             // BtnLivre
             // 
-            this.BtnLivre.Location = new System.Drawing.Point(140, 398);
+            this.BtnLivre.Location = new System.Drawing.Point(126, 365);
             this.BtnLivre.Name = "BtnLivre";
             this.BtnLivre.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnLivre.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -309,7 +311,7 @@
             // 
             // BtnControlado
             // 
-            this.BtnControlado.Location = new System.Drawing.Point(255, 398);
+            this.BtnControlado.Location = new System.Drawing.Point(241, 365);
             this.BtnControlado.Name = "BtnControlado";
             this.BtnControlado.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnControlado.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -353,7 +355,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel5.Controls.Add(this.PnlConteudo);
-            this.panel5.Location = new System.Drawing.Point(25, 449);
+            this.panel5.Location = new System.Drawing.Point(11, 416);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(631, 339);
             this.panel5.TabIndex = 26;
@@ -369,7 +371,7 @@
             // BtnConcluirRegistro
             // 
             this.BtnConcluirRegistro.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnConcluirRegistro.Location = new System.Drawing.Point(26, 822);
+            this.BtnConcluirRegistro.Location = new System.Drawing.Point(11, 786);
             this.BtnConcluirRegistro.Name = "BtnConcluirRegistro";
             this.BtnConcluirRegistro.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -380,7 +382,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnConcluirRegistro.OverrideDefault.Border.Rounding = 5F;
             this.BtnConcluirRegistro.OverrideDefault.Border.Width = 2;
-            this.BtnConcluirRegistro.Size = new System.Drawing.Size(629, 51);
+            this.BtnConcluirRegistro.Size = new System.Drawing.Size(631, 51);
             this.BtnConcluirRegistro.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.StateCommon.Back.ColorAngle = 45F;
@@ -413,7 +415,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(454, 108);
+            this.panel6.Location = new System.Drawing.Point(440, 85);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(202, 111);
             this.panel6.TabIndex = 28;
@@ -432,6 +434,7 @@
             // 
             // ChbxPlanoControlado
             // 
+            this.ChbxPlanoControlado.AutoCheck = false;
             this.ChbxPlanoControlado.AutoSize = true;
             this.ChbxPlanoControlado.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ChbxPlanoControlado.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -444,6 +447,7 @@
             // 
             // ChbxPlanoLivre
             // 
+            this.ChbxPlanoLivre.AutoCheck = false;
             this.ChbxPlanoLivre.AutoSize = true;
             this.ChbxPlanoLivre.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ChbxPlanoLivre.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -456,6 +460,7 @@
             // 
             // ChbxPlanoDiario
             // 
+            this.ChbxPlanoDiario.AutoCheck = false;
             this.ChbxPlanoDiario.AutoSize = true;
             this.ChbxPlanoDiario.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ChbxPlanoDiario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -477,23 +482,33 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Etapas Concluídas:";
             // 
+            // panel8
+            // 
+            this.panel8.AutoScroll = true;
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Controls.Add(this.BtnConcluirRegistro);
+            this.panel8.Controls.Add(this.panel6);
+            this.panel8.Controls.Add(this.panel5);
+            this.panel8.Controls.Add(this.BtnControlado);
+            this.panel8.Controls.Add(this.panel1);
+            this.panel8.Controls.Add(this.BtnLivre);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.BtnDiario);
+            this.panel8.Controls.Add(this.CbxGrupo);
+            this.panel8.Controls.Add(this.panel3);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(674, 638);
+            this.panel8.TabIndex = 29;
+            // 
             // RegistrarNovoPlanoDeCobrancaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(674, 892);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.BtnConcluirRegistro);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.BtnControlado);
-            this.Controls.Add(this.BtnLivre);
-            this.Controls.Add(this.BtnDiario);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.CbxGrupo);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(674, 638);
+            this.Controls.Add(this.panel8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarNovoPlanoDeCobrancaForm";
@@ -514,8 +529,9 @@
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -527,7 +543,6 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         public Label label4;
-        private Krypton.Toolkit.KryptonComboBox CbxGrupo;
         private Label label7;
         private Panel panel3;
         private Panel panel4;
@@ -545,5 +560,7 @@
         public CheckBox ChbxPlanoControlado;
         public CheckBox ChbxPlanoLivre;
         public CheckBox ChbxPlanoDiario;
+        private Panel panel8;
+        public Krypton.Toolkit.KryptonComboBox CbxGrupo;
     }
 }
