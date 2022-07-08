@@ -2,15 +2,18 @@
 using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Aplicacao.ModuloFuncionario;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
+using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
+using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using LocadoraFCVSJ.ModuloCliente;
 using LocadoraFCVSJ.ModuloFuncionario;
 using LocadoraFCVSJ.ModuloGrupo;
+using LocadoraFCVSJ.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.ModuloTaxa;
 
 namespace LocadoraFCVSJ
@@ -33,13 +36,15 @@ namespace LocadoraFCVSJ
             ServicoTaxa servicoTaxa = new(repositorioTaxa);
             ServicoCliente servicoCliente = new(repositorioCliente);
             ServicoFuncionario servicoFuncionario = new(repositorioFuncionario);
+            ServicoPlanoDeCobranca servicoPlanoDeCobranca = new(new RepositorioPlanoDeCobranca());
 
             controladores = new()
             {
                 { "Grupos", new ControladorGrupo(repositorioGrupo, servicoGrupo) },
                 { "Funcionarios", new ControladorFuncionario(repositorioFuncionario, servicoFuncionario) },
                 { "Taxas", new ControladorTaxa(repositorioTaxa, servicoTaxa) },
-                { "Clientes", new ControladorCliente(repositorioCliente, servicoCliente) }
+                { "Clientes", new ControladorCliente(repositorioCliente, servicoCliente) },
+                { "Planos", new ControladorPlanoDeCobranca(servicoGrupo, servicoPlanoDeCobranca) }
             };
         }
 
@@ -61,6 +66,11 @@ namespace LocadoraFCVSJ
         private void BtnAcessarClientes_Click(object sender, EventArgs e)
         {
             AbrirTela(BtnAcessarClientes);
+        }
+
+        private void BtnAcessarPlanos_Click(object sender, EventArgs e)
+        {
+            AbrirTela(BtnAcessarPlanos);
         }
 
         private void AbrirTela(KryptonButton botao)
