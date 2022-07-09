@@ -26,15 +26,15 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             _servicoPlanoDeCobranca = servicoPlanoDeCobranca;
             _servicoGrupo = servicoGrupo;
 
-            // Necessário revisão - 08/07/2022
-            _servicoPlanoDeCobranca.SelecionarTodos().ForEach(x =>
+            List<Grupo> gruposDisponiveis = new();
+
+            _servicoGrupo.SelecionarTodos().ForEach(x =>
             {
-                _servicoGrupo.SelecionarTodos().ForEach(y =>
-                {
-                    if (!x.Grupo.Equals(y))
-                        CbxGrupo.Items.Add(y);
-                });
+                if (!_servicoPlanoDeCobranca.SelecionarTodos().Select(x => x.Grupo).Contains(x))
+                    gruposDisponiveis.Add(x);
             });
+
+            gruposDisponiveis.ForEach(x => CbxGrupo.Items.Add(x));
 
             planoDiarioControl = new(this);
             planoLivreControl = new(this);
