@@ -24,8 +24,14 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
             comando.Parameters.AddWithValue("UF", condutor.UF);
             comando.Parameters.AddWithValue("COMPLEMENTO", condutor.Complemento);
             comando.Parameters.AddWithValue("RUA", condutor.Rua);
-            comando.Parameters.AddWithValue("CLIENTE_ID", condutor.Cliente.Id);
-
+            if (condutor.Cliente != null)
+            {
+                comando.Parameters.AddWithValue("CLIENTE_ID", condutor.Cliente.Id);
+            }
+            else
+            {
+                comando.Parameters.AddWithValue("CLIENTE_ID", DBNull.Value);
+            } 
         }
 
         public override Condutor ConverterRegistro(SqlDataReader leitorCondutor)
@@ -50,8 +56,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
             UF uf = (UF)leitorCondutor["CONDUTOR_UF"];
             string complemento = Convert.ToString(leitorCondutor["CONDUTOR_COMPLEMENTO"]);
             string rua = Convert.ToString(leitorCondutor["CONDUTOR_RUA"]);
-           
-            int idCliente = Convert.ToInt32(leitorCondutor["CONDUTOR_CLIENTE_ID"]);
+
+            int? idCliente = 0;
+
+            if (leitorCondutor["CONDUTOR_CLIENTE_ID"] != DBNull.Value)
+                idCliente = Convert.ToInt32(leitorCondutor["CONDUTOR_CLIENTE_ID"]);
+
             string nomeCliente = Convert.ToString(leitorCondutor["CONDUTOR_CLIENTE_NOME"]);
             string cpfCliente = Convert.ToString(leitorCondutor["CONDUTOR_CLIENTE_CPF"]);
 
@@ -92,7 +102,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                 
                 Cliente = new()
                 {
-                    Id = idCliente,
+                    Id = (int)idCliente,
                     Nome = nomeCliente,
                     CPF = cpfCliente,
                     CNPJ = cnpjCliente,

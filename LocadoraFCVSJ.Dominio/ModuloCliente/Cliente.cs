@@ -79,6 +79,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
             hash.Add(Rua);
             return hash.ToHashCode();
         }
+
+        public override string? ToString()
+        {
+            return Nome;
+        }
         // public List<Condutor> ListaCondutores { get; set; } = new();
 
 

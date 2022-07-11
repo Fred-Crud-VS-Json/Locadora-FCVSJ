@@ -15,11 +15,11 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
         public RegistrarNovoCondutor(ServicoCondutor servicoCondutor)
         {
-            _servicoCondutor = servicoCondutor;
-
             InitializeComponent();
 
-            servicoCondutor.SelecionarTodosOsClientes().ForEach(x => CbxCliente.Items.Add(x.Nome));
+            _servicoCondutor = servicoCondutor;
+
+            servicoCondutor.SelecionarTodosOsClientes().ForEach(x => CbxCliente.Items.Add(x));
 
             List<UF> estadosUF = Enum.GetValues(typeof(UF)).Cast<UF>().ToList();
 
@@ -98,6 +98,35 @@ namespace LocadoraFCVSJ.ModuloCondutor
                 condutor.CNH = TxbCnh.Text;
                 condutor.DataVencimento = DateTime.ParseExact(MtbxValidadeCnh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
+
+                //Cliente cliente = new Cliente();
+                //if (ChbxClienteCondutor.Checked = true)
+                //{
+                //    string clienteNome = (string)CbxCliente.SelectedItem;
+
+                //    List<Cliente> clienteLista = _servicoCondutor.SelecionarTodosOsClientes();
+
+                //    for (int i = 0; i < _servicoCondutor.SelecionarTodosOsClientes().Count; i++)
+                //    {
+                //        if (clienteNome == clienteLista[i].Nome)
+                //        {
+                //            cliente = clienteLista[i];
+                //        }
+                //    }
+                //}
+                //    Condutor.Cliente = cliente;
+
+                if (ChbxClienteCondutor.Checked == true)
+                {
+                    Cliente cliente = (Cliente)CbxCliente.SelectedItem;
+
+                    condutor.Cliente = cliente;
+                }
+                else
+                {
+                    condutor.Cliente = null;
+                }
+
                 if (ChbxPessoaJuridica.Checked == true)
                     condutor.CNPJ = MtxbCnpj.Text;
                 else
@@ -111,32 +140,19 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
                     DialogResult = DialogResult.None;
                 }
-            }
+           }
             catch (FormatException)
             {
-                MessageBox.Show("O campo 'NUMERO' deve conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("O campo 'Data' deve conter apenas números.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
             }
         }
 
         private void ChbxClienteCondutor_CheckedChanged(object sender, EventArgs e)
         {
-            if (ChbxClienteCondutor.Checked = true)
+            if (ChbxClienteCondutor.Checked == true)
             {
-                string clienteNome = (string)CbxCliente.SelectedItem;
-
-                List<Cliente> clienteLista = _servicoCondutor.SelecionarTodosOsClientes();
-
-                Cliente cliente = new Cliente();
-
-                for (int i = 0; i < _servicoCondutor.SelecionarTodosOsClientes().Count; i++)
-                {
-                    if (clienteNome == clienteLista[i].Nome)
-                    {
-                       cliente = clienteLista[i];
-                    }
-                }
-
+                Cliente cliente = (Cliente)CbxCliente.SelectedItem;
 
                 TxbNome.Text = cliente.Nome;
                 MtxbCpf.Text = cliente.CPF;

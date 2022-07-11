@@ -14,7 +14,7 @@
     [UF]             INT           NOT NULL,
     [Complemento]    VARCHAR (300) NOT NULL,
     [Rua]            VARCHAR (300) NOT NULL,
-	[Cliente_Id] INT NOT NULL,
+	[Cliente_Id] INT NULL,
     CONSTRAINT [PK_TbCondutor] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

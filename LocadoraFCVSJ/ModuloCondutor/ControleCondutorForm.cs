@@ -21,7 +21,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
             condutores.ForEach(x =>
             {
-                GridCondutores.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.DataVencimento, x.Email, x.Telefone);
+                GridCondutores.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.DataVencimento.ToString("dd/MM/yyyy"), x.Email, x.Telefone, x.CNPJ, x.Rua);
 
                 z++;
 

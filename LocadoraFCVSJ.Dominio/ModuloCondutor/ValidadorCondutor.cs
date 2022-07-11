@@ -43,7 +43,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
                 .Matches(new Regex(@"^[0-9]{10}$")).WithMessage("CNH informado é inválido. Lembre-se de preenche-la corretamente.\n (10 caracteres)\n");
 
             RuleFor(x => x.DataVencimento)
-                .LessThanOrEqualTo(DateTime.Now);
+                .GreaterThanOrEqualTo(DateTime.Now);
 
             RuleFor(x => x.Telefone)
                 .Matches(new Regex(@"^\d{2}\d{5}\d{4}$")).WithMessage("Telefone informado é inválido. Lembre-se de preenche-lo corretamente.\n (11 caracteres)\n");

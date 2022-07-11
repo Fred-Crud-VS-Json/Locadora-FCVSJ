@@ -49,7 +49,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
         public string? Complemento { get; set; }
         public string Rua { get; set; }
 
-        public Cliente Cliente { get; set; }
+        public Cliente? Cliente { get; set; }
 
         public override bool Equals(object? obj)
         {
@@ -69,7 +69,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
                    UF == condutor.UF &&
                    Complemento == condutor.Complemento &&
                    Rua == condutor.Rua &&
-                   EqualityComparer<Cliente>.Default.Equals(Cliente, condutor.Cliente);
+                   EqualityComparer<Cliente?>.Default.Equals(Cliente, condutor.Cliente);
         }
 
         public override int GetHashCode()

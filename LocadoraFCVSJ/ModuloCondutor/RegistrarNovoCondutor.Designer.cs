@@ -677,7 +677,6 @@
             // MtbxValidadeCnh
             // 
             this.MtbxValidadeCnh.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.MtbxValidadeCnh.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.MtbxValidadeCnh.Location = new System.Drawing.Point(269, 911);
             this.MtbxValidadeCnh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MtbxValidadeCnh.Mask = "00/00/0000";
@@ -691,7 +690,8 @@
             this.MtbxValidadeCnh.StateCommon.Border.Rounding = 5F;
             this.MtbxValidadeCnh.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MtbxValidadeCnh.TabIndex = 29;
-            this.MtbxValidadeCnh.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.MtbxValidadeCnh.Text = "__/__/____";
+            this.MtbxValidadeCnh.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // label19
             // 
