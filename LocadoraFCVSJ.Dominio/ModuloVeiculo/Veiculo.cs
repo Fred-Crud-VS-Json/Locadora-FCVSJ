@@ -52,5 +52,10 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
             hash.Add(Foto);
             return hash.ToHashCode();
         }
+
+        public override string ToString()
+        {
+            return GrupoVeiculo + " - " + Modelo;
+        }
     }
 }

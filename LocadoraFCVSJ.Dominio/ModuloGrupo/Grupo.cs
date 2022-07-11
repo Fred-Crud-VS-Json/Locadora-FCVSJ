@@ -22,6 +22,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
                    Nome == grupo.Nome;
         }
 
+        public override string ToString()
+        {
+            return Nome;
+        }
+
         public override int GetHashCode()
         {
             return HashCode.Combine(Id, Nome);
