@@ -131,5 +131,27 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
         {
             return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
         }
+
+        public void Salvar(Veiculo veiculo)
+        {
+            byte[] foto = GetFoto(veiculo.CaminhoFoto);
+
+            var sql = "INSERT INTO TBVeiculo (GrupoVeiculo, Modelo, Marca, Placa, Cor, TipoCombustivel, CapacidadeTanque, Ano, KmPercorrido, Foto) VALUES (@GrupoVeiculo, @Modelo, @Marca, @Placa, @Cor, @TipoCombustivel, @CapacidadeTanque, @Ano, @KmPercorrido, @Foto)";
+
+        }
+
+        private byte[] GetFoto(string caminhoFoto)
+        {
+            byte[] foto;
+
+            using (var stream = new FileStream(caminhoFoto, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = new BinaryReader(stream))
+                {
+                    foto = reader.ReadBytes((int)stream.Length);
+                }
+            }
+            return foto;
+        }
     }
 }

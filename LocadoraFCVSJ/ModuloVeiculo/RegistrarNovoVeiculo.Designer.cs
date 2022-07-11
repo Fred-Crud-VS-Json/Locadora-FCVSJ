@@ -62,6 +62,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxbModelo = new Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -573,6 +574,10 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Modelo";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // RegistrarNovoVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -638,5 +643,6 @@
         private Panel panel4;
         public Label label13;
         private PictureBox pictureBox2;
+        private OpenFileDialog openFileDialog1;
     }
 }

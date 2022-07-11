@@ -13,7 +13,6 @@ namespace LocadoraFCVSJ.ModuloVeiculo
     {
         public string caminhoFoto = "";
         private Veiculo veiculo = new Veiculo();
-        private MapeadorVeiculo mapeadorVeiculo;
         private readonly ServicoVeiculo _servicoVeiculo;
         private readonly ServicoGrupo _servicoGrupo;
 
@@ -72,17 +71,8 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             veiculo.CapacidadeTanque = Convert.ToInt32(TxbCapacidadeDoTanque.Text);
             veiculo.Ano = Convert.ToInt32(TxbAno.Text);
             veiculo.KmPercorrido = Convert.ToInt32(TxbKmPercorrido.Text);
-            SalvarVeiculo();
-        }
-
-
-        private void SalvarVeiculo()
-        {
             veiculo.CaminhoFoto = caminhoFoto;
-
-            mapeadorVeiculo.Salvar(veiculo);
-
-            MessageBox.Show("Veiculo gravado!");
+            _servicoVeiculo.SalvarVeiculo(veiculo, caminhoFoto);
         }
 
         private void BtnSelecionarFoto_Click(object sender, EventArgs e)
@@ -90,17 +80,18 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             CarregarFoto();
         }
 
-        private void CarregarFoto()
+        public void CarregarFoto()
         {
-            var openFile = new OpenFileDialog();
-            openFile.Filter = "Arquivos de imagens jpg e png|*.jpg; *.png";
-            openFile.Multiselect = false;
+            if(openFileDialog1.ShowDialog(this) == DialogResult.OK)
+            {
+                this.DialogResult = DialogResult.None;
 
-            if (openFile.ShowDialog() == DialogResult.OK)
-                caminhoFoto = openFile.FileName;
+                caminhoFoto = openFileDialog1.FileName;
 
-            if (caminhoFoto != "")
+                if (caminhoFoto != "")
                 pictureBox1.Load(caminhoFoto);
+            }
         }
+
     }
 }
