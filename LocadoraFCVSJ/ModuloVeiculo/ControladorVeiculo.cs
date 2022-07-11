@@ -1,4 +1,5 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
@@ -8,20 +9,23 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 {
     public class ControladorVeiculo : ControladorBase
     {
-        private readonly IRepositorioVeiculo _repositorioVeiculo;
+        private readonly RepositorioVeiculo _repositorioVeiculo;
         private readonly ServicoVeiculo _servicoVeiculo;
+        private readonly ServicoGrupo _servidoGrupo;
         private readonly ControleVeiculoForm controleVeiculoForm;
 
-        public ControladorVeiculo(IRepositorioVeiculo repositorioVeiculo, ServicoVeiculo servicoVeiculo)
+        public ControladorVeiculo(RepositorioVeiculo repositorioVeiculo, ServicoVeiculo servicoVeiculo, ServicoGrupo servidoGrupo)
         {
             _repositorioVeiculo = repositorioVeiculo;
             _servicoVeiculo = servicoVeiculo;
+            _servidoGrupo = servidoGrupo;
+            
             controleVeiculoForm = new(this);
         }
 
         public override void Inserir()
         {
-            RegistrarNovoVeiculo tela = new()
+            RegistrarNovoVeiculo tela = new(_servicoVeiculo, _servidoGrupo)
             {
                 Veiculo = new(),
                 SalvarRegistro = _servicoVeiculo.Inserir
@@ -43,7 +47,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 return;
             }
 
-            RegistrarNovoVeiculo tela = new()
+            RegistrarNovoVeiculo tela = new(_servicoVeiculo, _servidoGrupo)
             {
                 Veiculo = veiculoSelecionado,
                 SalvarRegistro = _servicoVeiculo.Editar

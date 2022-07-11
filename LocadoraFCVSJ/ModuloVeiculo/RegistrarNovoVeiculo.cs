@@ -1,5 +1,9 @@
 ﻿using FluentValidation.Results;
 using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
+using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
+using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 
@@ -10,9 +14,29 @@ namespace LocadoraFCVSJ.ModuloVeiculo
         public string caminhoFoto = "";
         private Veiculo veiculo = new Veiculo();
         private MapeadorVeiculo mapeadorVeiculo;
-        public RegistrarNovoVeiculo()
+        private readonly ServicoVeiculo _servicoVeiculo;
+        private readonly ServicoGrupo _servicoGrupo;
+
+        public RegistrarNovoVeiculo(ServicoVeiculo servicoVeiculo, ServicoGrupo servicoGrupo)
         {
             InitializeComponent();
+
+            _servicoVeiculo = servicoVeiculo;
+            _servicoGrupo = servicoGrupo;
+
+            List<Grupo> gruposVeiculo = new();
+
+            _servicoGrupo.SelecionarTodos().ForEach(x =>
+            {
+                if (!_servicoVeiculo.SelecionarTodos().Select(x => x.GrupoVeiculo).Contains(x))
+                    gruposVeiculo.Add(x);
+            });
+
+            gruposVeiculo.ForEach(x => CbxGrupo.Items.Add(x));
+
+            List<TipoCombustivel> tiposDeCalculoDeTaxa = Enum.GetValues(typeof(TipoCombustivel)).Cast<TipoCombustivel>().ToList();
+
+            tiposDeCalculoDeTaxa.ForEach(x => CbxTipoCombustivel.Items.Add(x));
         }
 
         public Veiculo Veiculo

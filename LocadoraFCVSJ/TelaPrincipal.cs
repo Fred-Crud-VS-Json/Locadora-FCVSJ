@@ -45,7 +45,7 @@ namespace LocadoraFCVSJ
                 { "Funcionarios", new ControladorFuncionario(repositorioFuncionario, servicoFuncionario) },
                 { "Taxas", new ControladorTaxa(repositorioTaxa, servicoTaxa) },
                 { "Clientes", new ControladorCliente(repositorioCliente, servicoCliente) },
-                { "Veiculos", new ControladorVeiculo(repositorioVeiculo, servicoVeiculo) }
+                { "Veiculos", new ControladorVeiculo(repositorioVeiculo, servicoVeiculo, servicoGrupo) }
             };
         }
 

@@ -34,6 +34,11 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             return resultadoValidacao;
         }
 
+        public List<Veiculo> SelecionarTodos()
+        {
+            return repositorioVeiculo.SelecionarTodos();
+        }
+
         private ValidationResult Validar(Veiculo veiculo)
         {
             AbstractValidator<Veiculo> validador = new ValidadorVeiculo();
