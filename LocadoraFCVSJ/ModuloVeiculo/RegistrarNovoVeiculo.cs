@@ -62,17 +62,36 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
-            veiculo.GrupoVeiculo = (Dominio.ModuloGrupo.Grupo)CbxGrupo.SelectedItem;
-            veiculo.Modelo = TxbMarca.Text;
-            veiculo.Marca = TxbMarca.Text;
-            veiculo.Placa = TxbPlaca.Text;
-            veiculo.Cor = TxbCor.Text;
-            veiculo.TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)CbxTipoCombustivel.SelectedItem;
-            veiculo.CapacidadeTanque = Convert.ToInt32(TxbCapacidadeDoTanque.Text);
-            veiculo.Ano = Convert.ToInt32(TxbAno.Text);
-            veiculo.KmPercorrido = Convert.ToInt32(TxbKmPercorrido.Text);
-            veiculo.CaminhoFoto = caminhoFoto;
-            _servicoVeiculo.SalvarVeiculo(veiculo, caminhoFoto);
+            try
+            {
+                veiculo.GrupoVeiculo = (Dominio.ModuloGrupo.Grupo)CbxGrupo.SelectedItem;
+                veiculo.Modelo = TxbMarca.Text;
+                veiculo.Marca = TxbMarca.Text;
+                veiculo.Placa = TxbPlaca.Text;
+                veiculo.Cor = TxbCor.Text;
+                veiculo.TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)CbxTipoCombustivel.SelectedItem;
+                veiculo.CapacidadeTanque = Convert.ToInt32(TxbCapacidadeDoTanque.Text);
+                veiculo.Ano = Convert.ToInt32(TxbAno.Text);
+                veiculo.KmPercorrido = Convert.ToInt32(TxbKmPercorrido.Text);
+                veiculo.CaminhoFoto = caminhoFoto;
+
+                if (CbxTipoCombustivel.SelectedItem != null)
+                    veiculo.TipoCombustivel = (TipoCombustivel)CbxTipoCombustivel.SelectedItem;
+
+                ValidationResult resultado = SalvarRegistro(veiculo);
+
+                if (resultado.IsValid == false)
+                {
+                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    DialogResult = DialogResult.None;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("O campo 'Placa' ou 'Ano' possue valores inválidos.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DialogResult = DialogResult.None;
+            }
         }
 
         private void BtnSelecionarFoto_Click(object sender, EventArgs e)
