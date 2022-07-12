@@ -73,7 +73,6 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 veiculo.CapacidadeTanque = Convert.ToInt32(TxbCapacidadeDoTanque.Text);
                 veiculo.Ano = Convert.ToInt32(TxbAno.Text);
                 veiculo.KmPercorrido = Convert.ToInt32(TxbKmPercorrido.Text);
-                veiculo.CaminhoFoto = caminhoFoto;
 
                 if (CbxTipoCombustivel.SelectedItem != null)
                     veiculo.TipoCombustivel = (TipoCombustivel)CbxTipoCombustivel.SelectedItem;
@@ -94,6 +93,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             }
         }
 
+
         private void BtnSelecionarFoto_Click(object sender, EventArgs e)
         {
             CarregarFoto();
@@ -108,8 +108,25 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 caminhoFoto = openFileDialog1.FileName;
 
                 if (caminhoFoto != "")
-                pictureBox1.Load(caminhoFoto);
+                {
+                    veiculo.Foto = GetFoto(caminhoFoto);
+                    pictureBox1.Load(caminhoFoto);
+                }
             }
+        }
+
+        private byte[] GetFoto(string caminhoFoto)
+        {
+            byte[] foto;
+
+            using (var stream = new FileStream(caminhoFoto, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = new BinaryReader(stream))
+                {
+                    foto = reader.ReadBytes((int)stream.Length);
+                }
+            }
+            return foto;
         }
 
     }
