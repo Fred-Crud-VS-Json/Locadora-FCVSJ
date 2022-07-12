@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LocadoraFCVSJ.Aplicacao\LocadoraFCVSJ.Aplicacao.csproj" />
     <ProjectReference Include="..\LocadoraFCVSJ.Infra.BancoDeDados\LocadoraFCVSJ.Infra.BancoDeDados.csproj" />
+    <ProjectReference Include="..\LocadoraFCVSJ.Infra.Logging\LocadoraFCVSJ.Infra.Logging.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ConfiguracaoAplicacao.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

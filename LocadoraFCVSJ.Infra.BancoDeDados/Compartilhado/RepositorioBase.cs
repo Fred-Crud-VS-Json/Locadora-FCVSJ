@@ -1,4 +1,5 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
@@ -7,13 +8,19 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
         where T : EntidadeBase<T>
         where TMapeador : MapeadorBase<T>, new()
     {
-        private readonly string StringConexao =
-            @"Data Source=(LocalDB)\MSSqlLocalDB;
-              Initial Catalog=DBLocadoraFCVSJ;
-              Integrated Security=True;
-              Pooling=False";
+        private readonly string StringConexao;
 
         private SqlConnection? Conexao = null;
+
+        public RepositorioBase()
+        {
+            IConfigurationRoot? configuracao = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("ConfiguracaoAplicacao.json")
+                .Build();
+
+            StringConexao = configuracao.GetConnectionString("SqlServer");
+        }
 
         protected abstract string QueryInserir { get; }
 

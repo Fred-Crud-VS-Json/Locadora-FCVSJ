@@ -1,0 +1,9 @@
+{
+  "ConfiguracaoLogs": {
+    "Diretorio": "D:\\LocadoraLogs"
+  },
+
+  "ConnectionStrings": {
+    "SqlServer": "Data Source=(LocalDB)\\MSSqlLocalDB;Initial Catalog=DBLocadoraFCVSJ;Integrated Security=True;Pooling=False"
+  }
+}
