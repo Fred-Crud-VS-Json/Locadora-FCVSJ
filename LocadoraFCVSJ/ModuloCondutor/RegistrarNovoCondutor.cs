@@ -90,22 +90,20 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
                     condutor.Cliente = cliente;
                 }
-                else
-                {
-                    condutor.Cliente = null;
-                }
 
                 if (ChbxPessoaJuridica.Checked == true)
                     condutor.CNPJ = MtxbCnpj.Text;
                 else
                     condutor.CNPJ = null;
 
-                ValidationResult resultado = SalvarRegistro(condutor);
-
                 if (condutor.Cliente == null)
                 {
-                    resultado.Errors.Add(new ValidationFailure("", "Para cadastrar um condutor, ele deve possuir alguma relação com o cliente"));
+                    MessageBox.Show("Para cadastrar um condutor, ele deve possuir alguma relação com o cliente", "Erro no Cadastro.");
+                    DialogResult = DialogResult.None;
+                    return;
                 }
+
+                ValidationResult resultado = SalvarRegistro(condutor);
 
                 if (resultado.IsValid == false)
                 {

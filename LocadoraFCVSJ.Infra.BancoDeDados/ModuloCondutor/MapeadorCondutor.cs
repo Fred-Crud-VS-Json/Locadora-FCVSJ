@@ -24,7 +24,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
             comando.Parameters.AddWithValue("UF", condutor.UF);
             comando.Parameters.AddWithValue("COMPLEMENTO", condutor.Complemento);
             comando.Parameters.AddWithValue("RUA", condutor.Rua);
-            comando.Parameters.AddWithValue("CLIENTE_ID", condutor.Cliente.Id);
+            if (condutor.Cliente != null)
+            {
+                comando.Parameters.AddWithValue("CLIENTE_ID", condutor.Cliente.Id);
+            }
+            
+            
          
         }
 
