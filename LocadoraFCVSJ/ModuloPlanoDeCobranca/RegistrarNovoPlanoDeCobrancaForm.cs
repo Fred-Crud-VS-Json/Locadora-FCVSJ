@@ -49,7 +49,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             {
                 planoDeCobranca = value;
 
-                if (planoDeCobranca.Id != 0)
+                if (PlanoDeCobranca.Grupo != null)
                 {
                     CbxGrupo.Items.Add(planoDeCobranca.Grupo);
                     CbxGrupo.SelectedItem = planoDeCobranca.Grupo;
