@@ -19,8 +19,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloPlanoDeCobranca
 
         public RepositorioPlanoDeCobrancaTestes()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]; DBCC CHECKIDENT (TBPlanoDeCobranca, RESEED, 0)");
-            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]; DBCC CHECKIDENT (TBGrupo, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]");
+            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]");
 
             repositorioPlanoDeCobranca = new();
             repositorioGrupo = new();
@@ -42,7 +42,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloPlanoDeCobranca
             PlanoDeCobranca? planoEncontrado = repositorioPlanoDeCobranca.SelecionarPorId(planoDeCobranca.Id);
 
             planoEncontrado.Should().NotBeNull();
-            planoDeCobranca.Should().Be(planoEncontrado);
+            planoEncontrado.Should().Be(planoDeCobranca);
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloPlanoDeCobranca
             PlanoDeCobranca? planoEncontrado = repositorioPlanoDeCobranca.SelecionarPorId(planoDeCobranca.Id);
 
             planoEncontrado.Should().NotBeNull();
-            planoDeCobranca.Should().Be(planoEncontrado);
+            planoEncontrado.Should().Be(planoDeCobranca);
         }
 
         [TestMethod]
@@ -106,7 +106,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloPlanoDeCobranca
 
             // assert
             planoEncontrado.Should().NotBeNull();
-            planoDeCobranca.Should().Be(planoEncontrado);
+            planoEncontrado.Should().Be(planoDeCobranca);
         }
 
         [TestMethod]
@@ -136,12 +136,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloPlanoDeCobranca
             repositorioPlanoDeCobranca.Inserir(planoDeCobranca2);
 
             // action
-            List<PlanoDeCobranca> planoEncontrado = repositorioPlanoDeCobranca.SelecionarTodos();
+            List<PlanoDeCobranca> planos = repositorioPlanoDeCobranca.SelecionarTodos();
 
             // assert
-            planoEncontrado.Count.Should().Be(2);
-            planoEncontrado[0].Should().Be(planoDeCobranca);
-            planoEncontrado[1].Should().Be(planoDeCobranca2);
+            planos.Count.Should().Be(2);
+            planos.Should().Contain(planoDeCobranca);
+            planos.Should().Contain(planoDeCobranca2);
         }
 
         private PlanoDeCobranca NovoPlanoDeCobranca()
@@ -165,5 +165,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloPlanoDeCobranca
                 Nome = "Grupo A - Compacto"
             };
         }
+
     }
 }

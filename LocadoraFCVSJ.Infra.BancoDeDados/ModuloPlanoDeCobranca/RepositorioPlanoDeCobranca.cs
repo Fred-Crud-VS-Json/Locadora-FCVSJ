@@ -9,6 +9,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca
         protected override string QueryInserir =>
             @"INSERT INTO [TBPlanoDeCobranca]
                 (
+					[ID],
 		            [PLANODIARIO_VALORDIARIO],
                     [PLANODIARIO_VALORKM],
 		            [PLANOLIVRE_VALORDIARIO],
@@ -19,6 +20,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca
 	            )
                  VALUES
                 (
+					@ID,
 		            @PLANODIARIO_VALORDIARIO,
 		            @PLANODIARIO_VALORKM,
 		            @PLANOLIVRE_VALORDIARIO,
@@ -26,8 +28,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca
 		            @PLANOCONTROLADO_VALORKM,
 		            @PLANOCONTROLADO_LIMITEKM,
 		            @GRUPO_ID
-	            )
-	            SELECT SCOPE_IDENTITY()";
+	            )";
 
         protected override string QueryEditar =>
             @"UPDATE [TBPlanoDeCobranca]

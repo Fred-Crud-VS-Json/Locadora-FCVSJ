@@ -16,6 +16,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca
         public override bool Equals(object? obj)
         {
             return obj is PlanoDeCobranca cobranca &&
+                   Id.Equals(cobranca.Id) &&
                    EqualityComparer<Grupo>.Default.Equals(Grupo, cobranca.Grupo) &&
                    PlanoDiario_ValorDiario == cobranca.PlanoDiario_ValorDiario &&
                    PlanoDiario_ValorKm == cobranca.PlanoDiario_ValorKm &&
@@ -27,7 +28,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Grupo, PlanoDiario_ValorDiario, PlanoDiario_ValorKm, PlanoLivre_ValorDiario, PlanoControlado_ValorDiario, PlanoControlado_ValorKm, PlanoControlado_LimiteKm);
+            return HashCode.Combine(Id, Grupo, PlanoDiario_ValorDiario, PlanoDiario_ValorKm, PlanoLivre_ValorDiario, PlanoControlado_ValorDiario, PlanoControlado_ValorKm, PlanoControlado_LimiteKm);
         }
     }
 }

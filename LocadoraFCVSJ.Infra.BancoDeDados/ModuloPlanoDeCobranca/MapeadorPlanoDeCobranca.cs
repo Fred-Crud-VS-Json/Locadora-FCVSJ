@@ -23,7 +23,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca
         {
             return new()
             {
-                Id = Convert.ToInt32(leitorRegistro["PLANO_ID"]),
+                Id = Guid.Parse(leitorRegistro["PLANO_ID"].ToString()),
                 PlanoDiario_ValorDiario = Convert.ToDecimal(leitorRegistro["PLANO_DIARIO_VALORDIARIO"]),
                 PlanoDiario_ValorKm = Convert.ToDecimal(leitorRegistro["PLANO_DIARIO_VALORKM"]),
                 PlanoLivre_ValorDiario = Convert.ToDecimal(leitorRegistro["PLANO_LIVRE_VALORDIARIO"]),
