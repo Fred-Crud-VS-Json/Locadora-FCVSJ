@@ -15,6 +15,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
         private Veiculo veiculo = new Veiculo();
         private readonly ServicoVeiculo _servicoVeiculo;
         private readonly ServicoGrupo _servicoGrupo;
+        private Byte[] imagem;
 
         public RegistrarNovoVeiculo(ServicoVeiculo servicoVeiculo, ServicoGrupo servicoGrupo)
         {
@@ -23,15 +24,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             _servicoVeiculo = servicoVeiculo;
             _servicoGrupo = servicoGrupo;
 
-            List<Grupo> gruposVeiculo = new();
-
-            _servicoGrupo.SelecionarTodos().ForEach(x =>
-            {
-                if (!_servicoVeiculo.SelecionarTodos().Select(x => x.GrupoVeiculo).Contains(x))
-                    gruposVeiculo.Add(x);
-            });
-
-            gruposVeiculo.ForEach(x => CbxGrupo.Items.Add(x));
+            _servicoGrupo.SelecionarTodos().ForEach(x => CbxGrupo.Items.Add(x));
 
             List<TipoCombustivel> tiposDeCalculoDeTaxa = Enum.GetValues(typeof(TipoCombustivel)).Cast<TipoCombustivel>().ToList();
 
@@ -55,6 +48,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 TxbCapacidadeDoTanque.Text = veiculo.CapacidadeTanque.ToString();
                 TxbAno.Text = veiculo.Ano.ToString();
                 TxbKmPercorrido.Text = veiculo.KmPercorrido.ToString();
+                PxbFotoVeiculo.Image = ObterImagem();
             }
         }
 
@@ -65,7 +59,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             try
             {
                 veiculo.GrupoVeiculo = (Dominio.ModuloGrupo.Grupo)CbxGrupo.SelectedItem;
-                veiculo.Modelo = TxbMarca.Text;
+                veiculo.Modelo = TxbModelo.Text;
                 veiculo.Marca = TxbMarca.Text;
                 veiculo.Placa = TxbPlaca.Text;
                 veiculo.Cor = TxbCor.Text;
@@ -105,28 +99,25 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             {
                 this.DialogResult = DialogResult.None;
 
-                caminhoFoto = openFileDialog1.FileName;
+                imagem = File.ReadAllBytes(openFileDialog1.FileName);
 
-                if (caminhoFoto != "")
-                {
-                    veiculo.Foto = GetFoto(caminhoFoto);
-                    PxbFotoVeiculo.Load(caminhoFoto);
-                }
+                veiculo.Foto = imagem;
+
+                using (MemoryStream ms = new(imagem))
+                    PxbFotoVeiculo.Image = new Bitmap(ms);
             }
         }
 
-        private byte[] GetFoto(string caminhoFoto)
-        {
-            byte[] foto;
 
-            using (var stream = new FileStream(caminhoFoto, FileMode.Open, FileAccess.Read))
+
+        private Bitmap ObterImagem()
+        {
+            if(veiculo.Foto != null)
             {
-                using (var reader = new BinaryReader(stream))
-                {
-                    foto = reader.ReadBytes((int)stream.Length);
-                }
+            using (MemoryStream ms = new(veiculo.Foto))
+                return new Bitmap(ms);
             }
-            return foto;
+            return null;
         }
 
     }

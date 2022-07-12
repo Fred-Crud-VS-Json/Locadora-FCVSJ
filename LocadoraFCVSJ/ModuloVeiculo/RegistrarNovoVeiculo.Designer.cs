@@ -272,6 +272,7 @@
             // 
             // PxbFotoVeiculo
             // 
+            this.PxbFotoVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PxbFotoVeiculo.Location = new System.Drawing.Point(519, 189);
             this.PxbFotoVeiculo.Name = "PxbFotoVeiculo";
             this.PxbFotoVeiculo.Size = new System.Drawing.Size(425, 280);
@@ -509,8 +510,9 @@
             // 
             // TxbPlaca
             // 
+            this.TxbPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxbPlaca.Location = new System.Drawing.Point(41, 349);
-            this.TxbPlaca.MaxLength = 10;
+            this.TxbPlaca.MaxLength = 7;
             this.TxbPlaca.Name = "TxbPlaca";
             this.TxbPlaca.Size = new System.Drawing.Size(200, 31);
             this.TxbPlaca.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -561,7 +563,7 @@
             // 
             // TxbModelo
             // 
-            this.TxbModelo.Location = new System.Drawing.Point(41, 271);
+            this.TxbModelo.Location = new System.Drawing.Point(42, 271);
             this.TxbModelo.MaxLength = 10;
             this.TxbModelo.Name = "TxbModelo";
             this.TxbModelo.Size = new System.Drawing.Size(200, 31);

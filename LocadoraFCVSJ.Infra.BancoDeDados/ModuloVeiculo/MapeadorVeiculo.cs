@@ -4,6 +4,7 @@ using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
 {
@@ -21,7 +22,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
             comando.Parameters.AddWithValue("CAPACIDADETANQUE", Registro.CapacidadeTanque);
             comando.Parameters.AddWithValue("ANO", Registro.Ano);
             comando.Parameters.AddWithValue("KMPERCORRIDO", Registro.KmPercorrido);
-            comando.Parameters.Add("FOTO", System.Data.SqlDbType.Image, Registro.Foto.Length).Value = Registro.Foto;
+            comando.Parameters.AddWithValue("FOTO", Registro.Foto);
         }
 
         public override Veiculo ConverterRegistro(SqlDataReader leitorRegistro)
@@ -37,7 +38,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 TipoCombustivel = (TipoCombustivel)leitorRegistro["VEICULO_TIPOCOMBUSTIVEL"],
                 CapacidadeTanque = Convert.ToInt32(leitorRegistro["VEICULO_CAPACIDADETANQUE"]),
                 Ano = Convert.ToInt32(leitorRegistro["VEICULO_ANO"]),
-                KmPercorrido = Convert.ToInt32(leitorRegistro["VEICULO_KMPERCORRIDO"])
+                KmPercorrido = Convert.ToInt32(leitorRegistro["VEICULO_KMPERCORRIDO"]),
+                Foto = (Byte[])leitorRegistro["VEICULO_FOTO"]
             };         
         }
     }
