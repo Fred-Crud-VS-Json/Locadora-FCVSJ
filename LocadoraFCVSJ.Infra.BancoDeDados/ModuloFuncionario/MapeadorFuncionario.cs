@@ -21,27 +21,16 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
 
         public override Funcionario ConverterRegistro(SqlDataReader leitorRegistro)
         {
-            int id = Convert.ToInt32(leitorRegistro["ID"]);
-            string nome = Convert.ToString(leitorRegistro["NOME"]);
-            string login = Convert.ToString(leitorRegistro["LOGIN"]);
-            string senha = Convert.ToString(leitorRegistro["SENHA"]);
-            decimal salario = Convert.ToDecimal(leitorRegistro["SALARIO"]);
-            DateTime dataAdmissao = Convert.ToDateTime(leitorRegistro["DATAADMISSAO"]);
-            int nivelAcesso = Convert.ToInt32(leitorRegistro["NIVELACESSO"]);
-
-
-            var funcionario = new Funcionario
+            return new()
             {
-                Id = id,
-                Nome = nome,
-                Usuario = login,
-                Senha = senha,
-                Salario = salario,
-                DataAdmissao = dataAdmissao,
-                NivelAcesso = (NivelAcesso)nivelAcesso
+                Id = Guid.Parse(leitorRegistro["FUNCIONARIO_ID"].ToString()),
+                Nome = Convert.ToString(leitorRegistro["FUNCIONARIO_NOME"]),
+                Usuario = Convert.ToString(leitorRegistro["FUNCIONARIO_LOGIN"]),
+                Senha = Convert.ToString(leitorRegistro["FUNCIONARIO_SENHA"]),
+                Salario = Convert.ToDecimal(leitorRegistro["FUNCIONARIO_SALARIO"]),
+                DataAdmissao = Convert.ToDateTime(leitorRegistro["FUNCIONARIO_DATAADMISSAO"]),
+                NivelAcesso = (NivelAcesso)leitorRegistro["FUNCIONARIO_NIVELACESSO"]
             };
-
-            return funcionario;
         }
     }
 }
