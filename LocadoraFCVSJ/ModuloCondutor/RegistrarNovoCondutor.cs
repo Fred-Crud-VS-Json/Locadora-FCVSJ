@@ -63,20 +63,6 @@ namespace LocadoraFCVSJ.ModuloCondutor
         }
         public Func<Condutor, ValidationResult> SalvarRegistro { get; set; }
 
-        private void ChbxPessoaJuridica_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ChbxPessoaJuridica.Checked == true)
-            {
-                MtxbCnpj.Enabled = true;
-            }
-            else
-            {
-                condutor.CNPJ = null;
-                MtxbCnpj.Clear();
-                MtxbCnpj.Enabled = false;
-            }
-        }
-
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
             try
@@ -98,24 +84,6 @@ namespace LocadoraFCVSJ.ModuloCondutor
                 condutor.CNH = TxbCnh.Text;
                 condutor.DataVencimento = DateTime.ParseExact(MtbxValidadeCnh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-
-                //Cliente cliente = new Cliente();
-                //if (ChbxClienteCondutor.Checked = true)
-                //{
-                //    string clienteNome = (string)CbxCliente.SelectedItem;
-
-                //    List<Cliente> clienteLista = _servicoCondutor.SelecionarTodosOsClientes();
-
-                //    for (int i = 0; i < _servicoCondutor.SelecionarTodosOsClientes().Count; i++)
-                //    {
-                //        if (clienteNome == clienteLista[i].Nome)
-                //        {
-                //            cliente = clienteLista[i];
-                //        }
-                //    }
-                //}
-                //    Condutor.Cliente = cliente;
-
                 if (ChbxClienteCondutor.Checked == true)
                 {
                     Cliente cliente = (Cliente)CbxCliente.SelectedItem;
@@ -134,6 +102,11 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
                 ValidationResult resultado = SalvarRegistro(condutor);
 
+                if (condutor.Cliente == null)
+                {
+                    resultado.Errors.Add(new ValidationFailure("", "Para cadastrar um condutor, ele deve possuir alguma relação com o cliente"));
+                }
+
                 if (resultado.IsValid == false)
                 {
                     MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -147,6 +120,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
                 DialogResult = DialogResult.None;
             }
         }
+
 
         private void ChbxClienteCondutor_CheckedChanged(object sender, EventArgs e)
         {
@@ -182,6 +156,20 @@ namespace LocadoraFCVSJ.ModuloCondutor
                 MtxbTelefone.Clear();
                 TxbEmail.Clear();
                 TxbCnh.Clear();
+            }
+        }
+
+        private void ChbxPessoaJuridica_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (ChbxPessoaJuridica.Checked == true)
+            {
+                MtxbCnpj.Enabled = true;
+            }
+            else
+            {
+                condutor.CNPJ = null;
+                MtxbCnpj.Clear();
+                MtxbCnpj.Enabled = false;
             }
         }
     }

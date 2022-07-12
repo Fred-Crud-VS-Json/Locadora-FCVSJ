@@ -1,5 +1,6 @@
 ﻿using Krypton.Toolkit;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
+using System.Text;
 
 namespace LocadoraFCVSJ.ModuloCondutor
 {
@@ -21,17 +22,17 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
             condutores.ForEach(x =>
             {
-                GridCondutores.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.DataVencimento.ToString("dd/MM/yyyy"), x.Email, x.Telefone, x.CNPJ, x.Rua);
+                GridCondutores.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.DataVencimento.ToString("dd/MM/yyyy"), x.Email, x.Telefone, x.CNPJ);
 
                 z++;
 
                 for (int i = z; i <= GridCondutores.Rows.Count; i++)
                 {
                     if (string.IsNullOrEmpty(x.CNPJ))
-                        GridCondutores.Rows[i - 1].Cells[6].Value = "Não";
+                        GridCondutores.Rows[i - 1].Cells[7].Value = "Não";
                     else
-                        GridCondutores.Rows[i - 1].Cells[6].Value = "Sim";
-                        GridCondutores.Rows[i - 1].Cells[7].Value = x.CNPJ;
+                        GridCondutores.Rows[i - 1].Cells[7].Value = "Sim";
+                        GridCondutores.Rows[i - 1].Cells[8].Value = x.CNPJ;
                 }
             });
 
@@ -70,7 +71,27 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
         private void GridCondutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // TO-DO
+            if (e.ColumnIndex == 9)
+            {
+                Condutor? condutor = _controladorCondutor.ObterCondutor();
+
+                StringBuilder sb = new();
+
+                if (condutor != null)
+                {
+                    sb.AppendLine($"CEP: {condutor.CEP}");
+                    sb.AppendLine($"UF: {condutor.UF}");
+                    sb.AppendLine($"Cidade: {condutor.Cidade}");
+                    sb.AppendLine($"Bairro: {condutor.Bairro}");
+                    sb.AppendLine($"Número: {condutor.Numero}");
+                    sb.AppendLine($"Rua: {condutor.Rua}");
+                    sb.AppendLine($"Complemento: {condutor.Complemento}");
+                }
+
+                MessageBox.Show(sb.ToString(), "Visualizando Endereço", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                GridCondutores.ClearSelection();
+            }
         }
 
         private void GridCondutores_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -80,7 +101,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -98,7 +119,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
         {
             DataGridViewCell cell = GridCondutores.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
                 cell.ToolTipText = "Visualizar Endereço";
         }
     }

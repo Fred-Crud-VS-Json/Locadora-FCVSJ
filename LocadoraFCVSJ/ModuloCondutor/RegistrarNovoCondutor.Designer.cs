@@ -432,6 +432,7 @@
             this.ChbxPessoaJuridica.Size = new System.Drawing.Size(18, 17);
             this.ChbxPessoaJuridica.TabIndex = 35;
             this.ChbxPessoaJuridica.UseVisualStyleBackColor = true;
+            this.ChbxPessoaJuridica.CheckedChanged += new System.EventHandler(this.ChbxPessoaJuridica_CheckedChanged_1);
             // 
             // label14
             // 

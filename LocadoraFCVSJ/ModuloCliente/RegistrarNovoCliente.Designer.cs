@@ -108,7 +108,7 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 0, -1, -1);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -116,11 +116,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(105, 19);
+            this.label1.Location = new System.Drawing.Point(120, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 40);
+            this.label1.Size = new System.Drawing.Size(339, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Novo Registro de Cliente";
             // 
@@ -128,9 +128,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(40, 70);
+            this.panel1.Location = new System.Drawing.Point(46, 93);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(426, 63);
+            this.panel1.Size = new System.Drawing.Size(487, 84);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -139,24 +140,26 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(1, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(424, 61);
+            this.panel2.Size = new System.Drawing.Size(485, 81);
             this.panel2.TabIndex = 3;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label4.Location = new System.Drawing.Point(48, 8);
+            this.label4.Location = new System.Drawing.Point(55, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(367, 46);
+            this.label4.Size = new System.Drawing.Size(419, 61);
             this.label4.TabIndex = 6;
             this.label4.Text = "Preencha o formulário abaixo para efetuar o cadastro de um novo cliente.";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LocadoraFCVSJ.Properties.Resources.info_30px;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -165,10 +168,11 @@
             // 
             // TxbNome
             // 
-            this.TxbNome.Location = new System.Drawing.Point(40, 189);
+            this.TxbNome.Location = new System.Drawing.Point(46, 252);
+            this.TxbNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbNome.MaxLength = 60;
             this.TxbNome.Name = "TxbNome";
-            this.TxbNome.Size = new System.Drawing.Size(425, 31);
+            this.TxbNome.Size = new System.Drawing.Size(486, 36);
             this.TxbNome.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbNome.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -183,9 +187,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label3.Location = new System.Drawing.Point(40, 161);
+            this.label3.Location = new System.Drawing.Point(46, 215);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nome";
             // 
@@ -194,9 +198,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label5.Location = new System.Drawing.Point(40, 240);
+            this.label5.Location = new System.Drawing.Point(46, 320);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 17);
+            this.label5.Size = new System.Drawing.Size(42, 20);
             this.label5.TabIndex = 6;
             this.label5.Text = "CPF";
             // 
@@ -205,16 +209,17 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(40, 318);
+            this.label6.Location = new System.Drawing.Point(46, 424);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 17);
+            this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "CEP";
             // 
             // BtnConcluirRegistro
             // 
             this.BtnConcluirRegistro.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnConcluirRegistro.Location = new System.Drawing.Point(39, 909);
+            this.BtnConcluirRegistro.Location = new System.Drawing.Point(45, 1212);
+            this.BtnConcluirRegistro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnConcluirRegistro.Name = "BtnConcluirRegistro";
             this.BtnConcluirRegistro.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -225,7 +230,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnConcluirRegistro.OverrideDefault.Border.Rounding = 5F;
             this.BtnConcluirRegistro.OverrideDefault.Border.Width = 2;
-            this.BtnConcluirRegistro.Size = new System.Drawing.Size(428, 51);
+            this.BtnConcluirRegistro.Size = new System.Drawing.Size(489, 68);
             this.BtnConcluirRegistro.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.StateCommon.Back.ColorAngle = 45F;
@@ -240,7 +245,7 @@
             this.BtnConcluirRegistro.StateCommon.Border.Width = 2;
             this.BtnConcluirRegistro.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
             this.BtnConcluirRegistro.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnConcluirRegistro.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnConcluirRegistro.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.BtnConcluirRegistro.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
             this.BtnConcluirRegistro.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
@@ -259,18 +264,19 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(335, 318);
+            this.label7.Location = new System.Drawing.Point(383, 424);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 17);
+            this.label7.Size = new System.Drawing.Size(31, 20);
             this.label7.TabIndex = 19;
             this.label7.Text = "UF";
             // 
             // TxbNumero
             // 
-            this.TxbNumero.Location = new System.Drawing.Point(40, 508);
+            this.TxbNumero.Location = new System.Drawing.Point(46, 677);
+            this.TxbNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbNumero.MaxLength = 5;
             this.TxbNumero.Name = "TxbNumero";
-            this.TxbNumero.Size = new System.Drawing.Size(70, 31);
+            this.TxbNumero.Size = new System.Drawing.Size(80, 36);
             this.TxbNumero.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbNumero.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -285,18 +291,19 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label8.Location = new System.Drawing.Point(38, 480);
+            this.label8.Location = new System.Drawing.Point(43, 640);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 17);
+            this.label8.Size = new System.Drawing.Size(68, 20);
             this.label8.TabIndex = 21;
             this.label8.Text = "Número";
             // 
             // TxbBairro
             // 
-            this.TxbBairro.Location = new System.Drawing.Point(266, 429);
+            this.TxbBairro.Location = new System.Drawing.Point(304, 572);
+            this.TxbBairro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbBairro.MaxLength = 60;
             this.TxbBairro.Name = "TxbBairro";
-            this.TxbBairro.Size = new System.Drawing.Size(198, 31);
+            this.TxbBairro.Size = new System.Drawing.Size(226, 36);
             this.TxbBairro.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbBairro.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -311,18 +318,19 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label9.Location = new System.Drawing.Point(266, 401);
+            this.label9.Location = new System.Drawing.Point(304, 535);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 17);
+            this.label9.Size = new System.Drawing.Size(55, 20);
             this.label9.TabIndex = 23;
             this.label9.Text = "Bairro";
             // 
             // TxbComplemento
             // 
-            this.TxbComplemento.Location = new System.Drawing.Point(351, 508);
+            this.TxbComplemento.Location = new System.Drawing.Point(401, 677);
+            this.TxbComplemento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbComplemento.MaxLength = 60;
             this.TxbComplemento.Name = "TxbComplemento";
-            this.TxbComplemento.Size = new System.Drawing.Size(113, 31);
+            this.TxbComplemento.Size = new System.Drawing.Size(129, 36);
             this.TxbComplemento.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbComplemento.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -337,18 +345,19 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label10.Location = new System.Drawing.Point(351, 480);
+            this.label10.Location = new System.Drawing.Point(401, 640);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 17);
+            this.label10.Size = new System.Drawing.Size(112, 20);
             this.label10.TabIndex = 25;
             this.label10.Text = "Complemento";
             // 
             // TxbCnh
             // 
-            this.TxbCnh.Location = new System.Drawing.Point(40, 587);
+            this.TxbCnh.Location = new System.Drawing.Point(46, 783);
+            this.TxbCnh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbCnh.MaxLength = 10;
             this.TxbCnh.Name = "TxbCnh";
-            this.TxbCnh.Size = new System.Drawing.Size(200, 31);
+            this.TxbCnh.Size = new System.Drawing.Size(229, 36);
             this.TxbCnh.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbCnh.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -363,18 +372,19 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label11.Location = new System.Drawing.Point(39, 559);
+            this.label11.Location = new System.Drawing.Point(45, 745);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 17);
+            this.label11.Size = new System.Drawing.Size(46, 20);
             this.label11.TabIndex = 27;
             this.label11.Text = "CNH";
             // 
             // TxbEmail
             // 
-            this.TxbEmail.Location = new System.Drawing.Point(40, 667);
+            this.TxbEmail.Location = new System.Drawing.Point(46, 889);
+            this.TxbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbEmail.MaxLength = 100;
             this.TxbEmail.Name = "TxbEmail";
-            this.TxbEmail.Size = new System.Drawing.Size(425, 31);
+            this.TxbEmail.Size = new System.Drawing.Size(486, 36);
             this.TxbEmail.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbEmail.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -389,9 +399,9 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label12.Location = new System.Drawing.Point(40, 639);
+            this.label12.Location = new System.Drawing.Point(46, 852);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 17);
+            this.label12.Size = new System.Drawing.Size(57, 20);
             this.label12.TabIndex = 29;
             this.label12.Text = "E-mail";
             // 
@@ -400,18 +410,19 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label13.Location = new System.Drawing.Point(262, 559);
+            this.label13.Location = new System.Drawing.Point(299, 745);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 17);
+            this.label13.Size = new System.Drawing.Size(73, 20);
             this.label13.TabIndex = 31;
             this.label13.Text = "Telefone";
             // 
             // ChbxPessoaJuridica
             // 
             this.ChbxPessoaJuridica.AutoSize = true;
-            this.ChbxPessoaJuridica.Location = new System.Drawing.Point(12, 41);
+            this.ChbxPessoaJuridica.Location = new System.Drawing.Point(14, 55);
+            this.ChbxPessoaJuridica.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ChbxPessoaJuridica.Name = "ChbxPessoaJuridica";
-            this.ChbxPessoaJuridica.Size = new System.Drawing.Size(15, 14);
+            this.ChbxPessoaJuridica.Size = new System.Drawing.Size(18, 17);
             this.ChbxPessoaJuridica.TabIndex = 29;
             this.ChbxPessoaJuridica.UseVisualStyleBackColor = true;
             this.ChbxPessoaJuridica.CheckedChanged += new System.EventHandler(this.ChbxPessoaJuridica_CheckedChanged);
@@ -421,9 +432,9 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label14.Location = new System.Drawing.Point(8, 13);
+            this.label14.Location = new System.Drawing.Point(9, 17);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 17);
+            this.label14.Size = new System.Drawing.Size(138, 20);
             this.label14.TabIndex = 34;
             this.label14.Text = "Pessoa Jurídica?";
             // 
@@ -432,9 +443,9 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label15.Location = new System.Drawing.Point(3, 75);
+            this.label15.Location = new System.Drawing.Point(3, 100);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 17);
+            this.label15.Size = new System.Drawing.Size(53, 20);
             this.label15.TabIndex = 35;
             this.label15.Text = "CNPJ";
             // 
@@ -442,10 +453,11 @@
             // 
             this.MtxbTelefone.Culture = new System.Globalization.CultureInfo("pt-BR");
             this.MtxbTelefone.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.MtxbTelefone.Location = new System.Drawing.Point(266, 587);
+            this.MtxbTelefone.Location = new System.Drawing.Point(304, 783);
+            this.MtxbTelefone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MtxbTelefone.Mask = "(00) 00000-0000";
             this.MtxbTelefone.Name = "MtxbTelefone";
-            this.MtxbTelefone.Size = new System.Drawing.Size(199, 31);
+            this.MtxbTelefone.Size = new System.Drawing.Size(227, 36);
             this.MtxbTelefone.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.MtxbTelefone.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -460,10 +472,11 @@
             // 
             this.MtxbCpf.Culture = new System.Globalization.CultureInfo("pt-BR");
             this.MtxbCpf.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.MtxbCpf.Location = new System.Drawing.Point(40, 268);
+            this.MtxbCpf.Location = new System.Drawing.Point(46, 357);
+            this.MtxbCpf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MtxbCpf.Mask = "000.000.000-00";
             this.MtxbCpf.Name = "MtxbCpf";
-            this.MtxbCpf.Size = new System.Drawing.Size(426, 31);
+            this.MtxbCpf.Size = new System.Drawing.Size(487, 36);
             this.MtxbCpf.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.MtxbCpf.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -478,10 +491,11 @@
             // 
             this.MtxbCep.Culture = new System.Globalization.CultureInfo("pt-BR");
             this.MtxbCep.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.MtxbCep.Location = new System.Drawing.Point(40, 346);
+            this.MtxbCep.Location = new System.Drawing.Point(46, 461);
+            this.MtxbCep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MtxbCep.Mask = "00000-000";
             this.MtxbCep.Name = "MtxbCep";
-            this.MtxbCep.Size = new System.Drawing.Size(272, 31);
+            this.MtxbCep.Size = new System.Drawing.Size(311, 36);
             this.MtxbCep.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.MtxbCep.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -496,9 +510,10 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(41, 724);
+            this.panel3.Location = new System.Drawing.Point(47, 965);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(425, 157);
+            this.panel3.Size = new System.Drawing.Size(486, 209);
             this.panel3.TabIndex = 36;
             // 
             // panel4
@@ -509,8 +524,9 @@
             this.panel4.Controls.Add(this.ChbxPessoaJuridica);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Location = new System.Drawing.Point(1, 1);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(423, 155);
+            this.panel4.Size = new System.Drawing.Size(483, 207);
             this.panel4.TabIndex = 37;
             // 
             // MtxbCnpj
@@ -518,10 +534,11 @@
             this.MtxbCnpj.Culture = new System.Globalization.CultureInfo("pt-BR");
             this.MtxbCnpj.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.MtxbCnpj.Enabled = false;
-            this.MtxbCnpj.Location = new System.Drawing.Point(8, 103);
+            this.MtxbCnpj.Location = new System.Drawing.Point(9, 137);
+            this.MtxbCnpj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MtxbCnpj.Mask = "00.000.000/0000-00";
             this.MtxbCnpj.Name = "MtxbCnpj";
-            this.MtxbCnpj.Size = new System.Drawing.Size(407, 31);
+            this.MtxbCnpj.Size = new System.Drawing.Size(465, 36);
             this.MtxbCnpj.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.MtxbCnpj.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -537,18 +554,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(131, 480);
+            this.label2.Location = new System.Drawing.Point(150, 640);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 40;
             this.label2.Text = "Rua";
             // 
             // TxbCidade
             // 
-            this.TxbCidade.Location = new System.Drawing.Point(40, 429);
+            this.TxbCidade.Location = new System.Drawing.Point(46, 572);
+            this.TxbCidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbCidade.MaxLength = 60;
             this.TxbCidade.Name = "TxbCidade";
-            this.TxbCidade.Size = new System.Drawing.Size(200, 31);
+            this.TxbCidade.Size = new System.Drawing.Size(229, 36);
             this.TxbCidade.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbCidade.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -563,18 +581,19 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label16.Location = new System.Drawing.Point(39, 401);
+            this.label16.Location = new System.Drawing.Point(45, 535);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 17);
+            this.label16.Size = new System.Drawing.Size(61, 20);
             this.label16.TabIndex = 39;
             this.label16.Text = "Cidade";
             // 
             // TxbRua
             // 
-            this.TxbRua.Location = new System.Drawing.Point(135, 508);
+            this.TxbRua.Location = new System.Drawing.Point(154, 677);
+            this.TxbRua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TxbRua.MaxLength = 150;
             this.TxbRua.Name = "TxbRua";
-            this.TxbRua.Size = new System.Drawing.Size(200, 31);
+            this.TxbRua.Size = new System.Drawing.Size(229, 36);
             this.TxbRua.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.TxbRua.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -590,9 +609,10 @@
             this.CbxUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxUf.DropDownWidth = 420;
             this.CbxUf.IntegralHeight = false;
-            this.CbxUf.Location = new System.Drawing.Point(335, 346);
+            this.CbxUf.Location = new System.Drawing.Point(383, 461);
+            this.CbxUf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CbxUf.Name = "CbxUf";
-            this.CbxUf.Size = new System.Drawing.Size(131, 31);
+            this.CbxUf.Size = new System.Drawing.Size(150, 36);
             this.CbxUf.StateCommon.ComboBox.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.CbxUf.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -637,19 +657,21 @@
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(512, 558);
+            this.panel5.Size = new System.Drawing.Size(585, 744);
             this.panel5.TabIndex = 41;
             // 
             // RegistrarNovoCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(512, 558);
+            this.ClientSize = new System.Drawing.Size(585, 744);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "RegistrarNovoCliente";
             this.Palette = this.kryptonPalette1;

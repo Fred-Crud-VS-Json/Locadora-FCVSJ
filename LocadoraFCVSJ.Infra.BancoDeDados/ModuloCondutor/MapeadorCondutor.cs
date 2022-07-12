@@ -24,14 +24,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
             comando.Parameters.AddWithValue("UF", condutor.UF);
             comando.Parameters.AddWithValue("COMPLEMENTO", condutor.Complemento);
             comando.Parameters.AddWithValue("RUA", condutor.Rua);
-            if (condutor.Cliente != null)
-            {
-                comando.Parameters.AddWithValue("CLIENTE_ID", condutor.Cliente.Id);
-            }
-            else
-            {
-                comando.Parameters.AddWithValue("CLIENTE_ID", DBNull.Value);
-            } 
+            comando.Parameters.AddWithValue("CLIENTE_ID", condutor.Cliente.Id);
+         
         }
 
         public override Condutor ConverterRegistro(SqlDataReader leitorCondutor)
