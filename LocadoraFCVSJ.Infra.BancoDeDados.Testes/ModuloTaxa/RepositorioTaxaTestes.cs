@@ -15,7 +15,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloTaxa
 
         public RepositorioTaxaTestes()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBTaxa]; DBCC CHECKIDENT (TBTaxa, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBTaxa]");
 
             repositorioTaxa = new();
         }
@@ -33,7 +33,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloTaxa
             Taxa? taxaEncontrada = repositorioTaxa.SelecionarPorId(taxa.Id);
 
             taxaEncontrada.Should().NotBeNull();
-            taxa.Should().Be(taxaEncontrada);
+            taxaEncontrada.Should().Be(taxa);
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloTaxa
             Taxa? taxaEncontrada = repositorioTaxa.SelecionarPorId(taxa.Id);
 
             taxaEncontrada.Should().NotBeNull();
-            taxa.Should().Be(taxaEncontrada);
+            taxaEncontrada.Should().Be(taxa);
         }
 
         [TestMethod]
@@ -86,7 +86,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloTaxa
 
             // assert
             taxaEncontrada.Should().NotBeNull();
-            taxa.Should().Be(taxaEncontrada);
+            taxaEncontrada.Should().Be(taxa);
         }
 
         [TestMethod]
@@ -106,12 +106,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloTaxa
             repositorioTaxa.Inserir(taxa2);
 
             // action
-            List<Taxa> taxaEncontrada = repositorioTaxa.SelecionarTodos();
+            List<Taxa> taxas = repositorioTaxa.SelecionarTodos();
 
             // assert
-            taxaEncontrada.Count.Should().Be(2);
-            taxaEncontrada[0].Should().Be(taxa);
-            taxaEncontrada[1].Should().Be(taxa2);
+            taxas.Count.Should().Be(2);
+            taxas.Should().Contain(taxa);
+            taxas.Should().Contain(taxa2);
         }
 
         private Taxa NovaTaxa()
@@ -123,5 +123,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloTaxa
                 TipoCalculoTaxa = TipoCalculoTaxa.Fixa
             };
         }
+
     }
 }

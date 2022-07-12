@@ -11,7 +11,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloTaxa
         public override bool Equals(object? obj)
         {
             return obj is Taxa taxa &&
-                   Id == taxa.Id &&
+                   Id.Equals(taxa.Id) &&
                    Nome == taxa.Nome &&
                    Valor == taxa.Valor &&
                    TipoCalculoTaxa == taxa.TipoCalculoTaxa;
