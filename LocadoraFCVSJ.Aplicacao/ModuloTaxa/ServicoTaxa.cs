@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
+using Serilog;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
 {
@@ -16,20 +17,40 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
 
         public ValidationResult Inserir(Taxa taxa)
         {
+            Log.Logger.Debug("Tentando inserir nova taxa...");
+
             ValidationResult resultadoValidacao = Validar(taxa);
 
             if (resultadoValidacao.IsValid)
+            {
                 _repositorioTaxa.Inserir(taxa);
+                Log.Logger.Information($"Taxa {taxa.Id} inserida com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir a taxa {taxa.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
 
         public ValidationResult Editar(Taxa taxa)
         {
+            Log.Logger.Debug("Tentando editar taxa...");
+
             ValidationResult resultadoValidacao = Validar(taxa);
 
             if (resultadoValidacao.IsValid)
+            {
                 _repositorioTaxa.Editar(taxa);
+                Log.Logger.Information($"Taxa {taxa.Id} editada com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar a taxa {taxa.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
