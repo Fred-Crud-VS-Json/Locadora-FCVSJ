@@ -82,7 +82,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             }
             catch (FormatException)
             {
-                MessageBox.Show("O campo 'Placa' ou 'Ano' possue valores inválidos.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("O campo 'Placa' ou 'Ano' ou 'Km Percorrido' possue valores inválidos.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 DialogResult = DialogResult.None;
             }
         }

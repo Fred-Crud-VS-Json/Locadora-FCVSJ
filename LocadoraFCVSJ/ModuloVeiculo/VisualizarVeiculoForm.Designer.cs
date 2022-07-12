@@ -429,7 +429,6 @@
             // PbxFoto
             // 
             this.PbxFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PbxFoto.Enabled = false;
             this.PbxFoto.Location = new System.Drawing.Point(517, 131);
             this.PbxFoto.Name = "PbxFoto";
             this.PbxFoto.Size = new System.Drawing.Size(391, 352);
@@ -529,24 +528,15 @@
         #endregion
 
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
-        private Krypton.Toolkit.KryptonTextBox TxbKmPercorrido;
         private Label label10;
-        private Krypton.Toolkit.KryptonTextBox TxbAno;
         private Label label16;
-        private Krypton.Toolkit.KryptonTextBox TxbCapacidadeDoTanque;
         private Label label8;
         private Label label9;
-        private Krypton.Toolkit.KryptonTextBox TxbCor;
         private Label label6;
-        private Krypton.Toolkit.KryptonTextBox TxbPlaca;
         private Label label7;
-        private Krypton.Toolkit.KryptonTextBox TxbMarca;
         private Label label5;
-        private Krypton.Toolkit.KryptonTextBox TxbModelo;
         private Label label2;
         private Label label3;
-        private Krypton.Toolkit.KryptonTextBox TxbGrupo;
-        private Krypton.Toolkit.KryptonTextBox TxbTipoCombustivel;
         private Panel panel1;
         private Panel panel2;
         private Label LblIdVeiculo;
@@ -555,7 +545,16 @@
         private Panel panel4;
         private PictureBox pictureBox1;
         private Label label1;
-        private PictureBox PbxFoto;
         private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
+        public PictureBox PbxFoto;
+        private Krypton.Toolkit.KryptonTextBox TxbModelo;
+        private Krypton.Toolkit.KryptonTextBox TxbGrupo;
+        private Krypton.Toolkit.KryptonTextBox TxbMarca;
+        private Krypton.Toolkit.KryptonTextBox TxbPlaca;
+        private Krypton.Toolkit.KryptonTextBox TxbCapacidadeDoTanque;
+        private Krypton.Toolkit.KryptonTextBox TxbCor;
+        private Krypton.Toolkit.KryptonTextBox TxbTipoCombustivel;
+        private Krypton.Toolkit.KryptonTextBox TxbAno;
+        private Krypton.Toolkit.KryptonTextBox TxbKmPercorrido;
     }
 }

@@ -95,7 +95,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             controleVeiculoForm.AtualizarGrid(veiculos);
         }
 
-        private Veiculo? ObterVeiculo()
+        public Veiculo? ObterVeiculo()
         {
             if (controleVeiculoForm.ObterGrid().CurrentCell != null && controleVeiculoForm.ObterGrid().CurrentCell.Selected == true)
             {

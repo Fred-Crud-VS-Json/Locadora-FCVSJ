@@ -22,6 +22,9 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
             RuleFor(x => x.CapacidadeTanque)
                 .GreaterThan(0).WithMessage("Capacidade do tanque informado é inválido. Lembre-se de preenche-lo corretamente.\n");
 
+            RuleFor(x => x.TipoCombustivel)
+                .NotEmpty();
+
             RuleFor(x => x.Ano)
                 .LessThanOrEqualTo(2022).WithMessage("Ano informado é inválido.\n");
 

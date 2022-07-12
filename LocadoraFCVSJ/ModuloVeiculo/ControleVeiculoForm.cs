@@ -14,7 +14,12 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
         private void GridVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.ColumnIndex == 5)
+            {
+                Veiculo? veiculo = _controladorVeiculo.ObterVeiculo();
 
+                new VisualizarVeiculoForm(veiculo).ShowDialog();
+            }
         }
 
         public void AtualizarGrid(List<Veiculo> veiculos)
@@ -46,7 +51,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 5)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
