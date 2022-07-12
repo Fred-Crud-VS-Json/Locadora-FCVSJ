@@ -63,6 +63,8 @@
             this.TxbModelo = new Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label11 = new System.Windows.Forms.Label();
+            this.PxbFotoVeiculo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,6 +74,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTipoCombustivel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PxbFotoVeiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -115,7 +118,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(105, 19);
+            this.label1.Location = new System.Drawing.Point(368, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(287, 29);
             this.label1.TabIndex = 0;
@@ -125,7 +128,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(40, 70);
+            this.panel1.Location = new System.Drawing.Point(303, 72);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(426, 63);
             this.panel1.TabIndex = 2;
@@ -237,6 +240,8 @@
             // panel5
             // 
             this.panel5.AutoScroll = true;
+            this.panel5.Controls.Add(this.PxbFotoVeiculo);
+            this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Controls.Add(this.BtnSelecionarFoto);
             this.panel5.Controls.Add(this.label12);
@@ -264,7 +269,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(512, 608);
+            this.panel5.Size = new System.Drawing.Size(1005, 608);
             this.panel5.TabIndex = 41;
             // 
             // panel3
@@ -578,12 +583,31 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.label11.Location = new System.Drawing.Point(527, 161);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 17);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "Foto";
+            // 
+            // PxbFotoVeiculo
+            // 
+            this.PxbFotoVeiculo.Location = new System.Drawing.Point(527, 189);
+            this.PxbFotoVeiculo.Name = "PxbFotoVeiculo";
+            this.PxbFotoVeiculo.Size = new System.Drawing.Size(433, 446);
+            this.PxbFotoVeiculo.TabIndex = 61;
+            this.PxbFotoVeiculo.TabStop = false;
+            // 
             // RegistrarNovoVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(512, 608);
+            this.ClientSize = new System.Drawing.Size(1005, 608);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -605,6 +629,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTipoCombustivel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PxbFotoVeiculo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,5 +669,7 @@
         public Label label13;
         private PictureBox pictureBox2;
         private OpenFileDialog openFileDialog1;
+        private PictureBox PxbFotoVeiculo;
+        private Label label11;
     }
 }

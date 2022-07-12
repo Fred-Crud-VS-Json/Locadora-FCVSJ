@@ -110,7 +110,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 if (caminhoFoto != "")
                 {
                     veiculo.Foto = GetFoto(caminhoFoto);
-                    pictureBox1.Load(caminhoFoto);
+                    PxbFotoVeiculo.Load(caminhoFoto);
                 }
             }
         }
