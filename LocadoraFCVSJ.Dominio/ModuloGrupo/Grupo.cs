@@ -9,7 +9,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
         public override bool Equals(object? obj)
         {
             return obj is Grupo grupo &&
-                   Id == grupo.Id &&
+                   Id.Equals(grupo.Id) &&
                    Nome == grupo.Nome;
         }
 

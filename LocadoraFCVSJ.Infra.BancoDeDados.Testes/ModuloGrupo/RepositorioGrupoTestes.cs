@@ -14,7 +14,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloGrupo
 
         public RepositorioGrupoTestes()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]; DBCC CHECKIDENT (TBGrupo, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]");
+            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]");
 
             repositorioGrupo = new();
         }
@@ -32,7 +33,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloGrupo
             Grupo? grupoEncontrado = repositorioGrupo.SelecionarPorId(grupo.Id);
 
             grupoEncontrado.Should().NotBeNull();
-            grupo.Should().Be(grupoEncontrado);
+            grupoEncontrado.Should().Be(grupo);
         }
 
         [TestMethod]
@@ -52,7 +53,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloGrupo
             Grupo? grupoEncontrado = repositorioGrupo.SelecionarPorId(grupo.Id);
 
             grupoEncontrado.Should().NotBeNull();
-            grupo.Should().Be(grupoEncontrado);
+            grupoEncontrado.Should().Be(grupo);
         }
 
         [TestMethod]
@@ -85,7 +86,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloGrupo
 
             // assert
             grupoEncontrado.Should().NotBeNull();
-            grupo.Should().Be(grupoEncontrado);
+            grupoEncontrado.Should().Be(grupo);
         }
 
         [TestMethod]
@@ -103,20 +104,21 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloGrupo
             repositorioGrupo.Inserir(grupo2);
 
             // action
-            List<Grupo> grupoEncontrado = repositorioGrupo.SelecionarTodos();
+            List<Grupo> grupos = repositorioGrupo.SelecionarTodos();
 
             // assert
-            grupoEncontrado.Count.Should().Be(2);
-            grupoEncontrado[0].Should().Be(grupo);
-            grupoEncontrado[1].Should().Be(grupo2);
+            grupos.Count.Should().Be(2);
+            grupos.Should().Contain(grupo);
+            grupos.Should().Contain(grupo2);
         }
 
         private Grupo NovoGrupo()
         {
-            return new Grupo()
+            return new()
             {
                 Nome = "Grupo A - Compacto"
             };
         }
+
     }
 }

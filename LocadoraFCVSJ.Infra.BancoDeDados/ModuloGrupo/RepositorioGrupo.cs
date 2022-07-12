@@ -9,18 +9,19 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
         protected override string QueryInserir =>
             @"INSERT INTO [TBGrupo]
                 (
-                    [Nome]
+                    [ID],
+                    [NOME]
                 )
                 VALUES
                 (
+                    @ID,
                     @NOME
-                )
-                SELECT SCOPE_IDENTITY()";
+                )";
 
         protected override string QueryEditar =>
             @"UPDATE [TBGrupo]
 	            SET 
-		            [Nome] = @NOME
+		            [NOME] = @NOME
 	            WHERE
 		            [ID] = @ID";
 
