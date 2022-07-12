@@ -40,12 +40,13 @@
             this.BtnConcluirRegistro = new Krypton.Toolkit.KryptonButton();
             this.CbxGrupo = new Krypton.Toolkit.KryptonComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.PxbFotoVeiculo = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.BtnSelecionarFoto = new Krypton.Toolkit.KryptonButton();
-            this.label12 = new System.Windows.Forms.Label();
             this.TxbKmPercorrido = new Krypton.Toolkit.KryptonTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TxbAno = new Krypton.Toolkit.KryptonTextBox();
@@ -63,18 +64,16 @@
             this.TxbModelo = new Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label11 = new System.Windows.Forms.Label();
-            this.PxbFotoVeiculo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxGrupo)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PxbFotoVeiculo)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTipoCombustivel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PxbFotoVeiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -118,7 +117,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(368, 21);
+            this.label1.Location = new System.Drawing.Point(368, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(287, 29);
             this.label1.TabIndex = 0;
@@ -128,7 +127,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(303, 72);
+            this.panel1.Location = new System.Drawing.Point(303, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(426, 63);
             this.panel1.TabIndex = 2;
@@ -177,7 +176,7 @@
             // BtnConcluirRegistro
             // 
             this.BtnConcluirRegistro.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnConcluirRegistro.Location = new System.Drawing.Point(39, 666);
+            this.BtnConcluirRegistro.Location = new System.Drawing.Point(303, 575);
             this.BtnConcluirRegistro.Name = "BtnConcluirRegistro";
             this.BtnConcluirRegistro.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -188,7 +187,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.BtnConcluirRegistro.OverrideDefault.Border.Rounding = 5F;
             this.BtnConcluirRegistro.OverrideDefault.Border.Width = 2;
-            this.BtnConcluirRegistro.Size = new System.Drawing.Size(428, 51);
+            this.BtnConcluirRegistro.Size = new System.Drawing.Size(426, 51);
             this.BtnConcluirRegistro.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnConcluirRegistro.StateCommon.Back.ColorAngle = 45F;
@@ -244,7 +243,6 @@
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Controls.Add(this.BtnSelecionarFoto);
-            this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.TxbKmPercorrido);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.TxbAno);
@@ -269,14 +267,33 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1005, 608);
+            this.panel5.Size = new System.Drawing.Size(1000, 503);
             this.panel5.TabIndex = 41;
+            // 
+            // PxbFotoVeiculo
+            // 
+            this.PxbFotoVeiculo.Location = new System.Drawing.Point(519, 189);
+            this.PxbFotoVeiculo.Name = "PxbFotoVeiculo";
+            this.PxbFotoVeiculo.Size = new System.Drawing.Size(425, 280);
+            this.PxbFotoVeiculo.TabIndex = 61;
+            this.PxbFotoVeiculo.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.label11.Location = new System.Drawing.Point(519, 161);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 17);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "Foto";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(249, 591);
+            this.panel3.Location = new System.Drawing.Point(727, 497);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(218, 44);
             this.panel3.TabIndex = 59;
@@ -315,7 +332,7 @@
             // BtnSelecionarFoto
             // 
             this.BtnSelecionarFoto.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnSelecionarFoto.Location = new System.Drawing.Point(42, 591);
+            this.BtnSelecionarFoto.Location = new System.Drawing.Point(520, 497);
             this.BtnSelecionarFoto.Name = "BtnSelecionarFoto";
             this.BtnSelecionarFoto.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.BtnSelecionarFoto.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -354,17 +371,6 @@
             this.BtnSelecionarFoto.TabIndex = 58;
             this.BtnSelecionarFoto.Values.Text = "Selecionar Arquivo";
             this.BtnSelecionarFoto.Click += new System.EventHandler(this.BtnSelecionarFoto_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label12.Location = new System.Drawing.Point(41, 563);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 17);
-            this.label12.TabIndex = 57;
-            this.label12.Text = "Foto";
             // 
             // TxbKmPercorrido
             // 
@@ -583,31 +589,12 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.label11.Location = new System.Drawing.Point(527, 161);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 17);
-            this.label11.TabIndex = 60;
-            this.label11.Text = "Foto";
-            // 
-            // PxbFotoVeiculo
-            // 
-            this.PxbFotoVeiculo.Location = new System.Drawing.Point(527, 189);
-            this.PxbFotoVeiculo.Name = "PxbFotoVeiculo";
-            this.PxbFotoVeiculo.Size = new System.Drawing.Size(433, 446);
-            this.PxbFotoVeiculo.TabIndex = 61;
-            this.PxbFotoVeiculo.TabStop = false;
-            // 
             // RegistrarNovoVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1005, 608);
+            this.ClientSize = new System.Drawing.Size(1000, 503);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -624,12 +611,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.CbxGrupo)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PxbFotoVeiculo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTipoCombustivel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PxbFotoVeiculo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -647,7 +634,6 @@
         public Label label4;
         private Panel panel5;
         private Krypton.Toolkit.KryptonButton BtnSelecionarFoto;
-        private Label label12;
         private Krypton.Toolkit.KryptonTextBox TxbKmPercorrido;
         private Label label10;
         private Krypton.Toolkit.KryptonTextBox TxbAno;
