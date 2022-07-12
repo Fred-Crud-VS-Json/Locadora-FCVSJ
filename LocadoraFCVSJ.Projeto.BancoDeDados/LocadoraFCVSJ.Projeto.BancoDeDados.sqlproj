@@ -62,13 +62,13 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\TBGrupo.sql" />
-    <Build Include="dbo\Tables\TBFuncionario.sql" />
-    <Build Include="dbo\Tables\TBCliente.sql" />
-    <Build Include="dbo\Tables\TBTaxa.sql" />
-    <Build Include="dbo\Tables\TBPlanoDeCobranca.sql" />
+    <RefactorLog Include="LocadoraFCVSJ.Projeto.BancoDeDados.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="LocadoraFCVSJ.Projeto.BancoDeDados.refactorlog" />
+    <Build Include="dbo\Tables\TBGrupo.sql" />
+    <Build Include="dbo\Tables\TBPlanoDeCobranca.sql" />
+    <Build Include="dbo\Tables\TBTaxa.sql" />
+    <Build Include="dbo\Tables\TBFuncionario.sql" />
+    <Build Include="dbo\Tables\TBCliente.sql" />
   </ItemGroup>
 </Project>
