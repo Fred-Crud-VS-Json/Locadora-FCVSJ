@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\LocadoraFCVSJ.Dominio\LocadoraFCVSJ.Dominio.csproj" />
     <ProjectReference Include="..\LocadoraFCVSJ.Infra.BancoDeDados\LocadoraFCVSJ.Infra.BancoDeDados.csproj" />
   </ItemGroup>
