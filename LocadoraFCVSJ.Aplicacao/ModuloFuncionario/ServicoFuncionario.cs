@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
+using Serilog;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
 {
@@ -16,20 +17,40 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
 
         public ValidationResult Inserir(Funcionario funcionario)
         {
+            Log.Logger.Debug("Tentando inserir novo funcionário...");
+
             ValidationResult resultadoValidacao = Validar(funcionario);
 
             if (resultadoValidacao.IsValid)
+            {
                 repositorioFuncionario.Inserir(funcionario);
+                Log.Logger.Information($"Funcionário {funcionario.Id} inserido com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o funcionário {funcionario.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
 
         public ValidationResult Editar(Funcionario funcionario)
         {
+            Log.Logger.Debug("Tentando editar funcionário...");
+
             ValidationResult resultadoValidacao = Validar(funcionario);
 
             if (resultadoValidacao.IsValid)
+            {
                 repositorioFuncionario.Editar(funcionario);
+                Log.Logger.Information($"Funcionário {funcionario.Id} editado com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o funcionário {funcionario.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
