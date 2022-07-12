@@ -127,7 +127,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 TipoCombustivel = TipoCombustivel.Elétrico,
                 CapacidadeTanque = 200,
                 Ano = 2020,
-                KmPercorrido = 0
+                KmPercorrido = 0,
+                Foto = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 }
             };
         }
 
@@ -143,7 +144,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 TipoCombustivel = TipoCombustivel.Gasolina,
                 CapacidadeTanque = 400,
                 Ano = 2010,
-                KmPercorrido = 100
+                KmPercorrido = 100,
+                Foto = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 }
             };
         }
 

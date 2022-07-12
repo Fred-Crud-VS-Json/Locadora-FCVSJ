@@ -402,7 +402,7 @@
             // TxbAno
             // 
             this.TxbAno.Location = new System.Drawing.Point(41, 510);
-            this.TxbAno.MaxLength = 10;
+            this.TxbAno.MaxLength = 4;
             this.TxbAno.Name = "TxbAno";
             this.TxbAno.Size = new System.Drawing.Size(200, 31);
             this.TxbAno.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -538,7 +538,7 @@
             // TxbMarca
             // 
             this.TxbMarca.Location = new System.Drawing.Point(265, 271);
-            this.TxbMarca.MaxLength = 10;
+            this.TxbMarca.MaxLength = 15;
             this.TxbMarca.Name = "TxbMarca";
             this.TxbMarca.Size = new System.Drawing.Size(200, 31);
             this.TxbMarca.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
@@ -564,7 +564,7 @@
             // TxbModelo
             // 
             this.TxbModelo.Location = new System.Drawing.Point(42, 271);
-            this.TxbModelo.MaxLength = 10;
+            this.TxbModelo.MaxLength = 20;
             this.TxbModelo.Name = "TxbModelo";
             this.TxbModelo.Size = new System.Drawing.Size(200, 31);
             this.TxbModelo.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));

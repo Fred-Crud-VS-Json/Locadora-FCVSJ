@@ -31,6 +31,8 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
             RuleFor(x => x.KmPercorrido)
                 .GreaterThanOrEqualTo(0).WithMessage("Quilometragem informada é inválida. Lembre-se de preenche-la corretamente.\n");
 
+            RuleFor(x => x.Foto)
+                .NotEmpty();
         }
     }
 }
