@@ -8,6 +8,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
         void Editar(T registro);
         void Excluir(T registro);
         List<T> SelecionarTodos();
-        T? SelecionarPorId(int id);
+        T? SelecionarPorId(Guid id);
     }
 }

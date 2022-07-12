@@ -37,7 +37,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 
                 Conexao.Open();
 
-                registro.Id = Convert.ToInt32(comando.ExecuteScalar());
+                comando.ExecuteNonQuery();
             }
         }
 
@@ -71,7 +71,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
             }
         }
 
-        public virtual T? SelecionarPorId(int id)
+        public virtual T? SelecionarPorId(Guid id)
         {
             using (Conexao = new(StringConexao))
             {
