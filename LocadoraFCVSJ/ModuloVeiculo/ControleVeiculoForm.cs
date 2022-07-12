@@ -23,7 +23,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
             veiculos.ForEach(x =>
             {
-                GridVeiculos.Rows.Add(x.Id, x.GrupoVeiculo, x.Modelo, x.Marca, x.Placa, x.Cor, x.TipoCombustivel, x.CapacidadeTanque, x.Ano, x.KmPercorrido);
+                GridVeiculos.Rows.Add(x.Id, x.GrupoVeiculo, x.Modelo, x.Marca, x.Placa);
             });
 
             GridVeiculos.ClearSelection();
