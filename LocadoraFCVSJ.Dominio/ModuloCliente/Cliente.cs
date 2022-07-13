@@ -1,6 +1,5 @@
 ﻿using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.Compartilhado;
-using LocadoraFCVSJ.Dominio.ModuloCondutor;
 
 namespace LocadoraFCVSJ.Dominio.ModuloCliente
 {
@@ -32,11 +31,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
                    Email == cliente.Email &&
                    Cidade == cliente.Cidade &&
                    CEP == cliente.CEP &&
+                   Rua == cliente.Rua &&
                    Numero == cliente.Numero &&
                    Bairro == cliente.Bairro &&
                    UF == cliente.UF &&
-                   Complemento == cliente.Complemento &&
-                   Rua == cliente.Rua;
+                   Complemento == cliente.Complemento;
         }
 
         public override int GetHashCode()
@@ -51,11 +50,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
             hash.Add(Email);
             hash.Add(Cidade);
             hash.Add(CEP);
+            hash.Add(Rua);
             hash.Add(Numero);
             hash.Add(Bairro);
             hash.Add(UF);
             hash.Add(Complemento);
-            hash.Add(Rua);
             return hash.ToHashCode();
         }
 
@@ -63,8 +62,5 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
         {
             return Nome;
         }
-        // public List<Condutor> ListaCondutores { get; set; } = new();
-
-
     }
 }

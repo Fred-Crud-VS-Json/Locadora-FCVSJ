@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[TbCondutor] (
-    [Id]             INT           IDENTITY (1, 1) NOT NULL,
+    [Id]             UNIQUEIDENTIFIER NOT NULL,
     [Nome]           VARCHAR (300) NOT NULL,
     [CPF]            VARCHAR (300) NOT NULL,
     [CNPJ]           VARCHAR (300) NULL,
@@ -14,8 +14,6 @@
     [UF]             INT           NOT NULL,
     [Complemento]    VARCHAR (300) NOT NULL,
     [Rua]            VARCHAR (300) NOT NULL,
-	[Cliente_Id] INT NULL,
+	[Cliente_Id] UNIQUEIDENTIFIER NOT NULL,
     CONSTRAINT [PK_TbCondutor] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
-
-

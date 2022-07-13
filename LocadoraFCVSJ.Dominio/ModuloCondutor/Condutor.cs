@@ -1,39 +1,11 @@
 ﻿using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LocadoraFCVSJ.Dominio.ModuloCondutor
 {
     public class Condutor : EntidadeBase<Condutor>
     {
-        public Condutor()
-        {
-        }
-
-        public Condutor(string nome, string cPF, string? cNPJ, string cNH, DateTime dataVencimento, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF? uF, string? complemento, string rua, Cliente cliente)
-        {
-            Nome = nome;
-            CPF = cPF;
-            CNPJ = cNPJ;
-            this.CNH = cNH;
-            DataVencimento = dataVencimento;
-            Telefone = telefone;
-            Email = email;
-            Cidade = cidade;
-            CEP = cEP;
-            Numero = numero;
-            Bairro = bairro;
-            UF = uF;
-            Complemento = complemento;
-            Rua = rua;
-            Cliente = cliente;
-        }
-
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string? CNPJ { get; set; }
@@ -48,13 +20,12 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
         public UF? UF { get; set; }
         public string? Complemento { get; set; }
         public string Rua { get; set; }
-
-        public Cliente? Cliente { get; set; }
+        public Cliente Cliente { get; set; }
 
         public override bool Equals(object? obj)
         {
             return obj is Condutor condutor &&
-                   Id == condutor.Id &&
+                   Id.Equals(condutor.Id) &&
                    Nome == condutor.Nome &&
                    CPF == condutor.CPF &&
                    CNPJ == condutor.CNPJ &&
@@ -69,7 +40,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
                    UF == condutor.UF &&
                    Complemento == condutor.Complemento &&
                    Rua == condutor.Rua &&
-                   EqualityComparer<Cliente?>.Default.Equals(Cliente, condutor.Cliente);
+                   EqualityComparer<Cliente>.Default.Equals(Cliente, condutor.Cliente);
         }
 
         public override int GetHashCode()
@@ -92,6 +63,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
             hash.Add(Rua);
             hash.Add(Cliente);
             return hash.ToHashCode();
+        }
+
+        public override string? ToString()
+        {
+            return Nome;
         }
     }
 }

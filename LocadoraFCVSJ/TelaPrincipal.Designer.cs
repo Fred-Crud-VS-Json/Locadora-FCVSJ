@@ -736,7 +736,7 @@
             // 
             // BtnAcessarCondutores
             // 
-            this.BtnAcessarCondutores.AccessibleName = "Clientes";
+            this.BtnAcessarCondutores.AccessibleName = "Condutores";
             this.BtnAcessarCondutores.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAcessarCondutores.Location = new System.Drawing.Point(8, 51);
             this.BtnAcessarCondutores.Name = "BtnAcessarCondutores";
@@ -786,6 +786,7 @@
             this.BtnAcessarCondutores.ToolTipValues.Heading = "Acessar Módulo Cliente";
             this.BtnAcessarCondutores.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnAcessarCondutores.Values.Text = "Acessar";
+            this.BtnAcessarCondutores.Click += new System.EventHandler(this.BtnAcessarCondutores_Click);
             // 
             // label5
             // 

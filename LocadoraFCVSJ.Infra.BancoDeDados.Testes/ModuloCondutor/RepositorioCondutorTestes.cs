@@ -12,45 +12,52 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCondutor
     [TestClass]
     public class RepositorioCondutorTestes
     {
-        private readonly Condutor? condutor;
-        private readonly RepositorioCondutor repositorio;
-        private readonly Cliente? cliente;
+        private Condutor? condutor;
+        private Condutor? condutor2;
+        private Cliente? cliente;
+        private Cliente? cliente2;
+
+        private readonly RepositorioCondutor repositorioCondutor;
         private readonly RepositorioCliente repositorioCliente;
 
         public RepositorioCondutorTestes()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBCliente]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
-            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]; DBCC CHECKIDENT (TBCondutor, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBCliente]");
+            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]");
 
-            cliente = new Cliente("Pedro", "59643424718", "12345678912345", "0123456789", "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda");
-            condutor = new Condutor("Pedro", "59643424718", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
             repositorioCliente = new RepositorioCliente();
-            repositorio = new RepositorioCondutor();
+            repositorioCondutor = new RepositorioCondutor();
         }
 
         [TestMethod]
-        public void Deve_inserir_novo_condutor()
+        public void Deve_Inserir_Condutor()
         {
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
 
-            //action
             repositorioCliente.Inserir(cliente);
-            repositorio.Inserir(condutor);
+
+            // action
+            repositorioCondutor.Inserir(condutor);
 
             //assert
-            var condutorEncontrado = repositorio.SelecionarPorId(condutor.Id);
+            Condutor? condutorEncontrado = repositorioCondutor.SelecionarPorId(condutor.Id);
 
             condutorEncontrado.Should().NotBeNull();
-            condutor.Should().Be(condutorEncontrado);
+            condutorEncontrado.Should().Be(condutor);
         }
 
         [TestMethod]
-        public void Deve_editar_informacoes_do_Condutor()
+        public void Deve_Editar_Condutor()
         {
-            //arrange
-            repositorioCliente.Inserir(cliente);
-            repositorio.Inserir(condutor);
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
 
-            //action
+            repositorioCliente.Inserir(cliente);
+            repositorioCondutor.Inserir(condutor);
+
             condutor.Nome = "Pedro Nunes";
             condutor.CPF = "69643424718";
             condutor.CNPJ = "12345678912345";
@@ -65,69 +72,158 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloCondutor
             condutor.Complemento = "verde";
             condutor.Rua = "Rua Fulano";
 
-            repositorio.Editar(condutor);
+            //action
+            repositorioCondutor.Editar(condutor);
 
             //assert
-            var condutorEncontrado = repositorio.SelecionarPorId(condutor.Id);
+            Condutor? condutorEncontrado = repositorioCondutor.SelecionarPorId(condutor.Id);
 
             condutorEncontrado.Should().NotBeNull();
-            condutor.Should().Be(condutorEncontrado);
+            condutorEncontrado.Should().Be(condutor);
         }
 
         [TestMethod]
-        public void Deve_excluir_condutor()
+        public void Deve_Excluir_Condutor()
         {
-            //arrange           
-            repositorio.Inserir(condutor);
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
+
+            repositorioCliente.Inserir(cliente);
+            repositorioCondutor.Inserir(condutor);
 
             //action           
-            repositorio.Excluir(condutor);
+            repositorioCondutor.Excluir(condutor);
 
             //assert
-            var condutorEncontrado = repositorio.SelecionarPorId(condutor.Id);
+            Condutor? condutorEncontrado = repositorioCondutor.SelecionarPorId(condutor.Id);
+
             condutorEncontrado.Should().BeNull();
         }
 
         [TestMethod]
-        public void Deve_selecionar_apenas_um_condutor()
+        public void Deve_Selecionar_Condutor_Por_Id()
         {
-            //arrange          
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
+
             repositorioCliente.Inserir(cliente);
-            repositorio.Inserir(condutor);
+            repositorioCondutor.Inserir(condutor);
 
             //action
-            var condutorEncontrado = repositorio.SelecionarPorId(condutor.Id);
+            Condutor? condutorEncontrado = repositorioCondutor.SelecionarPorId(condutor.Id);
 
             //assert
             condutorEncontrado.Should().NotBeNull();
-            condutor.Should().Be(condutorEncontrado);
+            condutorEncontrado.Should().Be(condutor);
         }
 
         [TestMethod]
-        public void Deve_selecionar_todos_os_condutores()
+        public void Deve_Selecionar_Todos_Os_Condutores()
         {
-            //arrange
-            repositorioCliente.Inserir(cliente);
-            var c01 = new Condutor("Alan", "59643424719", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
-            var c02 = new Condutor("Eduardo", "59643424718", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
-            var c03 = new Condutor("Pedro", "59643424717", "12345678912345", "0123456789", DateTime.Now.Date, "12988754461", "pedro@gmail", "lAGES", "01234567", "212", "Centro", UF.SC, "azul", "Alameda", cliente);
+            // arrange
+            cliente = NovoCliente();
+            cliente2 = NovoCliente2();
+            condutor = NovoCondutor();
+            condutor2 = NovoCondutor2();
 
-            repositorio.Inserir(c01);
-            repositorio.Inserir(c02);
-            repositorio.Inserir(c03);
+            repositorioCliente.Inserir(cliente);
+            repositorioCliente.Inserir(cliente2);
+            repositorioCondutor.Inserir(condutor);
+            repositorioCondutor.Inserir(condutor2);
 
             //action
-            var condutores = repositorio.SelecionarTodos();
+            List<Condutor> condutores = repositorioCondutor.SelecionarTodos();
 
             //assert
-            condutores.Count.Should().Be(3);
+            condutores.Count.Should().Be(2);
+            condutores.Should().Contain(condutor);
+            condutores.Should().Contain(condutor2);
+        }
 
-            condutores[0].Should().Be(c01);
-            condutores[1].Should().Be(c02);
-            condutores[2].Should().Be(c03);
+        private Condutor NovoCondutor()
+        {
+            return new Condutor
+            {
+                Nome = "Alan",
+                CPF = "59643424718",
+                CNPJ = "12345678912345",
+                Rua = "Alameda",
+                CNH = "0123456789",
+                DataVencimento = DateTime.Now.Date,
+                Telefone = "12988754461",
+                Email = "Alan@gmail.com",
+                Cidade = "Lages",
+                CEP = "01234567",
+                Numero = "212",
+                Bairro = "Coral",
+                UF = UF.SP,
+                Complemento = "verde",
+                Cliente = cliente
+            };
+        }
 
-            BdUtil.ExecutarSql("DELETE FROM [TBCliente]; DBCC CHECKIDENT (TBCliente, RESEED, 0)");
-            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]; DBCC CHECKIDENT (TBCondutor, RESEED, 0)");
+        private Condutor NovoCondutor2()
+        {
+            return new Condutor
+            {
+                Nome = "Eduardo",
+                CPF = "59643424718",
+                CNPJ = "12345678912345",
+                Rua = "Alameda",
+                CNH = "0123456789",
+                DataVencimento = DateTime.Now.Date,
+                Telefone = "12988754461",
+                Email = "Eduardo@gmail.com",
+                Cidade = "Lages",
+                CEP = "01234567",
+                Numero = "212",
+                Bairro = "Coral",
+                UF = UF.SP,
+                Complemento = "verde",
+                Cliente = cliente2
+            };
+        }
+
+        private Cliente NovoCliente()
+        {
+            return new()
+            {
+                Nome = "Fulano",
+                CPF = "59643424718",
+                CNPJ = "12345678912345",
+                Rua = "Alameda",
+                CNH = "0123456789",
+                Telefone = "12988754461",
+                Email = "Fulano@gmail.com",
+                Cidade = "Lages",
+                CEP = "01234567",
+                Numero = "212",
+                Bairro = "Coral",
+                UF = UF.SP,
+                Complemento = "verde"
+            };
+        }
+
+        private Cliente NovoCliente2()
+        {
+            return new()
+            {
+                Nome = "Fulana",
+                CPF = "98443424718",
+                CNPJ = "67445678912345",
+                Rua = "Alameda",
+                CNH = "0123456789",
+                Telefone = "12988754461",
+                Email = "Fulana@gmail.com",
+                Cidade = "Lages",
+                CEP = "01234567",
+                Numero = "212",
+                Bairro = "Coral",
+                UF = UF.SC,
+                Complemento = "verde"
+            };
         }
     }
 }

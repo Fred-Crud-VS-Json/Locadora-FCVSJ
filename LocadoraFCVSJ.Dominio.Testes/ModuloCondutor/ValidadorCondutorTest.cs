@@ -1,5 +1,6 @@
 ﻿using FluentValidation.TestHelper;
 using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -106,7 +107,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCondutor
             //arrange
             condutor = NovoCondutor();
 
-            condutor.DataVencimento = DateTime.MaxValue;
+            condutor.DataVencimento = DateTime.MinValue;
 
             //action
             TestValidationResult<Condutor> resultado = validador.TestValidate(condutor);
@@ -245,6 +246,27 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCondutor
                 Rua = "Alameda",
                 CNH = "0123456789",
                 DataVencimento = DateTime.Now.Date,
+                Telefone = "12988754461",
+                Email = "Fulano@gmail.com",
+                Cidade = "Lages",
+                CEP = "01234567",
+                Numero = "212",
+                Bairro = "Coral",
+                UF = UF.SP,
+                Complemento = "verde",
+                Cliente = NovoCliente()
+            };
+        }
+
+        private Cliente NovoCliente()
+        {
+            return new()
+            {
+                Nome = "Fulano",
+                CPF = "59643424718",
+                CNPJ = "12345678912345",
+                Rua = "Alameda",
+                CNH = "0123456789",
                 Telefone = "12988754461",
                 Email = "Fulano@gmail.com",
                 Cidade = "Lages",

@@ -6,9 +6,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
 {
     public class RepositorioCondutor : RepositorioBase<Condutor, MapeadorCondutor>, IRepositorioCondutor
     {
-
-        protected override string QueryInserir => @"INSERT INTO [TBCONDUTOR]
+        protected override string QueryInserir =>
+            @"INSERT INTO [TBCONDUTOR]
                 (
+                    [ID],
                     [NOME],       
                     [CPF],
                     [CNPJ],                   
@@ -27,6 +28,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                 )
             VALUES
                 (
+                    @ID,
                     @NOME,
                     @CPF,
                     @CNPJ,
@@ -42,9 +44,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     @COMPLEMENTO,
                     @RUA,
                     @CLIENTE_ID
-                ); SELECT SCOPE_IDENTITY();";
+                )";
 
-        protected override string QueryEditar => @" UPDATE [TBCONDUTOR]
+        protected override string QueryEditar =>
+            @" UPDATE [TBCONDUTOR]
                     SET 
                         [NOME] = @NOME,  
                         [CPF] = @CPF,
@@ -64,11 +67,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     WHERE 
                         [ID] = @ID";
 
-
-        protected override string QueryExcluir => @"DELETE FROM [TBCONDUTOR] 
+        protected override string QueryExcluir =>
+            @"DELETE FROM [TBCONDUTOR] 
                 WHERE [ID] = @ID";
 
-        protected override string QuerySelecionarPorId => @"SELECT 
+        protected override string QuerySelecionarPorId =>
+            @"SELECT 
                     CONDUTOR.[ID] AS CONDUTOR_ID,		            
                     CONDUTOR.[NOME] AS CONDUTOR_NOME,       
                     CONDUTOR.[CPF] AS CONDUTOR_CPF,
@@ -84,22 +88,23 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     CONDUTOR.[UF] AS CONDUTOR_UF,
                     CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
                     CONDUTOR.[RUA] AS CONDUTOR_RUA,
-                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
-                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
-                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
-                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
-                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
-                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
-                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
                     [TBCLIENTE] AS CLIENTE
                 ON
                     CLIENTE.ID = CONDUTOR.CLIENTE_ID
@@ -122,22 +127,23 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     CONDUTOR.[UF] AS CONDUTOR_UF,
                     CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
                     CONDUTOR.[RUA] AS CONDUTOR_RUA,
-                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
-                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
-                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
-                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
-                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
-                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
-                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
                     [TBCLIENTE] AS CLIENTE
                 ON
                     CLIENTE.ID = CONDUTOR.CLIENTE_ID";
@@ -159,28 +165,28 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     CONDUTOR.[UF] AS CONDUTOR_UF,
                     CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
                     CONDUTOR.[RUA] AS CONDUTOR_RUA,
-                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
-                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
-                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
-                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
-                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
-                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
-                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
                     [TBCLIENTE] AS CLIENTE
                 ON
                     CLIENTE.ID = CONDUTOR.CLIENTE_ID
 		        WHERE
                     CONDUTOR.[CPF] = @CPF";
-
 
         public string QuerySelecionarPorCnpj =>
            @"SELECT 
@@ -199,28 +205,28 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     CONDUTOR.[UF] AS CONDUTOR_UF,
                     CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
                     CONDUTOR.[RUA] AS CONDUTOR_RUA,
-                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
-                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
-                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
-                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
-                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
-                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
-                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
                     [TBCLIENTE] AS CLIENTE
                 ON
                     CLIENTE.ID = CONDUTOR.CLIENTE_ID
 		        WHERE
                     CONDUTOR.[CNPJ] = @CNPJ";
-
 
         public string QuerySelecionarPorTelefone =>
            @"SELECT 
@@ -239,28 +245,28 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     CONDUTOR.[UF] AS CONDUTOR_UF,
                     CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
                     CONDUTOR.[RUA] AS CONDUTOR_RUA,
-                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
-                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
-                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
-                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
-                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
-                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
-                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
                     [TBCLIENTE] AS CLIENTE
                 ON
                     CLIENTE.ID = CONDUTOR.CLIENTE_ID
 		        WHERE
                     CONDUTOR.[TELEFONE] = @TELEFONE";
-
 
         public string QuerySelecionarPorEmail =>
            @"SELECT 
@@ -279,28 +285,28 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     CONDUTOR.[UF] AS CONDUTOR_UF,
                     CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
                     CONDUTOR.[RUA] AS CONDUTOR_RUA,
-                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
-                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
-                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
-                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
-                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
-                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
-                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
                     [TBCLIENTE] AS CLIENTE
                 ON
                     CLIENTE.ID = CONDUTOR.CLIENTE_ID
 		        WHERE
                     CONDUTOR.[EMAIL] = @EMAIL";
-
 
         public string QuerySelecionarPorCnh =>
            @"SELECT 
@@ -319,28 +325,28 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                     CONDUTOR.[UF] AS CONDUTOR_UF,
                     CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
                     CONDUTOR.[RUA] AS CONDUTOR_RUA,
-                    CONDUTOR.[CLIENTE_ID] AS CONDUTOR_CLIENTE_ID,
-                    CLIENTE.[NOME] AS CONDUTOR_CLIENTE_NOME,       
-                    CLIENTE.[CPF]  AS CONDUTOR_CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CONDUTOR_CLIENTE_CNPJ,                   
-                    CLIENTE.[CNH] AS CONDUTOR_CLIENTE_CNH,                                                       
-                    CLIENTE.[TELEFONE] AS CONDUTOR_CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CONDUTOR_CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CONDUTOR_CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CONDUTOR_CLIENTE_CEP,
-                    CLIENTE.[NUMERO] AS CONDUTOR_CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CONDUTOR_CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CONDUTOR_CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CONDUTOR_CLIENTE_COMPLEMENTO,
-                    CLIENTE.[RUA] AS CONDUTOR_CLIENTE_RUA
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCONDUTOR] AS CONDUTOR LEFT JOIN
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
                     [TBCLIENTE] AS CLIENTE
                 ON
                     CLIENTE.ID = CONDUTOR.CLIENTE_ID
 		        WHERE
                     CONDUTOR.[CNH] = @CNH";
-
 
         public Condutor? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
