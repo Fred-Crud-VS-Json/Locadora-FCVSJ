@@ -1,16 +1,19 @@
 ﻿using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloCliente;
+using LocadoraFCVSJ.Aplicacao.ModuloCondutor;
 using LocadoraFCVSJ.Aplicacao.ModuloFuncionario;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
+using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using LocadoraFCVSJ.ModuloCliente;
+using LocadoraFCVSJ.ModuloCondutor;
 using LocadoraFCVSJ.ModuloFuncionario;
 using LocadoraFCVSJ.ModuloGrupo;
 using LocadoraFCVSJ.ModuloPlanoDeCobranca;
@@ -31,11 +34,13 @@ namespace LocadoraFCVSJ
             RepositorioFuncionario repositorioFuncionario = new();
             RepositorioTaxa repositorioTaxa = new();
             RepositorioCliente repositorioCliente = new();
+            RepositorioCondutor repositorioCondutor = new();
 
             ServicoGrupo servicoGrupo = new(repositorioGrupo);
             ServicoTaxa servicoTaxa = new(repositorioTaxa);
             ServicoCliente servicoCliente = new(repositorioCliente);
             ServicoFuncionario servicoFuncionario = new(repositorioFuncionario);
+            ServicoCondutor servicoCondutor = new(repositorioCondutor, servicoCliente);
             ServicoPlanoDeCobranca servicoPlanoDeCobranca = new(new RepositorioPlanoDeCobranca());
 
             controladores = new()
@@ -44,8 +49,14 @@ namespace LocadoraFCVSJ
                 { "Funcionarios", new ControladorFuncionario(repositorioFuncionario, servicoFuncionario) },
                 { "Taxas", new ControladorTaxa(repositorioTaxa, servicoTaxa) },
                 { "Clientes", new ControladorCliente(repositorioCliente, servicoCliente) },
-                { "Planos", new ControladorPlanoDeCobranca(servicoGrupo, servicoPlanoDeCobranca) }
+                { "Planos", new ControladorPlanoDeCobranca(servicoGrupo, servicoPlanoDeCobranca) },
+                { "Condutores", new ControladorCondutor(repositorioCondutor, servicoCondutor) }
             };
+        }
+
+        private void BtnAcessarCondutores_Click(object sender, EventArgs e)
+        {
+            AbrirTela(BtnAcessarCondutores);
         }
 
         private void BtnAcessarGrupos_Click(object sender, EventArgs e)

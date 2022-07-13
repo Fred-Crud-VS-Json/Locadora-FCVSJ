@@ -84,7 +84,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             return controleClienteForm;
         }
 
-        private void CarregarClientes()
+        public void CarregarClientes()
         {
             List<Cliente> clientes = _repositorioCliente.SelecionarTodos();
 
