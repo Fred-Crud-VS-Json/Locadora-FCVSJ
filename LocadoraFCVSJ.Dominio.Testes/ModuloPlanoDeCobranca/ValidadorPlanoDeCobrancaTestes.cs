@@ -9,11 +9,15 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
     public class ValidadorPlanoDeCobrancaTestes
     {
         private PlanoDeCobranca? planoDeCobranca;
-        private readonly ValidadorPlanoDeCobranca validador;
+        private readonly ValidadorPlanoDiario validadorPlanoDiario;
+        private readonly ValidadorPlanoLivre validadorPlanoLivre;
+        private readonly ValidadorPlanoControlado validadorPlanoControlado;
 
         public ValidadorPlanoDeCobrancaTestes()
         {
-            validador = new();
+            validadorPlanoDiario = new();
+            validadorPlanoLivre = new();
+            validadorPlanoControlado = new();
         }
 
         [TestMethod]
@@ -24,7 +28,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
 
             planoDeCobranca.PlanoDiario_ValorDiario = -50.45m;
             // action
-            TestValidationResult<PlanoDeCobranca> resultado = validador.TestValidate(planoDeCobranca);
+            TestValidationResult<PlanoDeCobranca> resultado = validadorPlanoDiario.TestValidate(planoDeCobranca);
 
             // assert
             resultado.ShouldHaveValidationErrorFor(planoDeCobranca => planoDeCobranca.PlanoDiario_ValorDiario);
@@ -38,7 +42,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
 
             planoDeCobranca.PlanoDiario_ValorKm = -10.50m;
             // action
-            TestValidationResult<PlanoDeCobranca> resultado = validador.TestValidate(planoDeCobranca);
+            TestValidationResult<PlanoDeCobranca> resultado = validadorPlanoDiario.TestValidate(planoDeCobranca);
 
             // assert
             resultado.ShouldHaveValidationErrorFor(planoDeCobranca => planoDeCobranca.PlanoDiario_ValorKm);
@@ -52,7 +56,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
 
             planoDeCobranca.PlanoLivre_ValorDiario = -4.40m;
             // action
-            TestValidationResult<PlanoDeCobranca> resultado = validador.TestValidate(planoDeCobranca);
+            TestValidationResult<PlanoDeCobranca> resultado = validadorPlanoLivre.TestValidate(planoDeCobranca);
 
             // assert
             resultado.ShouldHaveValidationErrorFor(planoDeCobranca => planoDeCobranca.PlanoLivre_ValorDiario);
@@ -66,7 +70,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
 
             planoDeCobranca.PlanoControlado_ValorDiario = -2.25m;
             // action
-            TestValidationResult<PlanoDeCobranca> resultado = validador.TestValidate(planoDeCobranca);
+            TestValidationResult<PlanoDeCobranca> resultado = validadorPlanoControlado.TestValidate(planoDeCobranca);
 
             // assert
             resultado.ShouldHaveValidationErrorFor(planoDeCobranca => planoDeCobranca.PlanoControlado_ValorDiario);
@@ -80,7 +84,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
 
             planoDeCobranca.PlanoControlado_ValorKm = -0.54m;
             // action
-            TestValidationResult<PlanoDeCobranca> resultado = validador.TestValidate(planoDeCobranca);
+            TestValidationResult<PlanoDeCobranca> resultado = validadorPlanoControlado.TestValidate(planoDeCobranca);
 
             // assert
             resultado.ShouldHaveValidationErrorFor(planoDeCobranca => planoDeCobranca.PlanoControlado_ValorKm);
@@ -94,7 +98,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloPlanoDeCobranca
 
             planoDeCobranca.PlanoControlado_LimiteKm = -16478;
             // action
-            TestValidationResult<PlanoDeCobranca> resultado = validador.TestValidate(planoDeCobranca);
+            TestValidationResult<PlanoDeCobranca> resultado = validadorPlanoControlado.TestValidate(planoDeCobranca);
 
             // assert
             resultado.ShouldHaveValidationErrorFor(planoDeCobranca => planoDeCobranca.PlanoControlado_LimiteKm);
