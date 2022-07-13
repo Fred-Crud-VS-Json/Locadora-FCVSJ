@@ -10,14 +10,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
 {
     [TestClass]
-    public class RepositorioVeiculoEmBancoDeDadosTest
+    public class RepositorioVeiculoTestes
     {
         private Veiculo? veiculo;
         private Grupo? grupo;
         private readonly RepositorioVeiculo repositorioVeiculo;
         private readonly RepositorioGrupo repositorioGrupo;
 
-        public RepositorioVeiculoEmBancoDeDadosTest()
+        public RepositorioVeiculoTestes()
         {
             BdUtil.ExecutarSql("DELETE FROM [TBVeiculo]; DBCC CHECKIDENT (TBVeiculo, RESEED, 0)");
             BdUtil.ExecutarSql("DELETE FROM [TBGrupo]; DBCC CHECKIDENT (TBGrupo, RESEED, 0)");
