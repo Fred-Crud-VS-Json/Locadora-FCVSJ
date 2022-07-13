@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
+using Serilog;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 {
@@ -16,20 +17,40 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         public ValidationResult Inserir(Cliente cliente)
         {
+            Log.Logger.Debug("Tentando inserir novo cliente...");
+
             ValidationResult resultadoValidacao = Validar(cliente);
 
             if (resultadoValidacao.IsValid)
+            {
                 _repositorioCliente.Inserir(cliente);
+                Log.Logger.Information($"Cliente {cliente.Id} inserido com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o cliente {cliente.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
 
         public ValidationResult Editar(Cliente cliente)
         {
+            Log.Logger.Debug("Tentando editar cliente...");
+
             ValidationResult resultadoValidacao = Validar(cliente);
 
             if (resultadoValidacao.IsValid)
+            {
                 _repositorioCliente.Editar(cliente);
+                Log.Logger.Information($"Cliente {cliente.Id} editado com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o cliente {cliente.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }

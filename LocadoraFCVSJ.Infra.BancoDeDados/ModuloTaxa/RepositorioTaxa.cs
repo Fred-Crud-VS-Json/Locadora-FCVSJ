@@ -1,5 +1,6 @@
 ﻿using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 {
@@ -8,17 +9,18 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
         protected override string QueryInserir =>
             @"INSERT INTO [TBTaxa]
                 (
+                    [ID],
                     [NOME],
                     [VALOR],
                     [TIPOCALCULOTAXA]
                 )
                 VALUES
                 (
+                    @ID,
                     @NOME,
                     @VALOR,
                     @TIPOCALCULOTAXA
-                )
-                SELECT SCOPE_IDENTITY()";
+                )";
 
         protected override string QueryEditar =>
              @"UPDATE [TBTaxa]
@@ -36,10 +38,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 
         protected override string QuerySelecionarPorId =>
             @"SELECT 
-	                TAXA.[ID],
-	                TAXA.[NOME],
-	                TAXA.[VALOR],
-	                TAXA.[TIPOCALCULOTAXA]
+	                TAXA.[ID] AS TAXA_ID,
+	                TAXA.[NOME] AS TAXA_NOME,
+	                TAXA.[VALOR] AS TAXA_VALOR,
+	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
                 FROM
 	                [TBTaxa] AS TAXA
                 WHERE 
@@ -47,19 +49,19 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 
         protected override string QuerySelecionarTodos =>
             @"SELECT 
-	                TAXA.[ID],
-	                TAXA.[NOME],
-	                TAXA.[VALOR],
-	                TAXA.[TIPOCALCULOTAXA]
+	                TAXA.[ID] AS TAXA_ID,
+	                TAXA.[NOME] AS TAXA_NOME,
+	                TAXA.[VALOR] AS TAXA_VALOR,
+	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
                 FROM
 	                [TBTaxa] AS TAXA";
 
         public string QuerySelecionarPorNome =>
             @"SELECT 
-	                TAXA.[ID],
-	                TAXA.[NOME],
-                    TAXA.[VALOR],
-                    TAXA.[TIPOCALCULOTAXA]
+	                TAXA.[ID] AS TAXA_ID,
+	                TAXA.[NOME] AS TAXA_NOME,
+	                TAXA.[VALOR] AS TAXA_VALOR,
+	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
                 FROM
 	                [TBTaxa] AS TAXA
                 WHERE 
@@ -67,7 +69,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 
         public Taxa? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
-            throw new NotImplementedException();
+            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
         }
     }
 }

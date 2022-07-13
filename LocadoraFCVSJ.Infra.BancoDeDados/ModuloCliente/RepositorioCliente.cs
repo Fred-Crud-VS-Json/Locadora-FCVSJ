@@ -7,8 +7,10 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
     public class RepositorioCliente : RepositorioBase<Cliente, MapeadorCliente>, IRepositorioCliente
     {
 
-        protected override string QueryInserir => @"INSERT INTO [TBCLIENTE]
+        protected override string QueryInserir =>
+            @"INSERT INTO [TBCliente]
                 (
+                    [ID],
                     [NOME],       
                     [CPF],
                     [CNPJ],                   
@@ -17,14 +19,15 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                     [EMAIL],
                     [CIDADE],
                     [CEP],
+                    [RUA],
                     [NUMERO],
                     [BAIRRO],
                     [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+                    [COMPLEMENTO]
                 )
             VALUES
                 (
+                    @ID,
                     @NOME,
                     @CPF,
                     @CNPJ,
@@ -33,15 +36,15 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                     @EMAIL,
                     @CIDADE,
                     @CEP,
+                    @RUA,
                     @NUMERO,
                     @BAIRRO,
                     @UF,
-                    @COMPLEMENTO,
-                    @RUA
+                    @COMPLEMENTO
+                )";
 
-                ); SELECT SCOPE_IDENTITY();";
-
-        protected override string QueryEditar => @" UPDATE [TBCLIENTE]
+        protected override string QueryEditar =>
+            @" UPDATE [TBCliente]
                     SET 
                         [NOME] = @NOME,  
                         [CPF] = @CPF,
@@ -51,159 +54,162 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
                         [EMAIL] =  @EMAIL,
                         [CIDADE] = @CIDADE,
                         [CEP] = @CEP,
+                        [RUA] = @RUA,
                         [NUMERO] = @NUMERO,
                         [BAIRRO] = @BAIRRO,
                         [UF] = @UF,
-                        [COMPLEMENTO] = @COMPLEMENTO,
-                        [RUA] = @RUA
+                        [COMPLEMENTO] = @COMPLEMENTO
                     WHERE 
                         [ID] = @ID";
 
-        protected override string QueryExcluir => @"DELETE FROM [TBCLIENTE] 
+        protected override string QueryExcluir =>
+            @"DELETE FROM [TBCliente] 
                 WHERE [ID] = @ID";
 
-        protected override string QuerySelecionarPorId => @"SELECT 
-                    [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                  
-                    [CNH],                                                           
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+        protected override string QuerySelecionarPorId =>
+            @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCLIENTE]
+		            [TBCLIENTE] AS CLIENTE
 		        WHERE
-                    [ID] = @ID";
+                    CLIENTE.[ID] = @ID";
 
-        protected override string QuerySelecionarTodos => @"SELECT 
-                    [ID],
-		            [NOME],       
-                    [CPF],
-                    [CNPJ],                 
-                    [CNH],                                                           
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+        protected override string QuerySelecionarTodos =>
+            @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCLIENTE]";
+		            [TBCLIENTE] AS CLIENTE";
 
         public string QuerySelecionarPorCpf =>
             @"SELECT 
-	                 [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                  
-                    [CNH],                                                           
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCLIENTE]
+		            [TBCLIENTE] AS CLIENTE
 		        WHERE 
-                    [CPF] = @CPF";
+                    CLIENTE.[CPF] = @CPF";
 
         public string QuerySelecionarPorCnpj =>
-           @"SELECT 
-	                 [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                  
-                    [CNH],                                                           
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+            @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCLIENTE]
+		            [TBCLIENTE] AS CLIENTE
 		        WHERE 
-                    [CNPJ] = @CNPJ";
+                    CLIENTE.[CNPJ] = @CNPJ";
 
         public string QuerySelecionarPorTelefone =>
-           @"SELECT 
-	                 [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                  
-                    [CNH],                                                           
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+            @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCLIENTE]
+		            [TBCLIENTE] AS CLIENTE
 		        WHERE 
-                    [TELEFONE] = @TELEFONE";
+                    CLIENTE.[TELEFONE] = @TELEFONE";
 
         public string QuerySelecionarPorEmail =>
-           @"SELECT 
-	                 [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                  
-                    [CNH],                                                           
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+            @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCLIENTE]
+		            [TBCLIENTE] AS CLIENTE
 		        WHERE 
-                    [EMAIL] = @EMAIL";
+                    CLIENTE.[EMAIL] = @EMAIL";
 
         public string QuerySelecionarPorCnh =>
-           @"SELECT 
-	                 [ID],		            
-                    [NOME],       
-                    [CPF],
-                    [CNPJ],                  
-                    [CNH],                                                           
-                    [TELEFONE],
-                    [EMAIL],
-                    [CIDADE],
-                    [CEP],
-                    [NUMERO],
-                    [BAIRRO],
-                    [UF],
-                    [COMPLEMENTO],
-                    [RUA]
+            @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
 	            FROM 
-		            [TBCLIENTE]
+		            [TBCLIENTE] AS CLIENTE
 		        WHERE 
-                    [CNH] = @CNH";
+                    CLIENTE.[CNH] = @CNH";
 
         public Cliente? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {

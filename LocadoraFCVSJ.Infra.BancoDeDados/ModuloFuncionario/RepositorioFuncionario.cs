@@ -9,6 +9,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
         protected override string QueryInserir =>
             @"INSERT INTO [TBFUNCIONARIO]
                 (
+                    [ID],
                     [NOME],
                     [LOGIN],
                     [SENHA],
@@ -18,13 +19,14 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 )
                 VALUES
                 (
+                    @ID,
                     @NOME,
                     @LOGIN,
                     @SENHA,
                     @SALARIO,
                     @DATAADMISSAO,
                     @NIVELACESSO
-                );SELECT SCOPE_IDENTITY();";
+                )";
 
         protected override string QueryEditar =>
             @"UPDATE [TBFUNCIONARIO]
@@ -45,43 +47,43 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
 
         protected override string QuerySelecionarPorId =>
             @"SELECT
-                [ID],
-                [NOME],
-                [LOGIN],
-                [SENHA],
-                [SALARIO],
-                [DATAADMISSAO],
-                [NIVELACESSO]
+                FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
+                FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
+                FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
+                FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
+                FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
+                FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
             FROM
-                [TBFUNCIONARIO]
+                [TBFUNCIONARIO] AS FUNCIONARIO
             WHERE
-                [ID] = @ID";
+                FUNCIONARIO.[ID] = @ID";
 
         protected override string QuerySelecionarTodos =>
             @"SELECT
-                [ID],
-                [NOME],
-                [LOGIN],
-                [SENHA],
-                [SALARIO],
-                [DATAADMISSAO],
-                [NIVELACESSO]
+                FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
+                FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
+                FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
+                FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
+                FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
+                FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
             FROM
-                [TBFUNCIONARIO]";
+                [TBFUNCIONARIO] AS FUNCIONARIO";
 
         public string QuerySelecionarPorUsuario =>
             @"SELECT 
-	                [ID],
-                    [NOME],
-                    [LOGIN],
-                    [SENHA],
-                    [SALARIO],
-                    [DATAADMISSAO],
-                    [NIVELACESSO]
+                    FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
+                    FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
+                    FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                    FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
+                    FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
+                    FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
+                    FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
                 FROM
-	                [TBFUNCIONARIO]
+                    [TBFUNCIONARIO] AS FUNCIONARIO
                 WHERE 
-	                [LOGIN] = @LOGIN";
+	                FUNCIONARIO.[LOGIN] = @LOGIN";
 
         public Funcionario? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {

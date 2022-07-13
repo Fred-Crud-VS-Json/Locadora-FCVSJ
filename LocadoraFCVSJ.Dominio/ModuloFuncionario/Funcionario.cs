@@ -14,7 +14,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
         public override bool Equals(object? obj)
         {
             return obj is Funcionario funcionario &&
-                   Id == funcionario.Id &&
+                   Id.Equals(funcionario.Id) &&
                    Nome == funcionario.Nome &&
                    Usuario == funcionario.Usuario &&
                    Senha == funcionario.Senha &&

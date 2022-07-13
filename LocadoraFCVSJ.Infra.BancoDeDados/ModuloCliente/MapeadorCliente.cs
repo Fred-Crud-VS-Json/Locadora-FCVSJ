@@ -27,42 +27,27 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 
         public override Cliente ConverterRegistro(SqlDataReader leitorCliente)
         {
-            int id = Convert.ToInt32(leitorCliente["ID"]);
-            string nome = Convert.ToString(leitorCliente["NOME"]);
-            string cpf = Convert.ToString(leitorCliente["CPF"]);
-
             string cnpj = "";
 
-            if (leitorCliente["CNPJ"] != DBNull.Value) 
-                cnpj = Convert.ToString(leitorCliente["CNPJ"]);
+            if (leitorCliente["CLIENTE_CNPJ"] != DBNull.Value) 
+                cnpj = Convert.ToString(leitorCliente["CLIENTE_CNPJ"]);
 
-            string cnh = Convert.ToString(leitorCliente["CNH"]);
-            string telefone = Convert.ToString(leitorCliente["TELEFONE"]);
-            string email = Convert.ToString(leitorCliente["EMAIL"]);
-            string cidade = Convert.ToString(leitorCliente["CIDADE"]);
-            string cep = Convert.ToString(leitorCliente["CEP"]);
-            string numero = Convert.ToString(leitorCliente["NUMERO"]);
-            string bairro = Convert.ToString(leitorCliente["BAIRRO"]);
-            UF uf = (UF)leitorCliente["UF"];
-            string complemento = Convert.ToString(leitorCliente["COMPLEMENTO"]);
-            string rua = Convert.ToString(leitorCliente["RUA"]);
-
-            return new Cliente()
+            return new()
             {
-                Id = id,
-                Nome = nome,
-                CPF = cpf,
+                Id = Guid.Parse(leitorCliente["CLIENTE_ID"].ToString()),
+                Nome = Convert.ToString(leitorCliente["CLIENTE_NOME"]),
+                CPF = Convert.ToString(leitorCliente["CLIENTE_CPF"]),
                 CNPJ = cnpj,
-                CNH = cnh,
-                Telefone = telefone,
-                Email = email,
-                Cidade = cidade,
-                CEP = cep,
-                Numero = numero,
-                Bairro = bairro,
-                UF = uf,
-                Complemento = complemento,
-                Rua = rua
+                CNH = Convert.ToString(leitorCliente["CLIENTE_CNH"]),
+                Telefone = Convert.ToString(leitorCliente["CLIENTE_TELEFONE"]),
+                Email = Convert.ToString(leitorCliente["CLIENTE_EMAIL"]),
+                Cidade = Convert.ToString(leitorCliente["CLIENTE_CIDADE"]),
+                CEP = Convert.ToString(leitorCliente["CLIENTE_CEP"]),
+                Numero = Convert.ToString(leitorCliente["CLIENTE_NUMERO"]),
+                Bairro = Convert.ToString(leitorCliente["CLIENTE_BAIRRO"]),
+                UF = (UF)leitorCliente["CLIENTE_UF"],
+                Complemento = Convert.ToString(leitorCliente["CLIENTE_COMPLEMENTO"]),
+                Rua = Convert.ToString(leitorCliente["CLIENTE_RUA"])
             };
         }
     }

@@ -16,7 +16,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
         {
             return new()
             {
-                Id = Convert.ToInt32(leitorRegistro["GRUPO_ID"]),
+                Id = Guid.Parse(leitorRegistro["GRUPO_ID"].ToString()),
                 Nome = Convert.ToString(leitorRegistro["GRUPO_NOME"])
             };
         }

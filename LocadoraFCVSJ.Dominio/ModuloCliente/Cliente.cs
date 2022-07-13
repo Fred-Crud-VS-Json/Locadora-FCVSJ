@@ -5,27 +5,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
 {
     public class Cliente : EntidadeBase<Cliente>
     {
-        public Cliente()
-        {
-        }
-
-        public Cliente(string nome, string cPF, string? cNPJ, string cNH, string telefone, string email, string cidade, string cEP, string numero, string bairro, UF uf, string? complemento, string rua)
-        {
-            Nome = nome;
-            CPF = cPF;
-            CNPJ = cNPJ;
-            CNH = cNH;
-            Telefone = telefone;
-            Email = email;
-            Cidade = cidade;
-            CEP = cEP;
-            Numero = numero;
-            Bairro = bairro;
-            UF = uf;
-            Complemento = complemento;
-            Rua = rua;
-        }
-
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string? CNPJ { get; set; }
@@ -34,16 +13,16 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
         public string Email { get; set; }
         public string Cidade { get; set; }
         public string CEP { get; set; }
+        public string Rua { get; set; }
         public string Numero { get; set; }
         public string Bairro { get; set; }
         public UF? UF { get; set; }
-        public string? Complemento { get; set; }
-        public string Rua { get; set; }
+        public string Complemento { get; set; }
 
         public override bool Equals(object? obj)
         {
             return obj is Cliente cliente &&
-                   Id == cliente.Id &&
+                   Id.Equals(cliente.Id) &&
                    Nome == cliente.Nome &&
                    CPF == cliente.CPF &&
                    CNPJ == cliente.CNPJ &&

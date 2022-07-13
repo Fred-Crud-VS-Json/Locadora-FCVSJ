@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Aplicação", "2. Aplica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Aplicacao", "LocadoraFCVSJ.Aplicacao\LocadoraFCVSJ.Aplicacao.csproj", "{918578B2-8466-45BF-A71A-F39BDD004DAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraFCVSJ.Infra.Logging", "LocadoraFCVSJ.Infra.Logging\LocadoraFCVSJ.Infra.Logging.csproj", "{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{918578B2-8466-45BF-A71A-F39BDD004DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{918578B2-8466-45BF-A71A-F39BDD004DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{918578B2-8466-45BF-A71A-F39BDD004DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{56B50F5E-2604-45EB-B315-831EC25FAB86} = {D2622BCB-E2B8-4773-81CE-28A7420778FC}
 		{056017D8-71DC-45B7-B190-037FDF50BA77} = {95D80287-78BB-4FF4-8F0D-CBB8B513E344}
 		{918578B2-8466-45BF-A71A-F39BDD004DAE} = {CB63949E-9AA7-418B-8C45-CBEDB041C15C}
+		{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8} = {D2622BCB-E2B8-4773-81CE-28A7420778FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC2BB27F-9238-46BD-8F42-19AFC6EF31D1}

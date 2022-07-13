@@ -18,7 +18,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
         public override bool Equals(object? obj)
         {
             return obj is Grupo grupo &&
-                   Id == grupo.Id &&
+                   Id.Equals(grupo.Id) &&
                    Nome == grupo.Nome;
         }
 
@@ -30,6 +30,11 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
         public override int GetHashCode()
         {
             return HashCode.Combine(Id, Nome);
+        }
+
+        public override string ToString()
+        {
+            return Nome;
         }
     }
 }

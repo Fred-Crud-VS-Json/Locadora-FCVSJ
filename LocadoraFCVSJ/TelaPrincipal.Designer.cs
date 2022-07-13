@@ -50,7 +50,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.kryptonButton4 = new Krypton.Toolkit.KryptonButton();
+            this.BtnAcessarPlanos = new Krypton.Toolkit.KryptonButton();
             this.label4 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -435,7 +435,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.pictureBox6);
-            this.panel8.Controls.Add(this.kryptonButton4);
+            this.panel8.Controls.Add(this.BtnAcessarPlanos);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Location = new System.Drawing.Point(2, 2);
             this.panel8.Name = "panel8";
@@ -452,28 +452,39 @@
             this.pictureBox6.TabIndex = 32;
             this.pictureBox6.TabStop = false;
             // 
-            // kryptonButton4
+            // BtnAcessarPlanos
             // 
-            this.kryptonButton4.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.kryptonButton4.Enabled = false;
-            this.kryptonButton4.Location = new System.Drawing.Point(8, 51);
-            this.kryptonButton4.Name = "kryptonButton4";
-            this.kryptonButton4.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton4.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton4.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnAcessarPlanos.AccessibleName = "Planos";
+            this.BtnAcessarPlanos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnAcessarPlanos.Location = new System.Drawing.Point(8, 51);
+            this.BtnAcessarPlanos.Name = "BtnAcessarPlanos";
+            this.BtnAcessarPlanos.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarPlanos.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarPlanos.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton4.OverrideDefault.Border.Rounding = 5F;
-            this.kryptonButton4.Size = new System.Drawing.Size(210, 51);
-            this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton4.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton4.StateCommon.Back.ColorAngle = 45F;
-            this.kryptonButton4.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton4.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonButton4.StateCommon.Border.ColorAngle = 45F;
-            this.kryptonButton4.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnAcessarPlanos.OverrideDefault.Border.Rounding = 5F;
+            this.BtnAcessarPlanos.Size = new System.Drawing.Size(210, 51);
+            this.BtnAcessarPlanos.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarPlanos.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarPlanos.StateCommon.Back.ColorAngle = 45F;
+            this.BtnAcessarPlanos.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarPlanos.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.BtnAcessarPlanos.StateCommon.Border.ColorAngle = 45F;
+            this.BtnAcessarPlanos.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarPlanos.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnAcessarPlanos.StateCommon.Border.Rounding = 5F;
+            this.BtnAcessarPlanos.StateCommon.Border.Width = 2;
+            this.BtnAcessarPlanos.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnAcessarPlanos.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
+            this.BtnAcessarPlanos.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Poppins Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarPlanos.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarPlanos.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarPlanos.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarPlanos.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(151)))), ((int)(((byte)(149)))));
+            this.BtnAcessarPlanos.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             this.kryptonButton4.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.kryptonButton4.StateCommon.Border.Rounding = 5F;
             this.kryptonButton4.StateCommon.Border.Width = 2;
@@ -487,23 +498,24 @@
             this.kryptonButton4.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton4.StateDisabled.Border.Rounding = 5F;
-            this.kryptonButton4.StateDisabled.Border.Width = 2;
-            this.kryptonButton4.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton4.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton4.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton4.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
-            this.kryptonButton4.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.BtnAcessarPlanos.StateDisabled.Border.Rounding = 5F;
+            this.BtnAcessarPlanos.StateDisabled.Border.Width = 2;
+            this.BtnAcessarPlanos.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarPlanos.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarPlanos.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarPlanos.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(94)))), ((int)(((byte)(50)))));
+            this.BtnAcessarPlanos.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonButton4.StatePressed.Border.Rounding = 5F;
-            this.kryptonButton4.StatePressed.Border.Width = 2;
-            this.kryptonButton4.TabIndex = 30;
-            this.kryptonButton4.ToolTipValues.Description = "";
-            this.kryptonButton4.ToolTipValues.EnableToolTips = true;
-            this.kryptonButton4.ToolTipValues.Heading = "Acessar Módulo Finança";
-            this.kryptonButton4.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
-            this.kryptonButton4.Values.Text = "Acessar";
+            this.BtnAcessarPlanos.StatePressed.Border.Rounding = 5F;
+            this.BtnAcessarPlanos.StatePressed.Border.Width = 2;
+            this.BtnAcessarPlanos.TabIndex = 30;
+            this.BtnAcessarPlanos.ToolTipValues.Description = "";
+            this.BtnAcessarPlanos.ToolTipValues.EnableToolTips = true;
+            this.BtnAcessarPlanos.ToolTipValues.Heading = "Acessar Módulo Finança";
+            this.BtnAcessarPlanos.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
+            this.BtnAcessarPlanos.Values.Text = "Acessar";
+            this.BtnAcessarPlanos.Click += new System.EventHandler(this.BtnAcessarPlanos_Click);
             // 
             // label4
             // 
@@ -512,15 +524,16 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label4.Location = new System.Drawing.Point(35, 13);
             this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 26);
             this.label4.Size = new System.Drawing.Size(141, 18);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Gestão de Finanças";
+            this.label4.Text = "Gestão de Planos";
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
             this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(11, 403);
+            this.panel9.Location = new System.Drawing.Point(261, 401);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(232, 114);
             this.panel9.TabIndex = 5;
@@ -875,7 +888,7 @@
         private Panel panel7;
         private Panel panel8;
         private PictureBox pictureBox6;
-        private Krypton.Toolkit.KryptonButton kryptonButton4;
+        private Krypton.Toolkit.KryptonButton BtnAcessarPlanos;
         private Label label4;
         private Panel panel9;
         private Panel panel10;

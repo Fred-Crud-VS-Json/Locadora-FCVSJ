@@ -17,17 +17,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 
         public override Taxa ConverterRegistro(SqlDataReader leitorRegistro)
         {
-            int id = Convert.ToInt32(leitorRegistro["ID"]);
-            string? nome = Convert.ToString(leitorRegistro["NOME"]);
-            decimal valor = Convert.ToDecimal(leitorRegistro["VALOR"]);
-            TipoCalculoTaxa tipoCalculoTaxa = (TipoCalculoTaxa)leitorRegistro["TIPOCALCULOTAXA"];
-
-            return new Taxa
+            return new()
             {
-                Id = id,
-                Nome = nome,
-                Valor = valor,
-                TipoCalculoTaxa = tipoCalculoTaxa
+                Id = Guid.Parse(leitorRegistro["TAXA_ID"].ToString()),
+                Nome = Convert.ToString(leitorRegistro["TAXA_NOME"]),
+                Valor = Convert.ToDecimal(leitorRegistro["TAXA_VALOR"]),
+                TipoCalculoTaxa = (TipoCalculoTaxa)leitorRegistro["TAXA_TIPOCALCULO"]
             };
         }
     }

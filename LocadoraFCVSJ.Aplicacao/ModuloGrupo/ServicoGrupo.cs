@@ -2,41 +2,62 @@
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
+using Serilog;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 {
     public class ServicoGrupo
     {
-        private readonly RepositorioGrupo repositorioGrupo;
+        private readonly RepositorioGrupo _repositorioGrupo;
 
         public ServicoGrupo(RepositorioGrupo repositorioGrupo)
         {
-            this.repositorioGrupo = repositorioGrupo;
+            _repositorioGrupo = repositorioGrupo;
         }
 
         public ValidationResult Inserir(Grupo grupo)
         {
+            Log.Logger.Debug("Tentando inserir novo grupo...");
+
             ValidationResult resultadoValidacao = Validar(grupo);
 
             if (resultadoValidacao.IsValid)
-                repositorioGrupo.Inserir(grupo);
+            {
+                _repositorioGrupo.Inserir(grupo);
+                Log.Logger.Information($"Grupo {grupo.Id} inserido com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o grupo {grupo.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
 
         public ValidationResult Editar(Grupo grupo)
         {
+            Log.Logger.Debug("Tentando editar grupo...");
+
             ValidationResult resultadoValidacao = Validar(grupo);
 
             if (resultadoValidacao.IsValid)
-                repositorioGrupo.Editar(grupo);
+            {
+                _repositorioGrupo.Editar(grupo);
+                Log.Logger.Information($"Grupo {grupo.Id} editado com sucesso.");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o grupo {grupo.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
 
         public List<Grupo> SelecionarTodos()
         {
-            return repositorioGrupo.SelecionarTodos();
+            return _repositorioGrupo.SelecionarTodos();
         }
 
         private ValidationResult Validar(Grupo grupo)
@@ -53,9 +74,9 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 
         private bool NomeDuplicado(Grupo grupo)
         {
-            string query = repositorioGrupo.QuerySelecionarPorNome;
+            string query = _repositorioGrupo.QuerySelecionarPorNome;
 
-            Grupo? grupoEncontrado = repositorioGrupo.SelecionarPropriedade(query, "NOME", grupo.Nome);
+            Grupo? grupoEncontrado = _repositorioGrupo.SelecionarPropriedade(query, "NOME", grupo.Nome);
 
             return grupoEncontrado != null
                 && grupoEncontrado.Nome.Equals(grupo.Nome, StringComparison.OrdinalIgnoreCase)

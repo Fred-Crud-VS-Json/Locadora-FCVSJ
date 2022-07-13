@@ -8,20 +8,20 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
 {
     [TestClass]
-    public class RepositorioFuncionarioEmBancoDadosTest
+    public class RepositorioFuncionarioTestes
     {
         private Funcionario? funcionario;
         private readonly RepositorioFuncionario repositorioFuncionario;
 
-        public RepositorioFuncionarioEmBancoDadosTest() 
+        public RepositorioFuncionarioTestes() 
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBFuncionario]; DBCC CHECKIDENT (TBFuncionario, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBFuncionario]");
 
             repositorioFuncionario = new();
         }
 
         [TestMethod]
-        public void Deve_inserir_funcionario()
+        public void Deve_Inserir_Funcionario()
         {
             //arrange
             funcionario = NovoFuncionario();
@@ -33,11 +33,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
 
             funcionarioEncontrado.Should().NotBeNull();
-            funcionario.Should().Be(funcionarioEncontrado);
+            funcionarioEncontrado.Should().Be(funcionario);
         }
 
         [TestMethod]
-        public void Deve_editar_funcionario()
+        public void Deve_Editar_Funcionario()
         {
             //arrange
             funcionario = NovoFuncionario();
@@ -61,76 +61,86 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloFuncionario
             Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
 
             funcionarioEncontrado.Should().NotBeNull();
-            funcionario.Should().Be(funcionarioEncontrado);
+            funcionarioEncontrado.Should().Be(funcionario);
         }
 
         [TestMethod]
-        public void Deve_excluir_funcionario()
+        public void Deve_Excluir_Funcionario()
         {
             //arrange
             funcionario = NovoFuncionario();
 
-            //action
             repositorioFuncionario.Inserir(funcionario);
-
-            //assert
-            Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
 
             //action
             repositorioFuncionario.Excluir(funcionario);
 
-            funcionarioEncontrado.Should().NotBeNull();
+            // assert
+            Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
+
+            funcionarioEncontrado.Should().BeNull();
         }
 
         [TestMethod]
-        public void Deve_Selecionar_todos_funcionarios()
+        public void Deve_Selecionar_Funcionario_Por_Id()
         {
             //arrange
             funcionario = NovoFuncionario();
 
-            //action
             repositorioFuncionario.Inserir(funcionario);
 
+            //action
+            Funcionario? funcionarioEncontrado = repositorioFuncionario.SelecionarPorId(funcionario.Id);
+
+            //assert
+            funcionarioEncontrado.Should().NotBeNull();
+            funcionarioEncontrado.Should().Be(funcionario);
+        }
+
+        [TestMethod]
+        public void Deve_Selecionar_Todos_Funcionarios()
+        {
             //arrange
-            funcionario = NovoFuncionario2();
+            funcionario = NovoFuncionario();
+            Funcionario funcionario2 = NovoFuncionario2();
+
+            repositorioFuncionario.Inserir(funcionario);
+            repositorioFuncionario.Inserir(funcionario2);
 
             //action
-            repositorioFuncionario.Inserir(funcionario);
+            List<Funcionario> funcionarios = repositorioFuncionario.SelecionarTodos();
 
             //assert
-            var funcionarios = repositorioFuncionario.SelecionarTodos();
-
-            //assert
-            Assert.AreEqual(2, funcionarios.Count);
-
-            Assert.AreEqual("Fulano", funcionarios[0].Nome);
-            Assert.AreEqual("Fulana", funcionarios[1].Nome);
+            funcionarios.Count.Should().Be(2);
+            funcionarios.Should().Contain(funcionario);
+            funcionarios.Should().Contain(funcionario2);
         }
 
         private Funcionario NovoFuncionario()
         {
-            return new Funcionario
+            return new()
             {
                 Nome = "Fulano",
                 Usuario = "FulanoDaSilva",
                 Senha = "Fulano123567789",
                 Salario = 1500,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = (NivelAcesso)1
+                NivelAcesso = NivelAcesso.Financeiro
             };
         }
 
         private Funcionario NovoFuncionario2()
         {
-            return new Funcionario
+            return new()
             {
                 Nome = "Fulana",
                 Usuario = "FulanaDaSilveira",
                 Senha = "Fulanoa4444657789",
                 Salario = 2000,
                 DataAdmissao = DateTime.Now.Date,
-                NivelAcesso = (NivelAcesso)2
+                NivelAcesso = NivelAcesso.Gerente
             };
         }
+
     }
 }
