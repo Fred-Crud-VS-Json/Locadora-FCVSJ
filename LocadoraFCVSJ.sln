@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Testes", "5. Testes", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Apresentação", "1. Apresentação", "{95D80287-78BB-4FF4-8F0D-CBB8B513E344}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 Teste Unitários", "4.1 Teste Unitários", "{C0DAE0DB-07E5-46BF-B85A-1B9960963CB4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 Teste Unitários", "5.1 Teste Unitários", "{C0DAE0DB-07E5-46BF-B85A-1B9960963CB4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 Testes de Integração", "4.2 Testes de Integração", "{35878EC7-75FF-4E96-A940-255D607AD843}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 Testes de Integração", "5.2 Testes de Integração", "{35878EC7-75FF-4E96-A940-255D607AD843}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Dominio.Testes", "LocadoraFCVSJ.Dominio.Testes\LocadoraFCVSJ.Dominio.Testes.csproj", "{E11071B5-046C-4073-9BEB-A19C31D7C830}"
 EndProject
