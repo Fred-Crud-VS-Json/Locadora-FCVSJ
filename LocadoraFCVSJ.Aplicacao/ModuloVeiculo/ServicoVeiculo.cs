@@ -1,75 +1,143 @@
-﻿using FluentValidation;
+﻿using FluentResults;
+using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 using Serilog;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
 {
     public class ServicoVeiculo
     {
         private readonly RepositorioVeiculo _repositorioVeiculo;
+        private string _msgErro = "";
 
         public ServicoVeiculo(RepositorioVeiculo repositorioVeiculo)
         {
             _repositorioVeiculo = repositorioVeiculo;
         }
 
-        public ValidationResult Inserir(Veiculo veiculo)
+        public Result<Veiculo> Inserir(Veiculo veiculo)
         {
-            Log.Logger.Information("Tentando inserir novo veículo...");
+            Log.Logger.Debug("Tentando inserir veículo...");
 
-            ValidationResult resultadoValidacao = Validar(veiculo);
+            Result resultadoValidacao = Validar(veiculo);
 
-            if (resultadoValidacao.IsValid)
+            if (resultadoValidacao.IsFailed)
+            {
+                foreach (Error erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o veículo {veiculo.Id} - {erro.Message}");
+
+                return Result.Fail(resultadoValidacao.Errors);
+            }
+
+            try
             {
                 _repositorioVeiculo.Inserir(veiculo);
-                Log.Logger.Information($"Veículo {veiculo.Id} inserido com sucesso!");
-            }
-            else
-            {
-                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
-                    Log.Logger.Warning($"Falha ao tentar inserir o veículo {veiculo.Id} - {erro.ErrorMessage}");
-            }
 
-            return resultadoValidacao;
+                Log.Logger.Information($"Veículo {veiculo.Id} inserido com sucesso!");
+
+                return Result.Ok(veiculo);
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar inserir veículo.";
+
+                Log.Logger.Fatal(ex, _msgErro + $"{veiculo.Id}");
+
+                return Result.Fail(_msgErro);
+            }
         }
 
-        public ValidationResult Editar(Veiculo veiculo)
+        public Result<Veiculo> Editar(Veiculo veiculo)
         {
             Log.Logger.Debug("Tentando editar veículo...");
 
-            ValidationResult resultadoValidacao = Validar(veiculo);
+            Result resultadoValidacao = Validar(veiculo);
 
-            if (resultadoValidacao.IsValid)
+            if (resultadoValidacao.IsFailed)
+            {
+                foreach (Error erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o veículo {veiculo.Id} = {erro.Message}");
+
+                return Result.Fail(resultadoValidacao.Errors);
+            }
+
+            try
             {
                 _repositorioVeiculo.Editar(veiculo);
+
                 Log.Logger.Information($"Veículo {veiculo.Id} editado com sucesso!");
+
+                return Result.Ok(veiculo);
             }
-            else
+            catch (SqlException ex)
             {
-                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
-                    Log.Logger.Warning($"Falha ao tentar editar o veículo {veiculo.Id} = {erro.ErrorMessage}");
+                _msgErro = "Falha ao tentar editar veículo.";
+
+                Log.Logger.Fatal(ex, _msgErro + $"{veiculo.Id}");
+
+                return Result.Fail(_msgErro);
             }
-
-            return resultadoValidacao;
         }
 
-        public List<Veiculo> SelecionarTodos()
+        public Result<Veiculo> Excluir(Veiculo veiculo)
         {
-            return _repositorioVeiculo.SelecionarTodos();
+            Log.Logger.Debug("Tentando exlcluir funcionário...");
+
+            try
+            {
+                _repositorioVeiculo.Excluir(veiculo);
+
+                Log.Logger.Information($"Veículo {veiculo.Id} excluído com sucesso!");
+
+                return Result.Ok();
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar excluir veículo.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
         }
 
-        private ValidationResult Validar(Veiculo veiculo)
+        public Result<List<Veiculo>> SelecionarTodos()
+        {
+            try
+            {
+                return Result.Ok(_repositorioVeiculo.SelecionarTodos());
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao selecionar todos os veículo.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+        }
+
+        private Result Validar(Veiculo veiculo)
         {
             AbstractValidator<Veiculo> validador = new ValidadorVeiculo();
 
-            var resultadoValidacao = validador.Validate(veiculo);
+            ValidationResult resultadoValidacao = validador.Validate(veiculo);
+
+            List<Error> erros = new();
+
+            foreach (ValidationFailure erro in resultadoValidacao.Errors)
+                erros.Add(new(erro.ErrorMessage));
 
             if (NomeDuplicado(veiculo))
-                resultadoValidacao.Errors.Add(new ValidationFailure("Modelo", "Modelo informado já existe."));
+                erros.Add(new("Nome informado já existe"));
 
-            return resultadoValidacao;
+            if (erros.Any())
+                return Result.Fail(erros);
+
+            return Result.Ok();
         }
 
         private bool NomeDuplicado(Veiculo veiculo)

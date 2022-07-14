@@ -1,11 +1,10 @@
-﻿using FluentValidation.Results;
+﻿using FluentResults;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
 using LocadoraFCVSJ.Dominio.Compartilhado;
-using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
+using System.Text;
 
 namespace LocadoraFCVSJ.ModuloVeiculo
 {
@@ -52,7 +51,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             }
         }
 
-        public Func<Veiculo, ValidationResult> SalvarRegistro { get; set; }
+        public Func<Veiculo, Result<Veiculo>> SalvarRegistro { get; set; }
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
@@ -71,11 +70,16 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 if (CbxTipoCombustivel.SelectedItem != null)
                     veiculo.TipoCombustivel = (TipoCombustivel)CbxTipoCombustivel.SelectedItem;
 
-                ValidationResult resultado = SalvarRegistro(veiculo);
+                Result<Veiculo> resultado = SalvarRegistro(veiculo);
 
-                if (resultado.IsValid == false)
+                if (resultado.IsFailed)
                 {
-                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    StringBuilder erros = new();
+
+                    foreach (Error erro in resultado.Errors)
+                        erros.AppendLine(erro.Message);
+
+                    MessageBox.Show(erros.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     DialogResult = DialogResult.None;
                 }

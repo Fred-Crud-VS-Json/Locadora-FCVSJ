@@ -34,7 +34,6 @@ namespace LocadoraFCVSJ
             InitializeComponent();
 
             RepositorioCondutor repositorioCondutor = new();
-            RepositorioVeiculo repositorioVeiculo = new();
 
             ServicoGrupo servicoGrupo = new(new RepositorioGrupo());
             ServicoTaxa servicoTaxa = new(new RepositorioTaxa());
@@ -42,7 +41,7 @@ namespace LocadoraFCVSJ
             ServicoFuncionario servicoFuncionario = new(new RepositorioFuncionario());
             ServicoCondutor servicoCondutor = new(repositorioCondutor, servicoCliente);
             ServicoPlanoDeCobranca servicoPlanoDeCobranca = new(new RepositorioPlanoDeCobranca());
-            ServicoVeiculo servicoVeiculo = new(repositorioVeiculo);
+            ServicoVeiculo servicoVeiculo = new(new RepositorioVeiculo());
 
             controladores = new()
             {
@@ -52,7 +51,7 @@ namespace LocadoraFCVSJ
                 { "Clientes", new ControladorCliente(servicoCliente) },
                 { "Planos", new ControladorPlanoDeCobranca(servicoGrupo, servicoPlanoDeCobranca) },
                 { "Condutores", new ControladorCondutor(repositorioCondutor, servicoCondutor) },
-                { "Veiculos", new ControladorVeiculo(repositorioVeiculo, servicoVeiculo, servicoGrupo) }
+                { "Veiculos", new ControladorVeiculo(servicoVeiculo, servicoGrupo) }
             };
         }
 

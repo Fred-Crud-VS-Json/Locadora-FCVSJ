@@ -1,22 +1,20 @@
-﻿using Krypton.Toolkit;
+﻿using FluentResults;
+using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 
 namespace LocadoraFCVSJ.ModuloVeiculo
 {
     public class ControladorVeiculo : ControladorBase
     {
-        private readonly RepositorioVeiculo _repositorioVeiculo;
         private readonly ServicoVeiculo _servicoVeiculo;
         private readonly ServicoGrupo _servidoGrupo;
         private readonly ControleVeiculoForm controleVeiculoForm;
 
-        public ControladorVeiculo(RepositorioVeiculo repositorioVeiculo, ServicoVeiculo servicoVeiculo, ServicoGrupo servidoGrupo)
+        public ControladorVeiculo(ServicoVeiculo servicoVeiculo, ServicoGrupo servidoGrupo)
         {
-            _repositorioVeiculo = repositorioVeiculo;
             _servicoVeiculo = servicoVeiculo;
             _servidoGrupo = servidoGrupo;
             
@@ -76,7 +74,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Funcionário", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _repositorioVeiculo.Excluir(veiculoSelecionado);
+                _servicoVeiculo.Excluir(veiculoSelecionado);
 
             CarregarVeiculos();
         }
@@ -90,9 +88,10 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
         private void CarregarVeiculos()
         {
-            List<Veiculo> veiculos = _repositorioVeiculo.SelecionarTodos();
+            Result<List<Veiculo>> resultado = _servicoVeiculo.SelecionarTodos();
 
-            controleVeiculoForm.AtualizarGrid(veiculos);
+            if (resultado.IsSuccess)
+                controleVeiculoForm.AtualizarGrid(resultado.Value);
         }
 
         public Veiculo? ObterVeiculo()
@@ -100,7 +99,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             if (controleVeiculoForm.ObterGrid().CurrentCell != null && controleVeiculoForm.ObterGrid().CurrentCell.Selected == true)
             {
                 int index = controleVeiculoForm.ObterLinhaSelecionada();
-                return _repositorioVeiculo.SelecionarTodos().ElementAtOrDefault(index);
+                return _servicoVeiculo.SelecionarTodos().Value.ElementAtOrDefault(index);
             }
 
             return null;
