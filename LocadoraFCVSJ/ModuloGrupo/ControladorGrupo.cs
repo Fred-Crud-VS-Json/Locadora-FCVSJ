@@ -94,7 +94,8 @@ namespace LocadoraFCVSJ.ModuloGrupo
         {
             if (controleGrupoForm.ObterGrid().CurrentCell != null && controleGrupoForm.ObterGrid().CurrentCell.Selected == true)
             {
-                return _servicoGrupo.SelecionarPorId((Guid)controleGrupoForm.ObterGrid().CurrentCell.Value).Value;
+                int index = controleGrupoForm.ObterLinhaSelecionada();
+                return _servicoGrupo.SelecionarTodos().Value.ElementAtOrDefault(index);
             }
 
             return null;

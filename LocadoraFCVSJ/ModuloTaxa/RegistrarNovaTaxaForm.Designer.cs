@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarNovaTaxaForm));
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LblInformacao = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TxbNome = new Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,14 +87,14 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins Medium", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(106, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Novo Registro de Taxa";
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Font = new System.Drawing.Font("Poppins Medium", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.LblTitulo.Location = new System.Drawing.Point(106, 22);
+            this.LblTitulo.Name = "label1";
+            this.LblTitulo.Size = new System.Drawing.Size(277, 40);
+            this.LblTitulo.TabIndex = 0;
+            this.LblTitulo.Text = "Novo Registro de Taxa";
             // 
             // panel1
             // 
@@ -108,7 +108,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.LblInformacao);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
@@ -117,13 +117,13 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label4.Location = new System.Drawing.Point(48, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(367, 46);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Preencha o formulário abaixo para efetuar o cadastro de uma nova taxa.";
+            this.LblInformacao.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblInformacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            this.LblInformacao.Location = new System.Drawing.Point(48, 8);
+            this.LblInformacao.Name = "label4";
+            this.LblInformacao.Size = new System.Drawing.Size(367, 46);
+            this.LblInformacao.TabIndex = 6;
+            this.LblInformacao.Text = "Preencha o formulário abaixo para efetuar o cadastro de uma nova taxa.";
             // 
             // pictureBox1
             // 
@@ -275,7 +275,7 @@
             this.Controls.Add(this.TxbNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -307,7 +307,7 @@
         private Label label9;
         private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
         private Krypton.Toolkit.KryptonComboBox CbxTipoCalculoTaxa;
-        public Label label1;
-        public Label label4;
+        public Label LblTitulo;
+        public Label LblInformacao;
     }
 }

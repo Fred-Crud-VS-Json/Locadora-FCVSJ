@@ -1,20 +1,18 @@
-﻿using Krypton.Toolkit;
+﻿using FluentResults;
+using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 
 namespace LocadoraFCVSJ.ModuloTaxa
 {
     public class ControladorTaxa : ControladorBase
     {
-        private readonly RepositorioTaxa _repositorioTaxa;
         private readonly ServicoTaxa _servicoTaxa;
         private readonly ControleTaxaForm controleTaxaForm;
 
-        public ControladorTaxa(RepositorioTaxa repositorioTaxa, ServicoTaxa servicoTaxa)
+        public ControladorTaxa(ServicoTaxa servicoTaxa)
         {
-            _repositorioTaxa = repositorioTaxa;
             _servicoTaxa = servicoTaxa;
             controleTaxaForm = new(this);
         }
@@ -35,9 +33,9 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
         public override void Editar()
         {
-            Taxa? taxaSelecionada = ObterTaxa();
+            Taxa? taxaSelecionado = ObterTaxa();
 
-            if (taxaSelecionada == null)
+            if (taxaSelecionado == null)
             {
                 MessageBox.Show("Selecione uma taxa primeiro.", "Edição de Taxa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -45,12 +43,12 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
             RegistrarNovaTaxaForm tela = new()
             {
-                Taxa = taxaSelecionada,
+                Taxa = taxaSelecionado,
                 SalvarRegistro = _servicoTaxa.Editar
             };
 
-            tela.label1.Text = "      Editando Registro";
-            tela.label4.Text = "Insira as novas informações da taxa no campo abaixo";
+            tela.LblTitulo.Text = "      Editando Registro";
+            tela.LblInformacao.Text = "Insira o novo nome da taxa no campo abaixo";
 
 
             DialogResult resultado = tela.ShowDialog();
@@ -61,18 +59,18 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
         public override void Excluir()
         {
-            Taxa? taxaSelecionada = ObterTaxa();
+            Taxa? taxaSelecionado = ObterTaxa();
 
-            if (taxaSelecionada == null)
+            if (taxaSelecionado == null)
             {
-                MessageBox.Show("Selecione uma taxa primeiro.", "Exclusão de Taxa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um taxa primeiro.", "Exclusão de Taxa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Taxa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _repositorioTaxa.Excluir(taxaSelecionada);
+                _servicoTaxa.Excluir(taxaSelecionado);
 
             CarregarTaxas();
         }
@@ -86,9 +84,10 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
         private void CarregarTaxas()
         {
-            List<Taxa> taxas = _repositorioTaxa.SelecionarTodos();
+            Result<List<Taxa>> resultado = _servicoTaxa.SelecionarTodos();
 
-            controleTaxaForm.AtualizarGrid(taxas);
+            if (resultado.IsSuccess)
+                controleTaxaForm.AtualizarGrid(resultado.Value);
         }
 
         private Taxa? ObterTaxa()
@@ -96,7 +95,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             if (controleTaxaForm.ObterGrid().CurrentCell != null && controleTaxaForm.ObterGrid().CurrentCell.Selected == true)
             {
                 int index = controleTaxaForm.ObterLinhaSelecionada();
-                return _repositorioTaxa.SelecionarTodos().ElementAtOrDefault(index);
+                return _servicoTaxa.SelecionarTodos().Value.ElementAtOrDefault(index);
             }
 
             return null;

@@ -121,22 +121,6 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
             }
         }
 
-        public Result<Grupo?> SelecionarPorId(Guid id)
-        {
-            try
-            {
-                return Result.Ok(_repositorioGrupo.SelecionarPorId(id));
-            }
-            catch (SqlException ex)
-            {
-                _msgErro = "Falha ao tentar selecionar grupo.";
-
-                Log.Logger.Fatal(ex, _msgErro);
-
-                return Result.Fail(_msgErro);
-            }
-        }
-
         private Result Validar(Grupo grupo)
         {
             AbstractValidator<Grupo> validador = new ValidadorGrupo();
