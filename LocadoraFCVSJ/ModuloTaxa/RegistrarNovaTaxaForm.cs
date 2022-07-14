@@ -1,8 +1,10 @@
-﻿using FluentValidation.Results;
+﻿using FluentResults;
+using FluentValidation.Results;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using System.Globalization;
+using System.Text;
 
 namespace LocadoraFCVSJ.ModuloTaxa
 {
@@ -32,7 +34,8 @@ namespace LocadoraFCVSJ.ModuloTaxa
                 CbxTipoCalculoTaxa.SelectedItem = taxa.TipoCalculoTaxa;
             }
         }
-        public Func<Taxa, ValidationResult> SalvarRegistro { get; set; }
+
+        public Func<Taxa, Result<Taxa>> SalvarRegistro { get; set; }
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
@@ -44,11 +47,16 @@ namespace LocadoraFCVSJ.ModuloTaxa
                 if (CbxTipoCalculoTaxa.SelectedItem != null)
                     taxa.TipoCalculoTaxa = (TipoCalculoTaxa)CbxTipoCalculoTaxa.SelectedItem;
 
-                ValidationResult resultado = SalvarRegistro(taxa);
+                Result<Taxa> resultado = SalvarRegistro(taxa);
 
-                if (resultado.IsValid == false)
+                if (resultado.IsFailed)
                 {
-                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    StringBuilder erros = new();
+
+                    foreach (Error erro in resultado.Errors)
+                        erros.AppendLine(erro.Message);
+
+                    MessageBox.Show(erros.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     DialogResult = DialogResult.None;
                 }
