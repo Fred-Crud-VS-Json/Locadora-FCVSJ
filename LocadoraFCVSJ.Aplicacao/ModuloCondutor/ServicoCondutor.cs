@@ -4,6 +4,7 @@ using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
+using Serilog;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
 {
@@ -18,22 +19,41 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
             _servicoCliente = servicoCliente;
         }
 
-        public ValidationResult Inserir(Condutor cliente)
+        public ValidationResult Inserir(Condutor condutor)
         {
-            ValidationResult resultadoValidacao = Validar(cliente);
+            Log.Logger.Debug("Tentando inserir novo condutor...");
+
+            ValidationResult resultadoValidacao = Validar(condutor);
 
             if (resultadoValidacao.IsValid)
-                _repositorioCondutor.Inserir(cliente);
-
+            {
+                _repositorioCondutor.Inserir(condutor);
+                Log.Logger.Information($"Condutor {condutor.Id} inserido com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o condutor {condutor.Id} - {erro.ErrorMessage}");
+            }
             return resultadoValidacao;
         }
 
         public ValidationResult Editar(Condutor condutor)
         {
+            Log.Logger.Debug("Tentando editar condutor...");
+
             ValidationResult resultadoValidacao = Validar(condutor);
 
             if (resultadoValidacao.IsValid)
+            {
                 _repositorioCondutor.Editar(condutor);
+                Log.Logger.Information($"Condutor {condutor.Id} editado com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o condutor {condutor.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
