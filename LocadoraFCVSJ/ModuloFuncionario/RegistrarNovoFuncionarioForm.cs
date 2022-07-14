@@ -1,16 +1,17 @@
-﻿using FluentValidation.Results;
+﻿using FluentResults;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using System.Globalization;
+using System.Text;
 
 namespace LocadoraFCVSJ.ModuloFuncionario
 {
-    public partial class RegistrarNovoFuncionario : KryptonForm
+    public partial class RegistrarNovoFuncionarioForm : KryptonForm
     {
         private Funcionario funcionario;
 
-        public RegistrarNovoFuncionario()
+        public RegistrarNovoFuncionarioForm()
         {
             InitializeComponent();
 
@@ -36,7 +37,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             }
         }
 
-        public Func<Funcionario, ValidationResult> SalvarRegistro { get; set; }
+        public Func<Funcionario, Result<Funcionario>> SalvarRegistro { get; set; }
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
@@ -51,11 +52,16 @@ namespace LocadoraFCVSJ.ModuloFuncionario
                 if (CbxNivelAcesso.SelectedItem != null)
                     funcionario.NivelAcesso = (NivelAcesso)CbxNivelAcesso.SelectedItem;
 
-                ValidationResult resultado = SalvarRegistro(funcionario);
+                Result<Funcionario> resultado = SalvarRegistro(funcionario);
 
-                if (resultado.IsValid == false)
+                if (resultado.IsFailed)
                 {
-                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    StringBuilder erros = new();
+
+                    foreach (Error erro in resultado.Errors)
+                        erros.AppendLine(erro.Message);
+
+                    MessageBox.Show(erros.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     DialogResult = DialogResult.None;
                 }

@@ -1,4 +1,5 @@
-﻿using Krypton.Toolkit;
+﻿using FluentResults;
+using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloFuncionario;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
@@ -8,20 +9,18 @@ namespace LocadoraFCVSJ.ModuloFuncionario
 {
     public class ControladorFuncionario : ControladorBase
     {
-        private readonly IRepositorioFuncionario _repositorioFuncionario;
         private readonly ServicoFuncionario _servicoFuncionario;
         private readonly ControleFuncionarioForm controleFuncionarioForm;
 
-        public ControladorFuncionario(IRepositorioFuncionario repositorioFuncionario, ServicoFuncionario servicoFuncionario)
+        public ControladorFuncionario(ServicoFuncionario servicoFuncionario)
         {
-            _repositorioFuncionario = repositorioFuncionario;
             _servicoFuncionario = servicoFuncionario;
             controleFuncionarioForm = new(this);
         }
 
         public override void Inserir()
         {
-            RegistrarNovoFuncionario tela = new()
+            RegistrarNovoFuncionarioForm tela = new()
             {
                 Funcionario = new(),
                 SalvarRegistro = _servicoFuncionario.Inserir
@@ -43,7 +42,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
                 return;
             }
 
-            RegistrarNovoFuncionario tela = new()
+            RegistrarNovoFuncionarioForm tela = new()
             {
                 Funcionario = funcionarioSelecionado,
                 SalvarRegistro = _servicoFuncionario.Editar
@@ -72,7 +71,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Funcionário", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _repositorioFuncionario.Excluir(funcionarioSelecionado);
+                _servicoFuncionario.Excluir(funcionarioSelecionado);
 
             CarregarFuncionarios();
         }
@@ -86,9 +85,10 @@ namespace LocadoraFCVSJ.ModuloFuncionario
 
         private void CarregarFuncionarios()
         {
-            List<Funcionario> funcionarios = _repositorioFuncionario.SelecionarTodos();
+            Result<List<Funcionario>> resultado = _servicoFuncionario.SelecionarTodos();
 
-            controleFuncionarioForm.AtualizarGrid(funcionarios);
+            if(resultado.IsSuccess)
+                controleFuncionarioForm.AtualizarGrid(resultado.Value);
         }
 
         private Funcionario? ObterFuncionario()
@@ -96,7 +96,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             if (controleFuncionarioForm.ObterGrid().CurrentCell != null && controleFuncionarioForm.ObterGrid().CurrentCell.Selected == true)
             {
                 int index = controleFuncionarioForm.ObterLinhaSelecionada();
-                return _repositorioFuncionario.SelecionarTodos().ElementAtOrDefault(index);
+                return _servicoFuncionario.SelecionarPorId((Guid)controleFuncionarioForm.ObterGrid().CurrentCell.Value).Value;
             }
 
             return null;
