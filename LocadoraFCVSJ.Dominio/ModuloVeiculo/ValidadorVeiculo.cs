@@ -26,7 +26,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
                 .NotEmpty();
 
             RuleFor(x => x.Ano)
-                .LessThanOrEqualTo(2022).WithMessage("Ano informado é inválido.\n");
+                .LessThanOrEqualTo(2023).WithMessage("Ano informado é inválido.\n");
 
             RuleFor(x => x.KmPercorrido)
                 .GreaterThanOrEqualTo(0).WithMessage("Quilometragem informada é inválida. Lembre-se de preenche-la corretamente.\n");
