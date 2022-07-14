@@ -1,20 +1,18 @@
-﻿using Krypton.Toolkit;
+﻿using FluentResults;
+using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 
 namespace LocadoraFCVSJ.ModuloGrupo
 {
     public class ControladorGrupo : ControladorBase
     {
-        private readonly RepositorioGrupo _repositorioGrupo;
         private readonly ServicoGrupo _servicoGrupo;
         private readonly ControleGrupoForm controleGrupoForm;
 
-        public ControladorGrupo(RepositorioGrupo repositorioGrupo, ServicoGrupo servicoGrupo)
+        public ControladorGrupo(ServicoGrupo servicoGrupo)
         {
-            _repositorioGrupo = repositorioGrupo;
             _servicoGrupo = servicoGrupo;
             controleGrupoForm = new(this);
         }
@@ -72,7 +70,7 @@ namespace LocadoraFCVSJ.ModuloGrupo
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Grupo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _repositorioGrupo.Excluir(grupoSelecionado);
+                _servicoGrupo.Excluir(grupoSelecionado);
 
             CarregarGrupos();
         }
@@ -86,17 +84,17 @@ namespace LocadoraFCVSJ.ModuloGrupo
 
         private void CarregarGrupos()
         {
-            List<Grupo> grupos = _repositorioGrupo.SelecionarTodos();
+            Result<List<Grupo>> resultado = _servicoGrupo.SelecionarTodos();
 
-            controleGrupoForm.AtualizarGrid(grupos);
+            if (resultado.IsSuccess)
+                controleGrupoForm.AtualizarGrid(resultado.Value);
         }
 
         private Grupo? ObterGrupo()
         {
             if (controleGrupoForm.ObterGrid().CurrentCell != null && controleGrupoForm.ObterGrid().CurrentCell.Selected == true)
             {
-                int index = controleGrupoForm.ObterLinhaSelecionada();
-                return _repositorioGrupo.SelecionarTodos().ElementAtOrDefault(index);
+                return _servicoGrupo.SelecionarPorId((Guid)controleGrupoForm.ObterGrid().CurrentCell.Value).Value;
             }
 
             return null;

@@ -1,6 +1,7 @@
-﻿using FluentValidation.Results;
+﻿using FluentResults;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
+using System.Text;
 
 namespace LocadoraFCVSJ.ModuloGrupo
 {
@@ -21,21 +22,26 @@ namespace LocadoraFCVSJ.ModuloGrupo
             {
                 grupo = value;
 
-                kryptonTextBox1.Text = grupo.Nome;
+                TxbNome.Text = grupo.Nome;
             }
         }
 
-        public Func<Grupo, ValidationResult> SalvarRegistro { get; set; }
+        public Func<Grupo, Result<Grupo>> SalvarRegistro { get; set; }
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
-            grupo.Nome = kryptonTextBox1.Text;
+            grupo.Nome = TxbNome.Text;
 
-            ValidationResult resultado = SalvarRegistro(grupo);
+            Result<Grupo> resultado = SalvarRegistro(grupo);
 
-            if (resultado.IsValid == false)
+            if (resultado.IsFailed)
             {
-                MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                StringBuilder erros = new();
+
+                foreach(Error erro in resultado.Errors)
+                    erros.AppendLine(erro.Message);
+
+                MessageBox.Show(erros.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 DialogResult = DialogResult.None;
             }

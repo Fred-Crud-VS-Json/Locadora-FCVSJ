@@ -1,75 +1,160 @@
-﻿using FluentValidation;
+﻿using FluentResults;
+using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using Serilog;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 {
     public class ServicoGrupo
     {
         private readonly RepositorioGrupo _repositorioGrupo;
+        private string _msgErro = "";
 
         public ServicoGrupo(RepositorioGrupo repositorioGrupo)
         {
             _repositorioGrupo = repositorioGrupo;
         }
 
-        public ValidationResult Inserir(Grupo grupo)
+        public Result<Grupo> Inserir(Grupo grupo)
         {
-            Log.Logger.Debug("Tentando inserir novo grupo...");
+            Log.Logger.Debug("Tentando inserir grupo...");
 
-            ValidationResult resultadoValidacao = Validar(grupo);
+            Result resultadoValidacao = Validar(grupo);
 
-            if (resultadoValidacao.IsValid)
+            if (resultadoValidacao.IsFailed)
+            {
+                foreach (Error erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o grupo {grupo.Id} - {erro.Message}");
+
+                return Result.Fail(resultadoValidacao.Errors);
+            }
+
+            try
             {
                 _repositorioGrupo.Inserir(grupo);
-                Log.Logger.Information($"Grupo {grupo.Id} inserido com sucesso!");
-            }
-            else
-            {
-                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
-                    Log.Logger.Warning($"Falha ao tentar inserir o grupo {grupo.Id} - {erro.ErrorMessage}");
-            }
 
-            return resultadoValidacao;
+                Log.Logger.Information($"Grupo {grupo.Id} inserido com sucesso!");
+
+                return Result.Ok(grupo);
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar inserir grupo.";
+
+                Log.Logger.Fatal(ex, _msgErro + $" {grupo.Id}");
+
+                return Result.Fail(_msgErro);
+            }
         }
 
-        public ValidationResult Editar(Grupo grupo)
+        public Result<Grupo> Editar(Grupo grupo)
         {
             Log.Logger.Debug("Tentando editar grupo...");
 
-            ValidationResult resultadoValidacao = Validar(grupo);
+            Result resultadoValidacao = Validar(grupo);
 
-            if (resultadoValidacao.IsValid)
+            if (resultadoValidacao.IsFailed)
+            {
+                foreach (Error erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o grupo {grupo.Id} - {erro.Message}");
+
+                return Result.Fail(resultadoValidacao.Errors);
+            }
+
+            try
             {
                 _repositorioGrupo.Editar(grupo);
-                Log.Logger.Information($"Grupo {grupo.Id} editado com sucesso.");
-            }
-            else
+
+                Log.Logger.Information($"Grupo {grupo.Id} editado com sucesso!");
+
+                return Result.Ok(grupo);
+            } 
+            catch (SqlException ex)
             {
-                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
-                    Log.Logger.Warning($"Falha ao tentar editar o grupo {grupo.Id} - {erro.ErrorMessage}");
+                _msgErro = "Falha ao tentar editar grupo.";
+
+                Log.Logger.Fatal(ex, _msgErro + $" {grupo.Id}");
+
+                return Result.Fail(_msgErro);
             }
-
-            return resultadoValidacao;
         }
 
-        public List<Grupo> SelecionarTodos()
+        public Result<Grupo> Excluir(Grupo grupo)
         {
-            return _repositorioGrupo.SelecionarTodos();
+            Log.Logger.Debug("Tentando excluir grupo...");
+
+            try
+            {
+                _repositorioGrupo.Excluir(grupo);
+
+                Log.Logger.Information($"Grupo {grupo.Id} excluído com sucesso!");
+
+                return Result.Ok();
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar excluir grupo.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
         }
 
-        private ValidationResult Validar(Grupo grupo)
+        public Result<List<Grupo>> SelecionarTodos()
+        {
+            try
+            {
+                return Result.Ok(_repositorioGrupo.SelecionarTodos());
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao selecionar todos os grupos.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+        }
+
+        public Result<Grupo?> SelecionarPorId(Guid id)
+        {
+            try
+            {
+                return Result.Ok(_repositorioGrupo.SelecionarPorId(id));
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar selecionar grupo.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+        }
+
+        private Result Validar(Grupo grupo)
         {
             AbstractValidator<Grupo> validador = new ValidadorGrupo();
 
-            var resultadoValidacao = validador.Validate(grupo);
+            ValidationResult resultadoValidacao = validador.Validate(grupo);
+
+            List<Error> erros = new();
+
+            foreach (ValidationFailure erro in resultadoValidacao.Errors)
+                erros.Add(new(erro.ErrorMessage));
 
             if (NomeDuplicado(grupo))
-                resultadoValidacao.Errors.Add(new ValidationFailure("Nome", "Nome informado já existe."));
+                erros.Add(new("Nome informado já existe."));
 
-            return resultadoValidacao;
+            if (erros.Any())
+                return Result.Fail(erros);
+
+            return Result.Ok();
         }
 
         private bool NomeDuplicado(Grupo grupo)

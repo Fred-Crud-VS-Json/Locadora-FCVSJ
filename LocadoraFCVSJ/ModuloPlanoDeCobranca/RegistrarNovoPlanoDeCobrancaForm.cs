@@ -28,7 +28,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 
             List<Grupo> gruposDisponiveis = new();
 
-            _servicoGrupo.SelecionarTodos().ForEach(x =>
+            _servicoGrupo.SelecionarTodos().Value.ForEach(x =>
             {
                 if (!_servicoPlanoDeCobranca.SelecionarTodos().Select(x => x.Grupo).Contains(x))
                     gruposDisponiveis.Add(x);

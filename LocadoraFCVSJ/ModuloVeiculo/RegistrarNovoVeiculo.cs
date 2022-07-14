@@ -24,7 +24,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             _servicoVeiculo = servicoVeiculo;
             _servicoGrupo = servicoGrupo;
 
-            _servicoGrupo.SelecionarTodos().ForEach(x => CbxGrupo.Items.Add(x));
+            _servicoGrupo.SelecionarTodos().Value.ForEach(x => CbxGrupo.Items.Add(x));
 
             List<TipoCombustivel> tiposDeCalculoDeTaxa = Enum.GetValues(typeof(TipoCombustivel)).Cast<TipoCombustivel>().ToList();
 

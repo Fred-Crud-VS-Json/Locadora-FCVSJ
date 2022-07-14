@@ -49,7 +49,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
         public string QuerySelecionarPorNome =>
             @"SELECT 
 	                GRUPO.[ID] AS GRUPO_ID,
-	                GRUPO.[NOME] AS GRUPO_NAME
+	                GRUPO.[NOME] AS GRUPO_NOME
                 FROM
 	                [TBGrupo] AS GRUPO
                 WHERE 

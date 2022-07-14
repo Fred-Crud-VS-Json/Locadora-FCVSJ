@@ -33,7 +33,7 @@
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxbNome = new Krypton.Toolkit.KryptonTextBox();
             this.BtnConcluirRegistro = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -102,20 +102,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nome";
             // 
-            // kryptonTextBox1
+            // TxbNome
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(36, 202);
-            this.kryptonTextBox1.MaxLength = 60;
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(417, 33);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.TxbNome.Location = new System.Drawing.Point(36, 202);
+            this.TxbNome.MaxLength = 60;
+            this.TxbNome.Name = "TxbNome";
+            this.TxbNome.Size = new System.Drawing.Size(417, 33);
+            this.TxbNome.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.TxbNome.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 5F;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonTextBox1.TabIndex = 3;
+            this.TxbNome.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.TxbNome.StateCommon.Border.Rounding = 5F;
+            this.TxbNome.StateCommon.Content.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxbNome.TabIndex = 3;
             // 
             // BtnConcluirRegistro
             // 
@@ -207,7 +207,7 @@
             this.ClientSize = new System.Drawing.Size(484, 343);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnConcluirRegistro);
-            this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.TxbNome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -232,7 +232,7 @@
 
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private Label label3;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox TxbNome;
         private Krypton.Toolkit.KryptonButton BtnConcluirRegistro;
         private Panel panel1;
         private Panel panel2;
