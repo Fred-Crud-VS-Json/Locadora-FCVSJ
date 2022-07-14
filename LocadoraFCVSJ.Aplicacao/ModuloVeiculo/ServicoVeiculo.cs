@@ -2,41 +2,62 @@
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
+using Serilog;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
 {
     public class ServicoVeiculo
     {
-        private readonly RepositorioVeiculo repositorioVeiculo;
+        private readonly RepositorioVeiculo _repositorioVeiculo;
 
         public ServicoVeiculo(RepositorioVeiculo repositorioVeiculo)
         {
-            this.repositorioVeiculo = repositorioVeiculo;
+            _repositorioVeiculo = repositorioVeiculo;
         }
 
         public ValidationResult Inserir(Veiculo veiculo)
         {
+            Log.Logger.Information("Tentando inserir novo veículo...");
+
             ValidationResult resultadoValidacao = Validar(veiculo);
 
             if (resultadoValidacao.IsValid)
-                repositorioVeiculo.Inserir(veiculo);
+            {
+                _repositorioVeiculo.Inserir(veiculo);
+                Log.Logger.Information($"Veículo {veiculo.Id} inserido com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o veículo {veiculo.Id} - {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
 
         public ValidationResult Editar(Veiculo veiculo)
         {
+            Log.Logger.Debug("Tentando editar veículo...");
+
             ValidationResult resultadoValidacao = Validar(veiculo);
 
             if (resultadoValidacao.IsValid)
-                repositorioVeiculo.Editar(veiculo);
+            {
+                _repositorioVeiculo.Editar(veiculo);
+                Log.Logger.Information($"Veículo {veiculo.Id} editado com sucesso!");
+            }
+            else
+            {
+                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o veículo {veiculo.Id} = {erro.ErrorMessage}");
+            }
 
             return resultadoValidacao;
         }
 
         public List<Veiculo> SelecionarTodos()
         {
-            return repositorioVeiculo.SelecionarTodos();
+            return _repositorioVeiculo.SelecionarTodos();
         }
 
         private ValidationResult Validar(Veiculo veiculo)
@@ -53,9 +74,9 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
 
         private bool NomeDuplicado(Veiculo veiculo)
         {
-            string query = repositorioVeiculo.QuerySelecionarPorModelo;
+            string query = _repositorioVeiculo.QuerySelecionarPorModelo;
 
-            Veiculo? veiculoEncontrado = repositorioVeiculo.SelecionarPropriedade(query, "MODELO", veiculo.Modelo);
+            Veiculo? veiculoEncontrado = _repositorioVeiculo.SelecionarPropriedade(query, "MODELO", veiculo.Modelo);
 
             return veiculoEncontrado != null
                 && veiculoEncontrado.Modelo.Equals(veiculo.Modelo, StringComparison.OrdinalIgnoreCase)
