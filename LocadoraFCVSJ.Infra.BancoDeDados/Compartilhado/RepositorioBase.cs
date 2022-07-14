@@ -72,9 +72,18 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 
                 comando.Parameters.AddWithValue("ID", registro.Id);
 
-                Conexao.Open();
+                try
+                {
 
-                comando.ExecuteNonQuery();
+                    Conexao.Open();
+
+                    comando.ExecuteNonQuery();
+                } 
+                catch (SqlException ex)
+                {
+                    if (ex != null && ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+                        throw new ExcluirRegistroRelacionadoException(ex);
+                }
             }
         }
 
