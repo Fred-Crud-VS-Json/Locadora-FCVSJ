@@ -96,7 +96,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             if (controleFuncionarioForm.ObterGrid().CurrentCell != null && controleFuncionarioForm.ObterGrid().CurrentCell.Selected == true)
             {
                 int index = controleFuncionarioForm.ObterLinhaSelecionada();
-                return _servicoFuncionario.SelecionarPorId((Guid)controleFuncionarioForm.ObterGrid().CurrentCell.Value).Value;
+                return _servicoFuncionario.SelecionarTodos().Value.ElementAtOrDefault(index);
             }
 
             return null;
