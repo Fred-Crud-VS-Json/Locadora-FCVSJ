@@ -1,10 +1,12 @@
-﻿using FluentValidation.Results;
+﻿using FluentResults;
+using FluentValidation.Results;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles;
+using System.Text;
 
 namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 {
@@ -30,7 +32,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 
             _servicoGrupo.SelecionarTodos().Value.ForEach(x =>
             {
-                if (!_servicoPlanoDeCobranca.SelecionarTodos().Select(x => x.Grupo).Contains(x))
+                if (!_servicoPlanoDeCobranca.SelecionarTodos().Value.Select(x => x.Grupo).Contains(x))
                     gruposDisponiveis.Add(x);
             });
 
@@ -70,7 +72,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             }
         }
 
-        public Func<PlanoDeCobranca, ValidationResult> SalvarRegistro { get; set; }
+        public Func<PlanoDeCobranca, Result<PlanoDeCobranca>> SalvarRegistro { get; set; }
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
@@ -78,14 +80,16 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             {
                 PlanoDeCobranca.Grupo = (Grupo)CbxGrupo.SelectedItem;
 
-                ValidationResult resultado = SalvarRegistro(planoDeCobranca);
+                Result<PlanoDeCobranca> resultado = SalvarRegistro(planoDeCobranca);
 
-                if (ChbxPlanoDiario.Checked == false || ChbxPlanoLivre.Checked == false || ChbxPlanoControlado.Checked == false)
-                    resultado.Errors.Add(new ValidationFailure("", "Todos os planos devem estar 100% cadastrados para concluir."));
-
-                if (resultado.IsValid == false)
+                if (resultado.IsFailed)
                 {
-                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    StringBuilder erros = new();
+
+                    foreach (Error erro in resultado.Errors)
+                        erros.AppendLine(erro.Message);
+
+                    MessageBox.Show(erros.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     DialogResult = DialogResult.None;
                 }
