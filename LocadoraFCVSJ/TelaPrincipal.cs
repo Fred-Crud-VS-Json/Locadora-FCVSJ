@@ -5,6 +5,7 @@ using LocadoraFCVSJ.Aplicacao.ModuloFuncionario;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
+using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
@@ -12,12 +13,14 @@ using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
+using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 using LocadoraFCVSJ.ModuloCliente;
 using LocadoraFCVSJ.ModuloCondutor;
 using LocadoraFCVSJ.ModuloFuncionario;
 using LocadoraFCVSJ.ModuloGrupo;
 using LocadoraFCVSJ.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.ModuloTaxa;
+using LocadoraFCVSJ.ModuloVeiculo;
 
 namespace LocadoraFCVSJ
 {
@@ -35,6 +38,7 @@ namespace LocadoraFCVSJ
             RepositorioTaxa repositorioTaxa = new();
             RepositorioCliente repositorioCliente = new();
             RepositorioCondutor repositorioCondutor = new();
+            RepositorioVeiculo repositorioVeiculo = new();
 
             ServicoGrupo servicoGrupo = new(repositorioGrupo);
             ServicoTaxa servicoTaxa = new(repositorioTaxa);
@@ -42,6 +46,7 @@ namespace LocadoraFCVSJ
             ServicoFuncionario servicoFuncionario = new(repositorioFuncionario);
             ServicoCondutor servicoCondutor = new(repositorioCondutor, servicoCliente);
             ServicoPlanoDeCobranca servicoPlanoDeCobranca = new(new RepositorioPlanoDeCobranca());
+            ServicoVeiculo servicoVeiculo = new(repositorioVeiculo);
 
             controladores = new()
             {
@@ -50,7 +55,8 @@ namespace LocadoraFCVSJ
                 { "Taxas", new ControladorTaxa(repositorioTaxa, servicoTaxa) },
                 { "Clientes", new ControladorCliente(repositorioCliente, servicoCliente) },
                 { "Planos", new ControladorPlanoDeCobranca(servicoGrupo, servicoPlanoDeCobranca) },
-                { "Condutores", new ControladorCondutor(repositorioCondutor, servicoCondutor) }
+                { "Condutores", new ControladorCondutor(repositorioCondutor, servicoCondutor) },
+                { "Veiculos", new ControladorVeiculo(repositorioVeiculo, servicoVeiculo, servicoGrupo) }
             };
         }
 
@@ -82,6 +88,11 @@ namespace LocadoraFCVSJ
         private void BtnAcessarPlanos_Click(object sender, EventArgs e)
         {
             AbrirTela(BtnAcessarPlanos);
+        }
+
+        private void BtnAcessarVeiculos_Click(object sender, EventArgs e)
+        {
+            AbrirTela(BtnAcessarVeiculos);
         }
 
         private void AbrirTela(KryptonButton botao)

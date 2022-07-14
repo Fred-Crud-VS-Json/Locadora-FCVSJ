@@ -359,8 +359,8 @@
             // 
             // BtnAcessarVeiculos
             // 
+            this.BtnAcessarVeiculos.AccessibleName = "Veiculos";
             this.BtnAcessarVeiculos.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnAcessarVeiculos.Enabled = false;
             this.BtnAcessarVeiculos.Location = new System.Drawing.Point(8, 51);
             this.BtnAcessarVeiculos.Name = "BtnAcessarVeiculos";
             this.BtnAcessarVeiculos.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
@@ -409,6 +409,7 @@
             this.BtnAcessarVeiculos.ToolTipValues.Heading = "Acessar Módulo Veículo";
             this.BtnAcessarVeiculos.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
             this.BtnAcessarVeiculos.Values.Text = "Acessar";
+            this.BtnAcessarVeiculos.Click += new System.EventHandler(this.BtnAcessarVeiculos_Click);
             // 
             // label3
             // 

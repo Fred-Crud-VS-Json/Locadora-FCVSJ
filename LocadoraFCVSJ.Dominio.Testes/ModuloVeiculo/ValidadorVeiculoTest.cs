@@ -128,7 +128,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloVeiculo
 
             return new Veiculo
             {
-                GrupoVeiculo = grupo,
+                Grupo = grupo,
                 Modelo = "Teste",
                 Marca = "Ford",
                 Placa = "ASD2345",

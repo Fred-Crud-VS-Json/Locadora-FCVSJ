@@ -6,7 +6,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
 {
     public class Veiculo : EntidadeBase<Veiculo>
     {
-        public Grupo GrupoVeiculo { get; set; }
         public string Modelo { get; set; }
         public string Marca { get; set; }
         public string Placa { get; set; }
@@ -15,16 +14,13 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
         public decimal CapacidadeTanque { get; set; }
         public int Ano { get; set; }
         public decimal KmPercorrido { get; set; }
-        public string CaminhoFoto { get; set; }
         public byte[] Foto { get; set; }
-
-       
+        public Grupo Grupo { get; set; }
 
         public override bool Equals(object? obj)
         {
             return obj is Veiculo veiculo &&
-                   Id == veiculo.Id &&
-                   EqualityComparer<Grupo>.Default.Equals(GrupoVeiculo, veiculo.GrupoVeiculo) &&
+                   Id.Equals(veiculo.Id) &&
                    Modelo == veiculo.Modelo &&
                    Marca == veiculo.Marca &&
                    Placa == veiculo.Placa &&
@@ -33,14 +29,13 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
                    CapacidadeTanque == veiculo.CapacidadeTanque &&
                    Ano == veiculo.Ano &&
                    KmPercorrido == veiculo.KmPercorrido &&
-                   EqualityComparer<byte[]>.Default.Equals(Foto, veiculo.Foto);
+                   EqualityComparer<Grupo>.Default.Equals(Grupo, veiculo.Grupo);
         }
 
         public override int GetHashCode()
         {
             HashCode hash = new HashCode();
             hash.Add(Id);
-            hash.Add(GrupoVeiculo);
             hash.Add(Modelo);
             hash.Add(Marca);
             hash.Add(Placa);
@@ -50,12 +45,13 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
             hash.Add(Ano);
             hash.Add(KmPercorrido);
             hash.Add(Foto);
+            hash.Add(Grupo);
             return hash.ToHashCode();
         }
 
         public override string ToString()
         {
-            return GrupoVeiculo + " - " + Modelo;
+            return Modelo;
         }
     }
 }

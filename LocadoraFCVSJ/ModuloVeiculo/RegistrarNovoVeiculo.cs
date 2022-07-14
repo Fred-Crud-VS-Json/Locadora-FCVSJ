@@ -39,7 +39,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             {
                 veiculo = value;
 
-                CbxGrupo.SelectedItem = veiculo.GrupoVeiculo;
+                CbxGrupo.SelectedItem = veiculo.Grupo;
                 TxbModelo.Text = veiculo.Modelo;
                 TxbMarca.Text = veiculo.Marca;
                 TxbPlaca.Text = veiculo.Placa;
@@ -58,7 +58,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
         {
             try
             {
-                veiculo.GrupoVeiculo = (Dominio.ModuloGrupo.Grupo)CbxGrupo.SelectedItem;
+                veiculo.Grupo = (Dominio.ModuloGrupo.Grupo)CbxGrupo.SelectedItem;
                 veiculo.Modelo = TxbModelo.Text;
                 veiculo.Marca = TxbMarca.Text;
                 veiculo.Placa = TxbPlaca.Text;

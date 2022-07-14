@@ -138,7 +138,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloPlanoDeCobranca
             // action
             List<PlanoDeCobranca> planos = repositorioPlanoDeCobranca.SelecionarTodos();
 
-            // assert
+            // assert    
             planos.Count.Should().Be(2);
             planos.Should().Contain(planoDeCobranca);
             planos.Should().Contain(planoDeCobranca2);

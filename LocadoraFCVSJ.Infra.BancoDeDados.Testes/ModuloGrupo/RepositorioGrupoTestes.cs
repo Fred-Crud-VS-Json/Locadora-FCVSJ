@@ -14,6 +14,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloGrupo
 
         public RepositorioGrupoTestes()
         {
+            BdUtil.ExecutarSql("DELETE FROM [TBVeiculo]");
             BdUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]");
             BdUtil.ExecutarSql("DELETE FROM [TBGrupo]");
 

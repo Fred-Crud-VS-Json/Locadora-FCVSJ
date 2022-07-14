@@ -11,7 +11,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
         protected override string QueryInserir =>
             @"INSERT INTO [TBVEICULO]
                 (
-                    [GRUPOVEICULO],
+                    [ID],
                     [MODELO],
                     [MARCA],
                     [PLACA],
@@ -20,11 +20,12 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                     [CAPACIDADETANQUE],
                     [ANO],
                     [KMPERCORRIDO],
-                    [FOTO]
+                    [FOTO],
+                    [GRUPO_ID]
                 )
                 VALUES
                 (
-                    @GRUPOVEICULO,
+                    @ID,
                     @MODELO,
                     @MARCA,
                     @PLACA,
@@ -33,13 +34,13 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                     @CAPACIDADETANQUE,
                     @ANO,
                     @KMPERCORRIDO,
-                    @FOTO
-                );SELECT SCOPE_IDENTITY();";
+                    @FOTO,
+                    @GRUPO_ID
+                )";
 
         protected override string QueryEditar =>
             @"UPDATE [TBVEICULO]
                 SET
-                    [GRUPOVEICULO] = @GRUPOVEICULO,
                     [MODELO] = @MODELO,
                     [MARCA] = @MARCA,
                     [PLACA] = @PLACA,
@@ -48,7 +49,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                     [CAPACIDADETANQUE] = @CAPACIDADETANQUE,
                     [ANO] = @ANO,
                     [KMPERCORRIDO] = @KMPERCORRIDO,
-                    [FOTO] = @FOTO
+                    [FOTO] = @FOTO,
+                    [GRUPO_ID] = @GRUPO_ID
                 WHERE
                     [ID] = @ID";
 
@@ -60,7 +62,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
         protected override string QuerySelecionarPorId =>
             @"SELECT
                 VEICULO.[ID] AS VEICULO_ID,
-                VEICULO.[GRUPOVEICULO] AS VEICULO_GRUPOVEICULO,
                 VEICULO.[MODELO] AS VEICULO_MODELO,
                 VEICULO.[MARCA] AS VEICULO_MARCA,
                 VEICULO.[PLACA] AS VEICULO_PLACA,
@@ -77,14 +78,13 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 [TBVEICULO] AS VEICULO INNER JOIN
                 [TBGRUPO] AS GRUPO
             ON
-                GRUPO.ID = VEICULO.GRUPOVEICULO
+                VEICULO.[GRUPO_ID] = GRUPO.[ID]
             WHERE
                 VEICULO.[ID] = @ID";
 
         protected override string QuerySelecionarTodos =>
             @"SELECT
                 VEICULO.[ID] AS VEICULO_ID,
-                VEICULO.[GRUPOVEICULO] AS VEICULO_GRUPOVEICULO,
                 VEICULO.[MODELO] AS VEICULO_MODELO,
                 VEICULO.[MARCA] AS VEICULO_MARCA,
                 VEICULO.[PLACA] AS VEICULO_PLACA,
@@ -101,12 +101,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 [TBVEICULO] AS VEICULO INNER JOIN
                 [TBGRUPO] AS GRUPO
             ON
-                GRUPO.ID = VEICULO.GRUPOVEICULO";
+                VEICULO.[GRUPO_ID] = GRUPO.[ID]";
 
         public string QuerySelecionarPorModelo =>
             @"SELECT
                 VEICULO.[ID] AS VEICULO_ID,
-                VEICULO.[GRUPOVEICULO] AS VEICULO_GRUPOVEICULO,
                 VEICULO.[MODELO] AS VEICULO_MODELO,
                 VEICULO.[MARCA] AS VEICULO_MARCA,
                 VEICULO.[PLACA] AS VEICULO_PLACA,
@@ -123,7 +122,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 [TBVEICULO] AS VEICULO INNER JOIN
                 [TBGRUPO] AS GRUPO
             ON
-                GRUPO.ID = VEICULO.GRUPOVEICULO
+                VEICULO.[GRUPO_ID] = GRUPO.[ID]
             WHERE
                 VEICULO.[MODELO] = @MODELO";
 

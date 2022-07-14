@@ -11,7 +11,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             InitializeComponent();
             _veiculo = veiculo;
 
-            TxbGrupo.Text = _veiculo.GrupoVeiculo.Nome;
+            TxbGrupo.Text = _veiculo.Grupo.Nome;
             TxbModelo.Text = _veiculo.Modelo;
             TxbMarca.Text = _veiculo.Marca;
             TxbPlaca.Text = _veiculo.Placa;

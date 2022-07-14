@@ -4,15 +4,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
 {
     public class Grupo : EntidadeBase<Grupo>
     {
-        public Grupo()
-        {
-        }
-
-        public Grupo(string nome)
-        {
-            Nome = nome;
-        }
-
         public string Nome { get; set; }
 
         public override bool Equals(object? obj)
@@ -20,11 +11,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloGrupo
             return obj is Grupo grupo &&
                    Id.Equals(grupo.Id) &&
                    Nome == grupo.Nome;
-        }
-
-        public override string ToString()
-        {
-            return Nome;
         }
 
         public override int GetHashCode()

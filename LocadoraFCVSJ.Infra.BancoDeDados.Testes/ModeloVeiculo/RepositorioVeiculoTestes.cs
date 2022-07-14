@@ -13,14 +13,16 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
     public class RepositorioVeiculoTestes
     {
         private Veiculo? veiculo;
+        private Veiculo? veiculo2;
         private Grupo? grupo;
         private readonly RepositorioVeiculo repositorioVeiculo;
         private readonly RepositorioGrupo repositorioGrupo;
 
         public RepositorioVeiculoTestes()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBVeiculo]; DBCC CHECKIDENT (TBVeiculo, RESEED, 0)");
-            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]; DBCC CHECKIDENT (TBGrupo, RESEED, 0)");
+            BdUtil.ExecutarSql("DELETE FROM [TBVeiculo]");
+            BdUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]");
+            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]");
 
             repositorioGrupo = new();
             repositorioVeiculo = new();
@@ -32,46 +34,43 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
             grupo = NovoGrupo();
             veiculo = NovoVeiculo();
 
-            //action
             repositorioGrupo.Inserir(grupo);
+
+            //action
             repositorioVeiculo.Inserir(veiculo);
 
             //assert
             Veiculo? veiculoEncontrado = repositorioVeiculo.SelecionarPorId(veiculo.Id);
 
             veiculoEncontrado.Should().NotBeNull();
-            veiculo.Should().Be(veiculoEncontrado);
+            veiculoEncontrado.Should().Be(veiculo);
         }
 
         [TestMethod]
         public void Deve_editar_Veiculo()
         {
+            // arrange 
             grupo = NovoGrupo();
             veiculo = NovoVeiculo();
 
-            //action
             repositorioGrupo.Inserir(grupo);
             repositorioVeiculo.Inserir(veiculo);
 
-            //assert
-            Veiculo? veiculoAtualizado = repositorioVeiculo.SelecionarPorId(veiculo.Id);
+            veiculo.Modelo = "Teste";
+            veiculo.Marca = "Ford";
+            veiculo.Placa = "ASD2345";
+            veiculo.Cor = "Preto";
+            veiculo.TipoCombustivel = TipoCombustivel.Elétrico;
+            veiculo.CapacidadeTanque = 200;
+            veiculo.Ano = 2020;
+            veiculo.KmPercorrido = 0;
 
-            veiculoAtualizado.GrupoVeiculo = grupo;
-            veiculoAtualizado.Modelo = "Teste";
-            veiculoAtualizado.Marca = "Ford";
-            veiculoAtualizado.Placa = "ASD2345";
-            veiculoAtualizado.Cor = "Preto";
-            veiculoAtualizado.TipoCombustivel = TipoCombustivel.Elétrico;
-            veiculoAtualizado.CapacidadeTanque = 200;
-            veiculoAtualizado.Ano = 2020;
-            veiculoAtualizado.KmPercorrido = 0;
-
-            repositorioVeiculo.Inserir(veiculoAtualizado);
+            repositorioVeiculo.Editar(veiculo);
 
             Veiculo? veiculoEncontrado = repositorioVeiculo.SelecionarPorId(veiculo.Id);
 
             veiculoEncontrado.Should().NotBeNull();
-            veiculo.Should().Be(veiculoEncontrado);
+            veiculoEncontrado.Should().Be(veiculo);
         }
 
         [TestMethod]
@@ -90,7 +89,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
             repositorioVeiculo.Excluir(veiculo);
 
             veiculoEncontrado.Should().NotBeNull();
-            veiculo.Should().Be(veiculoEncontrado);
+            veiculoEncontrado.Should().Be(veiculo);
         }
 
         [TestMethod]
@@ -102,24 +101,22 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
             veiculo = NovoVeiculo();
             repositorioVeiculo.Inserir(veiculo);
 
-            veiculo = NovoVeiculo2();
-            repositorioVeiculo.Inserir(veiculo);
+            veiculo2 = NovoVeiculo2();
+            repositorioVeiculo.Inserir(veiculo2);
 
             //assert
-            var veiculos = repositorioVeiculo.SelecionarTodos();
+            List<Veiculo> veiculos = repositorioVeiculo.SelecionarTodos();
 
             //assert
-            Assert.AreEqual(2, veiculos.Count);
-
-            Assert.AreEqual("Teste", veiculos[0].Modelo);
-            Assert.AreEqual("Teste2", veiculos[1].Modelo);
+            veiculos.Count.Should().Be(2);
+            veiculos.Should().Contain(veiculo);
+            veiculos.Should().Contain(veiculo2);
         }
 
         private Veiculo NovoVeiculo()
         {
             return new()
             {
-                GrupoVeiculo = grupo,
                 Modelo = "Teste",
                 Marca = "Ford",
                 Placa = "ASD2345",
@@ -128,7 +125,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 CapacidadeTanque = 200,
                 Ano = 2020,
                 KmPercorrido = 0,
-                Foto = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 }
+                Foto = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 },
+                Grupo = grupo
             };
         }
 
@@ -136,7 +134,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
         {
             return new()
             {
-                GrupoVeiculo = grupo,
                 Modelo = "Teste2",
                 Marca = "Volkswagen",
                 Placa = "PLG2945",
@@ -145,7 +142,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 CapacidadeTanque = 400,
                 Ano = 2010,
                 KmPercorrido = 100,
-                Foto = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 }
+                Foto = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10 },
+                Grupo = grupo
             };
         }
 

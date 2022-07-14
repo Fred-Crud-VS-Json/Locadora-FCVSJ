@@ -39,12 +39,6 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             return repositorioVeiculo.SelecionarTodos();
         }
 
-        public void SalvarVeiculo(Veiculo veiculo, string caminhoFoto)
-        {
-            veiculo.CaminhoFoto = caminhoFoto;
-        }
-
-
         private ValidationResult Validar(Veiculo veiculo)
         {
             AbstractValidator<Veiculo> validador = new ValidadorVeiculo();

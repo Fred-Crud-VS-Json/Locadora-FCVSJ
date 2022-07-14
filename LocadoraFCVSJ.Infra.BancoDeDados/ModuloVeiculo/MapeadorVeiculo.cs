@@ -1,10 +1,8 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
-using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
 {
@@ -13,7 +11,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
         public override void ConfigurarParametros(Veiculo Registro, SqlCommand comando)
         {
             comando.Parameters.AddWithValue("ID", Registro.Id);
-            comando.Parameters.AddWithValue("GRUPOVEICULO", Registro.GrupoVeiculo == null ? DBNull.Value : Registro.GrupoVeiculo.Id);
             comando.Parameters.AddWithValue("MODELO", Registro.Modelo);
             comando.Parameters.AddWithValue("MARCA", Registro.Marca);
             comando.Parameters.AddWithValue("PLACA", Registro.Placa);
@@ -23,14 +20,14 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
             comando.Parameters.AddWithValue("ANO", Registro.Ano);
             comando.Parameters.AddWithValue("KMPERCORRIDO", Registro.KmPercorrido);
             comando.Parameters.AddWithValue("FOTO", Registro.Foto);
+            comando.Parameters.AddWithValue("GRUPO_ID", Registro.Grupo.Id);
         }
 
         public override Veiculo ConverterRegistro(SqlDataReader leitorRegistro)
         {
             return new()
             {
-                Id = Convert.ToInt32(leitorRegistro["VEICULO_ID"]),
-                GrupoVeiculo = new MapeadorGrupo().ConverterRegistro(leitorRegistro),
+                Id = Guid.Parse(leitorRegistro["VEICULO_ID"].ToString()),
                 Modelo = Convert.ToString(leitorRegistro["VEICULO_MODELO"]),
                 Marca = Convert.ToString(leitorRegistro["VEICULO_MARCA"]),
                 Placa = Convert.ToString(leitorRegistro["VEICULO_PLACA"]),
@@ -39,7 +36,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 CapacidadeTanque = Convert.ToInt32(leitorRegistro["VEICULO_CAPACIDADETANQUE"]),
                 Ano = Convert.ToInt32(leitorRegistro["VEICULO_ANO"]),
                 KmPercorrido = Convert.ToInt32(leitorRegistro["VEICULO_KMPERCORRIDO"]),
-                Foto = (Byte[])leitorRegistro["VEICULO_FOTO"]
+                Foto = (byte[])leitorRegistro["VEICULO_FOTO"],
+                Grupo = new MapeadorGrupo().ConverterRegistro(leitorRegistro),
             };         
         }
     }
