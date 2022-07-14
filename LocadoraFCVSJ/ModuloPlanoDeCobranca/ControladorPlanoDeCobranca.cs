@@ -1,4 +1,5 @@
-﻿using Krypton.Toolkit;
+﻿using FluentResults;
+using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Compartilhado;
@@ -77,9 +78,14 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Plano de Cobrança", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _servicoPlanoDeCobranca.Excluir(planoSelecionado);
+            {
+                Result<PlanoDeCobranca> resultadoExclusao = _servicoPlanoDeCobranca.Excluir(planoSelecionado);
 
-            CarregarPlanosDeCobranca();
+                if (resultadoExclusao.IsSuccess)
+                    CarregarPlanosDeCobranca();
+                else
+                    MessageBox.Show(resultadoExclusao.Errors[0].Message, "Exclusão de Plano de Cobrança", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public override KryptonForm ObterTela()
@@ -91,9 +97,10 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 
         private void CarregarPlanosDeCobranca()
         {
-            List<PlanoDeCobranca> planosDeCobranca = _servicoPlanoDeCobranca.SelecionarTodos();
+            Result<List<PlanoDeCobranca>> resultado = _servicoPlanoDeCobranca.SelecionarTodos();
 
-            controlePlanoDeCobrancaForm.AtualizarGrid(planosDeCobranca);
+            if (resultado.IsSuccess)
+                controlePlanoDeCobrancaForm.AtualizarGrid(resultado.Value);
         }
 
         private PlanoDeCobranca? ObterPlanoDeCobranca()
@@ -101,7 +108,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             if (controlePlanoDeCobrancaForm.ObterGrid().CurrentCell != null && controlePlanoDeCobrancaForm.ObterGrid().CurrentCell.Selected == true)
             {
                 int index = controlePlanoDeCobrancaForm.ObterLinhaSelecionada();
-                return _servicoPlanoDeCobranca.SelecionarTodos().ElementAtOrDefault(index);
+                return _servicoPlanoDeCobranca.SelecionarTodos().Value.ElementAtOrDefault(index);
             }
 
             return null;
