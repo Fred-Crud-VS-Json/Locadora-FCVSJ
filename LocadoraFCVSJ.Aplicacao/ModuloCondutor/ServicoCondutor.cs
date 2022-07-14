@@ -60,7 +60,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
 
         public List<Cliente> SelecionarTodosOsClientes()
         {
-            return _servicoCliente.SelecionarTodos();
+            return _servicoCliente.SelecionarTodos().Value;
         }
 
         private ValidationResult Validar(Condutor condutor)

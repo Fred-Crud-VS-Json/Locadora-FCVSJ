@@ -1,88 +1,172 @@
-﻿using FluentValidation;
+﻿using FluentResults;
+using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using Serilog;
+using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 {
     public class ServicoCliente
     {
         private readonly RepositorioCliente _repositorioCliente;
+        private string _msgErro = "";
 
         public ServicoCliente(RepositorioCliente repositorioCliente)
         {
             _repositorioCliente = repositorioCliente;
         }
 
-        public ValidationResult Inserir(Cliente cliente)
+        public Result<Cliente> Inserir(Cliente cliente)
         {
-            Log.Logger.Debug("Tentando inserir novo cliente...");
+            Log.Logger.Debug("Tentando inserir cliente...");
 
-            ValidationResult resultadoValidacao = Validar(cliente);
+            Result resultadoValidacao = Validar(cliente);
 
-            if (resultadoValidacao.IsValid)
+            if (resultadoValidacao.IsFailed)
+            {
+                foreach (Error erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar inserir o cliente {cliente.Id} - {erro.Message}");
+
+                return Result.Fail(resultadoValidacao.Errors);
+            }
+
+            try
             {
                 _repositorioCliente.Inserir(cliente);
-                Log.Logger.Information($"Cliente {cliente.Id} inserido com sucesso!");
-            }
-            else
-            {
-                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
-                    Log.Logger.Warning($"Falha ao tentar inserir o cliente {cliente.Id} - {erro.ErrorMessage}");
-            }
 
-            return resultadoValidacao;
+                Log.Logger.Information($"Cliente {cliente.Id} inserido com sucesso!");
+
+                return Result.Ok(cliente);
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar inserir cliente.";
+
+                Log.Logger.Fatal(ex, _msgErro + $" {cliente.Id}");
+
+                return Result.Fail(_msgErro);
+            }
         }
 
-        public ValidationResult Editar(Cliente cliente)
+        public Result<Cliente> Editar(Cliente cliente)
         {
             Log.Logger.Debug("Tentando editar cliente...");
 
-            ValidationResult resultadoValidacao = Validar(cliente);
+            Result resultadoValidacao = Validar(cliente);
 
-            if (resultadoValidacao.IsValid)
+            if (resultadoValidacao.IsFailed)
+            {
+                foreach (Error erro in resultadoValidacao.Errors)
+                    Log.Logger.Warning($"Falha ao tentar editar o cliente {cliente.Id} - {erro.Message}");
+
+                return Result.Fail(resultadoValidacao.Errors);
+            }
+
+            try
             {
                 _repositorioCliente.Editar(cliente);
+
                 Log.Logger.Information($"Cliente {cliente.Id} editado com sucesso!");
+
+                return Result.Ok(cliente);
             }
-            else
+            catch (SqlException ex)
             {
-                foreach (ValidationFailure? erro in resultadoValidacao.Errors)
-                    Log.Logger.Warning($"Falha ao tentar editar o cliente {cliente.Id} - {erro.ErrorMessage}");
+                _msgErro = "Falha ao tentar editar cliente.";
+
+                Log.Logger.Fatal(ex, _msgErro + $" {cliente.Id}");
+
+                return Result.Fail(_msgErro);
             }
-
-            return resultadoValidacao;
         }
 
-        public List<Cliente> SelecionarTodos()
+        public Result<Cliente> Excluir(Cliente cliente)
         {
-            return _repositorioCliente.SelecionarTodos();
+            Log.Logger.Debug("Tentando excluir cliente...");
+
+            try
+            {
+                _repositorioCliente.Excluir(cliente);
+
+                Log.Logger.Information($"Cliente {cliente.Id} excluído com sucesso!");
+
+                return Result.Ok();
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar excluir cliente.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
         }
 
-        private ValidationResult Validar(Cliente cliente)
+        public Result<List<Cliente>> SelecionarTodos()
+        {
+            try
+            {
+                return Result.Ok(_repositorioCliente.SelecionarTodos());
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao selecionar todos os clientes.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+        }
+
+        public Result<Cliente?> SelecionarPorId(Guid id)
+        {
+            try
+            {
+                return Result.Ok(_repositorioCliente.SelecionarPorId(id));
+            }
+            catch (SqlException ex)
+            {
+                _msgErro = "Falha ao tentar selecionar o cliente.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+        }
+
+
+        private Result Validar(Cliente cliente)
         {
             AbstractValidator<Cliente> validador = new ValidadorCliente();
 
-            var resultadoValidacao = validador.Validate(cliente);
+            ValidationResult resultadoValidacao = validador.Validate(cliente);
+
+            List<Error> erros = new();
+
+            foreach (ValidationFailure erro in resultadoValidacao.Errors)
+                erros.Add(new(erro.ErrorMessage));
 
             if (CpfDuplicado(cliente))
-                resultadoValidacao.Errors.Add(new ValidationFailure("CPF", "CPF informado já existe."));
+                erros.Add(new("CPF informado já existe."));
 
             if (CNPJDuplicado(cliente))
-                resultadoValidacao.Errors.Add(new ValidationFailure("CNPJ", "CNPJ informado já existe."));
+                erros.Add(new("CNPJ informado já existe."));
 
             if (CNHDuplicado(cliente))
-                resultadoValidacao.Errors.Add(new ValidationFailure("CNH", "CNH informada já existe."));
+                erros.Add(new("CNH informado já existe."));
 
             if (EmailDuplicado(cliente))
-                resultadoValidacao.Errors.Add(new ValidationFailure("Email", "Email informado já existe."));
+                erros.Add(new("Email informado já existe."));
 
             if (TelefoneDuplicado(cliente))
-                resultadoValidacao.Errors.Add(new ValidationFailure("Telefone", "Telefone informado já existe."));
+                erros.Add(new("Telefone informado já existe."));
 
+            if (erros.Any())
+                return Result.Fail(erros);
 
-            return resultadoValidacao;
+            return Result.Ok();
         }
 
         private bool CpfDuplicado(Cliente cliente)

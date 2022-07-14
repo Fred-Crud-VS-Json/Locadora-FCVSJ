@@ -1,4 +1,5 @@
-﻿using Krypton.Toolkit;
+﻿using FluentResults;
+using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
@@ -8,13 +9,11 @@ namespace LocadoraFCVSJ.ModuloCliente
 {
     public class ControladorCliente : ControladorBase
     {
-        private readonly RepositorioCliente _repositorioCliente;
         private readonly ServicoCliente _servicoCliente;
         private readonly ControleClienteForm controleClienteForm;
 
-        public ControladorCliente(RepositorioCliente repositorioCliente, ServicoCliente servicoCliente)
+        public ControladorCliente(ServicoCliente servicoCliente)
         {
-            _repositorioCliente = repositorioCliente;
             _servicoCliente = servicoCliente;
             controleClienteForm = new(this);
         }
@@ -29,7 +28,7 @@ namespace LocadoraFCVSJ.ModuloCliente
 
             DialogResult resultado = tela.ShowDialog();
 
-            if (resultado == DialogResult.OK) 
+            if (resultado == DialogResult.OK)
                 CarregarClientes();
         }
 
@@ -49,8 +48,8 @@ namespace LocadoraFCVSJ.ModuloCliente
                 SalvarRegistro = _servicoCliente.Editar
             };
 
-            tela.label1.Text = "        Editando Registro";
-            tela.label4.Text = "Altere abaixo as informações que deseja do cliente selecionado.";
+            tela.label1.Text = "      Editando Registro";
+            tela.label4.Text = "Insira o novo nome do cliente no campo abaixo";
 
 
             DialogResult resultado = tela.ShowDialog();
@@ -72,7 +71,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Cliente", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _repositorioCliente.Excluir(clienteSelecionado);
+                _servicoCliente.Excluir(clienteSelecionado);
 
             CarregarClientes();
         }
@@ -84,11 +83,12 @@ namespace LocadoraFCVSJ.ModuloCliente
             return controleClienteForm;
         }
 
-        public void CarregarClientes()
+        private void CarregarClientes()
         {
-            List<Cliente> clientes = _repositorioCliente.SelecionarTodos();
+            Result<List<Cliente>> resultado = _servicoCliente.SelecionarTodos();
 
-            controleClienteForm.AtualizarGrid(clientes);
+            if (resultado.IsSuccess)
+                controleClienteForm.AtualizarGrid(resultado.Value);
         }
 
         public Cliente? ObterCliente()
@@ -96,7 +96,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             if (controleClienteForm.ObterGrid().CurrentCell != null && controleClienteForm.ObterGrid().CurrentCell.Selected == true)
             {
                 int index = controleClienteForm.ObterLinhaSelecionada();
-                return _repositorioCliente.SelecionarTodos().ElementAtOrDefault(index);
+                return _servicoCliente.SelecionarTodos().Value.ElementAtOrDefault(index);
             }
 
             return null;

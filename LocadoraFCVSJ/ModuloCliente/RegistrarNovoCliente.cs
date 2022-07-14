@@ -1,7 +1,9 @@
-﻿using FluentValidation.Results;
+﻿using FluentResults;
+using FluentValidation.Results;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
+using System.Text;
 
 namespace LocadoraFCVSJ.ModuloCliente
 {
@@ -51,7 +53,7 @@ namespace LocadoraFCVSJ.ModuloCliente
                 }
             }
         }
-        public Func<Cliente, ValidationResult> SalvarRegistro { get; set; }
+        public Func<Cliente, Result<Cliente>> SalvarRegistro { get; set; }
 
         private void BtnConcluirRegistro_Click(object sender, EventArgs e)
         {
@@ -78,11 +80,16 @@ namespace LocadoraFCVSJ.ModuloCliente
                 else
                     cliente.CNPJ = null;
 
-                ValidationResult resultado = SalvarRegistro(cliente);
+                Result<Cliente> resultado = SalvarRegistro(cliente);
 
-                if (resultado.IsValid == false)
+                if (resultado.IsFailed)
                 {
-                    MessageBox.Show(resultado.ToString("\n"), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    StringBuilder erros = new();
+
+                    foreach (Error erro in resultado.Errors)
+                        erros.AppendLine(erro.Message);
+
+                    MessageBox.Show(erros.ToString(), Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     DialogResult = DialogResult.None;
                 }
