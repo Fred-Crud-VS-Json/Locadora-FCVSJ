@@ -4,7 +4,6 @@ using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using Serilog;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
@@ -121,22 +120,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             }
         }
 
-        public Result<Funcionario?> SelecionarPorId(Guid id)
-        {
-            try
-            {
-                return Result.Ok(_repositorioFuncionario.SelecionarPorId(id));
-            }
-            catch (SqlException ex)
-            {
-                _msgErro = "Falha ao tentar selecionar funcionário.";
-
-                Log.Logger.Fatal(ex, _msgErro);
-
-                return Result.Fail(_msgErro);
-            }
-        }
-
+       
         private Result Validar(Funcionario funcionario)
         {
             AbstractValidator<Funcionario> validador = new ValidadorFuncionario();
