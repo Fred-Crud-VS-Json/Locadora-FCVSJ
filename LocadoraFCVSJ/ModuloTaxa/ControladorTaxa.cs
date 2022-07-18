@@ -8,7 +8,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
 {
     public class ControladorTaxa : ControladorBase
     {
-        private readonly ServicoTaxa _servicoTaxa;
+        public readonly ServicoTaxa _servicoTaxa;
         private readonly ControleTaxaForm controleTaxaForm;
 
         public ControladorTaxa(ServicoTaxa servicoTaxa)
@@ -19,7 +19,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
         public override void Inserir()
         {
-            RegistrarNovaTaxaForm tela = new()
+            RegistrarTaxaForm tela = new()
             {
                 Taxa = new(),
                 SalvarRegistro = _servicoTaxa.Inserir
@@ -33,23 +33,22 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
         public override void Editar()
         {
-            Taxa? taxaSelecionado = ObterTaxa();
+            Taxa? taxaSelecionada = ObterTaxa();
 
-            if (taxaSelecionado == null)
+            if (taxaSelecionada == null)
             {
                 MessageBox.Show("Selecione uma taxa primeiro.", "Edição de Taxa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            RegistrarNovaTaxaForm tela = new()
+            RegistrarTaxaForm tela = new()
             {
-                Taxa = taxaSelecionado,
+                Taxa = taxaSelecionada,
                 SalvarRegistro = _servicoTaxa.Editar
             };
 
-            tela.LblTitulo.Text = "      Editando Registro";
-            tela.LblInformacao.Text = "Insira o novo nome da taxa no campo abaixo";
-
+            tela.LblTitulo.Text = "Editando Registro";
+            tela.PxbIcon.Image = Properties.Resources.edit_50px;
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -59,20 +58,25 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
         public override void Excluir()
         {
-            Taxa? taxaSelecionado = ObterTaxa();
+            Taxa? taxaSelecionada = ObterTaxa();
 
-            if (taxaSelecionado == null)
+            if (taxaSelecionada == null)
             {
-                MessageBox.Show("Selecione um taxa primeiro.", "Exclusão de Taxa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione uma taxa primeiro.", "Exclusão de Taxa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Taxa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _servicoTaxa.Excluir(taxaSelecionado);
+            {
+                Result<Taxa> resultadoExclusao = _servicoTaxa.Excluir(taxaSelecionada);
 
-            CarregarTaxas();
+                if (resultadoExclusao.IsFailed)
+                    MessageBox.Show(resultadoExclusao.Errors[0].Message, "Exclusão de Taxa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    CarregarTaxas();
+            }
         }
 
         public override KryptonForm ObterTela()

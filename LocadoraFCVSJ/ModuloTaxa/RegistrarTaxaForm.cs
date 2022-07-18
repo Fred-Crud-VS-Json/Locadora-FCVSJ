@@ -1,24 +1,22 @@
 ﻿using FluentResults;
-using FluentValidation.Results;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
-using System.Globalization;
 using System.Text;
 
 namespace LocadoraFCVSJ.ModuloTaxa
 {
-    public partial class RegistrarNovaTaxaForm : KryptonForm
+    public partial class RegistrarTaxaForm : KryptonForm
     {
         private Taxa taxa;
 
-        public RegistrarNovaTaxaForm()
+        public RegistrarTaxaForm()
         {
             InitializeComponent();
 
             List<TipoCalculoTaxa> tiposDeCalculoDeTaxa = Enum.GetValues(typeof(TipoCalculoTaxa)).Cast<TipoCalculoTaxa>().ToList();
 
-            tiposDeCalculoDeTaxa.ForEach(x => CbxTipoCalculoTaxa.Items.Add(x));
+            tiposDeCalculoDeTaxa.ForEach(x => CbxTipo.Items.Add(x));
         }
 
         public Taxa Taxa
@@ -31,21 +29,21 @@ namespace LocadoraFCVSJ.ModuloTaxa
 
                 TxbNome.Text = taxa.Nome;
                 TxbValor.Text = taxa.Valor.ToString("F2");
-                CbxTipoCalculoTaxa.SelectedItem = taxa.TipoCalculoTaxa;
+                CbxTipo.SelectedItem = taxa.TipoCalculoTaxa;
             }
         }
 
         public Func<Taxa, Result<Taxa>> SalvarRegistro { get; set; }
 
-        private void BtnConcluirRegistro_Click(object sender, EventArgs e)
+        private void BtnConcluir_Click(object sender, EventArgs e)
         {
             try
             {
                 taxa.Nome = TxbNome.Text;
                 taxa.Valor = Convert.ToDecimal(TxbValor.Text);
 
-                if (CbxTipoCalculoTaxa.SelectedItem != null)
-                    taxa.TipoCalculoTaxa = (TipoCalculoTaxa)CbxTipoCalculoTaxa.SelectedItem;
+                if (CbxTipo.SelectedItem != null)
+                    taxa.TipoCalculoTaxa = (TipoCalculoTaxa)CbxTipo.SelectedItem;
 
                 Result<Taxa> resultado = SalvarRegistro(taxa);
 
@@ -68,5 +66,6 @@ namespace LocadoraFCVSJ.ModuloTaxa
                 TxbValor.Clear();
             }
         }
+
     }
 }
