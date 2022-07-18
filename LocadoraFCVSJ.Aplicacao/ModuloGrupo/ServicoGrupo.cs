@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using FluentValidation;
 using FluentValidation.Results;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using Serilog;
@@ -95,6 +96,15 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 
                 return Result.Ok();
             }
+            catch (ExcluirRegistroRelacionadoException ex)
+            {
+                _msgErro = "Esse grupo possui relação com alguma entidade no sistema e não pode ser excluído.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+
             catch (SqlException ex)
             {
                 _msgErro = "Falha ao tentar excluir grupo.";
