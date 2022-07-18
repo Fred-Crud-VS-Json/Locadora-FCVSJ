@@ -5,9 +5,9 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
 {
     public partial class PlanoControladoControl : UserControl
     {
-        private readonly RegistrarNovoPlanoDeCobrancaForm _telaRegistro;
+        private readonly RegistrarPlanoDeCobrancaForm _telaRegistro;
 
-        public PlanoControladoControl(RegistrarNovoPlanoDeCobrancaForm telaRegistro)
+        public PlanoControladoControl(RegistrarPlanoDeCobrancaForm telaRegistro)
         {
             InitializeComponent();
             _telaRegistro = telaRegistro;
@@ -36,8 +36,6 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
                 else
                 {
                     MessageBox.Show("Cadastro de Plano Controlado realizado com sucesso!", "Locadora FCSVJ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    _telaRegistro.ChbxPlanoControlado.Checked = true;
                 }
             }
             catch (FormatException)
@@ -52,7 +50,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
             TxbValorDiario.Clear();
             TxbValorKm.Clear();
             TxbLimiteKm.Clear();
-            _telaRegistro.ChbxPlanoControlado.Checked = false;
         }
+
     }
 }

@@ -10,18 +10,18 @@ using System.Text;
 
 namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 {
-    public partial class RegistrarNovoPlanoDeCobrancaForm : KryptonForm
+    public partial class RegistrarPlanoDeCobrancaForm : KryptonForm
     {
         private readonly ServicoPlanoDeCobranca _servicoPlanoDeCobranca;
         private readonly ServicoGrupo _servicoGrupo;
 
         private PlanoDeCobranca planoDeCobranca;
 
-        private readonly PlanoDiarioControl planoDiarioControl;
-        private readonly PlanoLivreControl planoLivreControl;
-        private readonly PlanoControladoControl planoControladoControl;
+        public readonly PlanoDiarioControl planoDiarioControl;
+        public readonly PlanoLivreControl planoLivreControl;
+        public readonly PlanoControladoControl planoControladoControl;
 
-        public RegistrarNovoPlanoDeCobrancaForm(ServicoPlanoDeCobranca servicoPlanoDeCobranca, ServicoGrupo servicoGrupo)
+        public RegistrarPlanoDeCobrancaForm(ServicoPlanoDeCobranca servicoPlanoDeCobranca, ServicoGrupo servicoGrupo)
         {
             InitializeComponent();
 
@@ -56,25 +56,31 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
                     CbxGrupo.Items.Add(planoDeCobranca.Grupo);
                     CbxGrupo.SelectedItem = planoDeCobranca.Grupo;
                     CbxGrupo.Enabled = false;
-                    ChbxPlanoDiario.Checked = true;
-                    ChbxPlanoLivre.Checked = true;
-                    ChbxPlanoControlado.Checked = true;
                 }
 
-                planoDiarioControl.TxbValorDiario.Text = PlanoDeCobranca.PlanoDiario_ValorDiario.ToString("F2");
-                planoDiarioControl.TxbValorKm.Text = PlanoDeCobranca.PlanoDiario_ValorKm.ToString("F2");
+                if (PlanoDeCobranca.PlanoDiario_ValorDiario != 0)
+                    planoDiarioControl.TxbValorDiario.Text = PlanoDeCobranca.PlanoDiario_ValorDiario.ToString("F2");
 
-                planoLivreControl.TxbValorDiario.Text = PlanoDeCobranca.PlanoLivre_ValorDiario.ToString("F2");
+                if (PlanoDeCobranca.PlanoDiario_ValorKm != 0)
+                    planoDiarioControl.TxbValorKm.Text = PlanoDeCobranca.PlanoDiario_ValorKm.ToString("F2");
 
-                planoControladoControl.TxbValorDiario.Text = PlanoDeCobranca.PlanoControlado_ValorDiario.ToString("F2");
-                planoControladoControl.TxbValorKm.Text = PlanoDeCobranca.PlanoControlado_ValorKm.ToString("F2");
-                planoControladoControl.TxbLimiteKm.Text = PlanoDeCobranca.PlanoControlado_LimiteKm.ToString();
+                if (PlanoDeCobranca.PlanoLivre_ValorDiario != 0)
+                    planoLivreControl.TxbValorDiario.Text = PlanoDeCobranca.PlanoLivre_ValorDiario.ToString("F2");
+
+                if (PlanoDeCobranca.PlanoControlado_ValorDiario != 0)
+                    planoControladoControl.TxbValorDiario.Text = PlanoDeCobranca.PlanoControlado_ValorDiario.ToString("F2");
+
+                if (PlanoDeCobranca.PlanoControlado_ValorKm != 0)
+                    planoControladoControl.TxbValorKm.Text = PlanoDeCobranca.PlanoControlado_ValorKm.ToString("F2");
+
+                if (PlanoDeCobranca.PlanoControlado_LimiteKm != 0)
+                    planoControladoControl.TxbLimiteKm.Text = PlanoDeCobranca.PlanoControlado_LimiteKm.ToString();
             }
         }
 
         public Func<PlanoDeCobranca, Result<PlanoDeCobranca>> SalvarRegistro { get; set; }
 
-        private void BtnConcluirRegistro_Click(object sender, EventArgs e)
+        private void BtnConcluir_Click(object sender, EventArgs e)
         {
             try
             {
@@ -119,30 +125,30 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             ConfigurarPanel(planoControladoControl);
         }
 
-        private void ConfigurarBackgroundBotoes(KryptonButton btn1, KryptonButton btn2, KryptonButton btn3)
-        {
-            btn1.StateCommon.Back.Color1 = Color.FromArgb(0, 152, 74);
-            btn1.StateCommon.Back.Color2 = Color.FromArgb(0, 152, 74);
-            btn1.StateCommon.Border.Color1 = Color.FromArgb(0, 152, 74);
-            btn1.StateCommon.Border.Color2 = Color.FromArgb(0, 152, 74);
-
-            btn2.StateCommon.Back.Color1 = Color.FromArgb(0, 152, 74);
-            btn2.StateCommon.Back.Color2 = Color.FromArgb(0, 152, 74);
-            btn2.StateCommon.Border.Color1 = Color.FromArgb(0, 152, 74);
-            btn2.StateCommon.Border.Color2 = Color.FromArgb(0, 152, 74);
-
-            btn3.StateCommon.Back.Color1 = Color.FromArgb(17, 92, 54);
-            btn3.StateCommon.Back.Color2 = Color.FromArgb(17, 92, 54);
-            btn3.StateCommon.Border.Color1 = Color.FromArgb(17, 92, 54);
-            btn3.StateCommon.Border.Color2 = Color.FromArgb(17, 92, 54);
-        }
-
         private void ConfigurarPanel(UserControl controle)
         {
             PnlConteudo.Controls.Clear();
             PnlConteudo.Controls.Add(controle);
 
             controle.Focus();
+        }
+
+        private static void ConfigurarBackgroundBotoes(KryptonButton btn1, KryptonButton btn2, KryptonButton btn3)
+        {
+            btn1.StateCommon.Back.Color1 = Color.FromArgb(83, 142, 187);
+            btn1.StateCommon.Back.Color2 = Color.FromArgb(83, 142, 187);
+            btn1.StateCommon.Border.Color1 = Color.FromArgb(83, 142, 187);
+            btn1.StateCommon.Border.Color2 = Color.FromArgb(83, 142, 187);
+
+            btn2.StateCommon.Back.Color1 = Color.FromArgb(83, 142, 187);
+            btn2.StateCommon.Back.Color2 = Color.FromArgb(83, 142, 187);
+            btn2.StateCommon.Border.Color1 = Color.FromArgb(83, 142, 187);
+            btn2.StateCommon.Border.Color2 = Color.FromArgb(83, 142, 187);
+
+            btn3.StateCommon.Back.Color1 = Color.FromArgb(43, 95, 134);
+            btn3.StateCommon.Back.Color2 = Color.FromArgb(43, 95, 134);
+            btn3.StateCommon.Border.Color1 = Color.FromArgb(43, 95, 134);
+            btn3.StateCommon.Border.Color2 = Color.FromArgb(43, 95, 134);
         }
     }
 }

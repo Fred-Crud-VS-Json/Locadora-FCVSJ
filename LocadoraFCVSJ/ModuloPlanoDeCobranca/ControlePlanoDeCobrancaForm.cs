@@ -1,4 +1,5 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
 
 namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
@@ -19,8 +20,10 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 
             planosDeCobrancas.ForEach(x =>
             {
-                GridPlanos.Rows.Add(x.Id, x.Grupo.Nome);
+                GridPlanos.Rows.Add(x.Grupo.Nome);
             });
+
+            LblRegistros.Text = _controladorPlanoDeCobranca._servicoPlanoDeCobranca.SelecionarTodos().Value.Count + "/" + _controladorPlanoDeCobranca._servicoGrupo.SelecionarTodos().Value.Count + " planos(s)";
 
             GridPlanos.ClearSelection();
         }
@@ -40,44 +43,57 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
             GridPlanos.ClearSelection();
         }
 
+        private void ControlePlanoDeCobrancaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TelaPrincipal.Instancia.WindowState = FormWindowState.Normal;
+        }
+
         private void BtnInserir_Click(object sender, EventArgs e)
         {
             _controladorPlanoDeCobranca.Inserir();
         }
 
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            _controladorPlanoDeCobranca.Editar();
-        }
-
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-            _controladorPlanoDeCobranca.Excluir();
-        }
-
         private void GridPlanos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    _controladorPlanoDeCobranca.Editar();
+                    GridPlanos.ClearSelection();
+                    break;
 
+                case 3:
+                    _controladorPlanoDeCobranca.Excluir();
+                    break;
+
+                case 5:
+                    Visualizar();
+                    break;
+            }
         }
 
         private void GridPlanos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            Image someImage = Properties.Resources.search_more_25px;
+            Image editarImg = Properties.Resources.edit_blue_30px;
+            Image excluirImg = Properties.Resources.close_blue_30px;
+            Image visualizarImg = Properties.Resources.search_more_30px;
 
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 2)
+            switch (e.ColumnIndex)
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                case 1:
+                    e.ConfigurarImagem(editarImg);
+                    break;
 
-                var w = someImage.Width;
-                var h = someImage.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                case 3:
+                    e.ConfigurarImagem(excluirImg);
+                    break;
 
-                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
-                e.Handled = true;
+                case 5:
+                    e.ConfigurarImagem(visualizarImg);
+                    break;
             }
         }
 
@@ -85,8 +101,73 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
         {
             DataGridViewCell cell = GridPlanos.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-            if (e.ColumnIndex == 8)
-                cell.ToolTipText = "Visualizar Informações do Plano";
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    cell.ToolTipText = "Editar Registro";
+                    break;
+
+                case 2:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 3:
+                    cell.ToolTipText = "Excluir Registro";
+                    break;
+
+                case 4:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 5:
+                    cell.ToolTipText = "Visualização Completa";
+                    break;
+            }
+        }
+
+        private void Visualizar()
+        {
+            PlanoDeCobranca? cliente = _controladorPlanoDeCobranca.ObterPlanoDeCobranca();
+
+            if (cliente != null)
+            {
+                RegistrarPlanoDeCobrancaForm tela = new(_controladorPlanoDeCobranca._servicoPlanoDeCobranca, _controladorPlanoDeCobranca._servicoGrupo)
+                {
+                    PlanoDeCobranca = cliente
+                };
+
+                PrepararVisualizacao(tela);
+
+                GridPlanos.ClearSelection();
+
+                tela.ShowDialog();
+            }
+        }
+
+        private static void PrepararVisualizacao(RegistrarPlanoDeCobrancaForm tela)
+        {
+            tela.LblTitulo.Text = "Visualizando Registro";
+            tela.PxbIcon.Image = Properties.Resources.search_more_50px;
+
+            tela.CbxGrupo.Enabled = false;
+
+            tela.planoDiarioControl.TxbValorDiario.ReadOnly = true;
+            tela.planoDiarioControl.TxbValorKm.ReadOnly = true;
+            tela.planoDiarioControl.BtnConcluir.Visible = false;
+            tela.planoDiarioControl.BtnLimpar.Visible = false;
+
+            tela.planoLivreControl.TxbValorDiario.ReadOnly = true;
+            tela.planoLivreControl.BtnConcluir.Visible = false;
+            tela.planoLivreControl.BtnLimpar.Visible = false;
+
+            tela.planoControladoControl.TxbValorDiario.ReadOnly = true;
+            tela.planoControladoControl.TxbValorKm.ReadOnly = true;
+            tela.planoControladoControl.TxbLimiteKm.ReadOnly = true;
+            tela.planoControladoControl.BtnConcluir.Visible = false;
+            tela.planoControladoControl.BtnLimpar.Visible = false;
+
+            tela.BtnConcluir.Visible = false;
+            tela.BtnVoltar.Location = tela.BtnConcluir.Location;
         }
     }
 }

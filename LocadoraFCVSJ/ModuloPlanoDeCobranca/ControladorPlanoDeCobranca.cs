@@ -4,14 +4,13 @@ using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 
 namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 {
     public class ControladorPlanoDeCobranca : ControladorBase
     {
-        private readonly ServicoGrupo _servicoGrupo;
-        private readonly ServicoPlanoDeCobranca _servicoPlanoDeCobranca;
+        public readonly ServicoGrupo _servicoGrupo;
+        public readonly ServicoPlanoDeCobranca _servicoPlanoDeCobranca;
         private readonly ControlePlanoDeCobrancaForm controlePlanoDeCobrancaForm;
 
         public ControladorPlanoDeCobranca(ServicoGrupo servicoGrupo, ServicoPlanoDeCobranca servicoPlanoDeCobranca)
@@ -23,7 +22,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 
         public override void Inserir()
         {
-            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoPlanoDeCobranca, _servicoGrupo)
+            RegistrarPlanoDeCobrancaForm tela = new(_servicoPlanoDeCobranca, _servicoGrupo)
             {
                 PlanoDeCobranca = new(),
                 SalvarRegistro = _servicoPlanoDeCobranca.Inserir
@@ -51,13 +50,14 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
                 return;
             }
 
-            RegistrarNovoPlanoDeCobrancaForm tela = new(_servicoPlanoDeCobranca, _servicoGrupo)
+            RegistrarPlanoDeCobrancaForm tela = new(_servicoPlanoDeCobranca, _servicoGrupo)
             {
                 PlanoDeCobranca = planoSelecionado,
                 SalvarRegistro = _servicoPlanoDeCobranca.Editar
             };
 
-            tela.label1.Text = "                    Editando Registro";
+            tela.LblTitulo.Text = "Editando Registro";
+            tela.PxbIcon.Image = Properties.Resources.edit_50px;
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -103,7 +103,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
                 controlePlanoDeCobrancaForm.AtualizarGrid(resultado.Value);
         }
 
-        private PlanoDeCobranca? ObterPlanoDeCobranca()
+        public PlanoDeCobranca? ObterPlanoDeCobranca()
         {
             if (controlePlanoDeCobrancaForm.ObterGrid().CurrentCell != null && controlePlanoDeCobrancaForm.ObterGrid().CurrentCell.Selected == true)
             {

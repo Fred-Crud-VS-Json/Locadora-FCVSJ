@@ -5,9 +5,9 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
 {
     public partial class PlanoDiarioControl : UserControl
     {
-        private readonly RegistrarNovoPlanoDeCobrancaForm _telaRegistro;
+        private readonly RegistrarPlanoDeCobrancaForm _telaRegistro;
 
-        public PlanoDiarioControl(RegistrarNovoPlanoDeCobrancaForm telaRegistro)
+        public PlanoDiarioControl(RegistrarPlanoDeCobrancaForm telaRegistro)
         {
             InitializeComponent();
             _telaRegistro = telaRegistro;
@@ -35,8 +35,6 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
                 else
                 {
                     MessageBox.Show("Cadastro de Plano Diário realizado com sucesso!", "Locadora FCSVJ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    _telaRegistro.ChbxPlanoDiario.Checked = true;
                 }
             }
             catch (FormatException)
@@ -50,7 +48,7 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
         {
             TxbValorDiario.Clear();
             TxbValorKm.Clear();
-            _telaRegistro.ChbxPlanoDiario.Checked = false;
         }
+    
     }
 }

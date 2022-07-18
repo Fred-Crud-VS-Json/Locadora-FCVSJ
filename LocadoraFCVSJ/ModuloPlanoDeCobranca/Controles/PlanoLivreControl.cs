@@ -5,9 +5,9 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
 {
     public partial class PlanoLivreControl : UserControl
     {
-        private readonly RegistrarNovoPlanoDeCobrancaForm _telaRegistro;
+        private readonly RegistrarPlanoDeCobrancaForm _telaRegistro;
 
-        public PlanoLivreControl(RegistrarNovoPlanoDeCobrancaForm telaRegistro)
+        public PlanoLivreControl(RegistrarPlanoDeCobrancaForm telaRegistro)
         {
             InitializeComponent();
             _telaRegistro = telaRegistro;
@@ -34,8 +34,6 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
                 else
                 {
                     MessageBox.Show("Cadastro de Plano Livre realizado com sucesso!", "Locadora FCSVJ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    _telaRegistro.ChbxPlanoLivre.Checked = true;
                 }
             }
             catch (FormatException)
@@ -48,7 +46,6 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca.Controles
         private void BtnLimpar_Click(object sender, EventArgs e)
         {
             TxbValorDiario.Clear();
-            _telaRegistro.ChbxPlanoLivre.Checked = false;
         }
     }
 }
