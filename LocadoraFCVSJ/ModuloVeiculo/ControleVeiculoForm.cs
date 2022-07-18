@@ -1,4 +1,6 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 
 namespace LocadoraFCVSJ.ModuloVeiculo
@@ -12,24 +14,16 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             _controladorVeiculo = controladorVeiculo;
         }
 
-        private void GridVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.ColumnIndex == 5)
-            {
-                Veiculo? veiculo = _controladorVeiculo.ObterVeiculo();
-
-                new VisualizarVeiculoForm(veiculo).ShowDialog();
-            }
-        }
-
         public void AtualizarGrid(List<Veiculo> veiculos)
         {
             GridVeiculos.Rows.Clear();
 
             veiculos.ForEach(x =>
             {
-                GridVeiculos.Rows.Add(x.Id, x.Grupo, x.Modelo, x.Marca, x.Placa);
+                GridVeiculos.Rows.Add(x.Modelo, x.Marca, x.Placa, x.Cor);
             });
+
+            LblRegistros.Text = _controladorVeiculo._servicoVeiculo.SelecionarTodos().Value.Count + " veículo(s)";
 
             GridVeiculos.ClearSelection();
         }
@@ -44,33 +38,14 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             return GridVeiculos.CurrentCell.RowIndex;
         }
 
-        private void GridVeiculos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void ControleVeiculoForm_Load(object sender, EventArgs e)
         {
-            Image someImage = Properties.Resources.search_more_25px;
-
-            if (e.RowIndex < 0)
-                return;
-
-            if (e.ColumnIndex == 5)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                var w = someImage.Width;
-                var h = someImage.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
-                e.Handled = true;
-            }
+            GridVeiculos.ClearSelection();
         }
 
-        private void GridVeiculos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void ControleVeiculoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DataGridViewCell cell = GridVeiculos.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-            if (e.ColumnIndex == 5)
-                cell.ToolTipText = "Visualização Completa";
+            TelaPrincipal.Instancia.WindowState = FormWindowState.Normal;
         }
 
         private void BtnInserir_Click(object sender, EventArgs e)
@@ -78,14 +53,117 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             _controladorVeiculo.Inserir();
         }
 
-        private void BtnEditar_Click(object sender, EventArgs e)
+        private void GridVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            _controladorVeiculo.Editar();
+            switch (e.ColumnIndex)
+            {
+                case 4:
+                    _controladorVeiculo.Editar();
+                    GridVeiculos.ClearSelection();
+                    break;
+
+                case 6:
+                    _controladorVeiculo.Excluir();
+                    break;
+
+                case 8:
+                    Visualizar();
+                    break;
+            }
         }
 
-        private void BtnExcluir_Click(object sender, EventArgs e)
+        private void GridVeiculos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            _controladorVeiculo.Excluir();
+            Image editarImg = Properties.Resources.edit_blue_30px;
+            Image excluirImg = Properties.Resources.close_blue_30px;
+            Image visualizarImg = Properties.Resources.search_more_30px;
+
+            if (e.RowIndex < 0)
+                return;
+
+            switch (e.ColumnIndex)
+            {
+                case 4:
+                    e.ConfigurarImagem(editarImg);
+                    break;
+
+                case 6:
+                    e.ConfigurarImagem(excluirImg);
+                    break;
+
+                case 8:
+                    e.ConfigurarImagem(visualizarImg);
+                    break;
+            }
         }
+
+        private void GridVeiculos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCell cell = GridVeiculos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+            switch (e.ColumnIndex)
+            {
+                case 4:
+                    cell.ToolTipText = "Editar Registro";
+                    break;
+
+                case 5:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 6:
+                    cell.ToolTipText = "Excluir Registro";
+                    break;
+
+                case 7:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 8:
+                    cell.ToolTipText = "Visualização Completa";
+                    break;
+            }
+        }
+
+        private void Visualizar()
+        {
+            Veiculo? veiculo = _controladorVeiculo.ObterVeiculo();
+
+            if (veiculo != null)
+            {
+                RegistrarVeiculoForm tela = new(_controladorVeiculo._servicoGrupo)
+                {
+                    Veiculo = veiculo
+                };
+
+                PrepararVisualizacao(tela);
+
+                GridVeiculos.ClearSelection();
+
+                tela.ShowDialog();
+            }
+        }
+
+        private static void PrepararVisualizacao(RegistrarVeiculoForm tela)
+        {
+            tela.LblTitulo.Text = "Visualizando Registro";
+            tela.PxbIcon.Image = Properties.Resources.search_more_50px;
+
+            tela.CbxGrupo.Enabled = false;
+            tela.TxbModelo.ReadOnly = true;
+            tela.TxbMarca.ReadOnly = true;
+            tela.TxbPlaca.ReadOnly = true;
+            tela.TxbCor.ReadOnly = true;
+            tela.CbxTipoCombustivel.Enabled = false;
+            tela.TxbCapacidadeTanque.ReadOnly = true;
+            tela.TxbAno.ReadOnly = true;
+            tela.TxbKmPercorrido.ReadOnly = true;
+
+            tela.BtnSelecionarImagem.Visible = false;
+            tela.customPanel4.Visible = false;
+            tela.BtnConcluir.Visible = false;
+            tela.BtnVoltar.Location = tela.BtnConcluir.Location;
+        }
+
     }
 }

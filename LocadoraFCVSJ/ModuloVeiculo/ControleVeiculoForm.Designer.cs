@@ -1,4 +1,6 @@
-﻿namespace LocadoraFCVSJ.ModuloVeiculo
+﻿using LocadoraFCVSJ.Compartilhado.Componentes;
+
+namespace LocadoraFCVSJ.ModuloVeiculo
 {
     partial class ControleVeiculoForm
     {
@@ -33,307 +35,367 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControleVeiculoForm));
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.GridVeiculos = new System.Windows.Forms.DataGridView();
+            this.ClnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnCor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnVisualizacaoCompleta = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ClnEsp1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ClnEsp2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.customPanel2 = new LocadoraFCVSJ.Compartilhado.Componentes.CustomPanel();
+            this.customPanel1 = new LocadoraFCVSJ.Compartilhado.Componentes.CustomPanel();
+            this.BtnInserir = new LocadoraFCVSJ.Compartilhado.Componentes.CustomKryptonButton();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.BtnExcluir = new Krypton.Toolkit.KryptonButton();
-            this.BtnEditar = new Krypton.Toolkit.KryptonButton();
-            this.BtnInserir = new Krypton.Toolkit.KryptonButton();
-            this.GridVeiculos = new System.Windows.Forms.DataGridView();
-            this.ClnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnVisualizar = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.LblRegistros = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.GridVeiculos)).BeginInit();
+            this.customPanel2.SuspendLayout();
+            this.customPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridVeiculos)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = Krypton.Toolkit.PaletteMode.Office2010BlackDarkMode;
-            this.kryptonPalette1.ButtonSpecs.FormClose.Image = global::LocadoraFCVSJ.Properties.Resources.close_20px;
-            this.kryptonPalette1.ButtonSpecs.FormMax.Image = global::LocadoraFCVSJ.Properties.Resources.maximize_button_20px;
-            this.kryptonPalette1.ButtonSpecs.FormMin.Image = global::LocadoraFCVSJ.Properties.Resources.subtract_20px;
-            this.kryptonPalette1.ButtonSpecs.FormRestore.Image = global::LocadoraFCVSJ.Properties.Resources.restore_window_20px;
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette1.BasePaletteMode = Krypton.Toolkit.PaletteMode.Office365White;
+            this.kryptonPalette1.ButtonSpecs.FormClose.Image = global::LocadoraFCVSJ.Properties.Resources.close_20px1;
+            this.kryptonPalette1.ButtonSpecs.FormMax.Image = global::LocadoraFCVSJ.Properties.Resources.maximize_button_20px1;
+            this.kryptonPalette1.ButtonSpecs.FormMin.Image = global::LocadoraFCVSJ.Properties.Resources.subtract_20px1;
+            this.kryptonPalette1.ButtonSpecs.FormRestore.Image = global::LocadoraFCVSJ.Properties.Resources.restore_window_20px1;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 5F;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Width = 1;
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Rounding = 1F;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Width = 0;
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Border.Width = 1;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 12;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonPadding = new System.Windows.Forms.Padding(-1, 0, -1, -1);
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(-1, 0, -1, -1);
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateDisabled.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LocadoraFCVSJ.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 75);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(306, 14);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(683, 72);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(679, 68);
-            this.panel2.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(196, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 31);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Gestão de Veículos";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(12, 115);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(977, 54);
-            this.panel3.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.BtnExcluir);
-            this.panel4.Controls.Add(this.BtnEditar);
-            this.panel4.Controls.Add(this.BtnInserir);
-            this.panel4.Location = new System.Drawing.Point(2, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(973, 50);
-            this.panel4.TabIndex = 2;
-            // 
-            // BtnExcluir
-            // 
-            this.BtnExcluir.Location = new System.Drawing.Point(139, 7);
-            this.BtnExcluir.Name = "BtnExcluir";
-            this.BtnExcluir.OverrideDefault.Back.Color1 = System.Drawing.Color.IndianRed;
-            this.BtnExcluir.OverrideDefault.Back.Color2 = System.Drawing.Color.IndianRed;
-            this.BtnExcluir.Size = new System.Drawing.Size(55, 38);
-            this.BtnExcluir.StateCommon.Back.Color1 = System.Drawing.Color.IndianRed;
-            this.BtnExcluir.StateCommon.Back.Color2 = System.Drawing.Color.IndianRed;
-            this.BtnExcluir.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.close_white_30px;
-            this.BtnExcluir.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.BtnExcluir.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.BtnExcluir.StateCommon.Border.Rounding = 4F;
-            this.BtnExcluir.TabIndex = 2;
-            this.BtnExcluir.ToolTipValues.Description = "";
-            this.BtnExcluir.ToolTipValues.EnableToolTips = true;
-            this.BtnExcluir.ToolTipValues.Heading = "Excluir Veículo";
-            this.BtnExcluir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
-            this.BtnExcluir.Values.Text = "";
-            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
-            // 
-            // BtnEditar
-            // 
-            this.BtnEditar.Location = new System.Drawing.Point(75, 7);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.OverrideDefault.Back.Color1 = System.Drawing.Color.CornflowerBlue;
-            this.BtnEditar.OverrideDefault.Back.Color2 = System.Drawing.Color.CornflowerBlue;
-            this.BtnEditar.Size = new System.Drawing.Size(55, 38);
-            this.BtnEditar.StateCommon.Back.Color1 = System.Drawing.Color.CornflowerBlue;
-            this.BtnEditar.StateCommon.Back.Color2 = System.Drawing.Color.CornflowerBlue;
-            this.BtnEditar.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.pencil_30px;
-            this.BtnEditar.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.BtnEditar.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.BtnEditar.StateCommon.Border.Rounding = 4F;
-            this.BtnEditar.StateCommon.Border.Width = 1;
-            this.BtnEditar.TabIndex = 1;
-            this.BtnEditar.ToolTipValues.Description = "";
-            this.BtnEditar.ToolTipValues.EnableToolTips = true;
-            this.BtnEditar.ToolTipValues.Heading = "Editar Veículo";
-            this.BtnEditar.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
-            this.BtnEditar.Values.Text = "";
-            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
-            // 
-            // BtnInserir
-            // 
-            this.BtnInserir.Location = new System.Drawing.Point(11, 7);
-            this.BtnInserir.Name = "BtnInserir";
-            this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.MediumSeaGreen;
-            this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.MediumSeaGreen;
-            this.BtnInserir.Size = new System.Drawing.Size(55, 38);
-            this.BtnInserir.StateCommon.Back.Color1 = System.Drawing.Color.MediumSeaGreen;
-            this.BtnInserir.StateCommon.Back.Color2 = System.Drawing.Color.MediumSeaGreen;
-            this.BtnInserir.StateCommon.Back.Image = global::LocadoraFCVSJ.Properties.Resources.plus_math_30px;
-            this.BtnInserir.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.CenterMiddle;
-            this.BtnInserir.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.BtnInserir.StateCommon.Border.Rounding = 4F;
-            this.BtnInserir.StateCommon.Border.Width = 1;
-            this.BtnInserir.TabIndex = 0;
-            this.BtnInserir.ToolTipValues.Description = "";
-            this.BtnInserir.ToolTipValues.EnableToolTips = true;
-            this.BtnInserir.ToolTipValues.Heading = "Adicionar Veículo";
-            this.BtnInserir.ToolTipValues.ToolTipStyle = Krypton.Toolkit.LabelStyle.NormalControl;
-            this.BtnInserir.Values.Text = "";
-            this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             // 
             // GridVeiculos
             // 
             this.GridVeiculos.AllowUserToAddRows = false;
             this.GridVeiculos.AllowUserToDeleteRows = false;
-            this.GridVeiculos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridVeiculos.BackgroundColor = System.Drawing.Color.White;
-            this.GridVeiculos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.GridVeiculos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridVeiculos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridVeiculos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(219)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GridVeiculos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridVeiculos.ColumnHeadersHeight = 45;
             this.GridVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GridVeiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClnId,
-            this.ClnGrupo,
-            this.ClnModelo,
             this.ClnMarca,
+            this.ClnModelo,
             this.ClnPlaca,
-            this.ClnVisualizar});
+            this.ClnCor,
+            this.ClnVisualizacaoCompleta,
+            this.ClnEsp1,
+            this.ClnEditar,
+            this.ClnEsp2,
+            this.ClnExcluir});
             this.GridVeiculos.EnableHeadersVisualStyles = false;
             this.GridVeiculos.GridColor = System.Drawing.Color.White;
-            this.GridVeiculos.Location = new System.Drawing.Point(12, 190);
+            this.GridVeiculos.Location = new System.Drawing.Point(1, 0);
             this.GridVeiculos.Name = "GridVeiculos";
             this.GridVeiculos.ReadOnly = true;
             this.GridVeiculos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.GridVeiculos.RowHeadersVisible = false;
             this.GridVeiculos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Open Sans", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
             this.GridVeiculos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.GridVeiculos.RowTemplate.Height = 25;
+            this.GridVeiculos.RowTemplate.Height = 35;
             this.GridVeiculos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridVeiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridVeiculos.Size = new System.Drawing.Size(977, 468);
+            this.GridVeiculos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.GridVeiculos.Size = new System.Drawing.Size(1232, 530);
             this.GridVeiculos.TabIndex = 4;
             this.GridVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridVeiculos_CellClick);
             this.GridVeiculos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridVeiculos_CellFormatting);
             this.GridVeiculos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridVeiculos_CellPainting);
             // 
-            // ClnId
-            // 
-            this.ClnId.FillWeight = 30F;
-            this.ClnId.HeaderText = "ID";
-            this.ClnId.Name = "ClnId";
-            this.ClnId.ReadOnly = true;
-            this.ClnId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnGrupo
-            // 
-            this.ClnGrupo.FillWeight = 95F;
-            this.ClnGrupo.HeaderText = "Grupo";
-            this.ClnGrupo.Name = "ClnGrupo";
-            this.ClnGrupo.ReadOnly = true;
-            this.ClnGrupo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnGrupo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ClnModelo
-            // 
-            this.ClnModelo.FillWeight = 40F;
-            this.ClnModelo.HeaderText = "Modelo";
-            this.ClnModelo.Name = "ClnModelo";
-            this.ClnModelo.ReadOnly = true;
-            this.ClnModelo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnModelo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // ClnMarca
             // 
-            this.ClnMarca.FillWeight = 66.81472F;
+            this.ClnMarca.FillWeight = 120.7564F;
+            this.ClnMarca.Frozen = true;
             this.ClnMarca.HeaderText = "Marca";
             this.ClnMarca.Name = "ClnMarca";
             this.ClnMarca.ReadOnly = true;
             this.ClnMarca.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnMarca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnMarca.Width = 268;
+            // 
+            // ClnModelo
+            // 
+            this.ClnModelo.Frozen = true;
+            this.ClnModelo.HeaderText = "Modelo";
+            this.ClnModelo.Name = "ClnModelo";
+            this.ClnModelo.ReadOnly = true;
+            this.ClnModelo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnModelo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnModelo.Width = 268;
             // 
             // ClnPlaca
             // 
-            this.ClnPlaca.FillWeight = 80F;
+            this.ClnPlaca.Frozen = true;
             this.ClnPlaca.HeaderText = "Placa";
             this.ClnPlaca.Name = "ClnPlaca";
             this.ClnPlaca.ReadOnly = true;
             this.ClnPlaca.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnPlaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnPlaca.Width = 268;
             // 
-            // ClnVisualizar
+            // ClnCor
             // 
-            this.ClnVisualizar.FillWeight = 66.81472F;
-            this.ClnVisualizar.HeaderText = "Visualizar";
-            this.ClnVisualizar.Name = "ClnVisualizar";
-            this.ClnVisualizar.ReadOnly = true;
-            this.ClnVisualizar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnCor.HeaderText = "Cor";
+            this.ClnCor.Name = "ClnCor";
+            this.ClnCor.ReadOnly = true;
+            this.ClnCor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnCor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnCor.Width = 268;
+            // 
+            // ClnVisualizacaoCompleta
+            // 
+            this.ClnVisualizacaoCompleta.FillWeight = 20F;
+            this.ClnVisualizacaoCompleta.HeaderText = "";
+            this.ClnVisualizacaoCompleta.Name = "ClnVisualizacaoCompleta";
+            this.ClnVisualizacaoCompleta.ReadOnly = true;
+            this.ClnVisualizacaoCompleta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnVisualizacaoCompleta.Width = 50;
+            // 
+            // ClnEsp1
+            // 
+            this.ClnEsp1.FillWeight = 1F;
+            this.ClnEsp1.HeaderText = "";
+            this.ClnEsp1.Name = "ClnEsp1";
+            this.ClnEsp1.ReadOnly = true;
+            this.ClnEsp1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnEsp1.Width = 5;
+            // 
+            // ClnEditar
+            // 
+            this.ClnEditar.FillWeight = 20F;
+            this.ClnEditar.HeaderText = "";
+            this.ClnEditar.Name = "ClnEditar";
+            this.ClnEditar.ReadOnly = true;
+            this.ClnEditar.Width = 50;
+            // 
+            // ClnEsp2
+            // 
+            this.ClnEsp2.FillWeight = 1F;
+            this.ClnEsp2.HeaderText = "";
+            this.ClnEsp2.Name = "ClnEsp2";
+            this.ClnEsp2.ReadOnly = true;
+            this.ClnEsp2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnEsp2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnEsp2.Width = 5;
+            // 
+            // ClnExcluir
+            // 
+            this.ClnExcluir.FillWeight = 20F;
+            this.ClnExcluir.HeaderText = "";
+            this.ClnExcluir.Name = "ClnExcluir";
+            this.ClnExcluir.ReadOnly = true;
+            this.ClnExcluir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnExcluir.Width = 50;
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.customPanel2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.customPanel2.BorderRadius = 5;
+            this.customPanel2.BorderSize = 2;
+            this.customPanel2.Controls.Add(this.GridVeiculos);
+            this.customPanel2.Location = new System.Drawing.Point(37, 218);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(1234, 533);
+            this.customPanel2.TabIndex = 6;
+            this.customPanel2.UnderlinedStyle = false;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.customPanel1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.customPanel1.BorderRadius = 5;
+            this.customPanel1.BorderSize = 1;
+            this.customPanel1.Controls.Add(this.BtnInserir);
+            this.customPanel1.Controls.Add(this.panel5);
+            this.customPanel1.Controls.Add(this.panel3);
+            this.customPanel1.Controls.Add(this.panel1);
+            this.customPanel1.Controls.Add(this.label2);
+            this.customPanel1.Location = new System.Drawing.Point(37, 27);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(1234, 159);
+            this.customPanel1.TabIndex = 7;
+            this.customPanel1.UnderlinedStyle = false;
+            // 
+            // BtnInserir
+            // 
+            this.BtnInserir.AccessibleName = "";
+            this.BtnInserir.Location = new System.Drawing.Point(18, 94);
+            this.BtnInserir.Name = "BtnInserir";
+            this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.OverrideDefault.Back.ColorAngle = 45F;
+            this.BtnInserir.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.OverrideDefault.Border.ColorAngle = 45F;
+            this.BtnInserir.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnInserir.OverrideDefault.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnInserir.OverrideDefault.Border.Rounding = 5F;
+            this.BtnInserir.OverrideDefault.Border.Width = 1;
+            this.BtnInserir.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.BtnInserir.Size = new System.Drawing.Size(171, 44);
+            this.BtnInserir.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnInserir.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnInserir.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnInserir.StateCommon.Border.Rounding = 5F;
+            this.BtnInserir.StateCommon.Border.Width = 1;
+            this.BtnInserir.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.BtnInserir.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.BtnInserir.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnInserir.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnInserir.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnInserir.StatePressed.Back.ColorAngle = 135F;
+            this.BtnInserir.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnInserir.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnInserir.StatePressed.Border.ColorAngle = 135F;
+            this.BtnInserir.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnInserir.StatePressed.Border.Rounding = 5F;
+            this.BtnInserir.StatePressed.Border.Width = 1;
+            this.BtnInserir.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnInserir.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnInserir.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnInserir.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnInserir.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnInserir.StateTracking.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnInserir.StateTracking.Border.Rounding = 5F;
+            this.BtnInserir.StateTracking.Border.Width = 1;
+            this.BtnInserir.TabIndex = 13;
+            this.BtnInserir.Values.Text = "Novo Veículo";
+            this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(904, 94);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 44);
+            this.panel5.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Registros";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(1014, 94);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(204, 44);
+            this.panel3.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.LblRegistros);
+            this.panel4.Location = new System.Drawing.Point(1, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(202, 41);
+            this.panel4.TabIndex = 10;
+            // 
+            // LblRegistros
+            // 
+            this.LblRegistros.AutoSize = true;
+            this.LblRegistros.Font = new System.Drawing.Font("Open Sans", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblRegistros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.LblRegistros.Location = new System.Drawing.Point(37, 8);
+            this.LblRegistros.Name = "LblRegistros";
+            this.LblRegistros.Size = new System.Drawing.Size(0, 26);
+            this.LblRegistros.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.panel1.Location = new System.Drawing.Point(18, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1200, 2);
+            this.panel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Open Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.label2.Location = new System.Drawing.Point(18, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(302, 39);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "GESTÃO DE VEÍCULOS";
             // 
             // ControleVeiculoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1001, 670);
-            this.Controls.Add(this.GridVeiculos);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.ClientSize = new System.Drawing.Size(1309, 779);
+            this.Controls.Add(this.customPanel1);
+            this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -342,13 +404,17 @@
             this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Locadora FCVSJ";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ControleVeiculoForm_FormClosed);
+            this.Load += new System.EventHandler(this.ControleVeiculoForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridVeiculos)).EndInit();
+            this.customPanel2.ResumeLayout(false);
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridVeiculos)).EndInit();
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -356,21 +422,25 @@
         #endregion
 
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
-        private PictureBox pictureBox1;
-        private Panel panel1;
-        private Panel panel2;
+        private DataGridView GridVeiculos;
+        private CustomPanel customPanel2;
+        private CustomPanel customPanel1;
+        private Panel panel5;
         private Label label1;
         private Panel panel3;
         private Panel panel4;
-        private Krypton.Toolkit.KryptonButton BtnExcluir;
-        private Krypton.Toolkit.KryptonButton BtnEditar;
-        private Krypton.Toolkit.KryptonButton BtnInserir;
-        private DataGridView GridVeiculos;
-        private DataGridViewTextBoxColumn ClnId;
-        private DataGridViewTextBoxColumn ClnGrupo;
-        private DataGridViewTextBoxColumn ClnModelo;
+        private Label LblRegistros;
+        private Panel panel1;
+        private Label label2;
+        private CustomKryptonButton BtnInserir;
         private DataGridViewTextBoxColumn ClnMarca;
+        private DataGridViewTextBoxColumn ClnModelo;
         private DataGridViewTextBoxColumn ClnPlaca;
-        private DataGridViewButtonColumn ClnVisualizar;
+        private DataGridViewTextBoxColumn ClnCor;
+        private DataGridViewButtonColumn ClnVisualizacaoCompleta;
+        private DataGridViewTextBoxColumn ClnEsp1;
+        private DataGridViewButtonColumn ClnEditar;
+        private DataGridViewTextBoxColumn ClnEsp2;
+        private DataGridViewButtonColumn ClnExcluir;
     }
 }

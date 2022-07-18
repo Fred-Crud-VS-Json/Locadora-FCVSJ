@@ -8,19 +8,15 @@ using System.Text;
 
 namespace LocadoraFCVSJ.ModuloVeiculo
 {
-    public partial class RegistrarNovoVeiculo : KryptonForm
+    public partial class RegistrarVeiculoForm : KryptonForm
     {
-        public string caminhoFoto = "";
-        private Veiculo veiculo = new Veiculo();
-        private readonly ServicoVeiculo _servicoVeiculo;
+        private Veiculo veiculo;
         private readonly ServicoGrupo _servicoGrupo;
-        private Byte[] imagem;
 
-        public RegistrarNovoVeiculo(ServicoVeiculo servicoVeiculo, ServicoGrupo servicoGrupo)
+        public RegistrarVeiculoForm(ServicoGrupo servicoGrupo)
         {
             InitializeComponent();
 
-            _servicoVeiculo = servicoVeiculo;
             _servicoGrupo = servicoGrupo;
 
             _servicoGrupo.SelecionarTodos().Value.ForEach(x => CbxGrupo.Items.Add(x));
@@ -44,16 +40,23 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 TxbPlaca.Text = veiculo.Placa;
                 TxbCor.Text = veiculo.Cor;
                 CbxTipoCombustivel.SelectedItem = veiculo.TipoCombustivel;
-                TxbCapacidadeDoTanque.Text = veiculo.CapacidadeTanque.ToString();
-                TxbAno.Text = veiculo.Ano.ToString();
-                TxbKmPercorrido.Text = veiculo.KmPercorrido.ToString();
-                PxbFotoVeiculo.Image = ObterImagem();
+
+                if (veiculo.CapacidadeTanque != 0)
+                    TxbCapacidadeTanque.Text = veiculo.CapacidadeTanque.ToString();
+
+                if (veiculo.Ano != 0)
+                    TxbAno.Text = veiculo.Ano.ToString();
+
+                if (veiculo.KmPercorrido != 0)
+                    TxbKmPercorrido.Text = veiculo.KmPercorrido.ToString();
+
+                PxbImagem.Image = ObterImagem();
             }
         }
 
         public Func<Veiculo, Result<Veiculo>> SalvarRegistro { get; set; }
 
-        private void BtnConcluirRegistro_Click(object sender, EventArgs e)
+        private void BtnConcluir_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,8 +65,8 @@ namespace LocadoraFCVSJ.ModuloVeiculo
                 veiculo.Marca = TxbMarca.Text;
                 veiculo.Placa = TxbPlaca.Text;
                 veiculo.Cor = TxbCor.Text;
-                veiculo.TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)CbxTipoCombustivel.SelectedItem;
-                veiculo.CapacidadeTanque = Convert.ToInt32(TxbCapacidadeDoTanque.Text);
+                veiculo.TipoCombustivel = (TipoCombustivel)CbxTipoCombustivel.SelectedItem;
+                veiculo.CapacidadeTanque = Convert.ToInt32(TxbCapacidadeTanque.Text);
                 veiculo.Ano = Convert.ToInt32(TxbAno.Text);
                 veiculo.KmPercorrido = Convert.ToInt32(TxbKmPercorrido.Text);
 
@@ -91,38 +94,34 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             }
         }
 
-
-        private void BtnSelecionarFoto_Click(object sender, EventArgs e)
+        private void BtnSelecionarImagem_Click(object sender, EventArgs e)
         {
-            CarregarFoto();
-        }
+            Opf.Filter = "Images (*.JPG;*.PNG)|*.JPG;*.PNG|" + "All files (*.*)|*.*";
 
-        public void CarregarFoto()
-        {
-            if(openFileDialog1.ShowDialog(this) == DialogResult.OK)
+
+            if (Opf.ShowDialog(this) == DialogResult.OK)
             {
-                this.DialogResult = DialogResult.None;
+                DialogResult = DialogResult.None;
 
-                imagem = File.ReadAllBytes(openFileDialog1.FileName);
+                byte[] imagem = File.ReadAllBytes(Opf.FileName);
 
                 veiculo.Foto = imagem;
 
-                using (MemoryStream ms = new(imagem))
-                    PxbFotoVeiculo.Image = new Bitmap(ms);
+                using MemoryStream ms = new(imagem);
+
+                PxbImagem.Image = new Bitmap(ms);
             }
         }
 
-
-
-        private Bitmap ObterImagem()
+        private Bitmap? ObterImagem()
         {
             if(veiculo.Foto != null)
             {
-            using (MemoryStream ms = new(veiculo.Foto))
+                using MemoryStream ms = new(veiculo.Foto);
                 return new Bitmap(ms);
             }
+
             return null;
         }
-
     }
 }

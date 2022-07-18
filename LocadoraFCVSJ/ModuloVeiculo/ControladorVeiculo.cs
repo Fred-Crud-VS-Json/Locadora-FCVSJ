@@ -9,21 +9,21 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 {
     public class ControladorVeiculo : ControladorBase
     {
-        private readonly ServicoVeiculo _servicoVeiculo;
-        private readonly ServicoGrupo _servidoGrupo;
+        public readonly ServicoVeiculo _servicoVeiculo;
+        public readonly ServicoGrupo _servicoGrupo;
         private readonly ControleVeiculoForm controleVeiculoForm;
 
         public ControladorVeiculo(ServicoVeiculo servicoVeiculo, ServicoGrupo servidoGrupo)
         {
             _servicoVeiculo = servicoVeiculo;
-            _servidoGrupo = servidoGrupo;
+            _servicoGrupo = servidoGrupo;
             
             controleVeiculoForm = new(this);
         }
 
         public override void Inserir()
         {
-            RegistrarNovoVeiculo tela = new(_servicoVeiculo, _servidoGrupo)
+            RegistrarVeiculoForm tela = new(_servicoGrupo)
             {
                 Veiculo = new(),
                 SalvarRegistro = _servicoVeiculo.Inserir
@@ -41,19 +41,18 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
             if (veiculoSelecionado == null)
             {
-                MessageBox.Show("Selecione um veiculo primeiro.", "Edição de Veiculo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um veiculo primeiro.", "Edição de Veículo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            RegistrarNovoVeiculo tela = new(_servicoVeiculo, _servidoGrupo)
+            RegistrarVeiculoForm tela = new(_servicoGrupo)
             {
                 Veiculo = veiculoSelecionado,
                 SalvarRegistro = _servicoVeiculo.Editar
             };
 
-            tela.label1.Text = "            Editando Registro";
-            tela.label4.Text = "Altere abaixo as informações que deseja do veiculo selecionado.";
-
+            tela.LblTitulo.Text = "Editando Registro";
+            tela.PxbIcon.Image = Properties.Resources.edit_50px;
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -67,16 +66,21 @@ namespace LocadoraFCVSJ.ModuloVeiculo
 
             if (veiculoSelecionado == null)
             {
-                MessageBox.Show("Selecione um veiculo primeiro.", "Exclusão de Veiculo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um veiculo primeiro.", "Exclusão de Veículo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Funcionário", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Veículo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _servicoVeiculo.Excluir(veiculoSelecionado);
+            {
+                Result<Veiculo> resultadoExclusao = _servicoVeiculo.Excluir(veiculoSelecionado);
 
-            CarregarVeiculos();
+                if (resultadoExclusao.IsFailed)
+                    MessageBox.Show(resultadoExclusao.Errors[0].Message, "Exclusão de Veículo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    CarregarVeiculos();
+            }
         }
 
         public override KryptonForm ObterTela()
