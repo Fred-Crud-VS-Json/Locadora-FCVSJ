@@ -15,7 +15,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
             comando.Parameters.AddWithValue("CPF", condutor.CPF);
             comando.Parameters.AddWithValue("CNPJ", string.IsNullOrEmpty(condutor.CNPJ) ? DBNull.Value : condutor.CNPJ);
             comando.Parameters.AddWithValue("CNH", condutor.CNH);
-            comando.Parameters.AddWithValue("DATAVENCIMENTO", condutor.DataVencimento);
+            comando.Parameters.AddWithValue("DATAVENCIMENTO", condutor.ValidadeCnh);
             comando.Parameters.AddWithValue("TELEFONE", condutor.Telefone);
             comando.Parameters.AddWithValue("EMAIL", condutor.Email);
             comando.Parameters.AddWithValue("CIDADE", condutor.Cidade);
@@ -42,7 +42,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
                 CPF = Convert.ToString(leitorCondutor["CONDUTOR_CPF"]),
                 CNPJ = cnpj,
                 CNH = Convert.ToString(leitorCondutor["CONDUTOR_CNH"]),
-                DataVencimento = Convert.ToDateTime(leitorCondutor["CONDUTOR_DATAVENCIMENTO"]),
+                ValidadeCnh = Convert.ToDateTime(leitorCondutor["CONDUTOR_DATAVENCIMENTO"]),
                 Telefone = Convert.ToString(leitorCondutor["CONDUTOR_TELEFONE"]),
                 Email = Convert.ToString(leitorCondutor["CONDUTOR_EMAIL"]),
                 Cidade = Convert.ToString(leitorCondutor["CONDUTOR_CIDADE"]),
