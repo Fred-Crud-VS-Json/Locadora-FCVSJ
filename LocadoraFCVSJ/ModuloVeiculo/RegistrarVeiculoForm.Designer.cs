@@ -186,6 +186,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             // 
             // TxbPlaca
             // 
+            this.TxbPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxbPlaca.Location = new System.Drawing.Point(35, 209);
             this.TxbPlaca.MaxLength = 7;
             this.TxbPlaca.Name = "TxbPlaca";
