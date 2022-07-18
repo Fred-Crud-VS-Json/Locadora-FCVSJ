@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using FluentValidation;
 using FluentValidation.Results;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 using Serilog;
@@ -94,6 +95,15 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
 
                 return Result.Ok();
             }
+            catch (ExcluirRegistroRelacionadoException ex)
+            {
+                _msgErro = "Esse veículo possui relação com alguma outra entidade no sistema e não pode ser excluído.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+
             catch (SqlException ex)
             {
                 _msgErro = "Falha ao tentar excluir veículo.";
