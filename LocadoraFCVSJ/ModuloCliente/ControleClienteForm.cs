@@ -1,6 +1,7 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
-using System.Text;
 
 namespace LocadoraFCVSJ.ModuloCliente
 {
@@ -18,23 +19,9 @@ namespace LocadoraFCVSJ.ModuloCliente
         {
             GridClientes.Rows.Clear();
 
-            int z = 0;
+            clientes.ForEach(x => GridClientes.Rows.Add(x.Nome, x.CPF.FormatarParaCpf(), x.Email, x.Telefone.FormatarParaTelefone()));
 
-            clientes.ForEach(x =>
-            {
-                GridClientes.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.Email, x.Telefone);
-
-                z++;
-
-                for (int i = z; i <= GridClientes.Rows.Count; i++)
-                {
-                    if (string.IsNullOrEmpty(x.CNPJ))
-                        GridClientes.Rows[i - 1].Cells[6].Value = "Não";
-                    else
-                        GridClientes.Rows[i - 1].Cells[6].Value = "Sim";
-                        GridClientes.Rows[i - 1].Cells[7].Value = x.CNPJ;
-                }
-            });
+            LblRegistros.Text = _controladorCliente._servicoCliente.SelecionarTodos().Value.Count + " cliente(s)";
 
             GridClientes.ClearSelection();
         }
@@ -54,72 +41,132 @@ namespace LocadoraFCVSJ.ModuloCliente
             GridClientes.ClearSelection();
         }
 
+        private void ControleClienteForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TelaPrincipal.Instancia.WindowState = FormWindowState.Normal;
+        }
+
         private void BtnInserir_Click(object sender, EventArgs e)
         {
+            GridClientes.ClearSelection();
+
             _controladorCliente.Inserir();
-        }
-
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            _controladorCliente.Editar();
-        }
-
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-            _controladorCliente.Excluir();
         }
 
         private void GridClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 8)
+            switch (e.ColumnIndex)
             {
-                Cliente? cliente = _controladorCliente.ObterCliente();
+                case 4:
+                    _controladorCliente.Editar();
+                    GridClientes.ClearSelection();
+                    break;
 
-                StringBuilder sb = new();
+                case 6:
+                    _controladorCliente.Excluir();
+                    break;
 
-                if (cliente != null) {
-                    sb.AppendLine($"CEP: {cliente.CEP}");
-                    sb.AppendLine($"UF: {cliente.UF}");
-                    sb.AppendLine($"Cidade: {cliente.Cidade}");
-                    sb.AppendLine($"Bairro: {cliente.Bairro}");
-                    sb.AppendLine($"Número: {cliente.Numero}");
-                    sb.AppendLine($"Rua: {cliente.Rua}");
-                    sb.AppendLine($"Complemento: {cliente.Complemento}");
-                }
-
-                MessageBox.Show(sb.ToString(), "Visualizando Endereço", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                GridClientes.ClearSelection();
+                case 8:
+                    Visualizar();
+                    break;
             }
         }
 
         private void GridClientes_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            Image someImage = Properties.Resources.search_more_25px;
+            Image editarImg = Properties.Resources.edit_blue_30px;
+            Image excluirImg = Properties.Resources.close_blue_30px;
+            Image visualizarImg = Properties.Resources.search_more_30px;
 
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 8)
+            switch (e.ColumnIndex)
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                case 4:
+                    e.ConfigurarImagem(editarImg);
+                    break;
 
-                var w = someImage.Width;
-                var h = someImage.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                case 6:
+                    e.ConfigurarImagem(excluirImg);
+                    break;
 
-                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
-                e.Handled = true;
+                case 8:
+                    e.ConfigurarImagem(visualizarImg);
+                    break;
             }
+
         }
 
         private void GridClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             DataGridViewCell cell = GridClientes.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-            if (e.ColumnIndex == 8)
-                cell.ToolTipText = "Visualizar Endereço";
+            switch (e.ColumnIndex)
+            {
+                case 4:
+                    cell.ToolTipText = "Editar Registro";
+                    break;
+
+                case 5:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 6:
+                    cell.ToolTipText = "Excluir Registro";
+                    break;
+
+                case 7:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 8:
+                    cell.ToolTipText = "Visualização Completa";
+                    break;
+            }
+        }
+
+        private void Visualizar()
+        {
+            Cliente? cliente = _controladorCliente.ObterCliente();
+
+            if (cliente != null)
+            {
+                RegistrarClienteForm tela = new()
+                {
+                    Cliente = cliente
+                };
+
+                PrepararVisualizacao(tela);
+
+                GridClientes.ClearSelection();
+
+                tela.ShowDialog();
+            }
+        }
+
+        private static void PrepararVisualizacao(RegistrarClienteForm tela)
+        {
+            tela.LblTitulo.Text = "Visualizando Registro";
+            tela.PxbIcon.Image = Properties.Resources.search_more_50px;
+
+            tela.TxbNome.ReadOnly = true;
+            tela.MtxbCpf.ReadOnly = true;
+            tela.MtbxCnh.ReadOnly = true;
+            tela.MtxbCep.ReadOnly = true;
+            tela.CbxUf.Enabled = false;
+            tela.TxbCidade.ReadOnly = true;
+            tela.TxbRua.ReadOnly = true;
+            tela.TxbNumero.ReadOnly = true;
+            tela.TxbBairro.ReadOnly = true;
+            tela.TxbComplemento.ReadOnly = true;
+            tela.MtxbTelefone.ReadOnly = true;
+            tela.TxbEmail.ReadOnly = true;
+            tela.ChbxPessoaJuridica.Enabled = false;
+            tela.MtxbCnpj.ReadOnly = true;
+
+            tela.BtnConcluir.Visible = false;
+            tela.BtnVoltar.Location = tela.BtnConcluir.Location;
         }
     }
 }

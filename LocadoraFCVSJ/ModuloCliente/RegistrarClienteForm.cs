@@ -1,5 +1,4 @@
 ﻿using FluentResults;
-using FluentValidation.Results;
 using Krypton.Toolkit;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
@@ -7,10 +6,11 @@ using System.Text;
 
 namespace LocadoraFCVSJ.ModuloCliente
 {
-    public partial class RegistrarNovoCliente : KryptonForm
+    public partial class RegistrarClienteForm : KryptonForm
     {
         private Cliente cliente;
-        public RegistrarNovoCliente()
+
+        public RegistrarClienteForm()
         {
             InitializeComponent();
 
@@ -38,7 +38,7 @@ namespace LocadoraFCVSJ.ModuloCliente
                 TxbComplemento.Text = cliente.Complemento;
                 MtxbTelefone.Text = cliente.Telefone;
                 TxbEmail.Text = cliente.Email;
-                TxbCnh.Text = cliente.CNH;
+                MtbxCnh.Text = cliente.CNH;
 
                 if (!string.IsNullOrEmpty(cliente.CNPJ))
                 {
@@ -53,9 +53,10 @@ namespace LocadoraFCVSJ.ModuloCliente
                 }
             }
         }
+
         public Func<Cliente, Result<Cliente>> SalvarRegistro { get; set; }
 
-        private void BtnConcluirRegistro_Click(object sender, EventArgs e)
+        private void BtnConcluir_Click(object sender, EventArgs e)
         {
             try
             {
@@ -73,7 +74,7 @@ namespace LocadoraFCVSJ.ModuloCliente
                 cliente.Complemento = TxbComplemento.Text;
                 cliente.Telefone = MtxbTelefone.Text;
                 cliente.Email = TxbEmail.Text;
-                cliente.CNH = TxbCnh.Text;
+                cliente.CNH = MtbxCnh.Text;
 
                 if (ChbxPessoaJuridica.Checked == true)
                     cliente.CNPJ = MtxbCnpj.Text;

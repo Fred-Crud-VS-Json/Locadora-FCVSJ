@@ -3,13 +3,12 @@ using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 
 namespace LocadoraFCVSJ.ModuloCliente
 {
     public class ControladorCliente : ControladorBase
     {
-        private readonly ServicoCliente _servicoCliente;
+        public readonly ServicoCliente _servicoCliente;
         private readonly ControleClienteForm controleClienteForm;
 
         public ControladorCliente(ServicoCliente servicoCliente)
@@ -20,7 +19,7 @@ namespace LocadoraFCVSJ.ModuloCliente
 
         public override void Inserir()
         {
-            RegistrarNovoCliente tela = new()
+            RegistrarClienteForm tela = new()
             {
                 Cliente = new(),
                 SalvarRegistro = _servicoCliente.Inserir
@@ -42,15 +41,14 @@ namespace LocadoraFCVSJ.ModuloCliente
                 return;
             }
 
-            RegistrarNovoCliente tela = new()
+            RegistrarClienteForm tela = new()
             {
                 Cliente = clienteSelecionado,
                 SalvarRegistro = _servicoCliente.Editar
             };
 
-            tela.label1.Text = "      Editando Registro";
-            tela.label4.Text = "Insira o novo nome do cliente no campo abaixo";
-
+            tela.LblTitulo.Text = "Editando Registro";
+            tela.PxbIcon.Image = Properties.Resources.edit_50px;
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -71,9 +69,14 @@ namespace LocadoraFCVSJ.ModuloCliente
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Cliente", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _servicoCliente.Excluir(clienteSelecionado);
+            {
+                Result<Cliente> resultadoExclusao = _servicoCliente.Excluir(clienteSelecionado);
 
-            CarregarClientes();
+                if (resultadoExclusao.IsFailed)
+                    MessageBox.Show(resultadoExclusao.Errors[0].Message, "Exclusão de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    CarregarClientes();
+            }
         }
 
         public override KryptonForm ObterTela()
