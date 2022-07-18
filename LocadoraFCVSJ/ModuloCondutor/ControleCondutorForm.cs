@@ -190,6 +190,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             tela.TxbComplemento.ReadOnly = true;
             tela.MtxbTelefone.ReadOnly = true;
             tela.TxbEmail.ReadOnly = true;
+            tela.MtxbValidadeCnh.ReadOnly = true;
             tela.ChbxPessoaJuridica.Enabled = false;
             tela.MtxbCnpj.ReadOnly = true;
 
