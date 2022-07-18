@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using FluentValidation;
 using FluentValidation.Results;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using Serilog;
@@ -94,6 +95,15 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
 
                 return Result.Ok();
             }
+            catch (ExcluirRegistroRelacionadoException ex)
+            {
+                _msgErro = "Esse funcionário possui relação com alguma entidade no sistema e não pode ser excluído.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+
             catch (SqlException ex)
             {
                 _msgErro = "Falha ao tentar excluir funcionário.";
@@ -119,7 +129,6 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
                 return Result.Fail(_msgErro);
             }
         }
-
        
         private Result Validar(Funcionario funcionario)
         {
