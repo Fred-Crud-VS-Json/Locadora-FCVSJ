@@ -1,4 +1,6 @@
-﻿using Krypton.Toolkit;
+﻿using FluentResults;
+using Krypton.Toolkit;
+using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Aplicacao.ModuloCondutor;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
@@ -9,20 +11,20 @@ namespace LocadoraFCVSJ.ModuloCondutor
 {
     public class ControladorCondutor : ControladorBase
     {
-        private readonly RepositorioCondutor _repositorioCondutor;
-        private readonly ServicoCondutor _servicoCondutor;
+        public readonly ServicoCondutor _servicoCondutor;
+        public readonly ServicoCliente _servicoCliente;
         private readonly ControleCondutorForm controleCondutorForm;
 
-        public ControladorCondutor(RepositorioCondutor repositorioCondutor, ServicoCondutor servicoCondutor)
+        public ControladorCondutor(ServicoCondutor servicoCondutor, ServicoCliente servicoCliente)
         {
-            _repositorioCondutor = repositorioCondutor;
             _servicoCondutor = servicoCondutor;
+            _servicoCliente = servicoCliente;
             controleCondutorForm = new(this);
         }
 
         public override void Inserir()
         {
-            RegistrarNovoCondutor tela = new(_servicoCondutor)
+            RegistrarCondutorForm tela = new(_servicoCondutor)
             {
                 Condutor = new(),
                 SalvarRegistro = _servicoCondutor.Inserir
@@ -40,19 +42,18 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
             if (condutorSelecionado == null)
             {
-                MessageBox.Show("Selecione um condutor primeiro.", "Edição de Condutores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um condutor primeiro.", "Edição de Condutor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            RegistrarNovoCondutor tela = new(_servicoCondutor)
+            RegistrarCondutorForm tela = new(_servicoCondutor)
             {
                 Condutor = condutorSelecionado,
                 SalvarRegistro = _servicoCondutor.Editar
             };
 
-            tela.label1.Text = "        Editando Registro";
-            tela.label4.Text = "Altere abaixo as informações que deseja do condutor selecionado.";
-
+            tela.LblTitulo.Text = "Editando Registro";
+            tela.PxbIcon.Image = Properties.Resources.edit_50px;
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -73,9 +74,14 @@ namespace LocadoraFCVSJ.ModuloCondutor
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Condutor", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _repositorioCondutor.Excluir(condutorSelecionado);
+            {
+                Result<Condutor> resultadoExclusao = _servicoCondutor.Excluir(condutorSelecionado);
 
-            CarregarCondutor();
+                if (resultadoExclusao.IsFailed)
+                    MessageBox.Show(resultadoExclusao.Errors[0].Message, "Exclusão de Condutor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    CarregarCondutor();
+            }
         }
 
         public override KryptonForm ObterTela()
@@ -87,9 +93,10 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
         private void CarregarCondutor()
         {
-            List<Condutor> condutores = _repositorioCondutor.SelecionarTodos();
+            Result<List<Condutor>> resultado = _servicoCondutor.SelecionarTodos();
 
-            controleCondutorForm.AtualizarGrid(condutores);
+            if (resultado.IsSuccess)
+                controleCondutorForm.AtualizarGrid(resultado.Value);
         }
 
         public Condutor? ObterCondutor()
@@ -97,7 +104,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             if (controleCondutorForm.ObterGrid().CurrentCell != null && controleCondutorForm.ObterGrid().CurrentCell.Selected == true)
             {
                 int index = controleCondutorForm.ObterLinhaSelecionada();
-                return _repositorioCondutor.SelecionarTodos().ElementAtOrDefault(index);
+                return _servicoCondutor.SelecionarTodos().Value.ElementAtOrDefault(index);
             }
 
             return null;

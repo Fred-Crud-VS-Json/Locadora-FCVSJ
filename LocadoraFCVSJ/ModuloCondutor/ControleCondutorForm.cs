@@ -1,4 +1,7 @@
 ﻿using Krypton.Toolkit;
+using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using System.Text;
 
@@ -22,19 +25,24 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
             condutores.ForEach(x =>
             {
-                GridCondutores.Rows.Add(x.Id, x.Nome, x.CPF, x.CNH, x.DataVencimento.ToString("dd/MM/yyyy"), x.Email, x.Telefone, x.CNPJ);
+
+                GridCondutores.Rows.Add(x.Nome, x.CPF.FormatarParaCpf(), x.Email, x.Telefone.FormatarParaTelefone());
 
                 z++;
 
                 for (int i = z; i <= GridCondutores.Rows.Count; i++)
                 {
-                    if (string.IsNullOrEmpty(x.CNPJ))
-                        GridCondutores.Rows[i - 1].Cells[7].Value = "Não";
+                    string nome = (string)GridCondutores.Rows[i - 1].Cells[0].Value;
+
+                    if (x.Cliente.Nome.Equals(nome))
+                        GridCondutores.Rows[i - 1].Cells[4].Value = "Cliente Condutor";
                     else
-                        GridCondutores.Rows[i - 1].Cells[7].Value = "Sim";
-                        GridCondutores.Rows[i - 1].Cells[8].Value = x.CNPJ;
+                        GridCondutores.Rows[i - 1].Cells[4].Value = x.Cliente.Nome;
                 }
+
             });
+
+            LblRegistros.Text = _controladorCondutor._servicoCondutor.SelecionarTodos().Value.Count + " condutor(es)";
 
             GridCondutores.ClearSelection();
         }
@@ -54,64 +62,57 @@ namespace LocadoraFCVSJ.ModuloCondutor
             GridCondutores.ClearSelection();
         }
 
+        private void ControleCondutorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TelaPrincipal.Instancia.WindowState = FormWindowState.Normal;
+        }
+
         private void BtnInserir_Click(object sender, EventArgs e)
         {
             _controladorCondutor.Inserir();
         }
 
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            _controladorCondutor.Editar();
-        }
-
-        private void BtnExcluir_Click(object sender, EventArgs e)
-        {
-            _controladorCondutor.Excluir();
-        }
-
         private void GridCondutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 9)
+            switch (e.ColumnIndex)
             {
-                Condutor? condutor = _controladorCondutor.ObterCondutor();
+                case 5:
+                    _controladorCondutor.Editar();
+                    GridCondutores.ClearSelection();
+                    break;
 
-                StringBuilder sb = new();
+                case 7:
+                    _controladorCondutor.Excluir();
+                    break;
 
-                if (condutor != null)
-                {
-                    sb.AppendLine($"CEP: {condutor.CEP}");
-                    sb.AppendLine($"UF: {condutor.UF}");
-                    sb.AppendLine($"Cidade: {condutor.Cidade}");
-                    sb.AppendLine($"Bairro: {condutor.Bairro}");
-                    sb.AppendLine($"Número: {condutor.Numero}");
-                    sb.AppendLine($"Rua: {condutor.Rua}");
-                    sb.AppendLine($"Complemento: {condutor.Complemento}");
-                }
-
-                MessageBox.Show(sb.ToString(), "Visualizando Endereço", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                GridCondutores.ClearSelection();
+                case 9:
+                    Visualizar();
+                    break;
             }
         }
 
         private void GridCondutores_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            Image someImage = Properties.Resources.search_more_25px;
+            Image editarImg = Properties.Resources.edit_blue_30px;
+            Image excluirImg = Properties.Resources.close_blue_30px;
+            Image visualizarImg = Properties.Resources.search_more_30px;
 
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 9)
+            switch (e.ColumnIndex)
             {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                case 5:
+                    e.ConfigurarImagem(editarImg);
+                    break;
 
-                var w = someImage.Width;
-                var h = someImage.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                case 7:
+                    e.ConfigurarImagem(excluirImg);
+                    break;
 
-                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
-                e.Handled = true;
+                case 9:
+                    e.ConfigurarImagem(visualizarImg);
+                    break;
             }
         }
 
@@ -119,8 +120,81 @@ namespace LocadoraFCVSJ.ModuloCondutor
         {
             DataGridViewCell cell = GridCondutores.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-            if (e.ColumnIndex == 9)
-                cell.ToolTipText = "Visualizar Endereço";
+            switch (e.ColumnIndex)
+            {
+                case 5:
+                    cell.ToolTipText = "Editar Registro";
+                    break;
+
+                case 6:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 7:
+                    cell.ToolTipText = "Excluir Registro";
+                    break;
+
+                case 8:
+                    cell.ToolTipText = "";
+                    break;
+
+                case 9:
+                    cell.ToolTipText = "Visualização Completa";
+                    break;
+            }
+        }
+
+        private void Visualizar()
+        {
+            Condutor? condutor = _controladorCondutor.ObterCondutor();
+
+            if (condutor != null)
+            {
+                RegistrarCondutorForm tela = new(_controladorCondutor._servicoCondutor)
+                {
+                    Condutor = condutor
+                };
+
+                PrepararVisualizacao(tela, condutor);
+
+                GridCondutores.ClearSelection();
+
+                tela.ShowDialog();
+            }
+        }
+
+        private static void PrepararVisualizacao(RegistrarCondutorForm tela, Condutor condutor)
+        {
+            tela.LblTitulo.Text = "Visualizando Registro";
+            tela.PxbIcon.Image = Properties.Resources.search_more_50px;
+
+            Cliente? cliente = (Cliente)tela.CbxCliente.SelectedItem;
+
+            if (!condutor.Nome.Equals(cliente.Nome))
+            {
+                tela.Label14.Text = "Condutor de";
+                tela.ChbxClienteCondutor.Visible = false;
+            }
+
+            tela.CbxCliente.Enabled = false;
+            tela.ChbxClienteCondutor.Enabled = false;
+            tela.TxbNome.ReadOnly = true;
+            tela.MtxbCpf.ReadOnly = true;
+            tela.MtxbCnh.ReadOnly = true;
+            tela.MtxbCep.ReadOnly = true;
+            tela.CbxUf.Enabled = false;
+            tela.TxbCidade.ReadOnly = true;
+            tela.TxbRua.ReadOnly = true;
+            tela.TxbNumero.ReadOnly = true;
+            tela.TxbBairro.ReadOnly = true;
+            tela.TxbComplemento.ReadOnly = true;
+            tela.MtxbTelefone.ReadOnly = true;
+            tela.TxbEmail.ReadOnly = true;
+            tela.ChbxPessoaJuridica.Enabled = false;
+            tela.MtxbCnpj.ReadOnly = true;
+
+            tela.BtnConcluir.Visible = false;
+            tela.BtnVoltar.Location = tela.BtnConcluir.Location;
         }
     }
 }
