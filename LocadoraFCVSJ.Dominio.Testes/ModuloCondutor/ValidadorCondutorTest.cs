@@ -107,13 +107,13 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCondutor
             //arrange
             condutor = NovoCondutor();
 
-            condutor.DataVencimento = DateTime.MinValue;
+            condutor.ValidadeCnh = DateTime.MinValue;
 
             //action
             TestValidationResult<Condutor> resultado = validador.TestValidate(condutor);
 
             //assert
-            resultado.ShouldHaveValidationErrorFor(condutor => condutor.DataVencimento);
+            resultado.ShouldHaveValidationErrorFor(condutor => condutor.ValidadeCnh);
         }
 
         [TestMethod]
@@ -245,7 +245,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloCondutor
                 CNPJ = "12345678912345",
                 Rua = "Alameda",
                 CNH = "0123456789",
-                DataVencimento = DateTime.Now.Date,
+                ValidadeCnh = DateTime.Now.Date,
                 Telefone = "12988754461",
                 Email = "Fulano@gmail.com",
                 Cidade = "Lages",
