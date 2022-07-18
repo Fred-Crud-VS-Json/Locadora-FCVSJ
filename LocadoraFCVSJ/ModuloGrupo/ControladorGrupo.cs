@@ -8,7 +8,7 @@ namespace LocadoraFCVSJ.ModuloGrupo
 {
     public class ControladorGrupo : ControladorBase
     {
-        private readonly ServicoGrupo _servicoGrupo;
+        public readonly ServicoGrupo _servicoGrupo;
         private readonly ControleGrupoForm controleGrupoForm;
 
         public ControladorGrupo(ServicoGrupo servicoGrupo)
@@ -19,7 +19,7 @@ namespace LocadoraFCVSJ.ModuloGrupo
 
         public override void Inserir()
         {
-            RegistrarNovoGrupoForm tela = new()
+            RegistrarGrupoForm tela = new()
             {
                 Grupo = new(),
                 SalvarRegistro = _servicoGrupo.Inserir
@@ -41,15 +41,14 @@ namespace LocadoraFCVSJ.ModuloGrupo
                 return;
             }
 
-            RegistrarNovoGrupoForm tela = new()
+            RegistrarGrupoForm tela = new()
             {
                 Grupo = grupoSelecionado,
                 SalvarRegistro = _servicoGrupo.Editar
             };
 
-            tela.label1.Text = "      Editando Registro";
-            tela.label4.Text = "Insira o novo nome do grupo no campo abaixo";
-
+            tela.LblTitulo.Text = "Editando Registro";
+            tela.PxbIcon.Image = Properties.Resources.edit_50px;
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -70,9 +69,14 @@ namespace LocadoraFCVSJ.ModuloGrupo
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Grupo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _servicoGrupo.Excluir(grupoSelecionado);
+            {
+                Result<Grupo> resultadoExclusao = _servicoGrupo.Excluir(grupoSelecionado);
 
-            CarregarGrupos();
+                if (resultadoExclusao.IsFailed)
+                    MessageBox.Show(resultadoExclusao.Errors[0].Message, "Exclusão de Grupo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    CarregarGrupos();
+            }
         }
 
         public override KryptonForm ObterTela()

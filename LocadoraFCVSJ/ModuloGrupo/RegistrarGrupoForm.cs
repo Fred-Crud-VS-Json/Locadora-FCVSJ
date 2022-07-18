@@ -5,11 +5,11 @@ using System.Text;
 
 namespace LocadoraFCVSJ.ModuloGrupo
 {
-    public partial class RegistrarNovoGrupoForm : KryptonForm
+    public partial class RegistrarGrupoForm : KryptonForm
     {
         private Grupo grupo;
 
-        public RegistrarNovoGrupoForm()
+        public RegistrarGrupoForm()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace LocadoraFCVSJ.ModuloGrupo
 
         public Func<Grupo, Result<Grupo>> SalvarRegistro { get; set; }
 
-        private void BtnConcluirRegistro_Click(object sender, EventArgs e)
+        private void BtnConcluir_Click(object sender, EventArgs e)
         {
             grupo.Nome = TxbNome.Text;
 
