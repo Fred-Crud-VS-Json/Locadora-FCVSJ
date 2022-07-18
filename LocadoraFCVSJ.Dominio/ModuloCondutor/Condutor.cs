@@ -10,7 +10,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
         public string CPF { get; set; }
         public string? CNPJ { get; set; }
         public string CNH { get; set; }
-        public DateTime DataVencimento { get; set; }
+        public DateTime ValidadeCnh { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
         public string Cidade { get; set; }
@@ -30,7 +30,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
                    CPF == condutor.CPF &&
                    CNPJ == condutor.CNPJ &&
                    CNH == condutor.CNH &&
-                   DataVencimento == condutor.DataVencimento &&
+                   ValidadeCnh == condutor.ValidadeCnh &&
                    Telefone == condutor.Telefone &&
                    Email == condutor.Email &&
                    Cidade == condutor.Cidade &&
@@ -51,7 +51,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
             hash.Add(CPF);
             hash.Add(CNPJ);
             hash.Add(CNH);
-            hash.Add(DataVencimento);
+            hash.Add(ValidadeCnh);
             hash.Add(Telefone);
             hash.Add(Email);
             hash.Add(Cidade);
