@@ -35,10 +35,10 @@ namespace LocadoraFCVSJ.Dominio.ModuloCliente
                 .Matches(new Regex(@"^[ a-zA-Z-à-ü]{2,60}$")).WithMessage("Complemento informado é inválido. Lembre-se de preenche-lo corretamente.\n (Min 2 caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
 
             RuleFor(x => x.CNH)
-                .Matches(new Regex(@"^[0-9]{10}$")).WithMessage("CNH informado é inválido. Lembre-se de preenche-la corretamente.\n (10 caracteres)\n");
+                .Matches(new Regex(@"^[0-9]{11}$")).WithMessage("CNH informado é inválido. Lembre-se de preenche-la corretamente.\n (11 caracteres)\n");
 
             RuleFor(x => x.Telefone)
-                .Matches(new Regex(@"^\d{2}\d{5}\d{4}$")).WithMessage("Telefone informado é inválido. Lembre-se de preenche-lo corretamente.\n (11 caracteres)\n");
+                .Matches(new Regex(@"^[0-9]{11}$")).WithMessage("Telefone informado é inválido. Lembre-se de preenche-lo corretamente.\n (11 caracteres)\n");
 
             RuleFor(x => x.Email)
                 .EmailAddress().WithMessage("E-mail informado é inválido. Lembre-se de preenche-lo corretamente.");
