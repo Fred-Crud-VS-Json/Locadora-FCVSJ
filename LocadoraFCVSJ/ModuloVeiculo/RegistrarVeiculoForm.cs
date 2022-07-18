@@ -97,19 +97,31 @@ namespace LocadoraFCVSJ.ModuloVeiculo
         private void BtnSelecionarImagem_Click(object sender, EventArgs e)
         {
             Opf.Filter = "Images (*.JPG;*.PNG)|*.JPG;*.PNG|" + "All files (*.*)|*.*";
+            long total = 0;
 
 
             if (Opf.ShowDialog(this) == DialogResult.OK)
             {
-                DialogResult = DialogResult.None;
+                foreach (string s in Opf.FileNames)
+                    total += new FileInfo(s).Length;
 
-                byte[] imagem = File.ReadAllBytes(Opf.FileName);
+                if (total < 15000)
+                {
+                    DialogResult = DialogResult.None;
 
-                veiculo.Foto = imagem;
+                    byte[] imagem = File.ReadAllBytes(Opf.FileName);
 
-                using MemoryStream ms = new(imagem);
+                    veiculo.Foto = imagem;
 
-                PxbImagem.Image = new Bitmap(ms);
+                    using MemoryStream ms = new(imagem);
+
+                    PxbImagem.Image = new Bitmap(ms);
+                }
+                else
+                {
+                    MessageBox.Show("Peso da imagem está acima do permitido, peso máximo aceito: 15KB, peso enviado: " + total.ToString() + " Bytes.");
+                    DialogResult = DialogResult.None;
+                }
             }
         }
 
