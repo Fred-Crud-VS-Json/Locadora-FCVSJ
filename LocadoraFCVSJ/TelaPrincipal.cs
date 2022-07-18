@@ -26,6 +26,8 @@ namespace LocadoraFCVSJ
 {
     public partial class TelaPrincipal : KryptonForm
     {
+        private static TelaPrincipal _instancia;
+
         private ControladorBase? controlador;
         private readonly Dictionary<string, ControladorBase> controladores;
 
@@ -33,15 +35,16 @@ namespace LocadoraFCVSJ
         {
             InitializeComponent();
 
-            RepositorioCondutor repositorioCondutor = new();
+            _instancia = this;
 
             ServicoGrupo servicoGrupo = new(new RepositorioGrupo());
             ServicoTaxa servicoTaxa = new(new RepositorioTaxa());
             ServicoCliente servicoCliente = new(new RepositorioCliente());
             ServicoFuncionario servicoFuncionario = new(new RepositorioFuncionario());
-            ServicoCondutor servicoCondutor = new(repositorioCondutor, servicoCliente);
             ServicoPlanoDeCobranca servicoPlanoDeCobranca = new(new RepositorioPlanoDeCobranca());
             ServicoVeiculo servicoVeiculo = new(new RepositorioVeiculo());
+            ServicoCondutor servicoCondutor = new(new RepositorioCondutor(), servicoCliente);
+
 
             controladores = new()
             {
@@ -50,29 +53,26 @@ namespace LocadoraFCVSJ
                 { "Taxas", new ControladorTaxa(servicoTaxa) },
                 { "Clientes", new ControladorCliente(servicoCliente) },
                 { "Planos", new ControladorPlanoDeCobranca(servicoGrupo, servicoPlanoDeCobranca) },
-                { "Condutores", new ControladorCondutor(repositorioCondutor, servicoCondutor) },
+                { "Condutores", new ControladorCondutor(servicoCondutor, servicoCliente) },
                 { "Veiculos", new ControladorVeiculo(servicoVeiculo, servicoGrupo) }
             };
         }
 
-        private void BtnAcessarCondutores_Click(object sender, EventArgs e)
-        {
-            AbrirTela(BtnAcessarCondutores);
-        }
+        public static TelaPrincipal Instancia { get { return _instancia; } }
 
         private void BtnAcessarGrupos_Click(object sender, EventArgs e)
         {
             AbrirTela(BtnAcessarGrupos);
         }
 
-        private void BtnAcessarFuncionarios_Click(object sender, EventArgs e)
-        {
-            AbrirTela(BtnAcessarFuncionarios);
-        }
-
         private void BtnAcessarTaxas_Click(object sender, EventArgs e)
         {
             AbrirTela(BtnAcessarTaxas);
+        }
+
+        private void BtnAcessarFuncionarios_Click(object sender, EventArgs e)
+        {
+            AbrirTela(BtnAcessarFuncionarios);
         }
 
         private void BtnAcessarClientes_Click(object sender, EventArgs e)
@@ -90,13 +90,19 @@ namespace LocadoraFCVSJ
             AbrirTela(BtnAcessarVeiculos);
         }
 
+        private void BtnAcessarCondutores_Click(object sender, EventArgs e)
+        {
+            AbrirTela(BtnAcessarCondutores);
+        }
+
         private void AbrirTela(KryptonButton botao)
         {
             controlador = controladores[botao.AccessibleName];
 
-            KryptonForm formAtual = controlador.ObterTela();
+            WindowState = FormWindowState.Minimized;
 
-            formAtual.ShowDialog();
+            controlador.ObterTela().ShowDialog();
         }
+
     }
 }
