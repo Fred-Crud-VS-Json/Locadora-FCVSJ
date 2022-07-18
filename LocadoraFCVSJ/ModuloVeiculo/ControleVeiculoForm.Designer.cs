@@ -36,15 +36,6 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControleVeiculoForm));
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.GridVeiculos = new System.Windows.Forms.DataGridView();
-            this.ClnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnCor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnVisualizacaoCompleta = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ClnEsp1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ClnEsp2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.customPanel2 = new LocadoraFCVSJ.Compartilhado.Componentes.CustomPanel();
             this.customPanel1 = new LocadoraFCVSJ.Compartilhado.Componentes.CustomPanel();
             this.BtnInserir = new LocadoraFCVSJ.Compartilhado.Componentes.CustomKryptonButton();
@@ -55,6 +46,15 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             this.LblRegistros = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.ClnMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnPlaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnCor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnVisualizacaoCompleta = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ClnEsp1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ClnEsp2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridVeiculos)).BeginInit();
             this.customPanel2.SuspendLayout();
             this.customPanel1.SuspendLayout();
@@ -142,96 +142,11 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             this.GridVeiculos.RowTemplate.Height = 35;
             this.GridVeiculos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GridVeiculos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.GridVeiculos.Size = new System.Drawing.Size(1232, 530);
+            this.GridVeiculos.Size = new System.Drawing.Size(1072, 461);
             this.GridVeiculos.TabIndex = 4;
             this.GridVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridVeiculos_CellClick);
             this.GridVeiculos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridVeiculos_CellFormatting);
             this.GridVeiculos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridVeiculos_CellPainting);
-            // 
-            // ClnMarca
-            // 
-            this.ClnMarca.FillWeight = 120.7564F;
-            this.ClnMarca.Frozen = true;
-            this.ClnMarca.HeaderText = "Marca";
-            this.ClnMarca.Name = "ClnMarca";
-            this.ClnMarca.ReadOnly = true;
-            this.ClnMarca.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnMarca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnMarca.Width = 268;
-            // 
-            // ClnModelo
-            // 
-            this.ClnModelo.Frozen = true;
-            this.ClnModelo.HeaderText = "Modelo";
-            this.ClnModelo.Name = "ClnModelo";
-            this.ClnModelo.ReadOnly = true;
-            this.ClnModelo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnModelo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnModelo.Width = 268;
-            // 
-            // ClnPlaca
-            // 
-            this.ClnPlaca.Frozen = true;
-            this.ClnPlaca.HeaderText = "Placa";
-            this.ClnPlaca.Name = "ClnPlaca";
-            this.ClnPlaca.ReadOnly = true;
-            this.ClnPlaca.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnPlaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnPlaca.Width = 268;
-            // 
-            // ClnCor
-            // 
-            this.ClnCor.HeaderText = "Cor";
-            this.ClnCor.Name = "ClnCor";
-            this.ClnCor.ReadOnly = true;
-            this.ClnCor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnCor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnCor.Width = 268;
-            // 
-            // ClnVisualizacaoCompleta
-            // 
-            this.ClnVisualizacaoCompleta.FillWeight = 20F;
-            this.ClnVisualizacaoCompleta.HeaderText = "";
-            this.ClnVisualizacaoCompleta.Name = "ClnVisualizacaoCompleta";
-            this.ClnVisualizacaoCompleta.ReadOnly = true;
-            this.ClnVisualizacaoCompleta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnVisualizacaoCompleta.Width = 50;
-            // 
-            // ClnEsp1
-            // 
-            this.ClnEsp1.FillWeight = 1F;
-            this.ClnEsp1.HeaderText = "";
-            this.ClnEsp1.Name = "ClnEsp1";
-            this.ClnEsp1.ReadOnly = true;
-            this.ClnEsp1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnEsp1.Width = 5;
-            // 
-            // ClnEditar
-            // 
-            this.ClnEditar.FillWeight = 20F;
-            this.ClnEditar.HeaderText = "";
-            this.ClnEditar.Name = "ClnEditar";
-            this.ClnEditar.ReadOnly = true;
-            this.ClnEditar.Width = 50;
-            // 
-            // ClnEsp2
-            // 
-            this.ClnEsp2.FillWeight = 1F;
-            this.ClnEsp2.HeaderText = "";
-            this.ClnEsp2.Name = "ClnEsp2";
-            this.ClnEsp2.ReadOnly = true;
-            this.ClnEsp2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnEsp2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnEsp2.Width = 5;
-            // 
-            // ClnExcluir
-            // 
-            this.ClnExcluir.FillWeight = 20F;
-            this.ClnExcluir.HeaderText = "";
-            this.ClnExcluir.Name = "ClnExcluir";
-            this.ClnExcluir.ReadOnly = true;
-            this.ClnExcluir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ClnExcluir.Width = 50;
             // 
             // customPanel2
             // 
@@ -242,7 +157,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             this.customPanel2.Controls.Add(this.GridVeiculos);
             this.customPanel2.Location = new System.Drawing.Point(37, 218);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1234, 533);
+            this.customPanel2.Size = new System.Drawing.Size(1072, 461);
             this.customPanel2.TabIndex = 6;
             this.customPanel2.UnderlinedStyle = false;
             // 
@@ -260,14 +175,14 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             this.customPanel1.Controls.Add(this.label2);
             this.customPanel1.Location = new System.Drawing.Point(37, 27);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(1234, 159);
+            this.customPanel1.Size = new System.Drawing.Size(1072, 145);
             this.customPanel1.TabIndex = 7;
             this.customPanel1.UnderlinedStyle = false;
             // 
             // BtnInserir
             // 
             this.BtnInserir.AccessibleName = "";
-            this.BtnInserir.Location = new System.Drawing.Point(18, 94);
+            this.BtnInserir.Location = new System.Drawing.Point(18, 87);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -325,7 +240,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(904, 94);
+            this.panel5.Location = new System.Drawing.Point(743, 87);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(110, 44);
             this.panel5.TabIndex = 11;
@@ -345,7 +260,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(1014, 94);
+            this.panel3.Location = new System.Drawing.Point(853, 87);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 44);
             this.panel3.TabIndex = 10;
@@ -374,7 +289,7 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel1.Location = new System.Drawing.Point(18, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 2);
+            this.panel1.Size = new System.Drawing.Size(1039, 2);
             this.panel1.TabIndex = 5;
             // 
             // label2
@@ -388,12 +303,97 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             this.label2.TabIndex = 2;
             this.label2.Text = "GESTÃO DE VEÍCULOS";
             // 
+            // ClnMarca
+            // 
+            this.ClnMarca.FillWeight = 120.7564F;
+            this.ClnMarca.Frozen = true;
+            this.ClnMarca.HeaderText = "Marca";
+            this.ClnMarca.Name = "ClnMarca";
+            this.ClnMarca.ReadOnly = true;
+            this.ClnMarca.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnMarca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnMarca.Width = 230;
+            // 
+            // ClnModelo
+            // 
+            this.ClnModelo.Frozen = true;
+            this.ClnModelo.HeaderText = "Modelo";
+            this.ClnModelo.Name = "ClnModelo";
+            this.ClnModelo.ReadOnly = true;
+            this.ClnModelo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnModelo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnModelo.Width = 230;
+            // 
+            // ClnPlaca
+            // 
+            this.ClnPlaca.Frozen = true;
+            this.ClnPlaca.HeaderText = "Placa";
+            this.ClnPlaca.Name = "ClnPlaca";
+            this.ClnPlaca.ReadOnly = true;
+            this.ClnPlaca.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnPlaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnPlaca.Width = 230;
+            // 
+            // ClnCor
+            // 
+            this.ClnCor.HeaderText = "Cor";
+            this.ClnCor.Name = "ClnCor";
+            this.ClnCor.ReadOnly = true;
+            this.ClnCor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnCor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnCor.Width = 221;
+            // 
+            // ClnVisualizacaoCompleta
+            // 
+            this.ClnVisualizacaoCompleta.FillWeight = 20F;
+            this.ClnVisualizacaoCompleta.HeaderText = "";
+            this.ClnVisualizacaoCompleta.Name = "ClnVisualizacaoCompleta";
+            this.ClnVisualizacaoCompleta.ReadOnly = true;
+            this.ClnVisualizacaoCompleta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnVisualizacaoCompleta.Width = 50;
+            // 
+            // ClnEsp1
+            // 
+            this.ClnEsp1.FillWeight = 1F;
+            this.ClnEsp1.HeaderText = "";
+            this.ClnEsp1.Name = "ClnEsp1";
+            this.ClnEsp1.ReadOnly = true;
+            this.ClnEsp1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnEsp1.Width = 5;
+            // 
+            // ClnEditar
+            // 
+            this.ClnEditar.FillWeight = 20F;
+            this.ClnEditar.HeaderText = "";
+            this.ClnEditar.Name = "ClnEditar";
+            this.ClnEditar.ReadOnly = true;
+            this.ClnEditar.Width = 50;
+            // 
+            // ClnEsp2
+            // 
+            this.ClnEsp2.FillWeight = 1F;
+            this.ClnEsp2.HeaderText = "";
+            this.ClnEsp2.Name = "ClnEsp2";
+            this.ClnEsp2.ReadOnly = true;
+            this.ClnEsp2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnEsp2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ClnEsp2.Width = 5;
+            // 
+            // ClnExcluir
+            // 
+            this.ClnExcluir.FillWeight = 20F;
+            this.ClnExcluir.HeaderText = "";
+            this.ClnExcluir.Name = "ClnExcluir";
+            this.ClnExcluir.ReadOnly = true;
+            this.ClnExcluir.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClnExcluir.Width = 50;
+            // 
             // ControleVeiculoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1309, 779);
+            this.ClientSize = new System.Drawing.Size(1146, 710);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

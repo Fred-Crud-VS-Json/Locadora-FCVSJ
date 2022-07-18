@@ -128,9 +128,10 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.ClnEditar,
             this.ClnEsp2,
             this.ClnExcluir});
+            this.GridCondutores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridCondutores.EnableHeadersVisualStyles = false;
             this.GridCondutores.GridColor = System.Drawing.Color.White;
-            this.GridCondutores.Location = new System.Drawing.Point(1, 0);
+            this.GridCondutores.Location = new System.Drawing.Point(0, 0);
             this.GridCondutores.Name = "GridCondutores";
             this.GridCondutores.ReadOnly = true;
             this.GridCondutores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -144,7 +145,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.GridCondutores.RowTemplate.Height = 35;
             this.GridCondutores.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GridCondutores.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.GridCondutores.Size = new System.Drawing.Size(1232, 530);
+            this.GridCondutores.Size = new System.Drawing.Size(1072, 461);
             this.GridCondutores.TabIndex = 4;
             this.GridCondutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridCondutores_CellClick);
             this.GridCondutores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridCondutores_CellFormatting);
@@ -159,7 +160,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.customPanel2.Controls.Add(this.GridCondutores);
             this.customPanel2.Location = new System.Drawing.Point(37, 218);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1234, 533);
+            this.customPanel2.Size = new System.Drawing.Size(1072, 461);
             this.customPanel2.TabIndex = 6;
             this.customPanel2.UnderlinedStyle = false;
             // 
@@ -177,14 +178,14 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.customPanel1.Controls.Add(this.label2);
             this.customPanel1.Location = new System.Drawing.Point(37, 27);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(1234, 159);
+            this.customPanel1.Size = new System.Drawing.Size(1072, 145);
             this.customPanel1.TabIndex = 7;
             this.customPanel1.UnderlinedStyle = false;
             // 
             // BtnInserir
             // 
             this.BtnInserir.AccessibleName = "";
-            this.BtnInserir.Location = new System.Drawing.Point(18, 94);
+            this.BtnInserir.Location = new System.Drawing.Point(18, 87);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -242,7 +243,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(904, 94);
+            this.panel5.Location = new System.Drawing.Point(743, 87);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(110, 44);
             this.panel5.TabIndex = 11;
@@ -262,7 +263,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(1014, 94);
+            this.panel3.Location = new System.Drawing.Point(853, 87);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 44);
             this.panel3.TabIndex = 10;
@@ -291,7 +292,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel1.Location = new System.Drawing.Point(18, 69);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 2);
+            this.panel1.Size = new System.Drawing.Size(1039, 2);
             this.panel1.TabIndex = 5;
             // 
             // label2
@@ -313,7 +314,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.ClnNome.ReadOnly = true;
             this.ClnNome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnNome.Width = 214;
+            this.ClnNome.Width = 220;
             // 
             // ClnCpf
             // 
@@ -323,7 +324,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.ClnCpf.ReadOnly = true;
             this.ClnCpf.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnCpf.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnCpf.Width = 214;
+            this.ClnCpf.Width = 126;
             // 
             // ClnEmail
             // 
@@ -333,7 +334,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.ClnEmail.ReadOnly = true;
             this.ClnEmail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnEmail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnEmail.Width = 214;
+            this.ClnEmail.Width = 220;
             // 
             // ClnTelefone
             // 
@@ -343,7 +344,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.ClnTelefone.ReadOnly = true;
             this.ClnTelefone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnTelefone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnTelefone.Width = 214;
+            this.ClnTelefone.Width = 125;
             // 
             // ClnClienteNome
             // 
@@ -352,7 +353,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.ClnClienteNome.ReadOnly = true;
             this.ClnClienteNome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnClienteNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnClienteNome.Width = 216;
+            this.ClnClienteNome.Width = 220;
             // 
             // ClnVisualizacaoCompleta
             // 
@@ -404,7 +405,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1309, 779);
+            this.ClientSize = new System.Drawing.Size(1146, 710);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

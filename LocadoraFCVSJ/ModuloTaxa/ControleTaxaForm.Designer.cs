@@ -137,7 +137,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             this.GridTaxas.RowTemplate.ReadOnly = true;
             this.GridTaxas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GridTaxas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.GridTaxas.Size = new System.Drawing.Size(1232, 530);
+            this.GridTaxas.Size = new System.Drawing.Size(1069, 457);
             this.GridTaxas.TabIndex = 4;
             this.GridTaxas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTaxas_CellClick);
             this.GridTaxas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridTaxas_CellFormatting);
@@ -150,7 +150,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             this.ClnNome.ReadOnly = true;
             this.ClnNome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnNome.Width = 417;
+            this.ClnNome.Width = 322;
             // 
             // ClnValor
             // 
@@ -159,7 +159,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             this.ClnValor.ReadOnly = true;
             this.ClnValor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnValor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnValor.Width = 410;
+            this.ClnValor.Width = 321;
             // 
             // ClnTipo
             // 
@@ -168,7 +168,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             this.ClnTipo.ReadOnly = true;
             this.ClnTipo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnTipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnTipo.Width = 300;
+            this.ClnTipo.Width = 321;
             // 
             // ClnEditar
             // 
@@ -207,7 +207,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             this.customPanel2.Controls.Add(this.GridTaxas);
             this.customPanel2.Location = new System.Drawing.Point(37, 218);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1234, 533);
+            this.customPanel2.Size = new System.Drawing.Size(1071, 461);
             this.customPanel2.TabIndex = 6;
             this.customPanel2.UnderlinedStyle = false;
             // 
@@ -225,14 +225,14 @@ namespace LocadoraFCVSJ.ModuloTaxa
             this.customPanel1.Controls.Add(this.label2);
             this.customPanel1.Location = new System.Drawing.Point(37, 27);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(1234, 159);
+            this.customPanel1.Size = new System.Drawing.Size(1072, 145);
             this.customPanel1.TabIndex = 6;
             this.customPanel1.UnderlinedStyle = false;
             // 
             // BtnInserir
             // 
             this.BtnInserir.AccessibleName = "";
-            this.BtnInserir.Location = new System.Drawing.Point(18, 94);
+            this.BtnInserir.Location = new System.Drawing.Point(18, 87);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -290,7 +290,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(904, 94);
+            this.panel5.Location = new System.Drawing.Point(743, 87);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(110, 44);
             this.panel5.TabIndex = 11;
@@ -310,7 +310,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(1014, 94);
+            this.panel3.Location = new System.Drawing.Point(853, 87);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 44);
             this.panel3.TabIndex = 10;
@@ -337,9 +337,9 @@ namespace LocadoraFCVSJ.ModuloTaxa
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.panel1.Location = new System.Drawing.Point(18, 69);
+            this.panel1.Location = new System.Drawing.Point(18, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 2);
+            this.panel1.Size = new System.Drawing.Size(1039, 2);
             this.panel1.TabIndex = 5;
             // 
             // label2
@@ -358,7 +358,7 @@ namespace LocadoraFCVSJ.ModuloTaxa
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1309, 779);
+            this.ClientSize = new System.Drawing.Size(1146, 710);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -397,12 +397,12 @@ namespace LocadoraFCVSJ.ModuloTaxa
         private Label LblRegistros;
         private Panel panel1;
         private Label label2;
+        private CustomKryptonButton BtnInserir;
         private DataGridViewTextBoxColumn ClnNome;
         private DataGridViewTextBoxColumn ClnValor;
         private DataGridViewTextBoxColumn ClnTipo;
         private DataGridViewButtonColumn ClnEditar;
         private DataGridViewTextBoxColumn ClnEsp1;
         private DataGridViewButtonColumn ClnExcluir;
-        private CustomKryptonButton BtnInserir;
     }
 }

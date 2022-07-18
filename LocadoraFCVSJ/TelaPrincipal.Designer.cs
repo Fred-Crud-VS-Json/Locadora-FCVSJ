@@ -95,8 +95,8 @@ namespace LocadoraFCVSJ
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -123,17 +123,16 @@ namespace LocadoraFCVSJ
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Open Sans", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.label1.Location = new System.Drawing.Point(39, 10);
+            this.label1.Location = new System.Drawing.Point(4, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(431, 68);
+            this.label1.Size = new System.Drawing.Size(312, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOCADORA FCVSJ";
             // 
             // PnlGrupos
             // 
-            this.PnlGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlGrupos.BackColor = System.Drawing.Color.White;
             this.PnlGrupos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.PnlGrupos.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -142,16 +141,16 @@ namespace LocadoraFCVSJ
             this.PnlGrupos.Controls.Add(this.BtnAcessarGrupos);
             this.PnlGrupos.Controls.Add(this.pictureBox1);
             this.PnlGrupos.Controls.Add(this.label2);
-            this.PnlGrupos.Location = new System.Drawing.Point(67, 187);
+            this.PnlGrupos.Location = new System.Drawing.Point(73, 166);
             this.PnlGrupos.Name = "PnlGrupos";
-            this.PnlGrupos.Size = new System.Drawing.Size(245, 261);
+            this.PnlGrupos.Size = new System.Drawing.Size(220, 240);
             this.PnlGrupos.TabIndex = 1;
             this.PnlGrupos.UnderlinedStyle = false;
             // 
             // BtnAcessarGrupos
             // 
             this.BtnAcessarGrupos.AccessibleName = "Grupos";
-            this.BtnAcessarGrupos.Location = new System.Drawing.Point(37, 183);
+            this.BtnAcessarGrupos.Location = new System.Drawing.Point(26, 172);
             this.BtnAcessarGrupos.Name = "BtnAcessarGrupos";
             this.BtnAcessarGrupos.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnAcessarGrupos.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -208,7 +207,7 @@ namespace LocadoraFCVSJ
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LocadoraFCVSJ.Properties.Resources.group_layouts_90px;
-            this.pictureBox1.Location = new System.Drawing.Point(84, 74);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -220,7 +219,7 @@ namespace LocadoraFCVSJ
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label2.Location = new System.Drawing.Point(77, 27);
+            this.label2.Location = new System.Drawing.Point(68, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 28);
             this.label2.TabIndex = 1;
@@ -236,16 +235,16 @@ namespace LocadoraFCVSJ
             this.PnlTaxas.Controls.Add(this.BtnAcessarTaxas);
             this.PnlTaxas.Controls.Add(this.pictureBox2);
             this.PnlTaxas.Controls.Add(this.label3);
-            this.PnlTaxas.Location = new System.Drawing.Point(376, 187);
+            this.PnlTaxas.Location = new System.Drawing.Point(330, 166);
             this.PnlTaxas.Name = "PnlTaxas";
-            this.PnlTaxas.Size = new System.Drawing.Size(245, 261);
+            this.PnlTaxas.Size = new System.Drawing.Size(220, 240);
             this.PnlTaxas.TabIndex = 2;
             this.PnlTaxas.UnderlinedStyle = false;
             // 
             // BtnAcessarTaxas
             // 
             this.BtnAcessarTaxas.AccessibleName = "Taxas";
-            this.BtnAcessarTaxas.Location = new System.Drawing.Point(38, 183);
+            this.BtnAcessarTaxas.Location = new System.Drawing.Point(26, 172);
             this.BtnAcessarTaxas.Name = "BtnAcessarTaxas";
             this.BtnAcessarTaxas.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnAcessarTaxas.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -302,7 +301,7 @@ namespace LocadoraFCVSJ
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LocadoraFCVSJ.Properties.Resources.discount_90px;
-            this.pictureBox2.Location = new System.Drawing.Point(84, 74);
+            this.pictureBox2.Location = new System.Drawing.Point(68, 67);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 80);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -314,7 +313,7 @@ namespace LocadoraFCVSJ
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label3.Location = new System.Drawing.Point(85, 27);
+            this.label3.Location = new System.Drawing.Point(71, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 28);
             this.label3.TabIndex = 1;
@@ -330,16 +329,16 @@ namespace LocadoraFCVSJ
             this.customPanel2.Controls.Add(this.BtnAcessarClientes);
             this.customPanel2.Controls.Add(this.pictureBox3);
             this.customPanel2.Controls.Add(this.label4);
-            this.customPanel2.Location = new System.Drawing.Point(994, 187);
+            this.customPanel2.Location = new System.Drawing.Point(846, 166);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(245, 261);
+            this.customPanel2.Size = new System.Drawing.Size(220, 240);
             this.customPanel2.TabIndex = 4;
             this.customPanel2.UnderlinedStyle = false;
             // 
             // BtnAcessarClientes
             // 
             this.BtnAcessarClientes.AccessibleName = "Clientes";
-            this.BtnAcessarClientes.Location = new System.Drawing.Point(38, 183);
+            this.BtnAcessarClientes.Location = new System.Drawing.Point(26, 172);
             this.BtnAcessarClientes.Name = "BtnAcessarClientes";
             this.BtnAcessarClientes.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnAcessarClientes.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -396,7 +395,7 @@ namespace LocadoraFCVSJ
             // pictureBox3
             // 
             this.pictureBox3.Image = global::LocadoraFCVSJ.Properties.Resources.male_user_90px;
-            this.pictureBox3.Location = new System.Drawing.Point(84, 74);
+            this.pictureBox3.Location = new System.Drawing.Point(68, 67);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(80, 80);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -408,7 +407,7 @@ namespace LocadoraFCVSJ
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label4.Location = new System.Drawing.Point(72, 27);
+            this.label4.Location = new System.Drawing.Point(56, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 28);
             this.label4.TabIndex = 1;
@@ -424,16 +423,16 @@ namespace LocadoraFCVSJ
             this.customPanel3.Controls.Add(this.BtnAcessarFuncionarios);
             this.customPanel3.Controls.Add(this.pictureBox4);
             this.customPanel3.Controls.Add(this.label5);
-            this.customPanel3.Location = new System.Drawing.Point(685, 187);
+            this.customPanel3.Location = new System.Drawing.Point(589, 166);
             this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(245, 261);
+            this.customPanel3.Size = new System.Drawing.Size(220, 240);
             this.customPanel3.TabIndex = 3;
             this.customPanel3.UnderlinedStyle = false;
             // 
             // BtnAcessarFuncionarios
             // 
             this.BtnAcessarFuncionarios.AccessibleName = "Funcionarios";
-            this.BtnAcessarFuncionarios.Location = new System.Drawing.Point(38, 183);
+            this.BtnAcessarFuncionarios.Location = new System.Drawing.Point(26, 172);
             this.BtnAcessarFuncionarios.Name = "BtnAcessarFuncionarios";
             this.BtnAcessarFuncionarios.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnAcessarFuncionarios.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -490,7 +489,7 @@ namespace LocadoraFCVSJ
             // pictureBox4
             // 
             this.pictureBox4.Image = global::LocadoraFCVSJ.Properties.Resources.name_tag_90px;
-            this.pictureBox4.Location = new System.Drawing.Point(84, 74);
+            this.pictureBox4.Location = new System.Drawing.Point(68, 67);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(80, 80);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -502,7 +501,7 @@ namespace LocadoraFCVSJ
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label5.Location = new System.Drawing.Point(42, 27);
+            this.label5.Location = new System.Drawing.Point(29, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 28);
             this.label5.TabIndex = 1;
@@ -518,16 +517,16 @@ namespace LocadoraFCVSJ
             this.customPanel4.Controls.Add(this.BtnAcessarCondutores);
             this.customPanel4.Controls.Add(this.pictureBox5);
             this.customPanel4.Controls.Add(this.label6);
-            this.customPanel4.Location = new System.Drawing.Point(841, 484);
+            this.customPanel4.Location = new System.Drawing.Point(720, 447);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(245, 261);
+            this.customPanel4.Size = new System.Drawing.Size(220, 240);
             this.customPanel4.TabIndex = 7;
             this.customPanel4.UnderlinedStyle = false;
             // 
             // BtnAcessarCondutores
             // 
             this.BtnAcessarCondutores.AccessibleName = "Condutores";
-            this.BtnAcessarCondutores.Location = new System.Drawing.Point(37, 183);
+            this.BtnAcessarCondutores.Location = new System.Drawing.Point(26, 172);
             this.BtnAcessarCondutores.Name = "BtnAcessarCondutores";
             this.BtnAcessarCondutores.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnAcessarCondutores.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -584,7 +583,7 @@ namespace LocadoraFCVSJ
             // pictureBox5
             // 
             this.pictureBox5.Image = global::LocadoraFCVSJ.Properties.Resources.driver_90px;
-            this.pictureBox5.Location = new System.Drawing.Point(84, 74);
+            this.pictureBox5.Location = new System.Drawing.Point(68, 67);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(80, 80);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -596,7 +595,7 @@ namespace LocadoraFCVSJ
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label6.Location = new System.Drawing.Point(51, 27);
+            this.label6.Location = new System.Drawing.Point(37, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 28);
             this.label6.TabIndex = 1;
@@ -612,16 +611,16 @@ namespace LocadoraFCVSJ
             this.customPanel5.Controls.Add(this.BtnAcessarVeiculos);
             this.customPanel5.Controls.Add(this.pictureBox6);
             this.customPanel5.Controls.Add(this.label7);
-            this.customPanel5.Location = new System.Drawing.Point(531, 484);
+            this.customPanel5.Location = new System.Drawing.Point(463, 447);
             this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(245, 261);
+            this.customPanel5.Size = new System.Drawing.Size(220, 240);
             this.customPanel5.TabIndex = 6;
             this.customPanel5.UnderlinedStyle = false;
             // 
             // BtnAcessarVeiculos
             // 
             this.BtnAcessarVeiculos.AccessibleName = "Veiculos";
-            this.BtnAcessarVeiculos.Location = new System.Drawing.Point(37, 183);
+            this.BtnAcessarVeiculos.Location = new System.Drawing.Point(26, 172);
             this.BtnAcessarVeiculos.Name = "BtnAcessarVeiculos";
             this.BtnAcessarVeiculos.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnAcessarVeiculos.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -678,7 +677,7 @@ namespace LocadoraFCVSJ
             // pictureBox6
             // 
             this.pictureBox6.Image = global::LocadoraFCVSJ.Properties.Resources.car_90px1;
-            this.pictureBox6.Location = new System.Drawing.Point(84, 74);
+            this.pictureBox6.Location = new System.Drawing.Point(68, 67);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(80, 80);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -690,7 +689,7 @@ namespace LocadoraFCVSJ
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label7.Location = new System.Drawing.Point(69, 27);
+            this.label7.Location = new System.Drawing.Point(56, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 28);
             this.label7.TabIndex = 1;
@@ -706,16 +705,16 @@ namespace LocadoraFCVSJ
             this.customPanel6.Controls.Add(this.BtnAcessarPlanos);
             this.customPanel6.Controls.Add(this.pictureBox7);
             this.customPanel6.Controls.Add(this.label8);
-            this.customPanel6.Location = new System.Drawing.Point(222, 484);
+            this.customPanel6.Location = new System.Drawing.Point(204, 447);
             this.customPanel6.Name = "customPanel6";
-            this.customPanel6.Size = new System.Drawing.Size(245, 261);
+            this.customPanel6.Size = new System.Drawing.Size(220, 240);
             this.customPanel6.TabIndex = 5;
             this.customPanel6.UnderlinedStyle = false;
             // 
             // BtnAcessarPlanos
             // 
             this.BtnAcessarPlanos.AccessibleName = "Planos";
-            this.BtnAcessarPlanos.Location = new System.Drawing.Point(38, 183);
+            this.BtnAcessarPlanos.Location = new System.Drawing.Point(26, 172);
             this.BtnAcessarPlanos.Name = "BtnAcessarPlanos";
             this.BtnAcessarPlanos.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnAcessarPlanos.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -772,7 +771,7 @@ namespace LocadoraFCVSJ
             // pictureBox7
             // 
             this.pictureBox7.Image = global::LocadoraFCVSJ.Properties.Resources.cheque_90px;
-            this.pictureBox7.Location = new System.Drawing.Point(84, 74);
+            this.pictureBox7.Location = new System.Drawing.Point(68, 67);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(80, 80);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -784,7 +783,7 @@ namespace LocadoraFCVSJ
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label8.Location = new System.Drawing.Point(77, 27);
+            this.label8.Location = new System.Drawing.Point(63, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 28);
             this.label8.TabIndex = 1;
@@ -792,13 +791,11 @@ namespace LocadoraFCVSJ
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(67, 47);
+            this.panel1.Location = new System.Drawing.Point(73, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 91);
+            this.panel1.Size = new System.Drawing.Size(319, 79);
             this.panel1.TabIndex = 8;
             // 
             // panel2
@@ -807,30 +804,28 @@ namespace LocadoraFCVSJ
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(561, 47);
+            this.panel2.Location = new System.Drawing.Point(391, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(678, 91);
+            this.panel2.Size = new System.Drawing.Size(675, 79);
             this.panel2.TabIndex = 9;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(674, 87);
+            this.panel3.Size = new System.Drawing.Size(671, 75);
             this.panel3.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Open Sans", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Open Sans", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label9.Location = new System.Drawing.Point(202, 9);
+            this.label9.Location = new System.Drawing.Point(242, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(271, 68);
+            this.label9.Size = new System.Drawing.Size(197, 49);
             this.label9.TabIndex = 1;
             this.label9.Text = "MÓDULOS";
             // 
@@ -839,7 +834,7 @@ namespace LocadoraFCVSJ
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1309, 779);
+            this.ClientSize = new System.Drawing.Size(1146, 717);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.customPanel4);

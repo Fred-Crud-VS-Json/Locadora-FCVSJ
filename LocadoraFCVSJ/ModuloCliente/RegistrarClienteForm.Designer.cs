@@ -67,11 +67,13 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.label2 = new System.Windows.Forms.Label();
             this.BtnVoltar = new LocadoraFCVSJ.Compartilhado.Componentes.CustomKryptonButton();
             this.BtnConcluir = new LocadoraFCVSJ.Compartilhado.Componentes.CustomKryptonButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PxbIcon)).BeginInit();
             this.customPanel2.SuspendLayout();
             this.customPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CbxUf)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -118,7 +120,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.customPanel1.BorderSize = 2;
             this.customPanel1.Controls.Add(this.LblTitulo);
             this.customPanel1.Controls.Add(this.PxbIcon);
-            this.customPanel1.Location = new System.Drawing.Point(24, 30);
+            this.customPanel1.Location = new System.Drawing.Point(9, 24);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(899, 49);
             this.customPanel1.TabIndex = 1;
@@ -177,7 +179,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.customPanel2.Controls.Add(this.TxbNome);
             this.customPanel2.Controls.Add(this.label3);
             this.customPanel2.Controls.Add(this.label2);
-            this.customPanel2.Location = new System.Drawing.Point(24, 108);
+            this.customPanel2.Location = new System.Drawing.Point(9, 108);
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(899, 519);
             this.customPanel2.TabIndex = 16;
@@ -625,7 +627,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             // BtnVoltar
             // 
             this.BtnVoltar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnVoltar.Location = new System.Drawing.Point(697, 657);
+            this.BtnVoltar.Location = new System.Drawing.Point(682, 640);
             this.BtnVoltar.Name = "BtnVoltar";
             this.BtnVoltar.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.BtnVoltar.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -682,7 +684,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             // BtnConcluir
             // 
             this.BtnConcluir.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnConcluir.Location = new System.Drawing.Point(813, 657);
+            this.BtnConcluir.Location = new System.Drawing.Point(798, 640);
             this.BtnConcluir.Name = "BtnConcluir";
             this.BtnConcluir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnConcluir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -736,16 +738,26 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.BtnConcluir.Values.Text = "Concluir";
             this.BtnConcluir.Click += new System.EventHandler(this.BtnConcluir_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.customPanel1);
+            this.panel1.Controls.Add(this.BtnVoltar);
+            this.panel1.Controls.Add(this.BtnConcluir);
+            this.panel1.Controls.Add(this.customPanel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(948, 618);
+            this.panel1.TabIndex = 19;
+            // 
             // RegistrarClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(948, 714);
-            this.Controls.Add(this.BtnVoltar);
-            this.Controls.Add(this.BtnConcluir);
-            this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.customPanel1);
+            this.ClientSize = new System.Drawing.Size(948, 618);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -762,6 +774,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CbxUf)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -803,5 +816,6 @@ namespace LocadoraFCVSJ.ModuloCliente
         public Krypton.Toolkit.KryptonTextBox TxbEmail;
         public CustomKryptonButton BtnVoltar;
         public CustomKryptonButton BtnConcluir;
+        private Panel panel1;
     }
 }

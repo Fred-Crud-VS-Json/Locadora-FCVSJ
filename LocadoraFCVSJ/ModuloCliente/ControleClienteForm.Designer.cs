@@ -47,6 +47,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.ClnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.customPanel2 = new LocadoraFCVSJ.Compartilhado.Componentes.CustomPanel();
             this.customPanel1 = new LocadoraFCVSJ.Compartilhado.Componentes.CustomPanel();
+            this.BtnInserir = new LocadoraFCVSJ.Compartilhado.Componentes.CustomKryptonButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.LblRegistros = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnInserir = new LocadoraFCVSJ.Compartilhado.Componentes.CustomKryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
             this.customPanel2.SuspendLayout();
             this.customPanel1.SuspendLayout();
@@ -126,9 +126,10 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.ClnEditar,
             this.ClnEsp2,
             this.ClnExcluir});
+            this.GridClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridClientes.EnableHeadersVisualStyles = false;
             this.GridClientes.GridColor = System.Drawing.Color.White;
-            this.GridClientes.Location = new System.Drawing.Point(1, 0);
+            this.GridClientes.Location = new System.Drawing.Point(0, 0);
             this.GridClientes.Name = "GridClientes";
             this.GridClientes.ReadOnly = true;
             this.GridClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -142,7 +143,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.GridClientes.RowTemplate.Height = 35;
             this.GridClientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GridClientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.GridClientes.Size = new System.Drawing.Size(1232, 530);
+            this.GridClientes.Size = new System.Drawing.Size(1072, 461);
             this.GridClientes.TabIndex = 4;
             this.GridClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridClientes_CellClick);
             this.GridClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridClientes_CellFormatting);
@@ -156,7 +157,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.ClnNome.ReadOnly = true;
             this.ClnNome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnNome.Width = 307;
+            this.ClnNome.Width = 230;
             // 
             // ClnCpf
             // 
@@ -166,7 +167,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.ClnCpf.ReadOnly = true;
             this.ClnCpf.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnCpf.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnCpf.Width = 202;
+            this.ClnCpf.Width = 230;
             // 
             // ClnEmail
             // 
@@ -176,7 +177,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.ClnEmail.ReadOnly = true;
             this.ClnEmail.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnEmail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnEmail.Width = 305;
+            this.ClnEmail.Width = 230;
             // 
             // ClnTelefone
             // 
@@ -186,7 +187,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.ClnTelefone.ReadOnly = true;
             this.ClnTelefone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ClnTelefone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ClnTelefone.Width = 258;
+            this.ClnTelefone.Width = 221;
             // 
             // ClnVisualizacaoCompleta
             // 
@@ -242,7 +243,7 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.customPanel2.Controls.Add(this.GridClientes);
             this.customPanel2.Location = new System.Drawing.Point(37, 218);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1234, 533);
+            this.customPanel2.Size = new System.Drawing.Size(1072, 461);
             this.customPanel2.TabIndex = 6;
             this.customPanel2.UnderlinedStyle = false;
             // 
@@ -260,81 +261,14 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.customPanel1.Controls.Add(this.label2);
             this.customPanel1.Location = new System.Drawing.Point(37, 27);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(1234, 159);
+            this.customPanel1.Size = new System.Drawing.Size(1072, 145);
             this.customPanel1.TabIndex = 7;
             this.customPanel1.UnderlinedStyle = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(904, 94);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(110, 44);
-            this.panel5.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Registros";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(1014, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(204, 44);
-            this.panel3.TabIndex = 10;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.LblRegistros);
-            this.panel4.Location = new System.Drawing.Point(1, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(202, 41);
-            this.panel4.TabIndex = 10;
-            // 
-            // LblRegistros
-            // 
-            this.LblRegistros.AutoSize = true;
-            this.LblRegistros.Font = new System.Drawing.Font("Open Sans", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblRegistros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
-            this.LblRegistros.Location = new System.Drawing.Point(37, 8);
-            this.LblRegistros.Name = "LblRegistros";
-            this.LblRegistros.Size = new System.Drawing.Size(0, 26);
-            this.LblRegistros.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.panel1.Location = new System.Drawing.Point(18, 69);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 2);
-            this.panel1.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
-            this.label2.Location = new System.Drawing.Point(18, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(296, 39);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "GESTÃO DE CLIENTES";
             // 
             // BtnInserir
             // 
             this.BtnInserir.AccessibleName = "";
-            this.BtnInserir.Location = new System.Drawing.Point(18, 94);
+            this.BtnInserir.Location = new System.Drawing.Point(18, 87);
             this.BtnInserir.Name = "BtnInserir";
             this.BtnInserir.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
             this.BtnInserir.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
@@ -388,12 +322,79 @@ namespace LocadoraFCVSJ.ModuloCliente
             this.BtnInserir.Values.Text = "Novo Cliente";
             this.BtnInserir.Click += new System.EventHandler(this.BtnInserir_Click);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(743, 87);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(110, 44);
+            this.panel5.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Registros";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(853, 87);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(204, 44);
+            this.panel3.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.LblRegistros);
+            this.panel4.Location = new System.Drawing.Point(1, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(202, 41);
+            this.panel4.TabIndex = 10;
+            // 
+            // LblRegistros
+            // 
+            this.LblRegistros.AutoSize = true;
+            this.LblRegistros.Font = new System.Drawing.Font("Open Sans", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblRegistros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(139)))), ((int)(((byte)(150)))));
+            this.LblRegistros.Location = new System.Drawing.Point(37, 8);
+            this.LblRegistros.Name = "LblRegistros";
+            this.LblRegistros.Size = new System.Drawing.Size(0, 26);
+            this.LblRegistros.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.panel1.Location = new System.Drawing.Point(18, 69);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1039, 2);
+            this.panel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Open Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.label2.Location = new System.Drawing.Point(18, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(296, 39);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "GESTÃO DE CLIENTES";
+            // 
             // ControleClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1309, 779);
+            this.ClientSize = new System.Drawing.Size(1146, 710);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -432,6 +433,7 @@ namespace LocadoraFCVSJ.ModuloCliente
         private Label LblRegistros;
         private Panel panel1;
         private Label label2;
+        private CustomKryptonButton BtnInserir;
         private DataGridViewTextBoxColumn ClnNome;
         private DataGridViewTextBoxColumn ClnCpf;
         private DataGridViewTextBoxColumn ClnEmail;
@@ -441,6 +443,5 @@ namespace LocadoraFCVSJ.ModuloCliente
         private DataGridViewButtonColumn ClnEditar;
         private DataGridViewTextBoxColumn ClnEsp2;
         private DataGridViewButtonColumn ClnExcluir;
-        private CustomKryptonButton BtnInserir;
     }
 }
