@@ -1,4 +1,5 @@
 ﻿using FluentValidation.TestHelper;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -97,7 +98,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloVeiculo
             //arrange
             veiculo = NovoVeiculo();
 
-            veiculo.Ano = 2023;
+            veiculo.Ano = 2025;
 
             //action
             TestValidationResult<Veiculo> resultado = validador.TestValidate(veiculo);
@@ -123,8 +124,7 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloVeiculo
 
         private Veiculo NovoVeiculo()
         {
-            Grupo grupo = new Grupo();
-            grupo.Nome = "Grupo A - Carro economico";
+            Grupo grupo = new() { Nome = "Grupo A - Carro economico"};
 
             return new Veiculo
             {
@@ -133,10 +133,10 @@ namespace LocadoraFCVSJ.Dominio.Testes.ModuloVeiculo
                 Marca = "Ford",
                 Placa = "ASD2345",
                 Cor = "Preto",
-                TipoCombustivel = (Dominio.Compartilhado.TipoCombustivel?)1,
+                TipoCombustivel = TipoCombustivel.Gasolina,
                 CapacidadeTanque = 200,
                 Ano = 2020,
-                KmPercorrido = 0
+                KmPercorrido = 0,
             };
         }
     }
