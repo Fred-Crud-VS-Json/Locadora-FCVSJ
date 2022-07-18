@@ -3,13 +3,12 @@ using Krypton.Toolkit;
 using LocadoraFCVSJ.Aplicacao.ModuloFuncionario;
 using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 
 namespace LocadoraFCVSJ.ModuloFuncionario
 {
     public class ControladorFuncionario : ControladorBase
     {
-        private readonly ServicoFuncionario _servicoFuncionario;
+        public readonly ServicoFuncionario _servicoFuncionario;
         private readonly ControleFuncionarioForm controleFuncionarioForm;
 
         public ControladorFuncionario(ServicoFuncionario servicoFuncionario)
@@ -20,7 +19,7 @@ namespace LocadoraFCVSJ.ModuloFuncionario
 
         public override void Inserir()
         {
-            RegistrarNovoFuncionarioForm tela = new()
+            RegistrarFuncionarioForm tela = new()
             {
                 Funcionario = new(),
                 SalvarRegistro = _servicoFuncionario.Inserir
@@ -42,15 +41,14 @@ namespace LocadoraFCVSJ.ModuloFuncionario
                 return;
             }
 
-            RegistrarNovoFuncionarioForm tela = new()
+            RegistrarFuncionarioForm tela = new()
             {
                 Funcionario = funcionarioSelecionado,
                 SalvarRegistro = _servicoFuncionario.Editar
             };
 
-            tela.label1.Text = "            Editando Registro";
-            tela.label4.Text = "Altere abaixo as informações que deseja do funcionário selecionado.";
-
+            tela.LblTitulo.Text = "Editando Registro";
+            tela.PxbIcon.Image = Properties.Resources.edit_50px;
 
             DialogResult resultado = tela.ShowDialog();
 
@@ -71,9 +69,14 @@ namespace LocadoraFCVSJ.ModuloFuncionario
             DialogResult resultado = MessageBox.Show("Deseja realmente excluir este registro?", "Exclusão de Funcionário", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.OK)
-                _servicoFuncionario.Excluir(funcionarioSelecionado);
+            {
+                Result<Funcionario> resultadoExclusao = _servicoFuncionario.Excluir(funcionarioSelecionado);
 
-            CarregarFuncionarios();
+                if (resultadoExclusao.IsFailed)
+                    MessageBox.Show(resultadoExclusao.Errors[0].Message, "Exclusão de Funcionário", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    CarregarFuncionarios();
+            }
         }
 
         public override KryptonForm ObterTela()

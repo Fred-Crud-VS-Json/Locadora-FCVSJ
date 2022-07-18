@@ -7,11 +7,11 @@ using System.Text;
 
 namespace LocadoraFCVSJ.ModuloFuncionario
 {
-    public partial class RegistrarNovoFuncionarioForm : KryptonForm
+    public partial class RegistrarFuncionarioForm : KryptonForm
     {
         private Funcionario funcionario;
 
-        public RegistrarNovoFuncionarioForm()
+        public RegistrarFuncionarioForm()
         {
             InitializeComponent();
 
@@ -31,15 +31,20 @@ namespace LocadoraFCVSJ.ModuloFuncionario
                 TxbNome.Text = funcionario.Nome;
                 TxbUsuario.Text = funcionario.Usuario;
                 TxbSenha.Text = funcionario.Senha;
-                TxbSalario.Text = funcionario.Salario.ToString("F2");
-                MtxbDataAdmissao.Text = Convert.ToString(funcionario.DataAdmissao);
+
+                if (funcionario.Salario != 0) 
+                    TxbSalario.Text = funcionario.Salario.ToString("F2");
+
+                if (funcionario.DataAdmissao != DateTime.MinValue) 
+                    MtxbDataAdmissao.Text = Convert.ToString(funcionario.DataAdmissao);
+
                 CbxNivelAcesso.SelectedItem = funcionario.NivelAcesso;
             }
         }
 
         public Func<Funcionario, Result<Funcionario>> SalvarRegistro { get; set; }
 
-        private void BtnConcluirRegistro_Click(object sender, EventArgs e)
+        private void BtnConcluir_Click(object sender, EventArgs e)
         {
             try
             {
