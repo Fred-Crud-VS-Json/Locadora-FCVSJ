@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using FluentValidation;
 using FluentValidation.Results;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using Serilog;
@@ -94,6 +95,15 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
 
                 return Result.Ok();
             }
+            catch (ExcluirRegistroRelacionadoException ex)
+            {
+                _msgErro = "Essa taxa possui relação com alguma entidade no sistema e não pode ser excluído.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+
             catch (SqlException ex)
             {
                 _msgErro = "Falha ao tentar excluir taxa.";
