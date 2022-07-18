@@ -74,7 +74,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 
                 try
                 {
-
                     Conexao.Open();
 
                     comando.ExecuteNonQuery();
@@ -83,6 +82,8 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
                 {
                     if (ex != null && ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
                         throw new ExcluirRegistroRelacionadoException(ex);
+
+                    throw;
                 }
             }
         }
