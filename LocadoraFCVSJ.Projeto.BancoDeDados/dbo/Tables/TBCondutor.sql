@@ -15,6 +15,7 @@
     [Complemento]    VARCHAR (300)    NOT NULL,
     [Rua]            VARCHAR (300)    NOT NULL,
     [Cliente_Id]     UNIQUEIDENTIFIER NOT NULL,
-    CONSTRAINT [PK_TbCondutor] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_TbCondutor] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_TBCondutor_TBCliente] FOREIGN KEY ([Cliente_Id]) REFERENCES [dbo].[TBCliente] ([Id])
 );
 

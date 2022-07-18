@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Aplicação", "2. Aplica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Aplicacao", "LocadoraFCVSJ.Aplicacao\LocadoraFCVSJ.Aplicacao.csproj", "{918578B2-8466-45BF-A71A-F39BDD004DAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraFCVSJ.Infra.Logging", "LocadoraFCVSJ.Infra.Logging\LocadoraFCVSJ.Infra.Logging.csproj", "{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocadoraFCVSJ.Infra.Logging", "LocadoraFCVSJ.Infra.Logging\LocadoraFCVSJ.Infra.Logging.csproj", "{7B720374-0BD7-4BD4-B4EC-00C99ED98ED8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
