@@ -8,13 +8,13 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
         public ValidadorVeiculo()
         {
             RuleFor(x => x.Modelo)
-                .Matches(new Regex(@"^[ .a-zA-Z-à-ü-0-9]{3,60}$")).WithMessage("Modelo informado é inválido. Lembre-se de preenche-lo corretamente.\n (Min 3 caracteres, Max 60 caracteres)\n (Acentos, números e espaços são permitidos)\n");
+                .Matches(new Regex(@"^[ .a-zA-Z-à-ü-0-9]{2,60}$")).WithMessage("Modelo informado é inválido. Lembre-se de preenche-lo corretamente.\n (Min 2 caracteres, Max 60 caracteres)\n (Acentos, números e espaços são permitidos)\n");
 
             RuleFor(x => x.Marca)
-                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{3,60}$")).WithMessage("Marca informada é inválida. Lembre-se de preenche-la corretamente.\n (Min 3 caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
+                .Matches(new Regex(@"^[ a-zA-Z-à-ü]{2,60}$")).WithMessage("Marca informada é inválida. Lembre-se de preenche-la corretamente.\n (Min 2 caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
 
             RuleFor(x => x.Placa)
-                .Matches(new Regex(@"^[A-Z-0-9]{7}$")).WithMessage("Placa informada é inválida. Lembre-se de preenche-la corretamente.\n (Min 7 caracteres)\n (Apenas números são permitidos)\n");
+                .Matches(new Regex(@"^[A-Z-0-9]{7}$")).WithMessage("Placa informada é inválida. Lembre-se de preenche-la corretamente.\n (Min 7 caracteres)\n");
 
             RuleFor(x => x.Cor)
                 .Matches(new Regex(@"^[ a-z-A-Z-à-ü]{3,60}$")).WithMessage("Cor informada é inválida. Lembre-se de preenche-la corretamente.\n (Min 3 caracteres, Max 60 caracteres)\n (Acentos e espaços são permitidos)\n");
@@ -30,9 +30,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
 
             RuleFor(x => x.KmPercorrido)
                 .GreaterThanOrEqualTo(0).WithMessage("Quilometragem informada é inválida. Lembre-se de preenche-la corretamente.\n");
-
-            RuleFor(x => x.Foto)
-                .NotEmpty();
         }
     }
 }
