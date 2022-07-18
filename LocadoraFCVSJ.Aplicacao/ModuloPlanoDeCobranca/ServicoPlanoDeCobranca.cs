@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using FluentValidation;
 using FluentValidation.Results;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 using Serilog;
@@ -95,6 +96,15 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
 
                 return Result.Ok();
             }
+            catch (ExcluirRegistroRelacionadoException ex)
+            {
+                _msgErro = "Esse plano possui relação com alguma entidade no sistema e não pode ser excluído.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+
             catch (SqlException ex)
             {
                 _msgErro = "Falha ao tentar excluir plano de cobrança.";
