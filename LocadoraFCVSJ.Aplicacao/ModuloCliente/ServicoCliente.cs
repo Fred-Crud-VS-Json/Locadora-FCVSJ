@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using FluentValidation;
 using FluentValidation.Results;
+using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using Serilog;
@@ -94,6 +95,15 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
                 return Result.Ok();
             }
+            catch (ExcluirRegistroRelacionadoException ex)
+            {
+                _msgErro = "Este cliente possui relação com alguma entidade no sistema e não pode ser excluído.";
+
+                Log.Logger.Fatal(ex, _msgErro);
+
+                return Result.Fail(_msgErro);
+            }
+
             catch (SqlException ex)
             {
                 _msgErro = "Falha ao tentar excluir cliente.";
@@ -135,7 +145,6 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
                 return Result.Fail(_msgErro);
             }
         }
-
 
         private Result Validar(Cliente cliente)
         {
