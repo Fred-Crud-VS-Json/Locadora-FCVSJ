@@ -20,9 +20,13 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
 
         public RepositorioVeiculoTestes()
         {
+            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]");
+            BdUtil.ExecutarSql("DELETE FROM [TBCliente]");
             BdUtil.ExecutarSql("DELETE FROM [TBVeiculo]");
             BdUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]");
             BdUtil.ExecutarSql("DELETE FROM [TBGrupo]");
+            BdUtil.ExecutarSql("DELETE FROM [TBTaxa]");
+            BdUtil.ExecutarSql("DELETE FROM [TBFuncionario]");
 
             repositorioGrupo = new();
             repositorioVeiculo = new();
