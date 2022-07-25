@@ -11,10 +11,10 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
 {
     public class ServicoFuncionario
     {
-        private readonly RepositorioFuncionario _repositorioFuncionario;
+        private readonly IRepositorioFuncionario _repositorioFuncionario;
         private string _msgErro = "";
 
-        public ServicoFuncionario(RepositorioFuncionario repositorioFuncionario)
+        public ServicoFuncionario(IRepositorioFuncionario repositorioFuncionario)
         {
             _repositorioFuncionario = repositorioFuncionario;
         }
@@ -152,7 +152,18 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
 
         private bool NomeDuplicado(Funcionario funcionario)
         {
-            string query = _repositorioFuncionario.QuerySelecionarPorUsuario;
+            string query = @"SELECT 
+                    FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
+                    FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
+                    FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                    FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
+                    FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
+                    FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
+                    FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
+                FROM
+                    [TBFUNCIONARIO] AS FUNCIONARIO
+                WHERE 
+	                FUNCIONARIO.[LOGIN] = @LOGIN";
 
             Funcionario? funcionarioEncontrado = _repositorioFuncionario.SelecionarPropriedade(query, "LOGIN", funcionario.Usuario);
 
