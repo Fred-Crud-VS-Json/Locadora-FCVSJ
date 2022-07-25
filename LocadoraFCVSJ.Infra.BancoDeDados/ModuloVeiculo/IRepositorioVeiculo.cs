@@ -1,5 +1,5 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloVeiculo;
-using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
 {

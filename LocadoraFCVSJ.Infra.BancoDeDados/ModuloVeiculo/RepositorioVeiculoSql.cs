@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
 {
-    public class RepositorioVeiculo : RepositorioBase<Veiculo, MapeadorVeiculo>, IRepositorioVeiculo
+    public class RepositorioVeiculoSql : RepositorioBase<Veiculo, MapeadorVeiculo>, IRepositorioVeiculo
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBVEICULO]
@@ -102,29 +102,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
                 [TBGRUPO] AS GRUPO
             ON
                 VEICULO.[GRUPO_ID] = GRUPO.[ID]";
-
-        public string QuerySelecionarPorModelo =>
-            @"SELECT
-                VEICULO.[ID] AS VEICULO_ID,
-                VEICULO.[MODELO] AS VEICULO_MODELO,
-                VEICULO.[MARCA] AS VEICULO_MARCA,
-                VEICULO.[PLACA] AS VEICULO_PLACA,
-                VEICULO.[COR] AS VEICULO_COR,
-                VEICULO.[TIPOCOMBUSTIVEL] AS VEICULO_TIPOCOMBUSTIVEL,
-                VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
-                VEICULO.[ANO] AS VEICULO_ANO,
-                VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
-                VEICULO.[FOTO] AS VEICULO_FOTO,
-
-                GRUPO.[ID] AS GRUPO_ID,
-                GRUPO.[NOME] AS GRUPO_NOME
-            FROM
-                [TBVEICULO] AS VEICULO INNER JOIN
-                [TBGRUPO] AS GRUPO
-            ON
-                VEICULO.[GRUPO_ID] = GRUPO.[ID]
-            WHERE
-                VEICULO.[MODELO] = @MODELO";
 
         public Veiculo? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
