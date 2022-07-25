@@ -151,18 +151,18 @@ namespace LocadoraFCVSJ.ModuloPlanoDeCobranca
 
             tela.CbxGrupo.Enabled = false;
 
-            tela.planoDiarioControl.TxbValorDiario.ReadOnly = true;
-            tela.planoDiarioControl.TxbValorKm.ReadOnly = true;
+            tela.planoDiarioControl.TxbValorDiario.Enabled = false;
+            tela.planoDiarioControl.TxbValorKm.Enabled = false;
             tela.planoDiarioControl.BtnConcluir.Visible = false;
             tela.planoDiarioControl.BtnLimpar.Visible = false;
 
-            tela.planoLivreControl.TxbValorDiario.ReadOnly = true;
+            tela.planoLivreControl.TxbValorDiario.Enabled = false;
             tela.planoLivreControl.BtnConcluir.Visible = false;
             tela.planoLivreControl.BtnLimpar.Visible = false;
 
-            tela.planoControladoControl.TxbValorDiario.ReadOnly = true;
-            tela.planoControladoControl.TxbValorKm.ReadOnly = true;
-            tela.planoControladoControl.TxbLimiteKm.ReadOnly = true;
+            tela.planoControladoControl.TxbValorDiario.Enabled = false;
+            tela.planoControladoControl.TxbValorKm.Enabled = false;
+            tela.planoControladoControl.TxbLimiteKm.Enabled = false;
             tela.planoControladoControl.BtnConcluir.Visible = false;
             tela.planoControladoControl.BtnLimpar.Visible = false;
 

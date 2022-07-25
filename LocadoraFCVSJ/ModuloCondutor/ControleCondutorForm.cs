@@ -3,7 +3,6 @@ using LocadoraFCVSJ.Compartilhado;
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
-using System.Text;
 
 namespace LocadoraFCVSJ.ModuloCondutor
 {
@@ -178,21 +177,21 @@ namespace LocadoraFCVSJ.ModuloCondutor
 
             tela.CbxCliente.Enabled = false;
             tela.ChbxClienteCondutor.Enabled = false;
-            tela.TxbNome.ReadOnly = true;
-            tela.MtxbCpf.ReadOnly = true;
-            tela.MtxbCnh.ReadOnly = true;
-            tela.MtxbCep.ReadOnly = true;
+            tela.TxbNome.Enabled = false;
+            tela.MtxbCpf.Enabled = false;
+            tela.MtxbCnh.Enabled = false;
+            tela.MtxbCep.Enabled = false;
             tela.CbxUf.Enabled = false;
-            tela.TxbCidade.ReadOnly = true;
-            tela.TxbRua.ReadOnly = true;
-            tela.TxbNumero.ReadOnly = true;
-            tela.TxbBairro.ReadOnly = true;
-            tela.TxbComplemento.ReadOnly = true;
-            tela.MtxbTelefone.ReadOnly = true;
-            tela.TxbEmail.ReadOnly = true;
-            tela.MtxbValidadeCnh.ReadOnly = true;
+            tela.TxbCidade.Enabled = false;
+            tela.TxbRua.Enabled = false;
+            tela.TxbNumero.Enabled = false;
+            tela.TxbBairro.Enabled = false;
+            tela.TxbComplemento.Enabled = false;
+            tela.MtxbTelefone.Enabled = false;
+            tela.TxbEmail.Enabled = false;
+            tela.MtxbValidadeCnh.Enabled = false;
             tela.ChbxPessoaJuridica.Enabled = false;
-            tela.MtxbCnpj.ReadOnly = true;
+            tela.MtxbCnpj.Enabled = false;
 
             tela.BtnConcluir.Visible = false;
             tela.BtnVoltar.Location = tela.BtnConcluir.Location;

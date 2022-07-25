@@ -150,14 +150,14 @@ namespace LocadoraFCVSJ.ModuloVeiculo
             tela.PxbIcon.Image = Properties.Resources.search_more_50px;
 
             tela.CbxGrupo.Enabled = false;
-            tela.TxbModelo.ReadOnly = true;
-            tela.TxbMarca.ReadOnly = true;
-            tela.TxbPlaca.ReadOnly = true;
-            tela.TxbCor.ReadOnly = true;
+            tela.TxbModelo.Enabled = false;
+            tela.TxbMarca.Enabled = false;
+            tela.TxbPlaca.Enabled = false;
+            tela.TxbCor.Enabled = false;
             tela.CbxTipoCombustivel.Enabled = false;
-            tela.TxbCapacidadeTanque.ReadOnly = true;
-            tela.TxbAno.ReadOnly = true;
-            tela.TxbKmPercorrido.ReadOnly = true;
+            tela.TxbCapacidadeTanque.Enabled = false;
+            tela.TxbAno.Enabled = false;
+            tela.TxbKmPercorrido.Enabled = false;
 
             tela.BtnSelecionarImagem.Visible = false;
             tela.customPanel4.Visible = false;
