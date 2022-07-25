@@ -12,10 +12,10 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
 {
     public class ServicoPlanoDeCobranca
     {
-        private readonly RepositorioPlanoDeCobranca _repositorioPlanoDeCobranca;
+        private readonly IRepositorioPlanoDeCobranca _repositorioPlanoDeCobranca;
         private string _msgErro = "";
 
-        public ServicoPlanoDeCobranca(RepositorioPlanoDeCobranca repositorioPlanoDeCobranca)
+        public ServicoPlanoDeCobranca(IRepositorioPlanoDeCobranca repositorioPlanoDeCobranca)
         {
             _repositorioPlanoDeCobranca = repositorioPlanoDeCobranca;
         }
