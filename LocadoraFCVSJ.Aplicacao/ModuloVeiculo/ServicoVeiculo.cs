@@ -11,10 +11,10 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
 {
     public class ServicoVeiculo
     {
-        private readonly RepositorioVeiculo _repositorioVeiculo;
+        private readonly IRepositorioVeiculo _repositorioVeiculo;
         private string _msgErro = "";
 
-        public ServicoVeiculo(RepositorioVeiculo repositorioVeiculo)
+        public ServicoVeiculo(IRepositorioVeiculo repositorioVeiculo)
         {
             _repositorioVeiculo = repositorioVeiculo;
         }
@@ -141,7 +141,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             foreach (ValidationFailure erro in resultadoValidacao.Errors)
                 erros.Add(new(erro.ErrorMessage));
 
-            if (NomeDuplicado(veiculo))
+            if (ModeloDuplicado(veiculo))
                 erros.Add(new("Nome informado já existe"));
 
             if (erros.Any())
@@ -150,9 +150,29 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             return Result.Ok();
         }
 
-        private bool NomeDuplicado(Veiculo veiculo)
+        private bool ModeloDuplicado(Veiculo veiculo)
         {
-            string query = _repositorioVeiculo.QuerySelecionarPorModelo;
+            string query = @"SELECT
+                VEICULO.[ID] AS VEICULO_ID,
+                VEICULO.[MODELO] AS VEICULO_MODELO,
+                VEICULO.[MARCA] AS VEICULO_MARCA,
+                VEICULO.[PLACA] AS VEICULO_PLACA,
+                VEICULO.[COR] AS VEICULO_COR,
+                VEICULO.[TIPOCOMBUSTIVEL] AS VEICULO_TIPOCOMBUSTIVEL,
+                VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
+                VEICULO.[ANO] AS VEICULO_ANO,
+                VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
+                VEICULO.[FOTO] AS VEICULO_FOTO,
+
+                GRUPO.[ID] AS GRUPO_ID,
+                GRUPO.[NOME] AS GRUPO_NOME
+            FROM
+                [TBVEICULO] AS VEICULO INNER JOIN
+                [TBGRUPO] AS GRUPO
+            ON
+                VEICULO.[GRUPO_ID] = GRUPO.[ID]
+            WHERE
+                VEICULO.[MODELO] = @MODELO";
 
             Veiculo? veiculoEncontrado = _repositorioVeiculo.SelecionarPropriedade(query, "MODELO", veiculo.Modelo);
 
