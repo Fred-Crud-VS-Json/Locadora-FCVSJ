@@ -1,5 +1,5 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloTaxa;
-using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloTaxa;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 {

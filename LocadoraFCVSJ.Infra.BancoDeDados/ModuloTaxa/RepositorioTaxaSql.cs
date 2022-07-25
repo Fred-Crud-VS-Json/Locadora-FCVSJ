@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 {
-    public class RepositorioTaxa : RepositorioBase<Taxa, MapeadorTaxa>, IRepositorioTaxa
+    public class RepositorioTaxaSql : RepositorioBase<Taxa, MapeadorTaxa>, IRepositorioTaxa
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBTaxa]
@@ -55,17 +55,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
                 FROM
 	                [TBTaxa] AS TAXA";
-
-        public string QuerySelecionarPorNome =>
-            @"SELECT 
-	                TAXA.[ID] AS TAXA_ID,
-	                TAXA.[NOME] AS TAXA_NOME,
-	                TAXA.[VALOR] AS TAXA_VALOR,
-	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
-                FROM
-	                [TBTaxa] AS TAXA
-                WHERE 
-	                TAXA.[NOME] = @NOME";
 
         public Taxa? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
