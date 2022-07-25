@@ -1,3 +1,4 @@
+using LocadoraFCVSJ.Compartilhado.ServiceLocator;
 using LocadoraFCVSJ.Infra.Logging;
 
 namespace LocadoraFCVSJ
@@ -9,7 +10,7 @@ namespace LocadoraFCVSJ
         {
             ConfiguracaoLogsLocadora.ConfigurarLogger();
             ApplicationConfiguration.Initialize();
-            Application.Run(new TelaPrincipal());
+            Application.Run(new TelaPrincipal(new ServiceLocatorComAutoFac()));
         }
     }
 }

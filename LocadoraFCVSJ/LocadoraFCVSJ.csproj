@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.4.0" />
     <PackageReference Include="FluentResults" Version="3.8.0" />
     <PackageReference Include="Krypton.Toolkit" Version="65.22.6.152" />
   </ItemGroup>

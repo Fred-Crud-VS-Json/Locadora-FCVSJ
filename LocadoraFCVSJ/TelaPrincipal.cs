@@ -7,6 +7,7 @@ using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
 using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Compartilhado.ServiceLocator;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
@@ -29,75 +30,57 @@ namespace LocadoraFCVSJ
         private static TelaPrincipal _instancia;
 
         private ControladorBase? controlador;
-        private readonly Dictionary<string, ControladorBase> controladores;
+        private readonly IServiceLocator _serviceLocator;
 
-        public TelaPrincipal()
+        public TelaPrincipal(IServiceLocator serviceLocator)
         {
             InitializeComponent();
 
+            _serviceLocator = serviceLocator;
+
             _instancia = this;
-
-            ServicoGrupo servicoGrupo = new(new RepositorioGrupo());
-            ServicoTaxa servicoTaxa = new(new RepositorioTaxa());
-            ServicoCliente servicoCliente = new(new RepositorioCliente());
-            ServicoFuncionario servicoFuncionario = new(new RepositorioFuncionario());
-            ServicoPlanoDeCobranca servicoPlanoDeCobranca = new(new RepositorioPlanoDeCobranca());
-            ServicoVeiculo servicoVeiculo = new(new RepositorioVeiculo());
-            ServicoCondutor servicoCondutor = new(new RepositorioCondutor(), servicoCliente);
-
-
-            controladores = new()
-            {
-                { "Grupos", new ControladorGrupo(servicoGrupo) },
-                { "Funcionarios", new ControladorFuncionario(servicoFuncionario) },
-                { "Taxas", new ControladorTaxa(servicoTaxa) },
-                { "Clientes", new ControladorCliente(servicoCliente) },
-                { "Planos", new ControladorPlanoDeCobranca(servicoGrupo, servicoPlanoDeCobranca) },
-                { "Condutores", new ControladorCondutor(servicoCondutor, servicoCliente) },
-                { "Veiculos", new ControladorVeiculo(servicoVeiculo, servicoGrupo) }
-            };
         }
 
         public static TelaPrincipal Instancia { get { return _instancia; } }
 
         private void BtnAcessarGrupos_Click(object sender, EventArgs e)
         {
-            AbrirTela(BtnAcessarGrupos);
+            AbrirTela(_serviceLocator.Get<ControladorGrupo>());
         }
 
         private void BtnAcessarTaxas_Click(object sender, EventArgs e)
         {
-            AbrirTela(BtnAcessarTaxas);
+            AbrirTela(_serviceLocator.Get<ControladorTaxa>());
         }
 
         private void BtnAcessarFuncionarios_Click(object sender, EventArgs e)
         {
-            AbrirTela(BtnAcessarFuncionarios);
+            AbrirTela(_serviceLocator.Get<ControladorFuncionario>());
         }
 
         private void BtnAcessarClientes_Click(object sender, EventArgs e)
         {
-            AbrirTela(BtnAcessarClientes);
+            AbrirTela(_serviceLocator.Get<ControladorCliente>());
         }
 
         private void BtnAcessarPlanos_Click(object sender, EventArgs e)
         {
-            AbrirTela(BtnAcessarPlanos);
+            AbrirTela(_serviceLocator.Get<ControladorPlanoDeCobranca>());
         }
 
         private void BtnAcessarVeiculos_Click(object sender, EventArgs e)
         {
-            AbrirTela(BtnAcessarVeiculos);
+            AbrirTela(_serviceLocator.Get<ControladorVeiculo>());
         }
 
         private void BtnAcessarCondutores_Click(object sender, EventArgs e)
         {
-            AbrirTela(BtnAcessarCondutores);
+            AbrirTela(_serviceLocator.Get<ControladorCondutor>());
         }
 
-        private void AbrirTela(KryptonButton botao)
+        private void AbrirTela(ControladorBase controladorBase)
         {
-            controlador = controladores[botao.AccessibleName];
+            controlador = controladorBase;
 
             WindowState = FormWindowState.Minimized;
 
