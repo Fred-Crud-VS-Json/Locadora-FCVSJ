@@ -13,11 +13,11 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
 {
     public class ServicoCondutor
     {
-        private readonly RepositorioCondutor _repositorioCondutor;
+        private readonly IRepositorioCondutor _repositorioCondutor;
         private readonly ServicoCliente _servicoCliente;
         private string _msgErro = "";
 
-        public ServicoCondutor(RepositorioCondutor repositorioCondutor, ServicoCliente servicoCliente)
+        public ServicoCondutor(IRepositorioCondutor repositorioCondutor, ServicoCliente servicoCliente)
         {
             _repositorioCondutor = repositorioCondutor;
             _servicoCliente = servicoCliente;
@@ -189,7 +189,44 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
 
         private bool CpfDuplicado(Condutor condutor)
         {
-            string query = _repositorioCondutor.QuerySelecionarPorCpf;
+            string query = @"SELECT 
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[CPF] = @CPF";
 
             Condutor? condutorEncontrado = _repositorioCondutor.SelecionarPropriedade(query, "CPF", condutor.CPF);
 
@@ -202,7 +239,44 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
         {
             if (condutor.CNPJ != null)
             {
-                string query = _repositorioCondutor.QuerySelecionarPorCnpj;
+                string query = @"SELECT 
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[CNPJ] = @CNPJ";
 
                 Condutor? condutorEncontrado = _repositorioCondutor.SelecionarPropriedade(query, "CNPJ", condutor.CNPJ);
 
@@ -215,7 +289,44 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
 
         private bool CNHDuplicado(Condutor condutor)
         {
-            string query = _repositorioCondutor.QuerySelecionarPorCnh;
+            string query = @"SELECT 
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[CNH] = @CNH";
 
             Condutor? condutorEncontrado = _repositorioCondutor.SelecionarPropriedade(query, "CNH", condutor.CNH);
 
@@ -226,7 +337,44 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
 
         private bool EmailDuplicado(Condutor condutor)
         {
-            string query = _repositorioCondutor.QuerySelecionarPorEmail;
+            string query = @"SELECT 
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[EMAIL] = @EMAIL";
 
             Condutor? condutorEncontrado = _repositorioCondutor.SelecionarPropriedade(query, "EMAIL", condutor.Email);
 
@@ -237,7 +385,44 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
 
         private bool TelefoneDuplicado(Condutor condutor)
         {
-            string query = _repositorioCondutor.QuerySelecionarPorTelefone;
+            string query = @"SELECT 
+	                CONDUTOR.[ID] AS CONDUTOR_ID,		            
+                    CONDUTOR.[NOME] AS CONDUTOR_NOME,       
+                    CONDUTOR.[CPF] AS CONDUTOR_CPF,
+                    CONDUTOR.[CNPJ] AS CONDUTOR_CNPJ,                   
+                    CONDUTOR.[CNH] AS CONDUTOR_CNH,      
+                    CONDUTOR.[DATAVENCIMENTO] AS CONDUTOR_DATAVENCIMENTO,
+                    CONDUTOR.[TELEFONE] AS CONDUTOR_TELEFONE,
+                    CONDUTOR.[EMAIL] AS CONDUTOR_EMAIL,
+                    CONDUTOR.[CIDADE] AS CONDUTOR_CIDADE,
+                    CONDUTOR.[CEP] AS CONDUTOR_CEP,
+                    CONDUTOR.[NUMERO] AS CONDUTOR_NUMERO,
+                    CONDUTOR.[BAIRRO] AS CONDUTOR_BAIRRO,
+                    CONDUTOR.[UF] AS CONDUTOR_UF,
+                    CONDUTOR.[COMPLEMENTO] AS CONDUTOR_COMPLEMENTO,
+                    CONDUTOR.[RUA] AS CONDUTOR_RUA,
+
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCONDUTOR] AS CONDUTOR INNER JOIN
+                    [TBCLIENTE] AS CLIENTE
+                ON
+                    CLIENTE.ID = CONDUTOR.CLIENTE_ID
+		        WHERE
+                    CONDUTOR.[TELEFONE] = @TELEFONE";
 
             Condutor? condutorEncontrado = _repositorioCondutor.SelecionarPropriedade(query, "TELEFONE", condutor.Telefone);
 
