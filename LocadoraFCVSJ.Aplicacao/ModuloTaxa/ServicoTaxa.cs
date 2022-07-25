@@ -11,10 +11,10 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
 {
     public class ServicoTaxa
     {
-        private readonly RepositorioTaxa _repositorioTaxa;
+        private readonly IRepositorioTaxa _repositorioTaxa;
         private string _msgErro = "";
 
-        public ServicoTaxa(RepositorioTaxa repositorioTaxa)
+        public ServicoTaxa(IRepositorioTaxa repositorioTaxa)
         {
             _repositorioTaxa = repositorioTaxa;
         }
@@ -152,7 +152,15 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
 
         private bool NomeDuplicado(Taxa taxa)
         {
-            string query = _repositorioTaxa.QuerySelecionarPorNome;
+            string query = @"SELECT 
+	                TAXA.[ID] AS TAXA_ID,
+	                TAXA.[NOME] AS TAXA_NOME,
+	                TAXA.[VALOR] AS TAXA_VALOR,
+	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
+                FROM
+	                [TBTaxa] AS TAXA
+                WHERE 
+	                TAXA.[NOME] = @NOME";
 
             Taxa? taxaEncontrado = _repositorioTaxa.SelecionarPropriedade(query, "NOME", taxa.Nome);
 
