@@ -2,7 +2,7 @@
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 {
-    public static class BdUtil
+    public static class SqlUtil
     {
         private static readonly string StringConexao =
             @"Data Source=(LocalDB)\MSSqlLocalDB;
