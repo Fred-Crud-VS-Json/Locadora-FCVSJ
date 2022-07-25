@@ -12,10 +12,10 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 {
     public class ServicoGrupo
     {
-        private readonly RepositorioGrupo _repositorioGrupo;
+        private readonly IRepositorioGrupo _repositorioGrupo;
         private string _msgErro = "";
 
-        public ServicoGrupo(RepositorioGrupo repositorioGrupo)
+        public ServicoGrupo(IRepositorioGrupo repositorioGrupo)
         {
             _repositorioGrupo = repositorioGrupo;
         }
@@ -153,7 +153,13 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 
         private bool NomeDuplicado(Grupo grupo)
         {
-            string query = _repositorioGrupo.QuerySelecionarPorNome;
+            string query = @"SELECT 
+	                GRUPO.[ID] AS GRUPO_ID,
+	                GRUPO.[NOME] AS GRUPO_NOME
+                FROM
+	                [TBGrupo] AS GRUPO
+                WHERE 
+	                GRUPO.[NOME] = @NOME";
 
             Grupo? grupoEncontrado = _repositorioGrupo.SelecionarPropriedade(query, "NOME", grupo.Nome);
 
