@@ -150,20 +150,20 @@ namespace LocadoraFCVSJ.ModuloCliente
             tela.LblTitulo.Text = "Visualizando Registro";
             tela.PxbIcon.Image = Properties.Resources.search_more_50px;
 
-            tela.TxbNome.ReadOnly = true;
-            tela.MtxbCpf.ReadOnly = true;
-            tela.MtbxCnh.ReadOnly = true;
-            tela.MtxbCep.ReadOnly = true;
+            tela.TxbNome.Enabled = false;
+            tela.MtxbCpf.Enabled = false;
+            tela.MtbxCnh.Enabled = false;
+            tela.MtxbCep.Enabled = false;
             tela.CbxUf.Enabled = false;
-            tela.TxbCidade.ReadOnly = true;
-            tela.TxbRua.ReadOnly = true;
-            tela.TxbNumero.ReadOnly = true;
-            tela.TxbBairro.ReadOnly = true;
-            tela.TxbComplemento.ReadOnly = true;
-            tela.MtxbTelefone.ReadOnly = true;
-            tela.TxbEmail.ReadOnly = true;
+            tela.TxbCidade.Enabled = false;
+            tela.TxbRua.Enabled = false;
+            tela.TxbNumero.Enabled = false;
+            tela.TxbBairro.Enabled = false;
+            tela.TxbComplemento.Enabled = false;
+            tela.MtxbTelefone.Enabled = false;
+            tela.TxbEmail.Enabled = false;
             tela.ChbxPessoaJuridica.Enabled = false;
-            tela.MtxbCnpj.ReadOnly = true;
+            tela.MtxbCnpj.Enabled = false;
 
             tela.BtnConcluir.Visible = false;
             tela.BtnVoltar.Location = tela.BtnConcluir.Location;

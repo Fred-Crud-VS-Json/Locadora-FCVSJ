@@ -224,7 +224,7 @@ namespace LocadoraFCVSJ.ModuloCondutor
             MtxbTelefone.Enabled = false;
             TxbEmail.Enabled = false;
             MtxbCnh.Enabled = false;
-            MtxbValidadeCnh.Enabled = true;
+            MtxbValidadeCnh.Enabled = false;
             ChbxPessoaJuridica.Enabled = false;
             MtxbCnpj.Enabled = false;
         }
@@ -261,9 +261,9 @@ namespace LocadoraFCVSJ.ModuloCondutor
             MtxbTelefone.Clear();
             TxbEmail.Clear();
             MtxbCnh.Clear();
+            MtxbValidadeCnh.Clear();
             ChbxPessoaJuridica.Checked = false;
             MtxbCnpj.Clear();
         }
-
     }
 }
