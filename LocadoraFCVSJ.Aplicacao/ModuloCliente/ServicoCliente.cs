@@ -11,10 +11,10 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 {
     public class ServicoCliente
     {
-        private readonly RepositorioCliente _repositorioCliente;
+        private readonly IRepositorioCliente _repositorioCliente;
         private string _msgErro = "";
 
-        public ServicoCliente(RepositorioCliente repositorioCliente)
+        public ServicoCliente(IRepositorioCliente repositorioCliente)
         {
             _repositorioCliente = repositorioCliente;
         }
@@ -180,7 +180,25 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         private bool CpfDuplicado(Cliente cliente)
         {
-            string query = _repositorioCliente.QuerySelecionarPorCpf;
+            string query = @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCLIENTE] AS CLIENTE
+		        WHERE 
+                    CLIENTE.[CPF] = @CPF";
 
             Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CPF", cliente.CPF);
 
@@ -193,7 +211,25 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
         {
             if (cliente.CNPJ != null)
             {
-                string query = _repositorioCliente.QuerySelecionarPorCnpj;
+                string query = @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCLIENTE] AS CLIENTE
+		        WHERE 
+                    CLIENTE.[CNPJ] = @CNPJ";
 
                 Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CNPJ", cliente.CNPJ);
 
@@ -206,7 +242,25 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         private bool CNHDuplicado(Cliente cliente)
         {
-            string query = _repositorioCliente.QuerySelecionarPorCnh;
+            string query = @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCLIENTE] AS CLIENTE
+		        WHERE 
+                    CLIENTE.[CNH] = @CNH";
 
             Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CNH", cliente.CNH);
 
@@ -217,7 +271,25 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         private bool EmailDuplicado(Cliente cliente)
         {
-            string query = _repositorioCliente.QuerySelecionarPorEmail;
+            string query = @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCLIENTE] AS CLIENTE
+		        WHERE 
+                    CLIENTE.[EMAIL] = @EMAIL";
 
             Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "EMAIL", cliente.Email);
 
@@ -228,7 +300,25 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         private bool TelefoneDuplicado(Cliente cliente)
         {
-            string query = _repositorioCliente.QuerySelecionarPorTelefone;
+            string query = @"SELECT 
+                    CLIENTE.[ID] AS CLIENTE_ID,		            
+                    CLIENTE.[NOME] AS CLIENTE_NOME,       
+                    CLIENTE.[CPF] AS CLIENTE_CPF,
+                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
+                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
+                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
+                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
+                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
+                    CLIENTE.[CEP] AS CLIENTE_CEP,
+                    CLIENTE.[RUA] AS CLIENTE_RUA,
+                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
+                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
+                    CLIENTE.[UF] AS CLIENTE_UF,
+                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
+	            FROM 
+		            [TBCLIENTE] AS CLIENTE
+		        WHERE 
+                    CLIENTE.[TELEFONE] = @TELEFONE";
 
             Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "TELEFONE", cliente.Telefone);
 
@@ -236,7 +326,6 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
                 && clienteEncontrado.Telefone.Equals(cliente.Telefone, StringComparison.OrdinalIgnoreCase)
                 && clienteEncontrado.Id != cliente.Id;
         }
-
 
     }
 }
