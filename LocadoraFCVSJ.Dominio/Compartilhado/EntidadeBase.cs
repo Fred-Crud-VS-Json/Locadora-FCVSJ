@@ -1,4 +1,6 @@
-﻿namespace LocadoraFCVSJ.Dominio.Compartilhado
+﻿using Taikandi;
+
+namespace LocadoraFCVSJ.Dominio.Compartilhado
 {
     public class EntidadeBase<T>
     {
@@ -6,7 +8,7 @@
 
         public EntidadeBase()
         {
-            Id = Guid.NewGuid();
+            Id = SequentialGuid.NewGuid();
         }
     }
 }
