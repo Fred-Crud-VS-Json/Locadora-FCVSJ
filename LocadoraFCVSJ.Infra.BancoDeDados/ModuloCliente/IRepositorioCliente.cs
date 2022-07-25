@@ -1,5 +1,5 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloCliente;
-using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 {
