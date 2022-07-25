@@ -224,7 +224,6 @@ namespace LocadoraFCVSJ.ModuloCondutor
             MtxbTelefone.Enabled = false;
             TxbEmail.Enabled = false;
             MtxbCnh.Enabled = false;
-            MtxbValidadeCnh.Enabled = false;
             ChbxPessoaJuridica.Enabled = false;
             MtxbCnpj.Enabled = false;
         }
