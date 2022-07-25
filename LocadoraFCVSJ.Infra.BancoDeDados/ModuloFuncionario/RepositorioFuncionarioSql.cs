@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
 {
-    public class RepositorioFuncionario : RepositorioBase<Funcionario, MapeadorFuncionario>, IRepositorioFuncionario
+    public class RepositorioFuncionarioSql : RepositorioBase<Funcionario, MapeadorFuncionario>, IRepositorioFuncionario
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBFUNCIONARIO]
@@ -70,20 +70,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
             FROM
                 [TBFUNCIONARIO] AS FUNCIONARIO";
-
-        public string QuerySelecionarPorUsuario =>
-            @"SELECT 
-                    FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
-                    FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
-                    FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
-                    FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
-                    FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
-                    FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
-                    FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
-                FROM
-                    [TBFUNCIONARIO] AS FUNCIONARIO
-                WHERE 
-	                FUNCIONARIO.[LOGIN] = @LOGIN";
 
         public Funcionario? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
