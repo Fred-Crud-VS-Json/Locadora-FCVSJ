@@ -10,17 +10,17 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModuloGrupo
     public class RepositorioGrupoTestes
     {
         private Grupo? grupo;
-        private readonly RepositorioGrupo repositorioGrupo;
+        private readonly RepositorioGrupoSql repositorioGrupo;
 
         public RepositorioGrupoTestes()
         {
-            BdUtil.ExecutarSql("DELETE FROM [TBCondutor]");
-            BdUtil.ExecutarSql("DELETE FROM [TBCliente]");
-            BdUtil.ExecutarSql("DELETE FROM [TBVeiculo]");
-            BdUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]");
-            BdUtil.ExecutarSql("DELETE FROM [TBGrupo]");
-            BdUtil.ExecutarSql("DELETE FROM [TBTaxa]");
-            BdUtil.ExecutarSql("DELETE FROM [TBFuncionario]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBCondutor]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBCliente]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBVeiculo]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBPlanoDeCobranca]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBGrupo]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBTaxa]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBFuncionario]");
 
             repositorioGrupo = new();
         }
