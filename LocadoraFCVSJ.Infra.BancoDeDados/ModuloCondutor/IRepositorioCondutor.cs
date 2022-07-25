@@ -1,5 +1,5 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloCondutor;
-using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloCondutor;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
 {
