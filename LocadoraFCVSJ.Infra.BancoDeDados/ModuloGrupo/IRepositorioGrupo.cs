@@ -1,5 +1,5 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloGrupo;
-using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.ModuloGrupo;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 {

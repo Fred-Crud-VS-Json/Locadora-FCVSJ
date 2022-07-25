@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 {
-    public class RepositorioGrupo : RepositorioBase<Grupo, MapeadorGrupo>, IRepositorioGrupo
+    public class RepositorioGrupoSql : RepositorioBase<Grupo, MapeadorGrupo>, IRepositorioGrupo
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBGrupo]
@@ -45,15 +45,6 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 	                GRUPO.[NOME] AS GRUPO_NOME
                 FROM
 	                [TBGrupo] AS GRUPO";
-
-        public string QuerySelecionarPorNome =>
-            @"SELECT 
-	                GRUPO.[ID] AS GRUPO_ID,
-	                GRUPO.[NOME] AS GRUPO_NOME
-                FROM
-	                [TBGrupo] AS GRUPO
-                WHERE 
-	                GRUPO.[NOME] = @NOME";
 
         public Grupo? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
         {
