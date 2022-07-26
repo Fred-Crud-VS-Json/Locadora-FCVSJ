@@ -23,6 +23,7 @@ using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.Orm.Compartilhado;
 using LocadoraFCVSJ.Infra.Orm.ModuloGrupo;
+using LocadoraFCVSJ.Infra.Orm.ModuloTaxa;
 using LocadoraFCVSJ.ModuloCliente;
 using LocadoraFCVSJ.ModuloCondutor;
 using LocadoraFCVSJ.ModuloFuncionario;
@@ -44,7 +45,7 @@ namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
             builder.RegisterType<LocadoraOrmContext>().As<IContextoPersistencia>().WithParameter("connectionString", "Data Source=(LocalDB)\\MSSqlLocalDB;Initial Catalog=DBLocadoraFCVSJ;Integrated Security=True;Pooling=False").InstancePerLifetimeScope();
 
             builder.RegisterType<RepositorioGrupoOrm>().As<IRepositorioGrupo>();
-            builder.RegisterType<RepositorioTaxaSql>().As<IRepositorioTaxa>();
+            builder.RegisterType<RepositorioTaxaOrm>().As<IRepositorioTaxa>();
             builder.RegisterType<RepositorioFuncionarioSql>().As<IRepositorioFuncionario>();
             builder.RegisterType<RepositorioClienteSql>().As<IRepositorioCliente>();
             builder.RegisterType<RepositorioPlanoDeCobrancaSql>().As<IRepositorioPlanoDeCobranca>();

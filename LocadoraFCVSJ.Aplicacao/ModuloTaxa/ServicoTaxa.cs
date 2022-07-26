@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using Serilog;
@@ -12,11 +13,13 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
     public class ServicoTaxa
     {
         private readonly IRepositorioTaxa _repositorioTaxa;
+        private readonly IContextoPersistencia _contextoPersistencia;
         private string _msgErro = "";
 
-        public ServicoTaxa(IRepositorioTaxa repositorioTaxa)
+        public ServicoTaxa(IRepositorioTaxa repositorioTaxa, IContextoPersistencia contextoPersistencia)
         {
             _repositorioTaxa = repositorioTaxa;
+            _contextoPersistencia = contextoPersistencia;
         }
 
         public Result<Taxa> Inserir(Taxa taxa)
@@ -36,6 +39,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
             try
             {
                 _repositorioTaxa.Inserir(taxa);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Taxa {taxa.Id} inserida com sucesso!");
 
@@ -68,6 +72,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
             try
             {
                 _repositorioTaxa.Editar(taxa);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Taxa {taxa.Id} editada com sucesso!");
 
@@ -90,6 +95,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
             try
             {
                 _repositorioTaxa.Excluir(taxa);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Taxa {taxa.Id} excluída com sucesso!");
 
