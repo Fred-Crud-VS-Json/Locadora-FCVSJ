@@ -12,12 +12,17 @@
     <PackageReference Include="Autofac" Version="6.4.0" />
     <PackageReference Include="FluentResults" Version="3.8.0" />
     <PackageReference Include="Krypton.Toolkit" Version="65.22.6.152" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LocadoraFCVSJ.Aplicacao\LocadoraFCVSJ.Aplicacao.csproj" />
     <ProjectReference Include="..\LocadoraFCVSJ.Infra.BancoDeDados\LocadoraFCVSJ.Infra.BancoDeDados.csproj" />
     <ProjectReference Include="..\LocadoraFCVSJ.Infra.Logging\LocadoraFCVSJ.Infra.Logging.csproj" />
+    <ProjectReference Include="..\LocadoraFCVSJ.Infra.Orm\LocadoraFCVSJ.Infra.Orm.csproj" />
   </ItemGroup>
 
   <ItemGroup>

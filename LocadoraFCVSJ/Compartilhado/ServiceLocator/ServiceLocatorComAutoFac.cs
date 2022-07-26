@@ -6,6 +6,14 @@ using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
+using LocadoraFCVSJ.Dominio.ModuloCliente;
+using LocadoraFCVSJ.Dominio.ModuloCondutor;
+using LocadoraFCVSJ.Dominio.ModuloFuncionario;
+using LocadoraFCVSJ.Dominio.ModuloGrupo;
+using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
+using LocadoraFCVSJ.Dominio.ModuloTaxa;
+using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
@@ -13,6 +21,8 @@ using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
+using LocadoraFCVSJ.Infra.Orm.Compartilhado;
+using LocadoraFCVSJ.Infra.Orm.ModuloGrupo;
 using LocadoraFCVSJ.ModuloCliente;
 using LocadoraFCVSJ.ModuloCondutor;
 using LocadoraFCVSJ.ModuloFuncionario;
@@ -31,7 +41,9 @@ namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
         {
             ContainerBuilder builder = new();
 
-            builder.RegisterType<RepositorioGrupoSql>().As<IRepositorioGrupo>();
+            builder.RegisterType<LocadoraOrmContext>().As<IContextoPersistencia>().WithParameter("connectionString", "Data Source=(LocalDB)\\MSSqlLocalDB;Initial Catalog=DBLocadoraFCVSJ;Integrated Security=True;Pooling=False").InstancePerLifetimeScope();
+
+            builder.RegisterType<RepositorioGrupoOrm>().As<IRepositorioGrupo>();
             builder.RegisterType<RepositorioTaxaSql>().As<IRepositorioTaxa>();
             builder.RegisterType<RepositorioFuncionarioSql>().As<IRepositorioFuncionario>();
             builder.RegisterType<RepositorioClienteSql>().As<IRepositorioCliente>();

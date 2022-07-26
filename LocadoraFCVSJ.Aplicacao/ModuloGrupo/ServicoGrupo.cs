@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using Serilog;
@@ -13,11 +14,13 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
     public class ServicoGrupo
     {
         private readonly IRepositorioGrupo _repositorioGrupo;
+        private readonly IContextoPersistencia _contextoPersistencia;
         private string _msgErro = "";
 
-        public ServicoGrupo(IRepositorioGrupo repositorioGrupo)
+        public ServicoGrupo(IRepositorioGrupo repositorioGrupo, IContextoPersistencia contextoPersistencia)
         {
             _repositorioGrupo = repositorioGrupo;
+            _contextoPersistencia = contextoPersistencia;
         }
 
         public Result<Grupo> Inserir(Grupo grupo)
@@ -37,6 +40,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
             try
             {
                 _repositorioGrupo.Inserir(grupo);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Grupo {grupo.Id} inserido com sucesso!");
 
@@ -69,6 +73,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
             try
             {
                 _repositorioGrupo.Editar(grupo);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Grupo {grupo.Id} editado com sucesso!");
 
@@ -91,6 +96,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
             try
             {
                 _repositorioGrupo.Excluir(grupo);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Grupo {grupo.Id} excluído com sucesso!");
 
