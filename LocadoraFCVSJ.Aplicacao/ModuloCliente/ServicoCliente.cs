@@ -163,14 +163,14 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
             if (CNPJDuplicado(cliente))
                 erros.Add(new("CNPJ informado já existe."));
 
-            if (CNHDuplicado(cliente))
-                erros.Add(new("CNH informado já existe."));
-
             if (EmailDuplicado(cliente))
                 erros.Add(new("Email informado já existe."));
 
             if (TelefoneDuplicado(cliente))
                 erros.Add(new("Telefone informado já existe."));
+
+            if (CNHDuplicado(cliente))
+                erros.Add(new("CNH informado já existe."));
 
             if (erros.Any())
                 return Result.Fail(erros);
@@ -180,27 +180,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         private bool CpfDuplicado(Cliente cliente)
         {
-            string query = @"SELECT 
-                    CLIENTE.[ID] AS CLIENTE_ID,		            
-                    CLIENTE.[NOME] AS CLIENTE_NOME,       
-                    CLIENTE.[CPF] AS CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
-                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
-                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CLIENTE_CEP,
-                    CLIENTE.[RUA] AS CLIENTE_RUA,
-                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
-	            FROM 
-		            [TBCLIENTE] AS CLIENTE
-		        WHERE 
-                    CLIENTE.[CPF] = @CPF";
-
-            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CPF", cliente.CPF);
+            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPorCnpj(cliente.CPF);
 
             return clienteEncontrado != null
                 && clienteEncontrado.CPF.Equals(cliente.CPF, StringComparison.OrdinalIgnoreCase)
@@ -211,27 +191,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
         {
             if (cliente.CNPJ != null)
             {
-                string query = @"SELECT 
-                    CLIENTE.[ID] AS CLIENTE_ID,		            
-                    CLIENTE.[NOME] AS CLIENTE_NOME,       
-                    CLIENTE.[CPF] AS CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
-                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
-                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CLIENTE_CEP,
-                    CLIENTE.[RUA] AS CLIENTE_RUA,
-                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
-	            FROM 
-		            [TBCLIENTE] AS CLIENTE
-		        WHERE 
-                    CLIENTE.[CNPJ] = @CNPJ";
-
-                Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CNPJ", cliente.CNPJ);
+                Cliente? clienteEncontrado = _repositorioCliente.SelecionarPorCnpj(cliente.CNPJ);
 
                 return clienteEncontrado != null
                     && clienteEncontrado.CNPJ.Equals(cliente.CNPJ, StringComparison.OrdinalIgnoreCase)
@@ -240,58 +200,9 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
             return false;
         }
 
-        private bool CNHDuplicado(Cliente cliente)
-        {
-            string query = @"SELECT 
-                    CLIENTE.[ID] AS CLIENTE_ID,		            
-                    CLIENTE.[NOME] AS CLIENTE_NOME,       
-                    CLIENTE.[CPF] AS CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
-                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
-                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CLIENTE_CEP,
-                    CLIENTE.[RUA] AS CLIENTE_RUA,
-                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
-	            FROM 
-		            [TBCLIENTE] AS CLIENTE
-		        WHERE 
-                    CLIENTE.[CNH] = @CNH";
-
-            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "CNH", cliente.CNH);
-
-            return clienteEncontrado != null
-                && clienteEncontrado.CNH.Equals(cliente.CNH, StringComparison.OrdinalIgnoreCase)
-                && clienteEncontrado.Id != cliente.Id;
-        }
-
         private bool EmailDuplicado(Cliente cliente)
         {
-            string query = @"SELECT 
-                    CLIENTE.[ID] AS CLIENTE_ID,		            
-                    CLIENTE.[NOME] AS CLIENTE_NOME,       
-                    CLIENTE.[CPF] AS CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
-                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
-                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CLIENTE_CEP,
-                    CLIENTE.[RUA] AS CLIENTE_RUA,
-                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
-	            FROM 
-		            [TBCLIENTE] AS CLIENTE
-		        WHERE 
-                    CLIENTE.[EMAIL] = @EMAIL";
-
-            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "EMAIL", cliente.Email);
+            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPorCnpj(cliente.Email);
 
             return clienteEncontrado != null
                 && clienteEncontrado.Email.Equals(cliente.Email, StringComparison.OrdinalIgnoreCase)
@@ -300,32 +211,20 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
 
         private bool TelefoneDuplicado(Cliente cliente)
         {
-            string query = @"SELECT 
-                    CLIENTE.[ID] AS CLIENTE_ID,		            
-                    CLIENTE.[NOME] AS CLIENTE_NOME,       
-                    CLIENTE.[CPF] AS CLIENTE_CPF,
-                    CLIENTE.[CNPJ] AS CLIENTE_CNPJ,                  
-                    CLIENTE.[CNH] AS CLIENTE_CNH,                                                           
-                    CLIENTE.[TELEFONE] AS CLIENTE_TELEFONE,
-                    CLIENTE.[EMAIL] AS CLIENTE_EMAIL,
-                    CLIENTE.[CIDADE] AS CLIENTE_CIDADE,
-                    CLIENTE.[CEP] AS CLIENTE_CEP,
-                    CLIENTE.[RUA] AS CLIENTE_RUA,
-                    CLIENTE.[NUMERO] AS CLIENTE_NUMERO,
-                    CLIENTE.[BAIRRO] AS CLIENTE_BAIRRO,
-                    CLIENTE.[UF] AS CLIENTE_UF,
-                    CLIENTE.[COMPLEMENTO] AS CLIENTE_COMPLEMENTO
-	            FROM 
-		            [TBCLIENTE] AS CLIENTE
-		        WHERE 
-                    CLIENTE.[TELEFONE] = @TELEFONE";
-
-            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPropriedade(query, "TELEFONE", cliente.Telefone);
+            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPorCnpj(cliente.Telefone);
 
             return clienteEncontrado != null
                 && clienteEncontrado.Telefone.Equals(cliente.Telefone, StringComparison.OrdinalIgnoreCase)
                 && clienteEncontrado.Id != cliente.Id;
         }
 
+        private bool CNHDuplicado(Cliente cliente)
+        {
+            Cliente? clienteEncontrado = _repositorioCliente.SelecionarPorCnpj(cliente.CNH);
+
+            return clienteEncontrado != null
+                && clienteEncontrado.CNH.Equals(cliente.CNH, StringComparison.OrdinalIgnoreCase)
+                && clienteEncontrado.Id != cliente.Id;
+        }
     }
 }

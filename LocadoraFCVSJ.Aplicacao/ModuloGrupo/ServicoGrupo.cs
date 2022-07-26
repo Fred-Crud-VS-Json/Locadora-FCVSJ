@@ -153,15 +153,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloGrupo
 
         private bool NomeDuplicado(Grupo grupo)
         {
-            string query = @"SELECT 
-	                GRUPO.[ID] AS GRUPO_ID,
-	                GRUPO.[NOME] AS GRUPO_NOME
-                FROM
-	                [TBGrupo] AS GRUPO
-                WHERE 
-	                GRUPO.[NOME] = @NOME";
-
-            Grupo? grupoEncontrado = _repositorioGrupo.SelecionarPropriedade(query, "NOME", grupo.Nome);
+            Grupo? grupoEncontrado = _repositorioGrupo.SelecionarGrupoPorNome(grupo.Nome);
 
             return grupoEncontrado != null
                 && grupoEncontrado.Nome.Equals(grupo.Nome, StringComparison.OrdinalIgnoreCase)

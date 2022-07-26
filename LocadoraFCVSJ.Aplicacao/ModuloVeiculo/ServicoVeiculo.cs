@@ -142,7 +142,10 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
                 erros.Add(new(erro.ErrorMessage));
 
             if (ModeloDuplicado(veiculo))
-                erros.Add(new("Nome informado já existe"));
+                erros.Add(new("Modelo informado já existe"));
+
+            if (PlacaDuplicada(veiculo))
+                erros.Add(new("Placa informada já existe"));
 
             if (erros.Any())
                 return Result.Fail(erros);
@@ -152,32 +155,19 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
 
         private bool ModeloDuplicado(Veiculo veiculo)
         {
-            string query = @"SELECT
-                VEICULO.[ID] AS VEICULO_ID,
-                VEICULO.[MODELO] AS VEICULO_MODELO,
-                VEICULO.[MARCA] AS VEICULO_MARCA,
-                VEICULO.[PLACA] AS VEICULO_PLACA,
-                VEICULO.[COR] AS VEICULO_COR,
-                VEICULO.[TIPOCOMBUSTIVEL] AS VEICULO_TIPOCOMBUSTIVEL,
-                VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
-                VEICULO.[ANO] AS VEICULO_ANO,
-                VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
-                VEICULO.[FOTO] AS VEICULO_FOTO,
-
-                GRUPO.[ID] AS GRUPO_ID,
-                GRUPO.[NOME] AS GRUPO_NOME
-            FROM
-                [TBVEICULO] AS VEICULO INNER JOIN
-                [TBGRUPO] AS GRUPO
-            ON
-                VEICULO.[GRUPO_ID] = GRUPO.[ID]
-            WHERE
-                VEICULO.[MODELO] = @MODELO";
-
-            Veiculo? veiculoEncontrado = _repositorioVeiculo.SelecionarPropriedade(query, "MODELO", veiculo.Modelo);
+            Veiculo? veiculoEncontrado = _repositorioVeiculo.SelecionarPorModelo(veiculo.Modelo);
 
             return veiculoEncontrado != null
                 && veiculoEncontrado.Modelo.Equals(veiculo.Modelo, StringComparison.OrdinalIgnoreCase)
+                && veiculoEncontrado.Id != veiculo.Id;
+        }
+
+        private bool PlacaDuplicada(Veiculo veiculo)
+        {
+            Veiculo? veiculoEncontrado = _repositorioVeiculo.SelecionarPorPlaca(veiculo.Placa);
+
+            return veiculoEncontrado != null
+                && veiculoEncontrado.Placa.Equals(veiculo.Placa, StringComparison.OrdinalIgnoreCase)
                 && veiculoEncontrado.Id != veiculo.Id;
         }
     }

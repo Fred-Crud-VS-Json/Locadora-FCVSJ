@@ -152,17 +152,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloTaxa
 
         private bool NomeDuplicado(Taxa taxa)
         {
-            string query = @"SELECT 
-	                TAXA.[ID] AS TAXA_ID,
-	                TAXA.[NOME] AS TAXA_NOME,
-	                TAXA.[VALOR] AS TAXA_VALOR,
-	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
-                FROM
-	                [TBTaxa] AS TAXA
-                WHERE 
-	                TAXA.[NOME] = @NOME";
-
-            Taxa? taxaEncontrado = _repositorioTaxa.SelecionarPropriedade(query, "NOME", taxa.Nome);
+            Taxa? taxaEncontrado = _repositorioTaxa.SelecionarPorNome(taxa.Nome);
 
             return taxaEncontrado != null
                 && taxaEncontrado.Nome.Equals(taxa.Nome, StringComparison.OrdinalIgnoreCase)

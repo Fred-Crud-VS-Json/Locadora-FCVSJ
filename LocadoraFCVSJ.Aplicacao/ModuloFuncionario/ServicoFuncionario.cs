@@ -141,8 +141,8 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             foreach (ValidationFailure erro in resultadoValidacao.Errors)
                 erros.Add(new(erro.ErrorMessage));
 
-            if (NomeDuplicado(funcionario))
-                erros.Add(new("Nome informado já existe"));
+            if (LoginDuplicado(funcionario))
+                erros.Add(new("Usuário informado já existe"));
 
             if (erros.Any())
                 return Result.Fail(erros);
@@ -150,22 +150,9 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             return Result.Ok();
         }
 
-        private bool NomeDuplicado(Funcionario funcionario)
+        private bool LoginDuplicado(Funcionario funcionario)
         {
-            string query = @"SELECT 
-                    FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
-                    FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
-                    FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
-                    FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
-                    FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
-                    FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
-                    FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
-                FROM
-                    [TBFUNCIONARIO] AS FUNCIONARIO
-                WHERE 
-	                FUNCIONARIO.[LOGIN] = @LOGIN";
-
-            Funcionario? funcionarioEncontrado = _repositorioFuncionario.SelecionarPropriedade(query, "LOGIN", funcionario.Usuario);
+            Funcionario? funcionarioEncontrado = _repositorioFuncionario.SelecionarPorLogin(funcionario.Nome);
 
             return funcionarioEncontrado != null
                 && funcionarioEncontrado.Usuario.Equals(funcionario.Usuario, StringComparison.OrdinalIgnoreCase)
