@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
-using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado.Utils;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

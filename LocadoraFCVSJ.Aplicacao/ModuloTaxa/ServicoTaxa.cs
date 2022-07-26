@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using FluentValidation;
 using FluentValidation.Results;
-using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using Serilog;

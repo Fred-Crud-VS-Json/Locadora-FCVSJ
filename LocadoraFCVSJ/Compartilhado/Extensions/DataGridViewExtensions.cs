@@ -1,4 +1,4 @@
-﻿namespace LocadoraFCVSJ.Compartilhado
+﻿namespace LocadoraFCVSJ.Compartilhado.Extensions
 {
     public static class DataGridViewExtensions
     {

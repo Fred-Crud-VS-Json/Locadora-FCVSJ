@@ -1,4 +1,5 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 

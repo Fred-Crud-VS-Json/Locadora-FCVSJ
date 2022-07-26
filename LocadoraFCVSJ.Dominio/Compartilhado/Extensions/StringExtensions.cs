@@ -1,4 +1,4 @@
-﻿namespace LocadoraFCVSJ.Dominio.Compartilhado
+﻿namespace LocadoraFCVSJ.Dominio.Compartilhado.Extensions
 {
     public static class StringExtensions
     {

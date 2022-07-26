@@ -1,4 +1,4 @@
-﻿namespace LocadoraFCVSJ.Dominio.Compartilhado
+﻿namespace LocadoraFCVSJ.Dominio.Compartilhado.Enums
 {
     public enum TipoCalculoTaxa
     {

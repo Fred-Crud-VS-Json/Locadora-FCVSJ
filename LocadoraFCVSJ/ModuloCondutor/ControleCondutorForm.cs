@@ -1,6 +1,6 @@
 ﻿using Krypton.Toolkit;
-using LocadoraFCVSJ.Compartilhado;
-using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Compartilhado.Extensions;
+using LocadoraFCVSJ.Dominio.Compartilhado.Extensions;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 

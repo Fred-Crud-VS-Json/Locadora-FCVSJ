@@ -1,5 +1,5 @@
 ﻿using FluentValidation.TestHelper;
-using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado.Enums;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

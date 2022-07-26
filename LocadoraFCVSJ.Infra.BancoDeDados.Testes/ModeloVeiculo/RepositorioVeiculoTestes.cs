@@ -2,7 +2,7 @@
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
-using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado;
+using LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado.Utils;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

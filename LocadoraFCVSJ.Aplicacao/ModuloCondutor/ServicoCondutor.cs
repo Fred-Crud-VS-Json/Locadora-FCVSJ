@@ -2,7 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Aplicacao.ModuloCliente;
-using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;

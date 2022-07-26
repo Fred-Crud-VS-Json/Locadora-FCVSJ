@@ -1,5 +1,5 @@
 ﻿using Krypton.Toolkit;
-using LocadoraFCVSJ.Compartilhado;
+using LocadoraFCVSJ.Compartilhado.Extensions;
 using LocadoraFCVSJ.Dominio.Compartilhado;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
 

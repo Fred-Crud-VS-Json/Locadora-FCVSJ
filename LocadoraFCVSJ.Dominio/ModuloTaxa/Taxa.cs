@@ -1,4 +1,5 @@
 ﻿using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado.Enums;
 
 namespace LocadoraFCVSJ.Dominio.ModuloTaxa
 {

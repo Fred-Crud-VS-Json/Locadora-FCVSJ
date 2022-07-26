@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
+namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado.Utils
 {
     public static class SqlUtil
     {

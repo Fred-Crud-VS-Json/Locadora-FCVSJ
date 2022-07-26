@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 using Krypton.Toolkit;
-using LocadoraFCVSJ.Dominio.Compartilhado;
+using LocadoraFCVSJ.Dominio.Compartilhado.Enums;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using System.Text;
 

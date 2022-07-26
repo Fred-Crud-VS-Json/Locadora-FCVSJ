@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace LocadoraFCVSJ.Dominio.Compartilhado
+namespace LocadoraFCVSJ.Dominio.Compartilhado.Excecoes
 {
     public class ExcluirRegistroRelacionadoException : Exception
     {
