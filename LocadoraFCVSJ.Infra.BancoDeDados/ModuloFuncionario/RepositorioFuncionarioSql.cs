@@ -71,9 +71,23 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
             FROM
                 [TBFUNCIONARIO] AS FUNCIONARIO";
 
-        public Funcionario? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
+        private string QuerySelecionarPorLogin =>
+            @"SELECT 
+                    FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
+                    FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
+                    FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                    FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
+                    FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
+                    FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
+                    FUNCIONARIO.[NIVELACESSO] AS FUNCIONARIO_NIVELACESSO
+                FROM
+                    [TBFUNCIONARIO] AS FUNCIONARIO
+                WHERE 
+	                FUNCIONARIO.[LOGIN] = @LOGIN";
+
+        public Funcionario? SelecionarPorLogin(string login)
         {
-            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
+            return SelecionarParametro(QuerySelecionarPorLogin, new SqlParameter("LOGIN", login));
         }
     }
 }

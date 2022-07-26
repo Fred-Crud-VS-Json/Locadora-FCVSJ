@@ -103,10 +103,60 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
             ON
                 VEICULO.[GRUPO_ID] = GRUPO.[ID]";
 
-        public Veiculo? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
+        private string QuerySelecionarPorModelo =>
+        @"SELECT
+                VEICULO.[ID] AS VEICULO_ID,
+                VEICULO.[MODELO] AS VEICULO_MODELO,
+                VEICULO.[MARCA] AS VEICULO_MARCA,
+                VEICULO.[PLACA] AS VEICULO_PLACA,
+                VEICULO.[COR] AS VEICULO_COR,
+                VEICULO.[TIPOCOMBUSTIVEL] AS VEICULO_TIPOCOMBUSTIVEL,
+                VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
+                VEICULO.[ANO] AS VEICULO_ANO,
+                VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
+                VEICULO.[FOTO] AS VEICULO_FOTO,
+
+                GRUPO.[ID] AS GRUPO_ID,
+                GRUPO.[NOME] AS GRUPO_NOME
+            FROM
+                [TBVEICULO] AS VEICULO INNER JOIN
+                [TBGRUPO] AS GRUPO
+            ON
+                VEICULO.[GRUPO_ID] = GRUPO.[ID]
+            WHERE
+                VEICULO.[MODELO] = @MODELO";
+
+        private string QuerySelecionarPorPlaca =>
+        @"SELECT
+                VEICULO.[ID] AS VEICULO_ID,
+                VEICULO.[MODELO] AS VEICULO_MODELO,
+                VEICULO.[MARCA] AS VEICULO_MARCA,
+                VEICULO.[PLACA] AS VEICULO_PLACA,
+                VEICULO.[COR] AS VEICULO_COR,
+                VEICULO.[TIPOCOMBUSTIVEL] AS VEICULO_TIPOCOMBUSTIVEL,
+                VEICULO.[CAPACIDADETANQUE] AS VEICULO_CAPACIDADETANQUE,
+                VEICULO.[ANO] AS VEICULO_ANO,
+                VEICULO.[KMPERCORRIDO] AS VEICULO_KMPERCORRIDO,
+                VEICULO.[FOTO] AS VEICULO_FOTO,
+
+                GRUPO.[ID] AS GRUPO_ID,
+                GRUPO.[NOME] AS GRUPO_NOME
+            FROM
+                [TBVEICULO] AS VEICULO INNER JOIN
+                [TBGRUPO] AS GRUPO
+            ON
+                VEICULO.[GRUPO_ID] = GRUPO.[ID]
+            WHERE
+                VEICULO.[PLACA] = @PLACA";
+
+        public Veiculo? SelecionarPorModelo(string modelo)
         {
-            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
+            return SelecionarParametro(QuerySelecionarPorModelo, new SqlParameter("MODELO", modelo));
         }
-        
+
+        public Veiculo? SelecionarPorPlaca(string placa)
+        {
+            return SelecionarParametro(QuerySelecionarPorPlaca, new SqlParameter("PLACA", placa));
+        }
     }
 }

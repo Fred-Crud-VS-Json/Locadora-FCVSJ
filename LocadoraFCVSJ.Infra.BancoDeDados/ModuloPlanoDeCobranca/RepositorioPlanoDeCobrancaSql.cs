@@ -92,10 +92,5 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca
 					[TBGrupo] AS GRUPO
 
 					ON PLANO.[GRUPO_ID] = GRUPO.[ID]";
-
-        public PlanoDeCobranca? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
-        {
-			return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
-		}
 	}
 }

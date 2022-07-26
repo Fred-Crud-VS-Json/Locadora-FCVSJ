@@ -56,9 +56,20 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
                 FROM
 	                [TBTaxa] AS TAXA";
 
-        public Taxa? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
+        private string QuerySelecionarPorNome =>
+            @"SELECT 
+	                TAXA.[ID] AS TAXA_ID,
+	                TAXA.[NOME] AS TAXA_NOME,
+	                TAXA.[VALOR] AS TAXA_VALOR,
+	                TAXA.[TIPOCALCULOTAXA] AS TAXA_TIPOCALCULO
+                FROM
+	                [TBTaxa] AS TAXA
+                WHERE 
+	                TAXA.[NOME] = @NOME";
+
+        public Taxa? SelecionarPorNome(string nome)
         {
-            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
+            return SelecionarParametro(QuerySelecionarPorNome, new SqlParameter("NOME", nome));
         }
     }
 }

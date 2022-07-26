@@ -106,7 +106,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 	            FROM 
 		            [TBCLIENTE] AS CLIENTE";
 
-        public string QuerySelecionarPorCpf =>
+        private string QuerySelecionarPorCpf =>
             @"SELECT 
                     CLIENTE.[ID] AS CLIENTE_ID,		            
                     CLIENTE.[NOME] AS CLIENTE_NOME,       
@@ -127,7 +127,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 		        WHERE 
                     CLIENTE.[CPF] = @CPF";
 
-        public string QuerySelecionarPorCnpj =>
+        private string QuerySelecionarPorCnpj =>
             @"SELECT 
                     CLIENTE.[ID] AS CLIENTE_ID,		            
                     CLIENTE.[NOME] AS CLIENTE_NOME,       
@@ -148,7 +148,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 		        WHERE 
                     CLIENTE.[CNPJ] = @CNPJ";
 
-        public string QuerySelecionarPorTelefone =>
+        private string QuerySelecionarPorTelefone =>
             @"SELECT 
                     CLIENTE.[ID] AS CLIENTE_ID,		            
                     CLIENTE.[NOME] AS CLIENTE_NOME,       
@@ -169,7 +169,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 		        WHERE 
                     CLIENTE.[TELEFONE] = @TELEFONE";
 
-        public string QuerySelecionarPorEmail =>
+        private string QuerySelecionarPorEmail =>
             @"SELECT 
                     CLIENTE.[ID] AS CLIENTE_ID,		            
                     CLIENTE.[NOME] AS CLIENTE_NOME,       
@@ -190,7 +190,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 		        WHERE 
                     CLIENTE.[EMAIL] = @EMAIL";
 
-        public string QuerySelecionarPorCnh =>
+        private string QuerySelecionarPorCnh =>
             @"SELECT 
                     CLIENTE.[ID] AS CLIENTE_ID,		            
                     CLIENTE.[NOME] AS CLIENTE_NOME,       
@@ -211,9 +211,29 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 		        WHERE 
                     CLIENTE.[CNH] = @CNH";
 
-        public Cliente? SelecionarPropriedade<T>(string query, string parametro, T propriedade)
+        public Cliente? SelecionarPorCpf(string cpf)
         {
-            return SelecionarParametro(query, new SqlParameter(parametro, propriedade));
+            return SelecionarParametro(QuerySelecionarPorCpf, new SqlParameter("CPF", cpf));
+        }
+
+        public Cliente? SelecionarPorCnpj(string cnpj)
+        {
+            return SelecionarParametro(QuerySelecionarPorCnpj, new SqlParameter("CNPJ", cnpj));
+        }
+
+        public Cliente? SelecionarPorTelefone(string telefone)
+        {
+            return SelecionarParametro(QuerySelecionarPorTelefone, new SqlParameter("TELEFONE", telefone));
+        }
+
+        public Cliente? SelecionarPorEmail(string email)
+        {
+            return SelecionarParametro(QuerySelecionarPorEmail, new SqlParameter("EMAIL", email));
+        }
+
+        public Cliente? SelecionarPorCnh(string cnh)
+        {
+            return SelecionarParametro(QuerySelecionarPorCnh, new SqlParameter("CNH", cnh));
         }
     }
 }
