@@ -5,15 +5,15 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 {
-    public abstract class RepositorioBase<T, TMapeador> : IRepositorio<T>
+    public abstract class RepositorioBaseSql<T, TMapeador> : IRepositorio<T>
         where T : EntidadeBase<T>
-        where TMapeador : MapeadorBase<T>, new()
+        where TMapeador : MapeadorBaseSql<T>, new()
     {
         private readonly string StringConexao;
 
         private SqlConnection? Conexao = null;
 
-        public RepositorioBase()
+        public RepositorioBaseSql()
         {
             IConfigurationRoot? configuracao = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())

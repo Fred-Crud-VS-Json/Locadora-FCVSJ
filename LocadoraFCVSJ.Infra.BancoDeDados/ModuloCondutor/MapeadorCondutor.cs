@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
 {
-    public class MapeadorCondutor : MapeadorBase<Condutor>
+    public class MapeadorCondutor : MapeadorBaseSql<Condutor>
     {
         public override void ConfigurarParametros(Condutor condutor, SqlCommand comando)
         {

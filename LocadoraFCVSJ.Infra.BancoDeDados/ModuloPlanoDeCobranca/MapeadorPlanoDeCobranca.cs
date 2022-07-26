@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca
 {
-    public class MapeadorPlanoDeCobranca : MapeadorBase<PlanoDeCobranca>
+    public class MapeadorPlanoDeCobranca : MapeadorBaseSql<PlanoDeCobranca>
     {
         public override void ConfigurarParametros(PlanoDeCobranca planoDeCobranca, SqlCommand comando)
         {

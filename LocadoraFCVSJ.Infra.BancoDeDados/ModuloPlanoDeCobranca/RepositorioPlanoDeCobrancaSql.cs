@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca
 {
-    public class RepositorioPlanoDeCobrancaSql : RepositorioBase<PlanoDeCobranca, MapeadorPlanoDeCobranca>, IRepositorioPlanoDeCobranca
+    public class RepositorioPlanoDeCobrancaSql : RepositorioBaseSql<PlanoDeCobranca, MapeadorPlanoDeCobranca>, IRepositorioPlanoDeCobranca
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBPlanoDeCobranca]

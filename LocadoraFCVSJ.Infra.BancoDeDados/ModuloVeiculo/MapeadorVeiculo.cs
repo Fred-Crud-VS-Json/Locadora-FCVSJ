@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
 {
-    public class MapeadorVeiculo : MapeadorBase<Veiculo>
+    public class MapeadorVeiculo : MapeadorBaseSql<Veiculo>
     {
         public override void ConfigurarParametros(Veiculo Registro, SqlCommand comando)
         {

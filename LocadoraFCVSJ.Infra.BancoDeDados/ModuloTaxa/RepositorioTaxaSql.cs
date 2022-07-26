@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 {
-    public class RepositorioTaxaSql : RepositorioBase<Taxa, MapeadorTaxa>, IRepositorioTaxa
+    public class RepositorioTaxaSql : RepositorioBaseSql<Taxa, MapeadorTaxa>, IRepositorioTaxa
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBTaxa]

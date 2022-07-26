@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 {
-    public class MapeadorCliente : MapeadorBase<Cliente>
+    public class MapeadorCliente : MapeadorBaseSql<Cliente>
     {
         public override void ConfigurarParametros(Cliente cliente, SqlCommand comando)
         {

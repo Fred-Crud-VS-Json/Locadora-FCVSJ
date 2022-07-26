@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 {
-    public class MapeadorGrupo : MapeadorBase<Grupo>
+    public class MapeadorGrupo : MapeadorBaseSql<Grupo>
     {
         public override void ConfigurarParametros(Grupo grupo, SqlCommand comando)
         {

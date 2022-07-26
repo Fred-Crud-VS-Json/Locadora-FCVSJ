@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.Compartilhado
 {
-    public abstract class MapeadorBase<T> where T : EntidadeBase<T>
+    public abstract class MapeadorBaseSql<T> where T : EntidadeBase<T>
     {
         public abstract void ConfigurarParametros(T Registro, SqlCommand comando);
 

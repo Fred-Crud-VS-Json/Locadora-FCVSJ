@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor
 {
-    public class RepositorioCondutorSql : RepositorioBase<Condutor, MapeadorCondutor>, IRepositorioCondutor
+    public class RepositorioCondutorSql : RepositorioBaseSql<Condutor, MapeadorCondutor>, IRepositorioCondutor
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBCONDUTOR]

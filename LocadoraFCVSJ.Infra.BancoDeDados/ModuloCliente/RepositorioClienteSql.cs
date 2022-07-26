@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente
 {
-    public class RepositorioClienteSql : RepositorioBase<Cliente, MapeadorCliente>, IRepositorioCliente
+    public class RepositorioClienteSql : RepositorioBaseSql<Cliente, MapeadorCliente>, IRepositorioCliente
     {
 
         protected override string QueryInserir =>

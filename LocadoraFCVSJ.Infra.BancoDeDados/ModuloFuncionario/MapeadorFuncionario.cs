@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
 {
-    public class MapeadorFuncionario : MapeadorBase<Funcionario>
+    public class MapeadorFuncionario : MapeadorBaseSql<Funcionario>
     {
         public override void ConfigurarParametros(Funcionario funcionario, SqlCommand comando)
         {

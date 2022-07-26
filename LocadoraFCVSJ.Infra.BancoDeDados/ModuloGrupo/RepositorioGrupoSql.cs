@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloGrupo
 {
-    public class RepositorioGrupoSql : RepositorioBase<Grupo, MapeadorGrupo>, IRepositorioGrupo
+    public class RepositorioGrupoSql : RepositorioBaseSql<Grupo, MapeadorGrupo>, IRepositorioGrupo
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBGrupo]

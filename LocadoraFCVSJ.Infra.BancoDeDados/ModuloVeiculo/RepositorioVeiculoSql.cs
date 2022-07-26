@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo
 {
-    public class RepositorioVeiculoSql : RepositorioBase<Veiculo, MapeadorVeiculo>, IRepositorioVeiculo
+    public class RepositorioVeiculoSql : RepositorioBaseSql<Veiculo, MapeadorVeiculo>, IRepositorioVeiculo
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBVEICULO]

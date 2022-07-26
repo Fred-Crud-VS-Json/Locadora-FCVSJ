@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
 {
-    public class RepositorioFuncionarioSql : RepositorioBase<Funcionario, MapeadorFuncionario>, IRepositorioFuncionario
+    public class RepositorioFuncionarioSql : RepositorioBaseSql<Funcionario, MapeadorFuncionario>, IRepositorioFuncionario
     {
         protected override string QueryInserir =>
             @"INSERT INTO [TBFUNCIONARIO]

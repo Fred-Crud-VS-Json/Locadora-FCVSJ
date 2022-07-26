@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa
 {
-    public class MapeadorTaxa : MapeadorBase<Taxa>
+    public class MapeadorTaxa : MapeadorBaseSql<Taxa>
     {
         public override void ConfigurarParametros(Taxa taxa, SqlCommand comando)
         {
