@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using Serilog;
@@ -12,11 +13,13 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
     public class ServicoCliente
     {
         private readonly IRepositorioCliente _repositorioCliente;
+        private readonly IContextoPersistencia _contextoPersistencia;
         private string _msgErro = "";
 
-        public ServicoCliente(IRepositorioCliente repositorioCliente)
+        public ServicoCliente(IRepositorioCliente repositorioCliente, IContextoPersistencia contextoPersistencia)
         {
             _repositorioCliente = repositorioCliente;
+            _contextoPersistencia = contextoPersistencia;
         }
 
         public Result<Cliente> Inserir(Cliente cliente)
@@ -36,6 +39,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
             try
             {
                 _repositorioCliente.Inserir(cliente);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Cliente {cliente.Id} inserido com sucesso!");
 
@@ -68,6 +72,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
             try
             {
                 _repositorioCliente.Editar(cliente);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Cliente {cliente.Id} editado com sucesso!");
 
@@ -90,6 +95,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCliente
             try
             {
                 _repositorioCliente.Excluir(cliente);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Cliente {cliente.Id} excluído com sucesso!");
 
