@@ -4,6 +4,7 @@ using LocadoraFCVSJ.Infra.Orm.Compartilhado;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraFCVSJ.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraOrmContext))]
-    partial class LocadoraOrmContextModelSnapshot : ModelSnapshot
+    [Migration("20220727193257_AddTabelaPlanosOrm")]
+    partial class AddTabelaPlanosOrm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,75 +82,6 @@ namespace LocadoraFCVSJ.Infra.Orm.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TBClienteOrm", (string)null);
-                });
-
-            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloCondutor.Condutor", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Bairro")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("CNH")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("CNPJ")
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("Cidade")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<Guid>("ClienteId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Complemento")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("Numero")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("Rua")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("varchar(300)");
-
-                    b.Property<int>("UF")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ValidadeCnh")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClienteId")
-                        .IsUnique();
-
-                    b.ToTable("TBCondutorOrm", (string)null);
                 });
 
             modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloFuncionario.Funcionario", b =>
@@ -308,17 +241,6 @@ namespace LocadoraFCVSJ.Infra.Orm.Migrations
                         .IsRequired();
 
                     b.Navigation("Grupo");
-                });
-
-            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloCondutor.Condutor", b =>
-                {
-                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloCliente.Cliente", "Cliente")
-                        .WithOne()
-                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloCondutor.Condutor", "ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloVeiculo.Veiculo", b =>
