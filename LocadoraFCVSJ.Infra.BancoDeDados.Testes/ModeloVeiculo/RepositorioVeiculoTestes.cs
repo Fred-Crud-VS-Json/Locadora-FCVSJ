@@ -64,7 +64,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
             veiculo.Marca = "Ford";
             veiculo.Placa = "ASD2345";
             veiculo.Cor = "Preto";
-            veiculo.TipoCombustivel = TipoCombustivel.Elétrico;
+            veiculo.TipoCombustivel = TipoCombustivel.Gasolina;
             veiculo.CapacidadeTanque = 200;
             veiculo.Ano = 2020;
             veiculo.KmPercorrido = 0;
@@ -125,7 +125,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 Marca = "Ford",
                 Placa = "ASD2345",
                 Cor = "Preto",
-                TipoCombustivel = TipoCombustivel.Elétrico,
+                TipoCombustivel = TipoCombustivel.Gasolina,
                 CapacidadeTanque = 200,
                 Ano = 2020,
                 KmPercorrido = 0,
@@ -142,7 +142,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.Testes.ModeloVeiculo
                 Marca = "Volkswagen",
                 Placa = "PLG2945",
                 Cor = "Brando",
-                TipoCombustivel = TipoCombustivel.Gasolina,
+                TipoCombustivel = TipoCombustivel.Diesel,
                 CapacidadeTanque = 400,
                 Ano = 2010,
                 KmPercorrido = 100,

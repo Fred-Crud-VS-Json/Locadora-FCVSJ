@@ -9,7 +9,6 @@ namespace LocadoraFCVSJ.Dominio.Compartilhado
     public enum TipoCombustivel
     {
         Gasolina,
-        Diesel,
-        Elétrico
+        Diesel
     }
 }

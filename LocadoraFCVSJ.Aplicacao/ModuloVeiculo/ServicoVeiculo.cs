@@ -2,8 +2,8 @@
 using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 using Serilog;
 using System.Data.SqlClient;
 
@@ -12,11 +12,13 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
     public class ServicoVeiculo
     {
         private readonly IRepositorioVeiculo _repositorioVeiculo;
+        private readonly IContextoPersistencia _contextoPersistencia;
         private string _msgErro = "";
 
-        public ServicoVeiculo(IRepositorioVeiculo repositorioVeiculo)
+        public ServicoVeiculo(IRepositorioVeiculo repositorioVeiculo, IContextoPersistencia contextoPersistencia)
         {
             _repositorioVeiculo = repositorioVeiculo;
+            _contextoPersistencia = contextoPersistencia;
         }
 
         public Result<Veiculo> Inserir(Veiculo veiculo)
@@ -36,6 +38,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             try
             {
                 _repositorioVeiculo.Inserir(veiculo);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Veículo {veiculo.Id} inserido com sucesso!");
 
@@ -68,6 +71,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             try
             {
                 _repositorioVeiculo.Editar(veiculo);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Veículo {veiculo.Id} editado com sucesso!");
 
@@ -90,6 +94,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             try
             {
                 _repositorioVeiculo.Excluir(veiculo);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Veículo {veiculo.Id} excluído com sucesso!");
 
