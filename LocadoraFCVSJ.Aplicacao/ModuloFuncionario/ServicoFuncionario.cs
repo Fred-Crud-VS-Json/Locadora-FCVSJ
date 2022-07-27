@@ -2,8 +2,8 @@
 using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario;
 using Serilog;
 using System.Data.SqlClient;
 
@@ -12,11 +12,13 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
     public class ServicoFuncionario
     {
         private readonly IRepositorioFuncionario _repositorioFuncionario;
+        private readonly IContextoPersistencia _contextoPersistencia;
         private string _msgErro = "";
 
-        public ServicoFuncionario(IRepositorioFuncionario repositorioFuncionario)
+        public ServicoFuncionario(IRepositorioFuncionario repositorioFuncionario, IContextoPersistencia contextoPersistencia)
         {
             _repositorioFuncionario = repositorioFuncionario;
+            _contextoPersistencia = contextoPersistencia;
         }
 
         public Result<Funcionario> Inserir(Funcionario funcionario)
@@ -36,6 +38,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             try
             {
                 _repositorioFuncionario.Inserir(funcionario);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Funcionário {funcionario.Id} inserido com sucesso!");
 
@@ -68,6 +71,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             try
             {
                 _repositorioFuncionario.Editar(funcionario);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Funcionário {funcionario.Id} editado com sucesso!");
 
@@ -90,6 +94,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             try
             {
                 _repositorioFuncionario.Excluir(funcionario);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Funcionário {funcionario.Id} excluído com sucesso!");
 
@@ -141,7 +146,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             foreach (ValidationFailure erro in resultadoValidacao.Errors)
                 erros.Add(new(erro.ErrorMessage));
 
-            if (LoginDuplicado(funcionario))
+            if (UsuarioDuplicado(funcionario))
                 erros.Add(new("Usuário informado já existe"));
 
             if (erros.Any())
@@ -150,9 +155,9 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloFuncionario
             return Result.Ok();
         }
 
-        private bool LoginDuplicado(Funcionario funcionario)
+        private bool UsuarioDuplicado(Funcionario funcionario)
         {
-            Funcionario? funcionarioEncontrado = _repositorioFuncionario.SelecionarPorLogin(funcionario.Nome);
+            Funcionario? funcionarioEncontrado = _repositorioFuncionario.SelecionarPorUsuario(funcionario.Nome);
 
             return funcionarioEncontrado != null
                 && funcionarioEncontrado.Usuario.Equals(funcionario.Usuario, StringComparison.OrdinalIgnoreCase)

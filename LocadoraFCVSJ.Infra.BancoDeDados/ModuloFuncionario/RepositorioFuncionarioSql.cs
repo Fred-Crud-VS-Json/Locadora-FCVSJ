@@ -11,7 +11,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 (
                     [ID],
                     [NOME],
-                    [LOGIN],
+                    [USUARIO],
                     [SENHA],
                     [SALARIO],
                     [DATAADMISSAO],
@@ -21,7 +21,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 (
                     @ID,
                     @NOME,
-                    @LOGIN,
+                    @USUARIO,
                     @SENHA,
                     @SALARIO,
                     @DATAADMISSAO,
@@ -32,7 +32,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
             @"UPDATE [TBFUNCIONARIO]
                 SET
                     [NOME] = @NOME,
-                    [LOGIN] = @LOGIN,
+                    [USUARIO] = @USUARIO,
                     [SENHA] = @SENHA,
                     [SALARIO] = @SALARIO,
                     [DATAADMISSAO] = @DATAADMISSAO,
@@ -49,7 +49,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
             @"SELECT
                 FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
                 FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
-                FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                FUNCIONARIO.[USUARIO] AS FUNCIONARIO_USUARIO,
                 FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
                 FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
                 FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
@@ -63,7 +63,7 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
             @"SELECT
                 FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
                 FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
-                FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                FUNCIONARIO.[USUARIO] AS FUNCIONARIO_USUARIO,
                 FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
                 FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
                 FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
@@ -71,11 +71,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
             FROM
                 [TBFUNCIONARIO] AS FUNCIONARIO";
 
-        private string QuerySelecionarPorLogin =>
+        private string QuerySelecionarPorUsuario =>
             @"SELECT 
                     FUNCIONARIO.[ID] AS FUNCIONARIO_ID,
                     FUNCIONARIO.[NOME] AS FUNCIONARIO_NOME,
-                    FUNCIONARIO.[LOGIN] AS FUNCIONARIO_LOGIN,
+                    FUNCIONARIO.[USUARIO] AS FUNCIONARIO_USUARIO,
                     FUNCIONARIO.[SENHA] AS FUNCIONARIO_SENHA,
                     FUNCIONARIO.[SALARIO] AS FUNCIONARIO_SALARIO,
                     FUNCIONARIO.[DATAADMISSAO] AS FUNCIONARIO_DATAADMISSAO,
@@ -83,11 +83,11 @@ namespace LocadoraFCVSJ.Infra.BancoDeDados.ModuloFuncionario
                 FROM
                     [TBFUNCIONARIO] AS FUNCIONARIO
                 WHERE 
-	                FUNCIONARIO.[LOGIN] = @LOGIN";
+	                FUNCIONARIO.[USUARIO] = @USUARIO";
 
-        public Funcionario? SelecionarPorLogin(string login)
+        public Funcionario? SelecionarPorUsuario(string usuario)
         {
-            return SelecionarParametro(QuerySelecionarPorLogin, new SqlParameter("LOGIN", login));
+            return SelecionarParametro(QuerySelecionarPorUsuario, new SqlParameter("USUARIO", usuario));
         }
     }
 }

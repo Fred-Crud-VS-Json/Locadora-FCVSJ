@@ -4,6 +4,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloFuncionario
 {
     public interface IRepositorioFuncionario : IRepositorio<Funcionario>
     {
-        Funcionario? SelecionarPorLogin(string login);
+        Funcionario? SelecionarPorUsuario(string usuario);
     }
 }

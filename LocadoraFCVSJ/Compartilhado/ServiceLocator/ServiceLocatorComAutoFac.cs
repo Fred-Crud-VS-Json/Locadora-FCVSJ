@@ -22,6 +22,7 @@ using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloTaxa;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloVeiculo;
 using LocadoraFCVSJ.Infra.Orm.Compartilhado;
+using LocadoraFCVSJ.Infra.Orm.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.Orm.ModuloGrupo;
 using LocadoraFCVSJ.Infra.Orm.ModuloTaxa;
 using LocadoraFCVSJ.ModuloCliente;
@@ -46,7 +47,7 @@ namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
 
             builder.RegisterType<RepositorioGrupoOrm>().As<IRepositorioGrupo>();
             builder.RegisterType<RepositorioTaxaOrm>().As<IRepositorioTaxa>();
-            builder.RegisterType<RepositorioFuncionarioSql>().As<IRepositorioFuncionario>();
+            builder.RegisterType<RepositorioFuncionarioOrm>().As<IRepositorioFuncionario>();
             builder.RegisterType<RepositorioClienteSql>().As<IRepositorioCliente>();
             builder.RegisterType<RepositorioPlanoDeCobrancaSql>().As<IRepositorioPlanoDeCobranca>();
             builder.RegisterType<RepositorioVeiculoSql>().As<IRepositorioVeiculo>();
