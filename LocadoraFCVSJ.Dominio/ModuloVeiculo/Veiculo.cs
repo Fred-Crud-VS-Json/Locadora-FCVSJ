@@ -16,6 +16,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloVeiculo
         public decimal KmPercorrido { get; set; }
         public byte[] Foto { get; set; }
         public Grupo Grupo { get; set; }
+        public Guid GrupoId { get; set; }
 
         public override bool Equals(object? obj)
         {

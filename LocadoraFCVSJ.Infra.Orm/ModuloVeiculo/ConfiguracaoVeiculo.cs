@@ -20,6 +20,7 @@ namespace LocadoraFCVSJ.Infra.Orm.ModuloVeiculo
             builder.Property(x => x.Ano).HasColumnType("int").IsRequired();
             builder.Property(x => x.KmPercorrido).HasColumnType("int").IsRequired();
             builder.Property(x => x.Foto).HasColumnType("varbinary(max)").IsRequired();
+            builder.HasOne(x => x.Grupo).WithOne();
         }
     }
 }
