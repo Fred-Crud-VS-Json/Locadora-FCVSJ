@@ -4,6 +4,7 @@ using LocadoraFCVSJ.Infra.Orm.Compartilhado;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraFCVSJ.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraOrmContext))]
-    partial class LocadoraOrmContextModelSnapshot : ModelSnapshot
+    [Migration("20220727182240_AddTabelaClienteOrm")]
+    partial class AddTabelaClienteOrm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,66 +147,6 @@ namespace LocadoraFCVSJ.Infra.Orm.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TBTaxaOrm", (string)null);
-                });
-
-            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloVeiculo.Veiculo", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Ano")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CapacidadeTanque")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Cor")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<byte[]>("Foto")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<Guid>("GrupoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("KmPercorrido")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Marca")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Modelo")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Placa")
-                        .IsRequired()
-                        .HasColumnType("varchar(10)");
-
-                    b.Property<int>("TipoCombustivel")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GrupoId")
-                        .IsUnique();
-
-                    b.ToTable("TBVeiculoOrm", (string)null);
-                });
-
-            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloVeiculo.Veiculo", b =>
-                {
-                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloGrupo.Grupo", "Grupo")
-                        .WithOne()
-                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloVeiculo.Veiculo", "GrupoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Grupo");
                 });
 #pragma warning restore 612, 618
         }
