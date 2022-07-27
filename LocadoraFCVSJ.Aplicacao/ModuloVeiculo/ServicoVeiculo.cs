@@ -146,9 +146,6 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
             foreach (ValidationFailure erro in resultadoValidacao.Errors)
                 erros.Add(new(erro.ErrorMessage));
 
-            if (ModeloDuplicado(veiculo))
-                erros.Add(new("Modelo informado já existe"));
-
             if (PlacaDuplicada(veiculo))
                 erros.Add(new("Placa informada já existe"));
 
@@ -156,15 +153,6 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloVeiculo
                 return Result.Fail(erros);
 
             return Result.Ok();
-        }
-
-        private bool ModeloDuplicado(Veiculo veiculo)
-        {
-            Veiculo? veiculoEncontrado = _repositorioVeiculo.SelecionarPorModelo(veiculo.Modelo);
-
-            return veiculoEncontrado != null
-                && veiculoEncontrado.Modelo.Equals(veiculo.Modelo, StringComparison.OrdinalIgnoreCase)
-                && veiculoEncontrado.Id != veiculo.Id;
         }
 
         private bool PlacaDuplicada(Veiculo veiculo)

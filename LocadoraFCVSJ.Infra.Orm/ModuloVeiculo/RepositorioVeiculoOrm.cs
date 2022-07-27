@@ -13,11 +13,6 @@ namespace LocadoraFCVSJ.Infra.Orm.ModuloVeiculo
             Veiculos = _dbSet;
         }
 
-        public Veiculo? SelecionarPorModelo(string modelo)
-        {
-            return Veiculos.FirstOrDefault(t => t.Modelo == modelo);
-        }
-
         public Veiculo? SelecionarPorPlaca(string placa)
         {
             return Veiculos.FirstOrDefault(t => t.Placa == placa);
