@@ -4,7 +4,6 @@ using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
 using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
-using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCliente;
 using Serilog;
 using System.Data.SqlClient;
 

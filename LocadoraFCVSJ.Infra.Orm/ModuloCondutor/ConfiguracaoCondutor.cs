@@ -1,14 +1,14 @@
-﻿using LocadoraFCVSJ.Dominio.ModuloCliente;
+﻿using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LocadoraFCVSJ.Infra.Orm.ModuloCliente
+namespace LocadoraFCVSJ.Infra.Orm.ModuloCondutor
 {
-    public class ConfiguracaoCliente : IEntityTypeConfiguration<Cliente>
+    public class ConfiguracaoCondutor : IEntityTypeConfiguration<Condutor>
     {
-        public void Configure(EntityTypeBuilder<Cliente> builder)
+        public void Configure(EntityTypeBuilder<Condutor> builder)
         {
-            builder.ToTable("TBClienteOrm");
+            builder.ToTable("TBCondutorOrm");
 
             builder.Property(x => x.Id).ValueGeneratedNever();
             builder.Property(x => x.Nome).HasColumnType("varchar(300)").IsRequired();
@@ -24,6 +24,7 @@ namespace LocadoraFCVSJ.Infra.Orm.ModuloCliente
             builder.Property(x => x.Bairro).HasColumnType("varchar(300)").IsRequired();
             builder.Property(x => x.UF).HasConversion<int>().IsRequired();
             builder.Property(x => x.Complemento).HasColumnType("varchar(300)").IsRequired();
+            builder.HasOne(x => x.Cliente).WithOne();
         }
     }
 }

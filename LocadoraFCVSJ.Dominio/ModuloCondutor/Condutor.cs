@@ -22,6 +22,8 @@ namespace LocadoraFCVSJ.Dominio.ModuloCondutor
         public string Rua { get; set; }
         public Cliente Cliente { get; set; }
 
+        public Guid ClienteId { get; set; }
+
         public override bool Equals(object? obj)
         {
             return obj is Condutor condutor &&

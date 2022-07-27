@@ -3,6 +3,7 @@ using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloCondutor;
@@ -15,12 +16,14 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
     {
         private readonly IRepositorioCondutor _repositorioCondutor;
         private readonly ServicoCliente _servicoCliente;
+        private readonly IContextoPersistencia _contextoPersistencia;
         private string _msgErro = "";
 
-        public ServicoCondutor(IRepositorioCondutor repositorioCondutor, ServicoCliente servicoCliente)
+        public ServicoCondutor(IRepositorioCondutor repositorioCondutor, ServicoCliente servicoCliente, IContextoPersistencia contextoPersistencia)
         {
             _repositorioCondutor = repositorioCondutor;
             _servicoCliente = servicoCliente;
+            _contextoPersistencia = contextoPersistencia;
         }
 
         public Result<Condutor> Inserir(Condutor condutor)
@@ -40,6 +43,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
             try
             {
                 _repositorioCondutor.Inserir(condutor);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Condutor {condutor.Id} inserido com sucesso!");
 
@@ -72,6 +76,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
             try
             {
                 _repositorioCondutor.Editar(condutor);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Condutor {condutor.Id} editado com sucesso!");
 
@@ -94,6 +99,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloCondutor
             try
             {
                 _repositorioCondutor.Excluir(condutor);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Condutor {condutor.Id} excluído com sucesso!");
 
