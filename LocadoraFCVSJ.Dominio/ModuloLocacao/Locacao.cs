@@ -11,14 +11,14 @@ namespace LocadoraFCVSJ.Dominio.ModuloLocacao
     public class Locacao : EntidadeBase<Locacao>
     {
         public Cliente Cliente { get; set; }
+        public Condutor Condutor { get; set; }
         public Grupo Grupo { get; set; }
+        public Veiculo Veiculo { get; set; }
+        public PlanoDeCobranca PlanoDeCobranca { get; set; }
         public DateTime DataLocacao { get; set; }
         public DateTime DataDevolucao { get; set; }
-        public Condutor Condutor { get; set; }
-        public Veiculo Veiculo { get; set; }
         public Taxa Taxa { get; set; }
-        public decimal precoEstimado { get; set; }
-        public PlanoDeCobranca PlanoDeCobranca { get; set; }
+        public decimal PrecoEstimado { get; set; }
 
         public override bool Equals(object? obj)
         {
@@ -31,7 +31,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloLocacao
                    EqualityComparer<Condutor>.Default.Equals(Condutor, locacao.Condutor) &&
                    EqualityComparer<Veiculo>.Default.Equals(Veiculo, locacao.Veiculo) &&
                    EqualityComparer<Taxa>.Default.Equals(Taxa, locacao.Taxa) &&
-                   precoEstimado == locacao.precoEstimado &&
+                   PrecoEstimado == locacao.PrecoEstimado &&
                    EqualityComparer<PlanoDeCobranca>.Default.Equals(PlanoDeCobranca, locacao.PlanoDeCobranca);
         }
 
@@ -46,7 +46,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloLocacao
             hash.Add(Condutor);
             hash.Add(Veiculo);
             hash.Add(Taxa);
-            hash.Add(precoEstimado);
+            hash.Add(PrecoEstimado);
             hash.Add(PlanoDeCobranca);
             return hash.ToHashCode();
         }
