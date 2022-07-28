@@ -245,7 +245,8 @@ namespace LocadoraFCVSJ.Infra.Orm.Migrations
                     b.HasIndex("TaxaId")
                         .IsUnique();
 
-                    b.HasIndex("VeiculoId");
+                    b.HasIndex("VeiculoId")
+                        .IsUnique();
 
                     b.ToTable("TBLocacaoOrm", (string)null);
                 });
@@ -369,37 +370,37 @@ namespace LocadoraFCVSJ.Infra.Orm.Migrations
                     b.HasOne("LocadoraFCVSJ.Dominio.ModuloCliente.Cliente", "Cliente")
                         .WithOne()
                         .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LocadoraFCVSJ.Dominio.ModuloCondutor.Condutor", "Condutor")
                         .WithOne()
                         .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "CondutorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LocadoraFCVSJ.Dominio.ModuloGrupo.Grupo", "Grupo")
                         .WithOne()
                         .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "GrupoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca.PlanoDeCobranca", "PlanoDeCobranca")
                         .WithOne()
                         .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "PlanoDeCobrancaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LocadoraFCVSJ.Dominio.ModuloTaxa.Taxa", "Taxa")
                         .WithOne()
                         .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "TaxaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LocadoraFCVSJ.Dominio.ModuloVeiculo.Veiculo", "Veiculo")
-                        .WithMany()
-                        .HasForeignKey("VeiculoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "VeiculoId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Cliente");
