@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using LocadoraFCVSJ.Dominio.Compartilhado.Excecoes;
+using LocadoraFCVSJ.Dominio.Compartilhado.Interfaces;
 using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Infra.BancoDeDados.ModuloPlanoDeCobranca;
 using Serilog;
@@ -13,11 +14,13 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
     public class ServicoPlanoDeCobranca
     {
         private readonly IRepositorioPlanoDeCobranca _repositorioPlanoDeCobranca;
+        private readonly IContextoPersistencia _contextoPersistencia;
         private string _msgErro = "";
 
-        public ServicoPlanoDeCobranca(IRepositorioPlanoDeCobranca repositorioPlanoDeCobranca)
+        public ServicoPlanoDeCobranca(IRepositorioPlanoDeCobranca repositorioPlanoDeCobranca, IContextoPersistencia contextoPersistencia)
         {
             _repositorioPlanoDeCobranca = repositorioPlanoDeCobranca;
+            _contextoPersistencia = contextoPersistencia;
         }
 
         public Result<PlanoDeCobranca> Inserir(PlanoDeCobranca planoDeCobranca)
@@ -37,6 +40,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
             try
             {
                 _repositorioPlanoDeCobranca.Inserir(planoDeCobranca);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Plano de cobrança {planoDeCobranca.Id} inserido com sucesso!");
 
@@ -69,6 +73,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
             try
             {
                 _repositorioPlanoDeCobranca.Editar(planoDeCobranca);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Plano de cobrança {planoDeCobranca.Id} editado com sucesso!");
 
@@ -91,6 +96,7 @@ namespace LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca
             try
             {
                 _repositorioPlanoDeCobranca.Excluir(planoDeCobranca);
+                _contextoPersistencia.GravarDados();
 
                 Log.Logger.Information($"Plano de cobrança {planoDeCobranca.Id} excluído com sucesso!");
 
