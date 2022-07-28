@@ -3,6 +3,7 @@ using LocadoraFCVSJ.Aplicacao.ModuloCliente;
 using LocadoraFCVSJ.Aplicacao.ModuloCondutor;
 using LocadoraFCVSJ.Aplicacao.ModuloFuncionario;
 using LocadoraFCVSJ.Aplicacao.ModuloGrupo;
+using LocadoraFCVSJ.Aplicacao.ModuloLocacao;
 using LocadoraFCVSJ.Aplicacao.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Aplicacao.ModuloTaxa;
 using LocadoraFCVSJ.Aplicacao.ModuloVeiculo;
@@ -11,6 +12,7 @@ using LocadoraFCVSJ.Dominio.ModuloCliente;
 using LocadoraFCVSJ.Dominio.ModuloCondutor;
 using LocadoraFCVSJ.Dominio.ModuloFuncionario;
 using LocadoraFCVSJ.Dominio.ModuloGrupo;
+using LocadoraFCVSJ.Dominio.ModuloLocacao;
 using LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.Dominio.ModuloTaxa;
 using LocadoraFCVSJ.Dominio.ModuloVeiculo;
@@ -26,6 +28,7 @@ using LocadoraFCVSJ.Infra.Orm.ModuloCliente;
 using LocadoraFCVSJ.Infra.Orm.ModuloCondutor;
 using LocadoraFCVSJ.Infra.Orm.ModuloFuncionario;
 using LocadoraFCVSJ.Infra.Orm.ModuloGrupo;
+using LocadoraFCVSJ.Infra.Orm.ModuloLocacao;
 using LocadoraFCVSJ.Infra.Orm.ModuloTaxa;
 using LocadoraFCVSJ.Infra.Orm.ModuloVeiculo;
 using LocadoraFCVSJ.ModuloCliente;
@@ -55,6 +58,7 @@ namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
             builder.RegisterType<RepositorioPlanoDeCobrancaSql>().As<IRepositorioPlanoDeCobranca>();
             builder.RegisterType<RepositorioVeiculoOrm>().As<IRepositorioVeiculo>();
             builder.RegisterType<RepositorioCondutorOrm>().As<IRepositorioCondutor>();
+            builder.RegisterType<RepositorioLocacaoOrm>().As<IRepositorioLocacao>();
 
             builder.RegisterType<ServicoGrupo>().AsSelf();
             builder.RegisterType<ServicoTaxa>().AsSelf();
@@ -63,6 +67,7 @@ namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
             builder.RegisterType<ServicoPlanoDeCobranca>().AsSelf();
             builder.RegisterType<ServicoVeiculo>().AsSelf();
             builder.RegisterType<ServicoCondutor>().AsSelf();
+            builder.RegisterType<ServicoLocacao>().AsSelf();
 
             builder.RegisterType<ControladorGrupo>().AsSelf();
             builder.RegisterType<ControladorTaxa>().AsSelf();
@@ -71,6 +76,7 @@ namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
             builder.RegisterType<ControladorPlanoDeCobranca>().AsSelf();
             builder.RegisterType<ControladorVeiculo>().AsSelf();
             builder.RegisterType<ControladorCondutor>().AsSelf();
+            //builder.RegisterType<ControladorLocacao>().AsSelf();
 
             container = builder.Build();
         }

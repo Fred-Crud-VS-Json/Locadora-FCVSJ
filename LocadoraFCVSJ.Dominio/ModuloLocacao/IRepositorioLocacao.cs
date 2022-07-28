@@ -4,7 +4,7 @@ namespace LocadoraFCVSJ.Dominio.ModuloLocacao
 {
     public interface IRepositorioLocacao : IRepositorio<Locacao>
     {
-        Locacao? SelecionarPorDataLocacao(string dataLocacao);
+        Locacao? SelecionarPorDataLocacao(DateTime dataLocacao);
 
     }
 }
