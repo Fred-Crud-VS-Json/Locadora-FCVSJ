@@ -2,9 +2,9 @@
 
 namespace LocadoraFCVSJ.Dominio.ModuloLocacao
 {
-    //public class IRepositorioLocacao : IRepositorio<Locacao>
-    //{
-    //    Locacao? SelecionarPorUsuario(string usuario);
+    public interface IRepositorioLocacao : IRepositorio<Locacao>
+    {
+        Locacao? SelecionarPorDataLocacao(string dataLocacao);
 
-    //}
+    }
 }
