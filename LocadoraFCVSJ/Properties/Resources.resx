@@ -121,6 +121,9 @@
   <data name="close_white_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_white_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="search_more_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_more_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="restore_window_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restore_window_20px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,14 +136,17 @@
   <data name="group_layouts_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\group_layouts_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cheque_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cheque_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search_more_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_more_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_35px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_35px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cheque_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cheque_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="subtract_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subtract_20px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="discount_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\discount_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,29 +163,23 @@
   <data name="name_tag_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\name_tag_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_blue_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_blue_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image_white_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_white_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info_30px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_30px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_20px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_more_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_more_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close_blue_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_blue_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="driver_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\driver_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add_50px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_50px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus_math_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_math_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pencil_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,17 +187,23 @@
   <data name="male_user_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\male_user_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="image_white_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_white_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edit_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maximize_button_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maximize_button_20px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plus_math_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus_math_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="car_90px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car_90px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,10 +211,10 @@
   <data name="edit_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info_30px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_30px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="driver_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\driver_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="subtract_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\subtract_20px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sign_up_in_calendar_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign_up_in_calendar_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
