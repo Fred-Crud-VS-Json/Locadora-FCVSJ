@@ -26,35 +26,6 @@ namespace LocadoraFCVSJ.Dominio.ModuloLocacao
         public Guid TaxaId { get; set; }
         public decimal PrecoEstimado { get; set; }
 
-        public override bool Equals(object? obj)
-        {
-            return obj is Locacao locacao &&
-                   Id.Equals(locacao.Id) &&
-                   EqualityComparer<Cliente>.Default.Equals(Cliente, locacao.Cliente) &&
-                   EqualityComparer<Condutor>.Default.Equals(Condutor, locacao.Condutor) &&
-                   EqualityComparer<Grupo>.Default.Equals(Grupo, locacao.Grupo) &&
-                   EqualityComparer<Veiculo>.Default.Equals(Veiculo, locacao.Veiculo) &&
-                   EqualityComparer<PlanoDeCobranca>.Default.Equals(PlanoDeCobranca, locacao.PlanoDeCobranca) &&
-                   DataLocacao == locacao.DataLocacao &&
-                   DataDevolucao == locacao.DataDevolucao &&
-                   EqualityComparer<Taxa>.Default.Equals(Taxa, locacao.Taxa) &&
-                   PrecoEstimado == locacao.PrecoEstimado;
-        }
-
-        public override int GetHashCode()
-        {
-            HashCode hash = new HashCode();
-            hash.Add(Id);
-            hash.Add(Cliente);
-            hash.Add(Condutor);
-            hash.Add(Grupo);
-            hash.Add(Veiculo);
-            hash.Add(PlanoDeCobranca);
-            hash.Add(DataLocacao);
-            hash.Add(DataDevolucao);
-            hash.Add(Taxa);
-            hash.Add(PrecoEstimado);
-            return hash.ToHashCode();
-        }
+       
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraFCVSJ.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraOrmContext))]
-    [Migration("20220727191058_AddTabelaCondutorOrm")]
-    partial class AddTabelaCondutorOrm
+    [Migration("20220728204151_Adicionando Tabelas")]
+    partial class AdicionandoTabelas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -198,6 +198,95 @@ namespace LocadoraFCVSJ.Infra.Orm.Migrations
                     b.ToTable("TBGrupoOrm", (string)null);
                 });
 
+            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CondutorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataDevolucao")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("DataLocacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<Guid>("GrupoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PlanoDeCobrancaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("PrecoEstimado")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("TaxaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("VeiculoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId")
+                        .IsUnique();
+
+                    b.HasIndex("CondutorId")
+                        .IsUnique();
+
+                    b.HasIndex("GrupoId")
+                        .IsUnique();
+
+                    b.HasIndex("PlanoDeCobrancaId")
+                        .IsUnique();
+
+                    b.HasIndex("TaxaId")
+                        .IsUnique();
+
+                    b.HasIndex("VeiculoId")
+                        .IsUnique();
+
+                    b.ToTable("TBLocacaoOrm", (string)null);
+                });
+
+            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca.PlanoDeCobranca", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("GrupoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("PlanoControlado_LimiteKm")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PlanoControlado_ValorDiario")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PlanoControlado_ValorKm")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PlanoDiario_ValorDiario")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PlanoDiario_ValorKm")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PlanoLivre_ValorDiario")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrupoId")
+                        .IsUnique();
+
+                    b.ToTable("TBPlanoOrm", (string)null);
+                });
+
             modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloTaxa.Taxa", b =>
                 {
                     b.Property<Guid>("Id")
@@ -276,6 +365,68 @@ namespace LocadoraFCVSJ.Infra.Orm.Migrations
                         .IsRequired();
 
                     b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", b =>
+                {
+                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloCliente.Cliente", "Cliente")
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "ClienteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloCondutor.Condutor", "Condutor")
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "CondutorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloGrupo.Grupo", "Grupo")
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "GrupoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca.PlanoDeCobranca", "PlanoDeCobranca")
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "PlanoDeCobrancaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloTaxa.Taxa", "Taxa")
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "TaxaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloVeiculo.Veiculo", "Veiculo")
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloLocacao.Locacao", "VeiculoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("Condutor");
+
+                    b.Navigation("Grupo");
+
+                    b.Navigation("PlanoDeCobranca");
+
+                    b.Navigation("Taxa");
+
+                    b.Navigation("Veiculo");
+                });
+
+            modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca.PlanoDeCobranca", b =>
+                {
+                    b.HasOne("LocadoraFCVSJ.Dominio.ModuloGrupo.Grupo", "Grupo")
+                        .WithOne()
+                        .HasForeignKey("LocadoraFCVSJ.Dominio.ModuloPlanoDeCobranca.PlanoDeCobranca", "GrupoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Grupo");
                 });
 
             modelBuilder.Entity("LocadoraFCVSJ.Dominio.ModuloVeiculo.Veiculo", b =>
