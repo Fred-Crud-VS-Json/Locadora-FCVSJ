@@ -19,6 +19,7 @@ using LocadoraFCVSJ.ModuloCliente;
 using LocadoraFCVSJ.ModuloCondutor;
 using LocadoraFCVSJ.ModuloFuncionario;
 using LocadoraFCVSJ.ModuloGrupo;
+using LocadoraFCVSJ.ModuloLocacao;
 using LocadoraFCVSJ.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.ModuloTaxa;
 using LocadoraFCVSJ.ModuloVeiculo;
@@ -80,7 +81,7 @@ namespace LocadoraFCVSJ
 
         private void BtnAcessarLocacoes_Click(object sender, EventArgs e)
         {
-            // TO-DO ControladorLocacoes
+            AbrirTela(_serviceLocator.Get<ControladorLocacao>());
         }
 
         private void AbrirTela(ControladorBase controladorBase)

@@ -39,6 +39,7 @@ using LocadoraFCVSJ.ModuloGrupo;
 using LocadoraFCVSJ.ModuloPlanoDeCobranca;
 using LocadoraFCVSJ.ModuloTaxa;
 using LocadoraFCVSJ.ModuloVeiculo;
+using LocadoraFCVSJ.ModuloLocacao;
 
 namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
 {
@@ -77,7 +78,7 @@ namespace LocadoraFCVSJ.Compartilhado.ServiceLocator
             builder.RegisterType<ControladorPlanoDeCobranca>().AsSelf();
             builder.RegisterType<ControladorVeiculo>().AsSelf();
             builder.RegisterType<ControladorCondutor>().AsSelf();
-            //builder.RegisterType<ControladorLocacao>().AsSelf();
+            builder.RegisterType<ControladorLocacao>().AsSelf();
 
             container = builder.Build();
         }
