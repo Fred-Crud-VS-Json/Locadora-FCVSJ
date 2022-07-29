@@ -8,5 +8,10 @@ namespace LocadoraFCVSJ.ModuloLocacao
         {
             InitializeComponent();
         }
+
+        private void BtnConcluir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
