@@ -910,7 +910,7 @@ namespace LocadoraFCVSJ
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::LocadoraFCVSJ.Properties.Resources.sign_up_in_calendar_90px;
+            this.pictureBox8.Image = global::LocadoraFCVSJ.Properties.Resources.sign_up_in_calendar_90px1;
             this.pictureBox8.Location = new System.Drawing.Point(68, 67);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(80, 80);

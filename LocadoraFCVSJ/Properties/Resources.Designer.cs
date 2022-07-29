@@ -383,6 +383,16 @@ namespace LocadoraFCVSJ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sign_up_in_calendar_90px1 {
+            get {
+                object obj = ResourceManager.GetObject("sign_up_in_calendar_90px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap subtract_20px1 {
             get {
                 object obj = ResourceManager.GetObject("subtract_20px1", resourceCulture);

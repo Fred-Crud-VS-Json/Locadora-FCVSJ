@@ -145,6 +145,9 @@
   <data name="add_35px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_35px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="driver_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\driver_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="subtract_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subtract_20px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,8 +175,8 @@
   <data name="close_20px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_20px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sign_up_in_calendar_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign_up_in_calendar_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_50px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_50px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,10 +214,10 @@
   <data name="edit_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="driver_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\driver_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sign_up_in_calendar_90px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sign_up_in_calendar_90px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sign_up_in_calendar_90px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign_up_in_calendar_90px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
