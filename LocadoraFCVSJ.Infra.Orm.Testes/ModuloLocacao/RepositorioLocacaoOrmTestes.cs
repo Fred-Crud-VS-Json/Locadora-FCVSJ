@@ -27,7 +27,9 @@ namespace LocadoraFCVSJ.Infra.Orm.Testes.ModuloLocacao
     {
         private LocadoraOrmContext locadora;
         private Locacao locacao;
+        private Locacao locacao2;
         private Condutor? condutor;
+        private Condutor? condutor2;
         private Cliente? cliente;
         private Grupo? grupo;
         private Veiculo? veiculo;
@@ -44,13 +46,15 @@ namespace LocadoraFCVSJ.Infra.Orm.Testes.ModuloLocacao
 
         public RepositorioLocacaoOrmTestes()
         {
-            SqlUtil.ExecutarSql("DELETE FROM [TBCondutorOrm]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBLocacaoOrm]");
             SqlUtil.ExecutarSql("DELETE FROM [TBClienteOrm]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBCondutorOrm]");            
             SqlUtil.ExecutarSql("DELETE FROM [TBVeiculoOrm]");
             SqlUtil.ExecutarSql("DELETE FROM [TBPlanoOrm]");
-            SqlUtil.ExecutarSql("DELETE FROM [TBGrupoOrm]");
             SqlUtil.ExecutarSql("DELETE FROM [TBTaxaOrm]");
+            SqlUtil.ExecutarSql("DELETE FROM [TBGrupoOrm]");           
             SqlUtil.ExecutarSql("DELETE FROM [TBFuncionarioOrm]");
+            
             locadora = new("Data Source=(LocalDB)\\MSSqlLocalDB;Initial Catalog=DBLocadoraFCVSJ;Integrated Security=True;Pooling=False");
 
             repositorioCliente = new RepositorioClienteOrm(locadora);
@@ -97,6 +101,174 @@ namespace LocadoraFCVSJ.Infra.Orm.Testes.ModuloLocacao
             locacaoEncontrada.Should().Be(locacao);
         }
 
+        [TestMethod]
+        public void Deve_Editar_Locacao()
+        {
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
+            grupo = NovoGrupo();
+            veiculo = NovoVeiculo();
+            planoDeCobranca = NovoPlanoDeCobranca();
+            taxa = NovaTaxa();
+            locacao = NovaLocacao();
+
+            repositorioCliente.Inserir(cliente);
+            locadora.SaveChanges();
+            repositorioCondutor.Inserir(condutor);
+            locadora.SaveChanges();
+            repositorioGrupo.Inserir(grupo);
+            locadora.SaveChanges();
+            repositorioVeiculo.Inserir(veiculo);
+            locadora.SaveChanges();
+            repositorioPlanoDeCobranca.Inserir(planoDeCobranca);
+            locadora.SaveChanges();
+            repositorioTaxa.Inserir(taxa);
+            locadora.SaveChanges();
+            repositorioLocacao.Inserir(locacao);
+            locadora.SaveChanges();
+
+            locacao.PrecoEstimado = 500;
+
+            repositorioLocacao.Editar(locacao);
+            locadora.SaveChanges();
+            //assert
+            Locacao? locacaoEncontrada = repositorioLocacao.SelecionarPorId(locacao.Id);
+
+            locacaoEncontrada.Should().NotBeNull();
+            locacaoEncontrada.Should().Be(locacao);
+        }
+
+        [TestMethod]
+        public void Deve_Excluir_Locacao()
+        {
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
+            grupo = NovoGrupo();
+            veiculo = NovoVeiculo();
+            planoDeCobranca = NovoPlanoDeCobranca();
+            taxa = NovaTaxa();
+            locacao = NovaLocacao();
+
+
+            repositorioCliente.Inserir(cliente);
+            locadora.SaveChanges();
+            repositorioCondutor.Inserir(condutor);
+            locadora.SaveChanges();
+            repositorioGrupo.Inserir(grupo);
+            locadora.SaveChanges();
+            repositorioVeiculo.Inserir(veiculo);
+            locadora.SaveChanges();
+            repositorioPlanoDeCobranca.Inserir(planoDeCobranca);
+            locadora.SaveChanges();
+            repositorioTaxa.Inserir(taxa);
+            locadora.SaveChanges();
+            repositorioLocacao.Inserir(locacao);
+            locadora.SaveChanges();
+
+            repositorioLocacao.Excluir(locacao);
+            locadora.SaveChanges();
+            //assert
+            Locacao? locacaoEncontrada = repositorioLocacao.SelecionarPorId(locacao.Id);
+
+            locacaoEncontrada.Should().BeNull();
+        }
+
+        [TestMethod]
+        public void Deve_Selecionar_Locacao_porId()
+        {
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
+            grupo = NovoGrupo();
+            veiculo = NovoVeiculo();
+            planoDeCobranca = NovoPlanoDeCobranca();
+            taxa = NovaTaxa();
+            locacao = NovaLocacao();
+
+            repositorioCliente.Inserir(cliente);
+            locadora.SaveChanges();
+            repositorioCondutor.Inserir(condutor);
+            locadora.SaveChanges();
+            repositorioGrupo.Inserir(grupo);
+            locadora.SaveChanges();
+            repositorioVeiculo.Inserir(veiculo);
+            locadora.SaveChanges();
+            repositorioPlanoDeCobranca.Inserir(planoDeCobranca);
+            locadora.SaveChanges();
+            repositorioTaxa.Inserir(taxa);
+            locadora.SaveChanges();
+            repositorioLocacao.Inserir(locacao);
+            locadora.SaveChanges();
+
+            //assert
+            Locacao? locacaoEncontrada = repositorioLocacao.SelecionarPorId(locacao.Id);
+
+            locacaoEncontrada.Should().NotBeNull();
+            locacaoEncontrada.Should().Be(locacao);
+        }
+
+        [TestMethod]
+        public void Deve_Selecionar_Todas_Locacoes()
+        {
+            // arrange
+            cliente = NovoCliente();
+            condutor = NovoCondutor();
+            grupo = NovoGrupo();
+            veiculo = NovoVeiculo();
+            planoDeCobranca = NovoPlanoDeCobranca();
+            taxa = NovaTaxa();
+            locacao = NovaLocacao();
+
+            repositorioCliente.Inserir(cliente);
+            locadora.SaveChanges();
+            repositorioCondutor.Inserir(condutor);
+            locadora.SaveChanges();
+            repositorioGrupo.Inserir(grupo);
+            locadora.SaveChanges();
+            repositorioVeiculo.Inserir(veiculo);
+            locadora.SaveChanges();
+            repositorioPlanoDeCobranca.Inserir(planoDeCobranca);
+            locadora.SaveChanges();
+            repositorioTaxa.Inserir(taxa);
+            locadora.SaveChanges();
+            repositorioLocacao.Inserir(locacao);
+            locadora.SaveChanges();
+
+
+            cliente = NovoCliente();
+            condutor2 = NovoCondutor();
+            grupo = NovoGrupo();
+            veiculo = NovoVeiculo();
+            planoDeCobranca = NovoPlanoDeCobranca();
+            taxa = NovaTaxa();
+            locacao2 = NovaLocacao2();
+
+            repositorioCliente.Inserir(cliente);
+            locadora.SaveChanges();
+            repositorioCondutor.Inserir(condutor2);
+            locadora.SaveChanges();
+            repositorioGrupo.Inserir(grupo);
+            locadora.SaveChanges();
+            repositorioVeiculo.Inserir(veiculo);
+            locadora.SaveChanges();
+            repositorioPlanoDeCobranca.Inserir(planoDeCobranca);
+            locadora.SaveChanges();
+            repositorioTaxa.Inserir(taxa);
+            locadora.SaveChanges();
+            repositorioLocacao.Inserir(locacao2);
+            locadora.SaveChanges();
+
+            //action
+            List<Locacao> locacoes = repositorioLocacao.SelecionarTodos();
+
+            //assert
+            locacoes.Count.Should().Be(2);
+            locacoes.Should().Contain(locacao);
+            locacoes.Should().Contain(locacao2);
+        }
+
 
 
         private Locacao NovaLocacao()
@@ -115,11 +287,49 @@ namespace LocadoraFCVSJ.Infra.Orm.Testes.ModuloLocacao
             };
         }
 
+        private Locacao NovaLocacao2()
+        {
+            return new Locacao
+            {
+                Cliente = cliente,
+                Condutor = condutor2,
+                Grupo = grupo,
+                Veiculo = veiculo,
+                PlanoDeCobranca = planoDeCobranca,
+                Taxa = taxa,
+                DataLocacao = DateTime.Now.Date,
+                DataDevolucao = DateTime.Now.AddDays(30).Date,
+                PrecoEstimado = 200
+            };
+        }
+
         private Condutor NovoCondutor()
         {
             return new Condutor
             {
                 Nome = "Alan",
+                CPF = "59643424718",
+                CNPJ = "12345678912345",
+                Rua = "Alameda",
+                CNH = "0123456789",
+                ValidadeCnh = DateTime.Now.Date,
+                Telefone = "12988754461",
+                Email = "Alan@gmail.com",
+                Cidade = "Lages",
+                CEP = "01234567",
+                Numero = "212",
+                Bairro = "Coral",
+                UF = UF.SP,
+                Complemento = "verde",
+                Cliente = cliente
+            };
+        }
+
+        private Condutor NovoCondutor2()
+        {
+            return new Condutor
+            {
+                Nome = "Pedro",
                 CPF = "59643424718",
                 CNPJ = "12345678912345",
                 Rua = "Alameda",

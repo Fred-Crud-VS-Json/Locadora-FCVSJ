@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocadoraFCVSJ.Infra.Orm.Migrations
 {
     [DbContext(typeof(LocadoraOrmContext))]
-    [Migration("20220728195612_Adicionando Tabelas")]
+    [Migration("20220728204151_Adicionando Tabelas")]
     partial class AdicionandoTabelas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
