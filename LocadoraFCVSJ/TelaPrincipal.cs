@@ -78,6 +78,11 @@ namespace LocadoraFCVSJ
             AbrirTela(_serviceLocator.Get<ControladorCondutor>());
         }
 
+        private void BtnAcessarLocacoes_Click(object sender, EventArgs e)
+        {
+            // TO-DO ControladorLocacoes
+        }
+
         private void AbrirTela(ControladorBase controladorBase)
         {
             controlador = controladorBase;
@@ -86,6 +91,5 @@ namespace LocadoraFCVSJ
 
             controlador.ObterTela().ShowDialog();
         }
-
     }
 }

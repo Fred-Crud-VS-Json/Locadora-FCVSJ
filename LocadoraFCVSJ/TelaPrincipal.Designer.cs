@@ -66,6 +66,10 @@ namespace LocadoraFCVSJ
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.customPanel1 = new LocadoraFCVSJ.Compartilhado.Componentes.CustomPanel();
+            this.BtnAcessarLocacoes = new LocadoraFCVSJ.Compartilhado.Componentes.CustomKryptonButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.PnlGrupos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlTaxas.SuspendLayout();
@@ -83,6 +87,8 @@ namespace LocadoraFCVSJ
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -517,7 +523,7 @@ namespace LocadoraFCVSJ
             this.customPanel4.Controls.Add(this.BtnAcessarCondutores);
             this.customPanel4.Controls.Add(this.pictureBox5);
             this.customPanel4.Controls.Add(this.label6);
-            this.customPanel4.Location = new System.Drawing.Point(720, 447);
+            this.customPanel4.Location = new System.Drawing.Point(589, 449);
             this.customPanel4.Name = "customPanel4";
             this.customPanel4.Size = new System.Drawing.Size(220, 240);
             this.customPanel4.TabIndex = 7;
@@ -611,7 +617,7 @@ namespace LocadoraFCVSJ
             this.customPanel5.Controls.Add(this.BtnAcessarVeiculos);
             this.customPanel5.Controls.Add(this.pictureBox6);
             this.customPanel5.Controls.Add(this.label7);
-            this.customPanel5.Location = new System.Drawing.Point(463, 447);
+            this.customPanel5.Location = new System.Drawing.Point(332, 449);
             this.customPanel5.Name = "customPanel5";
             this.customPanel5.Size = new System.Drawing.Size(220, 240);
             this.customPanel5.TabIndex = 6;
@@ -705,7 +711,7 @@ namespace LocadoraFCVSJ
             this.customPanel6.Controls.Add(this.BtnAcessarPlanos);
             this.customPanel6.Controls.Add(this.pictureBox7);
             this.customPanel6.Controls.Add(this.label8);
-            this.customPanel6.Location = new System.Drawing.Point(204, 447);
+            this.customPanel6.Location = new System.Drawing.Point(73, 449);
             this.customPanel6.Name = "customPanel6";
             this.customPanel6.Size = new System.Drawing.Size(220, 240);
             this.customPanel6.TabIndex = 5;
@@ -829,12 +835,107 @@ namespace LocadoraFCVSJ
             this.label9.TabIndex = 1;
             this.label9.Text = "MÓDULOS";
             // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.customPanel1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.customPanel1.BorderRadius = 15;
+            this.customPanel1.BorderSize = 2;
+            this.customPanel1.Controls.Add(this.BtnAcessarLocacoes);
+            this.customPanel1.Controls.Add(this.pictureBox8);
+            this.customPanel1.Controls.Add(this.label10);
+            this.customPanel1.Location = new System.Drawing.Point(846, 449);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(220, 240);
+            this.customPanel1.TabIndex = 10;
+            this.customPanel1.UnderlinedStyle = false;
+            // 
+            // BtnAcessarLocacoes
+            // 
+            this.BtnAcessarLocacoes.AccessibleName = "Locacoes";
+            this.BtnAcessarLocacoes.Location = new System.Drawing.Point(26, 172);
+            this.BtnAcessarLocacoes.Name = "BtnAcessarLocacoes";
+            this.BtnAcessarLocacoes.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.OverrideDefault.Back.ColorAngle = 45F;
+            this.BtnAcessarLocacoes.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.OverrideDefault.Border.ColorAngle = 45F;
+            this.BtnAcessarLocacoes.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarLocacoes.OverrideDefault.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnAcessarLocacoes.OverrideDefault.Border.Rounding = 20F;
+            this.BtnAcessarLocacoes.OverrideDefault.Border.Width = 1;
+            this.BtnAcessarLocacoes.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.BtnAcessarLocacoes.Size = new System.Drawing.Size(171, 49);
+            this.BtnAcessarLocacoes.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.BtnAcessarLocacoes.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarLocacoes.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnAcessarLocacoes.StateCommon.Border.Rounding = 20F;
+            this.BtnAcessarLocacoes.StateCommon.Border.Width = 1;
+            this.BtnAcessarLocacoes.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.BtnAcessarLocacoes.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.BtnAcessarLocacoes.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Open Sans SemiBold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnAcessarLocacoes.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnAcessarLocacoes.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnAcessarLocacoes.StatePressed.Back.ColorAngle = 135F;
+            this.BtnAcessarLocacoes.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnAcessarLocacoes.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(95)))), ((int)(((byte)(134)))));
+            this.BtnAcessarLocacoes.StatePressed.Border.ColorAngle = 135F;
+            this.BtnAcessarLocacoes.StatePressed.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarLocacoes.StatePressed.Border.Rounding = 20F;
+            this.BtnAcessarLocacoes.StatePressed.Border.Width = 1;
+            this.BtnAcessarLocacoes.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnAcessarLocacoes.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnAcessarLocacoes.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnAcessarLocacoes.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(126)))), ((int)(((byte)(168)))));
+            this.BtnAcessarLocacoes.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.BtnAcessarLocacoes.StateTracking.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.BtnAcessarLocacoes.StateTracking.Border.Rounding = 20F;
+            this.BtnAcessarLocacoes.StateTracking.Border.Width = 1;
+            this.BtnAcessarLocacoes.TabIndex = 6;
+            this.BtnAcessarLocacoes.Values.Text = "Acessar";
+            this.BtnAcessarLocacoes.Click += new System.EventHandler(this.BtnAcessarLocacoes_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::LocadoraFCVSJ.Properties.Resources.sign_up_in_calendar_90px;
+            this.pictureBox8.Location = new System.Drawing.Point(68, 67);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Open Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(142)))), ((int)(((byte)(187)))));
+            this.label10.Location = new System.Drawing.Point(49, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(117, 28);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "LOCAÇÕES";
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1146, 717);
+            this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.customPanel4);
@@ -878,6 +979,9 @@ namespace LocadoraFCVSJ
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -918,5 +1022,9 @@ namespace LocadoraFCVSJ
         private CustomKryptonButton BtnAcessarVeiculos;
         private CustomKryptonButton BtnAcessarPlanos;
         private CustomKryptonButton BtnAcessarGrupos;
+        private CustomPanel customPanel1;
+        private CustomKryptonButton BtnAcessarLocacoes;
+        private PictureBox pictureBox8;
+        private Label label10;
     }
 }
